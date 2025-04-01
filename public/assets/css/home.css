@@ -1,0 +1,79 @@
+img {
+    max-width: 100%;
+    height: auto
+}
+
+.modeofconsultation.h2 {
+    color: #212529 !important;
+}
+
+.video-bx img.img-responsive.video-icon-block.video-block-imgages {
+    width: 60px;
+    height: 52px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    transform: translate(-50%, -50%)
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.slider-form label,
+.slider-form br {
+    display: none;
+}
+
+.slider-form input,
+.slider-form select {
+    height: 35px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.slider-form textarea {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px
+}
+
+.slider-form button#search-main-form-btn,
+[type=submit] {
+    background: #dc3545;
+    color: #fff;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.video-bx {
+    position: relative;
+}
+
+.video-bx p {
+    position: absolute;
+    bottom: 50%;
+    margin-bottom: -70px;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.treatmentsModal .modal-dialog {
+    max-width: 380px;
+}
+
+/* viewmore */
+.view-more-bx {
+    display: none
+}
+
+.qna {
+    max-height: unset
+}

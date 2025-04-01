@@ -55,4 +55,33 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = service('session');
     }
+
+
+
+    protected $global = [];
+
+    public function loadView($viewName = "",$pageInfo = null, $headerInfo = [],  $footerInfo = []){
+        echo view('includes/header', $headerInfo);
+        echo view($viewName, $pageInfo);
+        echo view('includes/footer', $footerInfo);
+    }
+
+
+    public function isLoggedIn(){
+        $this->session = session();
+        $isLoggedIn = $this->session->get('isLoggedIn');
+        if (! isset ( $isLoggedIn ) || $isLoggedIn != TRUE) {
+            redirect()->to(base_url('admin/login'))->with('error', 'Please log in first.')->send();
+            exit;
+        }
+    }
+    
+    public function isUserLoggedIn(){
+        $this->session = session();
+        $isUserLoggedIn = $this->session->get('isUserLoggedIn');
+        if (! isset ( $isUserLoggedIn ) || $isUserLoggedIn != TRUE) {
+            redirect()->to(base_url('login'))->with('error', 'Please log in first.')->send();
+            exit;
+        }
+    }
 }

@@ -1,0 +1,114 @@
+
+#formTerms,
+#formPrivacyPolicy {
+    font-size: 14px;
+    color: #666;
+    top: 30px
+}
+
+#formTerms .modal-dialog,
+#formPrivacyPolicy .modal-dialog {
+    margin: 0px auto;
+}
+
+#formTerms .modal-title,
+#formPrivacyPolicy .modal-title {
+    color: #666;
+    font-size: 16px;
+    margin: 10px
+}
+
+.formtns-triger {
+    opacity: .6;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#formTerms .modal-header,
+#formPrivacyPolicy .modal-header {
+    background: unset;
+    padding: 0 5px;
+    border: 0
+}
+
+#formTerms .close,
+#formPrivacyPolicy .close {
+    font-size: 30px;
+    color: #e43939;
+    position: absolute;
+    opacity: 1;
+    top: 1px;
+    right: 5px;
+    z-index: 999
+}
+
+#formTerms .modal-body,
+#formPrivacyPolicy .modal-body {
+    padding: 5px 15px;
+    max-height: 420px;
+    overflow: auto;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd
+}
+
+#formTerms .modal-footer,
+#formPrivacyPolicy .modal-footer {
+    padding: 5px;
+    border-top: 0
+}
+
+#formTerms .modal-footer .btn,
+#formPrivacyPolicy .modal-footer .btn {
+    background: #e43939;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 5px;
+    padding: 5px 8px
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#formTerms h2,
+#formPrivacyPolicy h2 {
+    font-size: 16px;
+    color: #666
+}
+
+#formTerms ul,
+#formPrivacyPolicy ul,
+#formTerms ol,
+#formPrivacyPolicy ol {
+    padding-left: 15px
+}
+
+#formTerms .modal-content,
+#formPrivacyPolicy .modal-content {
+    background: #ffffff
+}
+
+.modal-backdrop.fade.in {
+    opacity: 0.5
+}
+
+.modal-backdrop {
+    --bs-backdrop-zindex: 0;
+}
+
+@media only screen and (max-width: 520px) {
+    div#formPrivacyPolicy {
+        top: 36px
+    }
+
+    #formTerms .modal-body,
+    #formPrivacyPolicy .modal-body {
+        max-height: 480px
+    }
+}
+
+.formtns-triger a {
+    color: #164399;
+}
