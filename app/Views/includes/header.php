@@ -38,7 +38,7 @@
             <div class="container logo-section">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-7 col-6 text-start"> 
-                        <a href="https://www.medassure.co.in" class="vh-logo text-white lh-1" title="Medassure"> 
+                        <a href="<?= base_url(''); ?>" class="vh-logo text-white lh-1" title="Medassure"> 
                             <span class="logo fw-semibold">Medassure.co.in</span> 
                             <span class="tagline text-uppercase border-top border-white">start your life now</span>
                         </a> 
