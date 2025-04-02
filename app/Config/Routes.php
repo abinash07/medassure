@@ -26,3 +26,6 @@ $routes->get('/turkey', 'Home::turkey');
 $routes->get('/thailand', 'Home::thailand');
 
 $routes->get('/consult-online', 'Home::consult_online');
+
+$routes->get('/test_data', 'Home::test_data');
+

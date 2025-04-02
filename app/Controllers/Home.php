@@ -3,10 +3,19 @@
 namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\CommonModel;
 
 class Home extends BaseController{
+
+    protected $CommonModel;
+
+    public function __construct(){
+        $this->CommonModel = new CommonModel();
+    }
+
     public function index(){
         $data = [];
+        $data['countryList'] = $this->CommonModel->getMasterData();
         return $this->loadView('index',$data);
     }
 
@@ -98,5 +107,17 @@ class Home extends BaseController{
 
     public function consult_online(){
         return view('consultonline');
+    }
+
+    public function test_data(){
+        $examStatusCount = $this->CommonModel->getMasterData();
+        echo '<pre>';
+        print_r($examStatusCount);
+    }
+
+
+
+    public function insert_enquiry(){
+        
     }
 }
