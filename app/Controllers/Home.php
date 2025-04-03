@@ -16,6 +16,10 @@ class Home extends BaseController{
     public function index(){
         $data = [];
         $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['faq'] = $this->CommonModel->getFaqData('home');
+        // echo '<pre>';
+        // print_r($data['faq']);
+        // exit;
         return $this->loadView('index',$data);
     }
 
@@ -117,7 +121,40 @@ class Home extends BaseController{
 
 
 
-    public function insert_enquiry(){
-        
+    public function generic_form(){
+        $name = $this->request->getPost('name');
+        $email = $this->request->getPost('email');
+        $country = $this->request->getPost('country');
+        $other = $this->request->getPost('other');
+        $phone = $this->request->getPost('phone_number');
+        $medical_problem = $this->request->getPost('medical_problem');
+        $age = $this->request->getPost('age');
+
+        $data = array(
+            'name' => $name,
+            'email' => $email,
+            'country_id' => $country,
+            'mobile' => $phone,
+            'other' => $other,
+            'description' => $medical_problem,
+            'age' => $age,
+            'status' => 1,
+            'created_by' => 1,
+            'created_on' => time()
+        );
+
+        $result = $this->CommonModel->add_record('tbl_enquiry',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'Record found',
+                'result' => $data
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'Record not found'
+            ]);
+        }
     }
 }

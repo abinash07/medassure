@@ -67,6 +67,13 @@ abstract class BaseController extends Controller
     }
 
 
+    public function loadAdminView($viewName = "",$pageInfo = null, $headerInfo = [],  $footerInfo = []){
+        echo view('adminpanel/includes/header', $headerInfo);
+        echo view('adminpanel/'.$viewName, $pageInfo);
+        echo view('adminpanel/includes/footer', $footerInfo);
+    }
+
+
     public function isLoggedIn(){
         $this->session = session();
         $isLoggedIn = $this->session->get('isLoggedIn');

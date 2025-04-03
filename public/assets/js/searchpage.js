@@ -6429,8 +6429,7 @@
     });
     city = city.trim();
 
-    var page_source = $("#page_source").val();
-    var url = page_source.split("/");
+ 
     var citydata = cities.filter(function (citydata) {
         return citydata.city == city;
     });
@@ -6443,7 +6442,7 @@
     $(".online-consult-button").text("Submitting...");
 
     // Submit the form data via AJAX
-    $.post(base_url_lp + "/genericform", $("#genericForm").serialize(), function (data) {
+    $.post(base_url_lp + "genericform", $("#genericForm").serialize(), function (data) {
         console.log(data);
 
         // After successful submission, redirect to the next step

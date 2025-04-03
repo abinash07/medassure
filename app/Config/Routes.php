@@ -29,3 +29,44 @@ $routes->get('/consult-online', 'Home::consult_online');
 
 $routes->get('/test_data', 'Home::test_data');
 
+$routes->post('/genericform','Home::generic_form');
+
+
+
+
+
+
+//Dashboard
+$routes->get('/admin/login','Adminpanel\Auth::index');
+$routes->post('/adminlogin','Adminpanel\Auth::loginme');
+$routes->get('/admin/logout','Adminpanel\Auth::logout');
+
+
+$routes->get('/admin','Adminpanel\Home::index');
+
+
+$routes->get('/admin/client','Adminpanel\Home::client');
+$routes->post('/admin/clientlist','Adminpanel\Home::get_all_client');
+$routes->get('/admin/addclient','Adminpanel\Home::add_client');
+$routes->post('/admin/insertclient','Adminpanel\Home::insert_client');
+
+
+$routes->get('/admin/examinee','Adminpanel\Home::examinee');
+$routes->post('/admin/examineelist','Adminpanel\Home::get_all_exminee');
+$routes->get('/admin/addexaminee','Adminpanel\Home::add_examniee');
+$routes->post('/admin/insertexaminee','Adminpanel\Home::insert_examinee');
+
+
+$routes->get('/admin/category','Adminpanel\Home::category');
+$routes->post('/admin/categorylist','Adminpanel\Home::get_all_category');
+
+
+$routes->get('/admin/question','Adminpanel\Home::question');
+$routes->post('/admin/questionlist','Adminpanel\Home::get_all_question');
+
+
+$routes->get('/admin/adminuser','Adminpanel\Home::adminuser');
+$routes->post('/admin/adminlist','Adminpanel\Home::get_all_admin_user');
+
+$routes->get('/admin/report','Adminpanel\Home::report');
+$routes->post('/admin/userreport','Adminpanel\Home::get_user_report');
