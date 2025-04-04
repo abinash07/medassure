@@ -417,6 +417,73 @@ class Home extends BaseController{
         return $this->loadAdminView('addnews',$data); 
     }
 
+    public function insert_news(){
+
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'page'      => 'required|trim',
+            'title' => 'required|trim',
+            'content'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'page'        => $this->request->getPost('page'),
+            'title'       => $this->request->getPost('title'),
+            'content'       => $this->request->getPost('content'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_faq',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+
+
+        $insertdata['name'] = $this->input->post('name');
+        $uploadDirectory = PUBPATH. '/docs/category/';
+        if(!empty($_FILES['profileImg']['tmp_name'])){
+            $gallery_uniqueFilename = uniqid().'.'.pathinfo($_FILES['profileImg']['name'], PATHINFO_EXTENSION);
+            $gallery_file_binary = file_get_contents($_FILES['profileImg']['tmp_name']);
+            if(file_put_contents($uploadDirectory.$gallery_uniqueFilename, $gallery_file_binary)){
+  
+            }
+            $insertdata['image'] = 'docs/category/'.$gallery_uniqueFilename;
+        }        
+        $insertdata['status'] = 1;
+        $insertdata['created_by'] = $this->session->userdata('id');
+        $insertdata['created_on'] = time();
+        $result = $this->Common_model->add_record('tbl_category_master',$insertdata);
+        if($result){
+            echo json_encode(array('status'=>true, 'message' => 'Success'));
+        }else{
+            echo json_encode(array('status'=>false, 'message' => 'Error'));
+        }
+    }
+
 
     // $uploadDirectory = PUBPATH. '/docs/category/';
     //     if(!empty($_FILES['profileImg']['tmp_name'])){
