@@ -39,6 +39,12 @@
             </li>
             <?php } ?>
 
+            <?php if($loginRoleId == 1){ ?>
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/news'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>News</span></a>
+            </li>
+            <?php } ?>
+
 
             <?php if($loginRoleId == 1){ ?>
             <li class="" id="indentsPage">

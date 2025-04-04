@@ -44,6 +44,19 @@ $routes->get('/admin/logout','Adminpanel\Auth::logout');
 
 $routes->get('/admin','Adminpanel\Home::index');
 
+$routes->get('/admin/faq','Adminpanel\Home::faq');
+$routes->post('/admin/get_all_faq','Adminpanel\Home::get_all_faq');
+$routes->get('/admin/addfaq','Adminpanel\Home::add_faq');
+$routes->post('/admin/insert_faq','Adminpanel\Home::insert_faq');
+
+
+$routes->get('/admin/news','Adminpanel\Home::news');
+$routes->post('/admin/get_all_news','Adminpanel\Home::get_all_news');
+$routes->get('/admin/addnews','Adminpanel\Home::add_news');
+$routes->post('/admin/insert_news','Adminpanel\Home::insert_news');
+
+
+
 
 $routes->get('/admin/client','Adminpanel\Home::client');
 $routes->post('/admin/clientlist','Adminpanel\Home::get_all_client');

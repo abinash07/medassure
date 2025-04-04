@@ -7,18 +7,21 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\adminpanel\ClientModel;
 use App\Models\adminpanel\UserModel;
 use App\Models\adminpanel\AuthModel;
+use App\Models\CommonModel;
 
 class Home extends BaseController{
 
     protected $clientModel;
     protected $userModel;
     protected $authModel;
+    protected $CommonModel;
 
     public function __construct(){
         $this->isLoggedIn();
         $this->clientModel = new ClientModel();
         $this->userModel = new UserModel();
         $this->authModel = new AuthModel();
+        $this->CommonModel = new CommonModel();
     }
 
     public function index(){
@@ -331,4 +334,97 @@ class Home extends BaseController{
             ]);
         }
     }
+
+
+    public function faq(){
+        $data = [];
+        return $this->loadAdminView('faq',$data);
+    }
+
+    public function get_all_faq(){
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_faq($postData);
+        return $this->response->setJSON($response);
+    }
+
+    public function add_faq(){
+        $data = [];
+        return $this->loadAdminView('addfaq',$data); 
+    }
+
+
+    public function insert_faq(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'page'      => 'required|trim',
+            'title' => 'required|trim',
+            'content'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'page'        => $this->request->getPost('page'),
+            'title'       => $this->request->getPost('title'),
+            'content'       => $this->request->getPost('content'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_faq',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+
+
+    public function news(){
+        $data = [];
+        return $this->loadAdminView('news',$data);
+    }
+
+    public function get_all_news(){
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_news($postData);
+        return $this->response->setJSON($response);
+    }
+
+    public function add_news(){
+        $data = [];
+        return $this->loadAdminView('addnews',$data); 
+    }
+
+
+    // $uploadDirectory = PUBPATH. '/docs/category/';
+    //     if(!empty($_FILES['profileImg']['tmp_name'])){
+    //         $gallery_uniqueFilename = uniqid().'.'.pathinfo($_FILES['profileImg']['name'], PATHINFO_EXTENSION);
+    //         $gallery_file_binary = file_get_contents($_FILES['profileImg']['tmp_name']);
+    //         if(file_put_contents($uploadDirectory.$gallery_uniqueFilename, $gallery_file_binary)){
+  
+    //         }
+    //         $insertdata['image'] = 'docs/category/'.$gallery_uniqueFilename;
+    //     }
 }
