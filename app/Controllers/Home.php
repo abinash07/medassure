@@ -17,8 +17,10 @@ class Home extends BaseController{
         $data = [];
         $data['countryList'] = $this->CommonModel->getMasterData();
         $data['faq'] = $this->CommonModel->getFaqData('home');
+        $data['news'] = $this->CommonModel->getGenericData('tbl_news');
+        $data['googlerating'] = $this->CommonModel->getGenericData('tbl_google_rating');
         // echo '<pre>';
-        // print_r($data['faq']);
+        // print_r($data['news']);
         // exit;
         return $this->loadView('index',$data);
     }

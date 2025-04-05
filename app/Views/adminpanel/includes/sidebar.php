@@ -20,11 +20,6 @@
             <?php } ?>
 
 
-            <?php if($loginRoleId == 1){ ?>
-            <li class="" id="candidatesPage">
-                <a href="<?php echo base_url('admin/category'); ?>"><i class="fa fa-file" aria-hidden="true"></i> <span>Category</span></a>
-            </li>
-            <?php } ?>
 
 
             <?php if($loginRoleId == 1){ ?>
@@ -37,11 +32,25 @@
             <li class="" id="candidatesPage">
                 <a href="<?php echo base_url('admin/faq'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>FAQ</span></a>
             </li>
-            <?php } ?>
 
-            <?php if($loginRoleId == 1){ ?>
             <li class="" id="candidatesPage">
                 <a href="<?php echo base_url('admin/news'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>News</span></a>
+            </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/author'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Authors</span></a>
+            </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/googlerating'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Google Rating</span></a>
+            </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/category'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Category Master</span></a>
+            </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/video'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Video</span></a>
             </li>
             <?php } ?>
 

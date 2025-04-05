@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?= base_url('admin/home'); ?>"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="breadcrumb-item">Category</li>
+                                <li class="breadcrumb-item">Board Members</li>
                             </ol>
                         </nav>
                     </div>
@@ -29,10 +29,10 @@
                                 <div class="box-header with-border">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <h3 class="box-title pull-left">List of categories </h3>
+                                            <h3 class="box-title pull-left">List of Authors </h3>
                                         </div>
                                         <div class="col-md-6" style="text-align: right;">
-                                            <a href="<?= base_url('admin/addcategory'); ?>" class="btn btn-primary btn-sm">Add New Category</a>
+                                            <a href="<?= base_url('admin/addauthor'); ?>" class="btn btn-primary btn-sm">Add New Author</a>
                                         </div>
                                     </div>
                                 </div>
@@ -45,8 +45,8 @@
                                                         <tr>
                                                             <th>#</th> 
                                                             <th>Name</th>
-                                                            <th>Slug</th>
-                                                            <th>Section</th>
+                                                            <th>Bio</th>
+                                                            <th>Image</th>
                                                             <th>Created On</th>
                                                         </tr>
                                                     </thead>
@@ -73,7 +73,7 @@
             'serverMethod': 'post',
             'order': [[0, 'desc']],
             'ajax': {
-                'url':'<?=base_url('admin/get_all_category') ?>',
+                'url':'<?=base_url('admin/get_all_author') ?>',
                 'data': function(data){
                     data.status = "1";
                 }
@@ -82,8 +82,8 @@
             'columns': [
                 { data: 'id' },
                 { data: 'name' },
-                { data: 'slug' },
-                { data: 'section' },
+                { data: 'bio' },
+                { data: 'image' },
                 { data: 'date' },
             ],
         });

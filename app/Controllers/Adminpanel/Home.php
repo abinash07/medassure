@@ -252,17 +252,6 @@ class Home extends BaseController{
     }
 
 
-    public function category(){
-        $data = [];
-        return $this->loadAdminView('category',$data); 
-    }
-
-    public function get_all_category(){
-        $clientModel = new ClientModel();
-        $postData = $this->request->getPost();
-        $response = $this->clientModel->get_all_category($postData);
-        return $this->response->setJSON($response);
-    }
 
 
     public function question(){
@@ -399,6 +388,7 @@ class Home extends BaseController{
     }
 
 
+    /*********************************News Sction***************************/
 
 
     public function news(){
@@ -417,15 +407,269 @@ class Home extends BaseController{
         return $this->loadAdminView('addnews',$data); 
     }
 
-    public function insert_news(){
 
+    function createSlug($productName) {
+        // Convert to lowercase
+        $slug = strtolower($productName);
+    
+        // Replace special character '&' with 'and'
+        $slug = preg_replace('/&/', 'and', $slug);
+    
+        // Replace non-alphanumeric characters with a hyphen
+        $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);
+    
+        // Reduce multiple hyphens to a single hyphen
+        $slug = preg_replace('/-+/', '-', $slug);
+    
+        // Trim hyphens from the beginning and end
+        $slug = trim($slug, '-');
+        
+        return $slug;
+    }
+
+
+    public function insert_news(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/news/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'link'   => 'required|trim',
+            'description'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/news/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'link'       => $this->request->getPost('link'),
+            'slug' =>$this->createSlug($this->request->getPost('title')),
+            'image' =>$image,
+            'description'       => $this->request->getPost('description'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_news',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+    /******************************************Author Section****************************/
+
+    public function author(){
+        $data = [];
+        return $this->loadAdminView('authors',$data);
+    }
+
+    public function get_all_author(){
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_author($postData);
+        return $this->response->setJSON($response);
+    }
+
+    public function add_author(){
+        $data = [];
+        return $this->loadAdminView('addauthor',$data); 
+    }
+
+    public function insert_author(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/author/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'bio'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/author/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'        => $this->request->getPost('name'),
+            'bio'       => $this->request->getPost('bio'),
+            'image' =>$image,
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_author',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+    /**********************************Google Rating*****************************/
+
+
+    public function google_rating(){
+        $data = [];
+        return $this->loadAdminView('googlerating',$data);
+    }
+
+    public function get_all_google_rating(){
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_google_rating($postData);
+        return $this->response->setJSON($response);
+    }
+
+    public function add_google_rating(){
+        $data = [];
+        return $this->loadAdminView('addgooglerating',$data); 
+    }
+
+
+
+    public function insert_google_rating(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/googlerating/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'review'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/googlerating/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'        => $this->request->getPost('name'),
+            'review'       => $this->request->getPost('review'),
+            'image' =>$image,
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_google_rating',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+    /**********************Category Section************************/
+    public function category(){
+        $data = [];
+        return $this->loadAdminView('category',$data); 
+    }
+
+    public function get_all_category(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_category($postData);
+        return $this->response->setJSON($response);
+    }
+
+
+    public function add_category(){
+        $data = [];
+        return $this->loadAdminView('addcategory',$data); 
+    }
+
+
+    public function insert_category(){
         $session = session();
         
         ## ✅ Validation Rules
         $validationRules = [
-            'page'      => 'required|trim',
-            'title' => 'required|trim',
-            'content'   => 'required|trim',
+            'name'      => 'required|trim',
+            'section' => 'required|trim',
         ];
 
         ## ✅ Validate Input
@@ -439,9 +683,9 @@ class Home extends BaseController{
 
         ## ✅ Fetch Data from POST Request
         $data = [
-            'page'        => $this->request->getPost('page'),
-            'title'       => $this->request->getPost('title'),
-            'content'       => $this->request->getPost('content'),
+            'name'        => $this->request->getPost('name'),
+            'slug'       => $this->createSlug($this->request->getPost('name')),
+            'section'       => $this->request->getPost('section'),
             'status'      => 1,
             'created_by'   => session()->get('id'),
             'created_on'   => time() + 12600,
@@ -449,7 +693,7 @@ class Home extends BaseController{
         ];
 
         ## ✅ Insert into Database
-        $result = $this->CommonModel->add_record('tbl_faq',$data);
+        $result = $this->CommonModel->add_record('tbl_category_master',$data);
         if($result){
             return $this->response->setJSON([
                 'status'  => true,
@@ -461,37 +705,71 @@ class Home extends BaseController{
                 'message' => 'Something error, Try after sometime!'
             ]);
         }
+    }
 
+    /******************************************Video Section*********************/
 
-        $insertdata['name'] = $this->input->post('name');
-        $uploadDirectory = PUBPATH. '/docs/category/';
-        if(!empty($_FILES['profileImg']['tmp_name'])){
-            $gallery_uniqueFilename = uniqid().'.'.pathinfo($_FILES['profileImg']['name'], PATHINFO_EXTENSION);
-            $gallery_file_binary = file_get_contents($_FILES['profileImg']['tmp_name']);
-            if(file_put_contents($uploadDirectory.$gallery_uniqueFilename, $gallery_file_binary)){
-  
-            }
-            $insertdata['image'] = 'docs/category/'.$gallery_uniqueFilename;
-        }        
-        $insertdata['status'] = 1;
-        $insertdata['created_by'] = $this->session->userdata('id');
-        $insertdata['created_on'] = time();
-        $result = $this->Common_model->add_record('tbl_category_master',$insertdata);
-        if($result){
-            echo json_encode(array('status'=>true, 'message' => 'Success'));
-        }else{
-            echo json_encode(array('status'=>false, 'message' => 'Error'));
-        }
+    public function video(){
+        $data = [];
+        return $this->loadAdminView('video',$data); 
+    }
+
+    public function get_all_video(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_video($postData);
+        return $this->response->setJSON($response);
     }
 
 
-    // $uploadDirectory = PUBPATH. '/docs/category/';
-    //     if(!empty($_FILES['profileImg']['tmp_name'])){
-    //         $gallery_uniqueFilename = uniqid().'.'.pathinfo($_FILES['profileImg']['name'], PATHINFO_EXTENSION);
-    //         $gallery_file_binary = file_get_contents($_FILES['profileImg']['tmp_name']);
-    //         if(file_put_contents($uploadDirectory.$gallery_uniqueFilename, $gallery_file_binary)){
-  
-    //         }
-    //         $insertdata['image'] = 'docs/category/'.$gallery_uniqueFilename;
-    //     }
+    public function add_video(){
+        $data = [];
+        return $this->loadAdminView('addvideo',$data); 
+    }
+
+
+    public function insert_video(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'url' => 'required|trim',
+            'cat_id' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'url'       => $this->request->getPost('url'),
+            'cat_id'       => $this->request->getPost('cat_id'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_youtube_videos',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
 }

@@ -19,6 +19,13 @@ class CommonModel extends Model{
     }
 
 
+    public function getGenericData($table){
+        $db = \Config\Database::connect();
+        
+        $query = $db->query("SELECT * FROM $table WHERE status = 1");
+        return $result = $query->getResult();
+    }
+
     public function add_record($table,$data){
         $db = \Config\Database::connect();
         $query = $db->table($table)->insert($data);

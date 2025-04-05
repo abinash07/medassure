@@ -40,9 +40,8 @@ $routes->post('/genericform','Home::generic_form');
 $routes->get('/admin/login','Adminpanel\Auth::index');
 $routes->post('/adminlogin','Adminpanel\Auth::loginme');
 $routes->get('/admin/logout','Adminpanel\Auth::logout');
-
-
 $routes->get('/admin','Adminpanel\Home::index');
+
 
 $routes->get('/admin/faq','Adminpanel\Home::faq');
 $routes->post('/admin/get_all_faq','Adminpanel\Home::get_all_faq');
@@ -54,6 +53,43 @@ $routes->get('/admin/news','Adminpanel\Home::news');
 $routes->post('/admin/get_all_news','Adminpanel\Home::get_all_news');
 $routes->get('/admin/addnews','Adminpanel\Home::add_news');
 $routes->post('/admin/insert_news','Adminpanel\Home::insert_news');
+
+
+$routes->get('/admin/author','Adminpanel\Home::author');
+$routes->post('/admin/get_all_author','Adminpanel\Home::get_all_author');
+$routes->get('/admin/addauthor','Adminpanel\Home::add_author');
+$routes->post('/admin/insert_author','Adminpanel\Home::insert_author');
+
+
+$routes->get('/admin/googlerating','Adminpanel\Home::google_rating');
+$routes->post('/admin/get_all_google_rating','Adminpanel\Home::get_all_google_rating');
+$routes->get('/admin/addgooglerating','Adminpanel\Home::add_google_rating');
+$routes->post('/admin/insert_google_rating','Adminpanel\Home::insert_google_rating');
+
+
+$routes->get('/admin/category','Adminpanel\Home::category');
+$routes->post('/admin/get_all_category','Adminpanel\Home::get_all_category');
+$routes->get('/admin/addcategory','Adminpanel\Home::add_category');
+$routes->post('/admin/insert_category','Adminpanel\Home::insert_category');
+
+
+$routes->get('/admin/video','Adminpanel\Home::video');
+$routes->post('/admin/get_all_video','Adminpanel\Home::get_all_video');
+$routes->get('/admin/addvideo','Adminpanel\Home::add_video');
+$routes->post('/admin/insert_video','Adminpanel\Home::insert_video');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,8 +106,6 @@ $routes->get('/admin/addexaminee','Adminpanel\Home::add_examniee');
 $routes->post('/admin/insertexaminee','Adminpanel\Home::insert_examinee');
 
 
-$routes->get('/admin/category','Adminpanel\Home::category');
-$routes->post('/admin/categorylist','Adminpanel\Home::get_all_category');
 
 
 $routes->get('/admin/question','Adminpanel\Home::question');

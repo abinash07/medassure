@@ -41,8 +41,8 @@
                                                 <div class="row">
                                                     <div class="col-md-8">
                                                         <div class="form-group">
-                                                            <label class="control-label">Title <span class="star">*</span></label>
-                                                            <input type="text" class="form-control" name="title" id="title" placeholder="Enter News Title" required="">
+                                                            <label class="control-label">Name <span class="star">*</span></label>
+                                                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Author Name" required="">
                                                         </div>
                                                     </div>
 
@@ -62,18 +62,13 @@
                                                     </div>
 
 
-                                                    <div class="col-md-8">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Link <span class="star">*</span></label>
-                                                            <input type="text" class="form-control" name="link" id="link" placeholder="Enter News Link" required="">
-                                                        </div>
-                                                    </div>
+                                 
 
                                                     
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label">Description <span class="star">*</span></label>
-                                                            <textarea class="form-control" id="description" name="description" rows="10" placeholder="Enter News Description" required=""></textarea>
+                                                            <label class="control-label">Review <span class="star">*</span></label>
+                                                            <textarea class="form-control" id="review" name="review" rows="10" placeholder="Enter Authors Bio" required=""></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -204,7 +199,7 @@
 			var filename = userImage.value;
 			var extdot = filename.lastIndexOf(".")+1;
 			var image_ext = filename.substr(extdot,filename.lenght).toLowerCase();
-			if (image_ext == "jpg" || image_ext == "jpeg" || image_ext == "png") {
+			if (image_ext == "jpg" || image_ext == "jpeg" || image_ext == "png" || image_ext == "webp") {
                 $('#profileerrormsg').html('');
 				if(file){
 					const blobURL = URL.createObjectURL(file);
@@ -229,7 +224,7 @@
 			}else{
 				$('#profileImg').val('');
                 $('#profileimagepreview').attr('src', baseUrl3+'assets/img/user.jpg');
-                $('#profileerrormsg').html('<span class="text-danger">Only png, jpeg, jpg files are allowed.</span>');
+                $('#profileerrormsg').html('<span class="text-danger">Only png, jpeg, jpg, webp files are allowed.</span>');
 			}
 		}else{
 			$('#profileImg').val('');
@@ -246,30 +241,26 @@
 
         $('#addFaq').validate({
             rules: {
-                title: {
+                name: {
                     required: true,
                 },
                 profileImg: {
                     required: true,
                 },
-                link: {
+                bio: {
                     required: true,
-                },
-                description: {
-                    required: true
                 },
             },
             messages: {
-                title: {
+                name: {
                     required: "Please enter your email address",
                 },
-                profileImg: {
+                bio: {
                     required: "Please enter your phone number"
                 },
-                link: {
+                image: {
                     required: "Please enter your phone number"
                 },
-                description: "Please enter your address",
             },
             submitHandler: function(form) {
                 var formData = new FormData(form);
@@ -282,7 +273,7 @@
                 }
 
                 $.ajax({
-                    url: "<?php echo base_url('admin/insert_news'); ?>",
+                    url: "<?php echo base_url('admin/insert_google_rating'); ?>",
                     method: "POST",
                     enctype: "multipart/form-data",
                     data: formData,

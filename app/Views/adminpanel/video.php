@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?= base_url('admin/home'); ?>"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="breadcrumb-item">Category</li>
+                                <li class="breadcrumb-item">Videos</li>
                             </ol>
                         </nav>
                     </div>
@@ -29,10 +29,10 @@
                                 <div class="box-header with-border">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <h3 class="box-title pull-left">List of categories </h3>
+                                            <h3 class="box-title pull-left">List of Videos </h3>
                                         </div>
                                         <div class="col-md-6" style="text-align: right;">
-                                            <a href="<?= base_url('admin/addcategory'); ?>" class="btn btn-primary btn-sm">Add New Category</a>
+                                            <a href="<?= base_url('admin/addvideo'); ?>" class="btn btn-primary btn-sm">Add New Video</a>
                                         </div>
                                     </div>
                                 </div>
@@ -44,9 +44,8 @@
                                                     <thead>
                                                         <tr>
                                                             <th>#</th> 
-                                                            <th>Name</th>
-                                                            <th>Slug</th>
-                                                            <th>Section</th>
+                                                            <th>Title</th>
+                                                            <th>Video</th>
                                                             <th>Created On</th>
                                                         </tr>
                                                     </thead>
@@ -73,7 +72,7 @@
             'serverMethod': 'post',
             'order': [[0, 'desc']],
             'ajax': {
-                'url':'<?=base_url('admin/get_all_category') ?>',
+                'url':'<?=base_url('admin/get_all_video') ?>',
                 'data': function(data){
                     data.status = "1";
                 }
@@ -81,9 +80,8 @@
             "columnDefs": [],
             'columns': [
                 { data: 'id' },
-                { data: 'name' },
-                { data: 'slug' },
-                { data: 'section' },
+                { data: 'title' },
+                { data: 'url' },
                 { data: 'date' },
             ],
         });

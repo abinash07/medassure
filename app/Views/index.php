@@ -1289,131 +1289,49 @@
             <div class="container">
                 <div class="testimonial-title d-md-flex align-items-center justify-content-between">
                     <div class="rating d-flex align-items-center">
-                        <figure class="m-0"><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/google-icon.webp"
-                                loading="lazy" alt="Google Rating" width="75" height="76" class="img-fluid"
-                                title="Google Rating"></figure>
+                        <figure class="m-0">
+                            <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/google-icon.webp" loading="lazy" alt="Google Rating" width="75" height="76" class="img-fluid" title="Google Rating">
+                        </figure>
                         <div class="info ps-2">
-                            <div class="titl">Google Rating</div> <span class="d-flex">4.7 <span class="d-flex ms-2">
-                                    <img alt="Rating Star"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp"
-                                        width="13" height="13" title="Rating star"> <img alt="Rating Star"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp"
-                                        width="13" height="13" title="Rating star"> <img alt="Rating Star"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp"
-                                        width="13" height="13" title="Rating star"> <img alt="Rating Star"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp"
-                                        width="13" height="13" title="Rating star"> <img alt="Rating Star"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp"
-                                        width="13" height="13" title="Rating star"> </span></span>
+                            <div class="titl">Google Rating</div> 
+                            <span class="d-flex">4.7 <span class="d-flex ms-2">
+                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
+                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
+                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
+                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
+                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
+                            </span></span>
                             <p>See all our reviews</p>
                         </div>
                     </div>
                     <div class="section-title text-center">
                         <h2>Satisfied Patients, Proud Service</h2>
                         <p class="my-3">100,000+ patients have trusted us since 2016.</p>
-                    </div> <a href="https://bit.ly/4c6iqqQ" target="_blank" title="Google Reviews"
-                        class="readmore-outline d-none d-lg-block">View All Reviews</a>
+                    </div> 
+                    <a href="https://bit.ly/4c6iqqQ" target="_blank" title="Google Reviews" class="readmore-outline d-none d-lg-block">View All Reviews</a>
                 </div>
                 <div class="owl-carousel testimonial-slider">
-                    <div class="item">
-                        <div class="testimonial-bx">
-                            <p>My experience with Vaidam Health has been splendid and very rewarding. I had all the
-                                support and guidance to make my Medical Tourism to BLK-MAX Hospital, Pisa Road - New
-                                Delhi hassle free.
-                                The Staff are very courteous and always willing to help patients. Also costs saving
-                                measures — without compromising quality standards were proffered were necessary for the
-                                overall budget targets of patient.
-                                I will recommend this Organization to any prospective patient that may seek medical care
-                                Overseas.</p>
+                    <?php foreach($googlerating as $k4 => $v4){ ?>
+                        <div class="item">
+                            <div class="testimonial-bx">
+                                <p><?= $v4->review; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-bx">
-                            <p>I really had a very good experience. The team I was assigned was really helpful. Heena
-                                did her best to see that we do not get any challenges while in India. Gaurav was so
-                                passionate about his job. He was willing to go any where I wanted. From the pharmacies,
-                                seeing doctors and any other errands like money exchange. He was so genuine in his work.
-                                He exhibited a high level of professionalism.
-                                Thank you so much team at Vaidam.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-bx">
-                            <p>I am writing this to thank your agency for assisting me for my surgery.
-                                I Specially Thank Mrs. Anamika for taking my calls/ text and assigning Everything.
-                                And Mr. Budda Dev Of Course.
-                                They are so professional and cordial, the perfect person to have representing every kind
-                                of help From Fortis hospital.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-bx">
-                            <p>This is an exciting experience for me that some one help me for several times in an
-                                unknown country without any expectation. Thanks & thanks Mr. Budda Dev for ur tremendous
-                                support. If u r not there it will be very difficult to take such an excelent treatment
-                                plan for my child & my wife. Thanks & thanks again Budda Dev. Special thanks to Papipy
-                                who cordinate all of this. Thanks a lot papiya. Thanks Vidam Health.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-bx">
-                            <p>My brother is still having treatment in Fortis HealthCare Institute through Vaidam
-                                Health. We have got amazing help in all processes ( finding great hospital, visa
-                                processing, accomodations and hospital process). Whenever we got issue, they are besides
-                                us to resolve it very quick. Specially thanks to Ethiopia representative 'Fasika' and
-                                the New delhi guy 'Abdul Awol' and their manager. All are passionate and sincere to help
-                                us as a family, thanks so much. We are still in the hospital and I am sure this awesome
-                                help will continue to the end. I totally recommend Vaidam for those in need medical
-                                treatment abroad.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial-bx">
-                            <p>You are excellent in services and good coordination and timing</p>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
                 <div class="owl-carousel testimonial-thumb mt-4 mt-sm-5">
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/KABIR-ZUBAIRU.webp"
-                                alt="Cristina" width="156" height="156" class="img-fluid" title="KABIR-ZUBAIRU">
-                        </figure> <span>Kabir Zubairu</span>
-                    </div>
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Namagembe-Winnie.webp"
-                                alt="Danial" width="156" height="156" class="img-fluid" title="Namagembe-Winnie">
-                        </figure> <span>Namagembe Winnie</span>
-                    </div>
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/M.Rahman-Faruque.webp"
-                                alt="Cristina" width="156" height="156" class="img-fluid" title="M.Rahman-Farque">
-                        </figure> <span>M.Rahman Anan Faruque</span>
-                    </div>
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/shahdat-hossain.webp"
-                                alt="Danial" width="156" height="156" class="img-fluid" title="Shahdat-hossain">
-                        </figure> <span>Shahdat Hossain</span>
-                    </div>
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Addisu.webp"
-                                alt="Cristina" width="156" height="156" class="img-fluid" title="Addisu"></figure>
-                        <span>Addisu</span>
-                    </div>
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Johnson-Marun.webp"
-                                alt="Danial" width="156" height="156" class="img-fluid" title="Johnson-Marun"></figure>
-                        <span>Johnson Marun</span>
-                    </div>
+                    <?php foreach($googlerating as $k4 => $v4){ ?>
+                        <div class="item">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?><?= $v4->image; ?>" alt="Cristina" width="156" height="156" class="img-fluid" title="<?= $v4->name; ?>">
+                            </figure> 
+                            <span><?= $v4->name; ?></span>
+                        </div>
+                    <?php } ?>
                 </div>
-                <div class="d-lg-none text-center mt-4 mt-sm-5"> <a href="https://bit.ly/4c6iqqQ" target="_blank"
-                        class="readmore-outline" title="View-All-Reviews">View All Reviews</a> </div>
+                <div class="d-lg-none text-center mt-4 mt-sm-5"> 
+                    <a href="https://bit.ly/4c6iqqQ" target="_blank" class="readmore-outline" title="View-All-Reviews">View All Reviews</a> 
+                </div>
             </div>
         </section>
         <section class="pb-0">
@@ -1752,54 +1670,22 @@
         <section class="py-0">
             <div class="container">
                 <div class="section-title text-start mb-4 d-flex align-items-center justify-content-between bloghdng">
-                    <h2>Vaidam In News</h2>
+                    <h2>Medassure In News</h2>
                 </div>
                 <div class="slick-- news-slider vaidam-news">
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/png/medical-travel.png"
-                                alt="Vaidam In News" class="img-fluid" title="Vaidam In news"></figure>
-                        <div class="card-body news-card-body"> <a class="card-link"
-                                href="https://www.vaidam.com/knowledge-center/news/vaidam-health-gets-covered-medical-travel-today-authoritative-newsletter-medical"
-                                title="Vaidam health Coverage by Medical Travel">
-                                <p class="card-text news-card-text text-dark">Vaidam health Coverage by Medical Travel
-                                    today - The
-                                    authoritative Newsletter for Medical Tourism.</p> Read more
-                            </a> </div>
-                    </div>
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/png/Group-91.png"
-                                alt="Vaidam In News" class="img-fluid" title="Vaidam In news"></figure>
-                        <div class="card-body news-card-body"> <a class="card-link"
-                                href="https://www.vaidam.com/knowledge-center/life-at-vaidam/vaidam-health-gets-featured-one-best-online-entrepreneur-magazines-india"
-                                title="Vaidam-Health Gets covered">
-                                <p class="card-text news-card-text text-dark">Vaidam Health gets covered by 'Your Story'
-                                    India's
-                                    Leading
-                                    Online longer magazine.</p> Read more
-                            </a> </div>
-                    </div>
-                    <div class="item">
-                        <figure><img loading="lazy" src="https://img.youtube.com/vi/Uj5CppBSivk/0.jpg"
-                                alt="Vaidam In News" class="img-fluid" title="Vaidam In news"></figure>
-                        <div class="card-body news-card-body"> <a class="card-link"
-                                href="https://www.vaidam.com/knowledge-center/vaidam-co-founder-pankaj-chandna-talks-dd-india">
-                                <p class="card-text news-card-text text-dark">Vaidam Co-founder Pankaj Chandna talks to
-                                    DD India about the Impact of Technology on Medical Tourism</p> Read more
-                            </a> </div>
-                    </div>
-                    <div class="item">
-                        <figure><img loading="lazy"
-                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/png/nabh-logo.png"
-                                alt="Vaidam In News" class="img-fluid" title="Vaidam In news"></figure>
-                        <div class="card-body news-card-body"> <a class="card-link"
-                                href="https://www.vaidam.com/knowledge-center/life-at-vaidam/vaidam-becomes-india-first-online-health-facilitator-accredited-nabh"
-                                title="Vaidam health gets the prestigious NABH accredation">
-                                <p class="card-text news-card-text text-dark">Vaidam health gets the prestigious NABH
-                                    accredation.</p> Read more
-                            </a> </div>
-                    </div>
+                    <?php foreach($news as $k3 => $v3){ ?>
+                        <div class="item">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?><?= $v3->image; ?>" alt="Medassure In News" class="img-fluid" title="Medassure In news">
+                            </figure>
+                            <div class="card-body news-card-body"> 
+                                <a class="card-link" href="<?= base_url(''); ?>/knowledge-center/news/vaidam-health-gets-covered-medical-travel-today-authoritative-newsletter-medical"
+                                    title="Vaidam health Coverage by Medical Travel">
+                                    <p class="card-text news-card-text text-dark"><?= $v3->title; ?></p> Read more
+                                </a> 
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
                 <!-- <div class="blogallbtn text-center mt-4"> <a href="javascript:void(0);" class="readmore-outline">View All Stories</a> </div> -->
             </div>
