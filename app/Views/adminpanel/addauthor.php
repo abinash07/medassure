@@ -199,7 +199,7 @@
 			var filename = userImage.value;
 			var extdot = filename.lastIndexOf(".")+1;
 			var image_ext = filename.substr(extdot,filename.lenght).toLowerCase();
-			if (image_ext == "jpg" || image_ext == "jpeg" || image_ext == "png") {
+			if (image_ext == "jpg" || image_ext == "jpeg" || image_ext == "png" || image_ext == "webp"){
                 $('#profileerrormsg').html('');
 				if(file){
 					const blobURL = URL.createObjectURL(file);

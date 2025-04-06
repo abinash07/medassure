@@ -45,6 +45,7 @@
                                                             <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title" required="">
                                                         </div>
                                                     </div>
+                                                    
 
                                                     <div class="col-md-8">
                                                         <div class="form-group">
@@ -58,9 +59,17 @@
                                                             <label class="control-label">Category <span class="star">*</span></label>
                                                             <select class="form-control" name="cat_id" id="cat_id" required="">
 																<option selected="selected" value="">Select Category</option>
-                                                                <option value="1">About City</option>
-                                                                <option value="blog">Blog</option>
+                                                                <?php foreach($category as $cat){ ?>
+                                                                    <option value="<?= $cat->id; ?>"><?= $cat->name; ?></option>
+                                                                <?php } ?>
                                                             </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label class="radio-inline">
+                                                            <input type="checkbox" name="home_page" id="home_page" value="1"> Show in home page                                                                </label>
                                                         </div>
                                                     </div>
                                                     

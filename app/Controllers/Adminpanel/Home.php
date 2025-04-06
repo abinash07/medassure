@@ -724,6 +724,7 @@ class Home extends BaseController{
 
     public function add_video(){
         $data = [];
+        $data['category'] = $this->CommonModel->getGenericData('tbl_category_master');
         return $this->loadAdminView('addvideo',$data); 
     }
 
@@ -752,6 +753,7 @@ class Home extends BaseController{
             'title'        => $this->request->getPost('title'),
             'url'       => $this->request->getPost('url'),
             'cat_id'       => $this->request->getPost('cat_id'),
+            'home_page'       => $this->request->getPost('home_page'),
             'status'      => 1,
             'created_by'   => session()->get('id'),
             'created_on'   => time() + 12600,
@@ -760,6 +762,333 @@ class Home extends BaseController{
 
         ## ✅ Insert into Database
         $result = $this->CommonModel->add_record('tbl_youtube_videos',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+    /******************************Patient Testimonials********************/
+
+    public function patient_testimonial(){
+        $data = [];
+        return $this->loadAdminView('patienttestimonial',$data); 
+    }
+
+    public function get_all_patient_testimonial(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_patient_testimonial($postData);
+        return $this->response->setJSON($response);
+    }
+
+
+    public function add_patient_testimonial(){
+        $data = [];
+        $data['author'] = $this->CommonModel->getGenericData('tbl_author');
+        return $this->loadAdminView('addpatienttestimonial',$data); 
+    }
+
+
+    public function insert_patient_testimonial(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/testimonial/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'description'   => 'required|trim',
+            'content'   => 'required|trim',
+            'author_id'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/testimonial/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'slug' =>$this->createSlug($this->request->getPost('title')),
+            'description'       => $this->request->getPost('description'),
+            'image' =>$image,
+            'content'       => $this->request->getPost('content'),
+            'author_id'       => $this->request->getPost('author_id'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_patient_testimonial',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+    /************************************lowest Qoutes******************/
+
+    public function lowest_quote(){
+        $data = [];
+        return $this->loadAdminView('lowestquote',$data); 
+    }
+
+    public function get_all_lowest_quote(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_lowest_quote($postData);
+        return $this->response->setJSON($response);
+    }
+
+
+    public function add_lowest_quote(){
+        $data = [];
+        return $this->loadAdminView('addlowestquote',$data); 
+    }
+
+
+    public function insert_lowest_quote(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/qoute/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'price'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/qoute/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'price'       => $this->request->getPost('price'),
+            'image' =>$image,
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_lowest_quote',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+    /********************************Multi Specialty***************/
+
+    public function multi_specialty(){
+        $data = [];
+        return $this->loadAdminView('multispecialty',$data); 
+    }
+
+    public function get_all_multi_specialty(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_multi_specialty($postData);
+        return $this->response->setJSON($response);
+    }
+
+    public function add_multi_specialty(){
+        $data = [];
+        return $this->loadAdminView('addmultispecialty',$data); 
+    }
+
+    public function insert_multi_specialty(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/specialty/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'description'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/specialty/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'description'  => $this->request->getPost('description'),
+            'image'        => $image,
+            'status'       => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_multi_specialty',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+    /********************************Travel Visa***************/
+
+    public function travel_visa(){
+        $data = [];
+        return $this->loadAdminView('travelvisa',$data); 
+    }
+
+    public function get_all_travel_visa(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_travel_visa($postData);
+        return $this->response->setJSON($response);
+    }
+
+    public function add_travel_visa(){
+        $data = [];
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        return $this->loadAdminView('addtravelvisa',$data); 
+    }
+
+
+    public function insert_travel_visa(){
+        $session = session();
+
+        ## ✅ Validation Rules
+        $validationRules = [
+            'country_from'      => 'required|trim',
+            'country_to'   => 'required|trim',
+            'visa_requirement'      => 'required|trim',
+            'visa_invitation'   => 'required|trim',
+            'remark'      => 'required|trim',
+            'eligible_for_evisa'   => 'required|trim',
+            'evisa_fees'      => 'required|trim',
+            'visa_duration'   => 'required|trim',
+            'visa_application'      => 'required|trim',
+            'evisa_application'   => 'required|trim',
+            'resource'      => 'required|trim',
+        ];
+
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'slug'         => $this->createSlug($this->request->getPost('country_from').'-'.$this->request->getPost('country_to')),
+            'country_from'  => $this->request->getPost('country_from'),
+            'country_to'  => $this->request->getPost('country_to'),
+            'visa_requirement'  => $this->request->getPost('visa_requirement'),
+            'visa_invitation'  => $this->request->getPost('visa_invitation'),
+            'remark'  => $this->request->getPost('remark'),
+            'eligible_for_evisa'  => $this->request->getPost('eligible_for_evisa'),
+            'evisa_fees'  => $this->request->getPost('evisa_fees'),
+            'regular_visa_fee'  => $this->request->getPost('regular_visa_fee'),
+            'visa_duration'  => $this->request->getPost('visa_duration'),
+            'visa_application'  => $this->request->getPost('visa_application'),
+            'evisa_application'  => $this->request->getPost('evisa_application'),
+            'resource'  => $this->request->getPost('resource'),
+            'status'       => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_travel_visa',$data);
         if($result){
             return $this->response->setJSON([
                 'status'  => true,

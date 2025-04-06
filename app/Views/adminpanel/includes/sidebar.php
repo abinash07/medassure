@@ -7,7 +7,7 @@
 				<a href="<?= base_url('admin'); ?>"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a>
 			</li>
 
-            <?php if($loginRoleId == 1){ ?>
+            <!-- <?php if($loginRoleId == 1){ ?>
             <li class="" id="indentsPage">
                 <a href="<?= base_url('admin/client'); ?>"><i class="fa fa-users" aria-hidden="true"></i> <span>Client</span></a>
             </li>
@@ -17,16 +17,16 @@
             <li class="" id="boardMemberPage">
                 <a href="<?php echo base_url('admin/examinee'); ?>"><i class="fa fa-user" aria-hidden="true"></i> <span>Board Members</span></a>
             </li>
-            <?php } ?>
+            <?php } ?> -->
 
-
-
-
-            <?php if($loginRoleId == 1){ ?>
+            <!-- <?php if($loginRoleId == 1){ ?>
             <li class="" id="candidatesPage">
                 <a href="<?php echo base_url('admin/question'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Questions</span></a>
             </li>
-            <?php } ?>
+            <?php } ?> -->
+
+
+
 
             <?php if($loginRoleId == 1){ ?>
             <li class="" id="candidatesPage">
@@ -52,10 +52,23 @@
             <li class="" id="candidatesPage">
                 <a href="<?php echo base_url('admin/video'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Video</span></a>
             </li>
-            <?php } ?>
 
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/patienttestimonial'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Patient Testimonial</span></a>
+            </li>
 
-            <?php if($loginRoleId == 1){ ?>
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/lowestquote'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Lowest Quote</span></a>
+            </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/multispecialty'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Multi Specialty</span></a>
+            </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/travelvisa'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Travel Visa</span></a>
+            </li>
+            
             <li class="" id="indentsPage">
                 <a href="<?= base_url('admin/adminuser'); ?>"><i class="fa fa-users" aria-hidden="true"></i> <span>Admin Users</span></a>
             </li>

@@ -25,10 +25,21 @@ $routes->get('/india', 'Home::india');
 $routes->get('/turkey', 'Home::turkey');
 $routes->get('/thailand', 'Home::thailand');
 
+$routes->get('/videos', 'Home::videos');
+$routes->get('/videos/(:any)', 'Home::videos/$1');
+
+$routes->get('/knowledge-center', 'Home::knowledge_center');
+$routes->get('/knowledge-center/(:any)', 'Home::knowledge_center/$1');
+
+$routes->get('/patient-testimonials', 'Home::patient_testimonials');
+$routes->get('/patient-testimonials/(:any)', 'Home::patient_testimonial/$1');
+
+
+$routes->get('/travel-visa', 'Home::travel_visa');
+$routes->get('/travel-visa/(:any)', 'Home::travel_visa_page/$1');
+
 $routes->get('/consult-online', 'Home::consult_online');
-
 $routes->get('/test_data', 'Home::test_data');
-
 $routes->post('/genericform','Home::generic_form');
 
 
@@ -77,6 +88,38 @@ $routes->get('/admin/video','Adminpanel\Home::video');
 $routes->post('/admin/get_all_video','Adminpanel\Home::get_all_video');
 $routes->get('/admin/addvideo','Adminpanel\Home::add_video');
 $routes->post('/admin/insert_video','Adminpanel\Home::insert_video');
+
+
+$routes->get('/admin/patienttestimonial','Adminpanel\Home::patient_testimonial');
+$routes->post('/admin/get_all_patient_testimonial','Adminpanel\Home::get_all_patient_testimonial');
+$routes->get('/admin/addpatienttestimonial','Adminpanel\Home::add_patient_testimonial');
+$routes->post('/admin/insert_patient_testimonial','Adminpanel\Home::insert_patient_testimonial');
+
+
+$routes->get('/admin/lowestquote','Adminpanel\Home::lowest_quote');
+$routes->post('/admin/get_all_lowest_quote','Adminpanel\Home::get_all_lowest_quote');
+$routes->get('/admin/addlowestquote','Adminpanel\Home::add_lowest_quote');
+$routes->post('/admin/insert_lowest_quote','Adminpanel\Home::insert_lowest_quote');
+
+
+$routes->get('/admin/multispecialty','Adminpanel\Home::multi_specialty');
+$routes->post('/admin/get_all_multi_specialty','Adminpanel\Home::get_all_multi_specialty');
+$routes->get('/admin/addmultispecialty','Adminpanel\Home::add_multi_specialty');
+$routes->post('/admin/insert_multi_specialty','Adminpanel\Home::insert_multi_specialty');
+
+
+$routes->get('/admin/travelvisa','Adminpanel\Home::travel_visa');
+$routes->post('/admin/get_all_travel_visa','Adminpanel\Home::get_all_travel_visa');
+$routes->get('/admin/addtravelvisa','Adminpanel\Home::add_travel_visa');
+$routes->post('/admin/insert_travel_visa','Adminpanel\Home::insert_travel_visa');
+
+
+
+
+
+
+
+
 
 
 

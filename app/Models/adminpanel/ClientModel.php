@@ -915,8 +915,9 @@ class ClientModel extends Model{
         $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
 
         ## Fetch records with pagination & sorting
-        $query = $db->query("SELECT *
+        $query = $db->query("SELECT tyv.*, tcm.name as category_name
         FROM tbl_youtube_videos tyv 
+        INNER JOIN tbl_category_master tcm ON tcm.id = tyv.cat_id
         WHERE $status $searchQuery 
         ORDER BY $columnName $columnSortOrder 
         LIMIT $start, $rowperpage");
@@ -928,6 +929,7 @@ class ClientModel extends Model{
         foreach ($records as $record) {
             $data[] = [
                 "id" => $slno,
+                "category_name" => $record->category_name,
                 "title"=> $record->title,
                 "url"=> $record->url,
                 "date" => date('d M, Y - H:i:s A', $record->created_on)
@@ -944,4 +946,277 @@ class ClientModel extends Model{
         ];
     }
 
+
+
+
+
+
+
+
+
+    
+    ## Get all patient testimonial 
+    public function get_all_patient_testimonial($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "tpt.status = ".$db->escape($postData['status']) : "tpt.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (tpt.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR tpt.url LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(tpt.id) as totalrecord FROM tbl_patient_testimonial tpt WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(tpt.id) as totalrecord FROM tbl_patient_testimonial tpt WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT tpt.*, ta.name as author_name
+        FROM tbl_patient_testimonial tpt 
+        INNER JOIN tbl_author ta ON ta.id = tpt.author_id
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "author_name" => $record->author_name,
+                "title"=> $record->title,
+                "description"=> $record->description,
+                "image"=> $record->image,
+                "date" => date('d M, Y - H:i:s A', $record->created_on)
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
+
+
+
+
+
+    ## Get all lowest quote 
+    public function get_all_lowest_quote($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "tlq.status = ".$db->escape($postData['status']) : "tlq.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (tlq.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR tlq.price LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(tlq.id) as totalrecord FROM tbl_lowest_quote tlq WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(tlq.id) as totalrecord FROM tbl_lowest_quote tlq WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT *
+        FROM tbl_lowest_quote tlq 
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "title"=> $record->title,
+                "price"=> $record->price,
+                "image"=> $record->image,
+                "date" => date('d M, Y - H:i:s A', $record->created_on)
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
+
+
+
+
+    
+    ## Get all multi specialty 
+    public function get_all_multi_specialty($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "tms.status = ".$db->escape($postData['status']) : "tms.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (tms.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR tms.description LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(tms.id) as totalrecord FROM tbl_multi_specialty tms WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(tms.id) as totalrecord FROM tbl_multi_specialty tms WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT *
+        FROM tbl_multi_specialty tms 
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "title"=> $record->title,
+                "description"=> $record->description,
+                "image"=> $record->image,
+                "date" => date('d M, Y - H:i:s A', $record->created_on)
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
+
+
+
+    ## Get all travel visa
+    public function get_all_travel_visa($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "ttv.status = ".$db->escape($postData['status']) : "ttv.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (ttv.country_from LIKE '%".$db->escapeLikeString($searchValue)."%' OR ttv.country_to LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(ttv.id) as totalrecord FROM tbl_travel_visa ttv WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(ttv.id) as totalrecord FROM tbl_travel_visa ttv WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT *
+        FROM tbl_travel_visa ttv 
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "country_from"=> $record->country_from,
+                "country_to"=> $record->country_to,
+                "visa_requirement"=> $record->visa_requirement,
+                "visa_invitation"=> $record->visa_invitation,
+                "remark"=> $record->remark,
+                "eligible_for_evisa"=> $record->eligible_for_evisa,
+                "evisa_fees"=> $record->evisa_fees,
+                "regular_visa_fee"=> $record->regular_visa_fee,
+                "visa_duration"=> $record->visa_duration,
+                "visa_application"=> $record->visa_application,
+                "evisa_application"=> $record->evisa_application,
+                "resource"=> $record->resource,
+                "date" => date('d M, Y - H:i:s A', $record->created_on)
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
 }

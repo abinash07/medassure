@@ -1,0 +1,227 @@
+.pt-0{padding-top: 0 !important;}
+.mb-0{margin-bottom: 0 !important;}
+.by-location-filter {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.by-location-filter li {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.by-location-filter ul.dropdown-menu {
+    max-height: 420px;
+    overflow-y: scroll;
+}
+.by-location-filter ul li {
+    margin-bottom: 0;
+    padding: 0 !important;
+    display: block;
+}
+
+.by-location-filter li:first-child, .vdetails small:first-child {
+  padding-left: 0 !important;
+}
+.click-to-play-video {
+    width: 100%;
+    max-width: 270px;
+    margin: 0;
+    position: relative;
+}
+.video-icon-block-cost {
+    position: absolute;
+}
+.vdetails {margin-top: 5px; display: block;}
+ .vdetails small {
+    font-size: 1.28rem;
+    padding: 5px;
+    color: #6e6e6e;
+    text-transform: uppercase;
+}
+small.country, small.department {
+    float: right;
+    margin-left: 10px;
+    background-color: #005897;
+    line-height: 7px;
+    color: #fff;
+}
+/* .click-to-play-video{
+    min-height:320px;
+    margin-bottom: 20px;
+} */
+.click-to-play-video, .video-description {
+    width: 100%;
+    max-width: 270px;
+    margin: 0;
+}
+.video-description {
+    margin-bottom: 30px;
+}
+div#load {
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    background: #c1e4f9;
+    border-radius: 4px;
+    cursor: pointer;
+}
+div#load2 {
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    background: #c1e4f9;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+.pagination li a {
+    border-radius: 0 !important;
+    margin: 0 10px;
+    padding: 10px 25px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
+ .quick-links ul li a {
+    padding: 3px 10px 3px 0;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    color: #369;
+}
+@media screen and (max-width: 768px){
+.main-content {
+    flex-direction: column;
+}
+.by-location-filter li {
+    margin-bottom: 0px;
+}
+.pagination li a {
+    margin: 0 5px;
+    padding: 6px 15px;
+}
+}
+iframe.click-to-play-video {
+    margin-bottom: 0;
+}
+@media screen and (max-width: 480px){
+    .click-to-play-video {
+          margin: auto;
+    }
+    small.all-records {
+        text-align: center;
+        display: block;
+        margin-bottom:30px;
+    }
+    }
+/* Filter Section */
+.filter-section{
+    background-color: #005897;
+}
+.filter-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter-row div{position: relative;}
+.input-select {
+    height: 42px;
+    background-color: #fff ;
+    display: flex;
+}
+.input-select .form-control{
+    height: 40px;
+    padding:0 10px;
+    font-size: unset;
+    border: 0;
+    border-radius: 0;
+    box-shadow: unset;
+}
+.select_box{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: url(../images/png/arrow-down.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 95%;
+    border: 1px solid #a4a1a4;
+
+}
+.btn-search {
+    width: 100%;
+    height: 42px;
+    padding: 0 15px;
+    background: #c1e4f9;
+    white-space: nowrap;
+    border-radius: 4px;
+    color: #333;
+    transition: all .2s ease-out,color .2s ease-out;
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+    /*box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);*/
+}
+.filter-section button#reset {
+    background: no-repeat;
+    border: 0;
+    color: #fff;
+    font-size: 1.5em;
+    height: 42px;
+    padding: 5px 0px;
+}
+.sing-vd-block{
+    display: none;
+    min-height:410px;
+}
+.video-icon-block-cost {
+    top:50%;
+    right: 50%;
+    width: 70px !important;
+    height: 55px !important;
+    margin-right:-35px !important;
+    margin-top:-28px !important;
+}
+.load-vd-block{
+    display: none;
+    min-height:410px;
+}
+
+.disableClick{
+    pointer-events: none;
+}
+@media screen and (max-width: 767px)
+{
+    .by-location-filter li {
+        padding: 10px 5px;
+    }
+    .all-records {
+        margin-bottom: 30px;
+        display: block;
+    }
+    .sing-vd-block {
+        margin-bottom: 30px;
+        min-height: unset;
+    }
+    .video-description {
+        max-width: 270px;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 767px){
+    iframe.click-to-play-video {
+        max-width: unset;
+    }
+    .click-to-play-video {
+        margin: auto;
+    }
+    }

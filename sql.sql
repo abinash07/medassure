@@ -26,5 +26,19 @@ CREATE TABLE `medassure`.`tbl_category_master` (`id` INT NOT NULL AUTO_INCREMENT
 
 CREATE TABLE `medassure`.`tbl_youtube_videos` (`id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `url` VARCHAR(255) NOT NULL , `cat_id` INT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
+ALTER TABLE `tbl_youtube_videos` ADD `home_page` INT NULL AFTER `cat_id`;
+
+CREATE TABLE `medassure`.`tbl_patient_testimonial` (`id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `description` TEXT NOT NULL , `image` VARCHAR(255) NOT NULL , `content` LONGTEXT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `tbl_patient_testimonial` ADD `author_id` INT NOT NULL AFTER `content`;
+
+ALTER TABLE `tbl_patient_testimonial` ADD `slug` VARCHAR(255) NOT NULL AFTER `title`;
+
+CREATE TABLE `medassure`.`tbl_lowest_quote` (`id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `price` VARCHAR(255) NOT NULL , `image` VARCHAR(255) NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `medassure`.`tbl_multi_specialty` (`id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `description` VARCHAR(255) NOT NULL , `image` VARCHAR(255) NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `medassure`.`tbl_travel_visa` (`id` INT NOT NULL AUTO_INCREMENT , `slug` VARCHAR(255) NOT NULL , `country_from` VARCHAR(255) NOT NULL , `country_to` VARCHAR(255) NOT NULL , `visa_requirement` VARCHAR(255) NOT NULL , `visa_invitation` VARCHAR(255) NOT NULL , `remark` LONGTEXT NOT NULL , `eligible_for_evisa` VARCHAR(255) NOT NULL , `evisa_fees` VARCHAR(255) NOT NULL , `regular_visa_fee` VARCHAR(255) NOT NULL , `visa_duration` VARCHAR(255) NOT NULL , `visa_application` TEXT NOT NULL , `evisa_application` VARCHAR(255) NOT NULL , `resource` LONGTEXT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
 
 

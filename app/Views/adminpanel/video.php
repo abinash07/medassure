@@ -43,7 +43,8 @@
                                                 <table id="crudTable" class='display dataTable table table-striped table-bordered' style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>#</th> 
+                                                            <th>#</th>
+                                                            <th>Category</th>
                                                             <th>Title</th>
                                                             <th>Video</th>
                                                             <th>Created On</th>
@@ -80,6 +81,7 @@
             "columnDefs": [],
             'columns': [
                 { data: 'id' },
+                { data: 'category_name' },
                 { data: 'title' },
                 { data: 'url' },
                 { data: 'date' },

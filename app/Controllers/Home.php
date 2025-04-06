@@ -4,13 +4,16 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\CommonModel;
+use App\Models\HomeModel;
 
 class Home extends BaseController{
 
     protected $CommonModel;
+    protected $HomeModel;
 
     public function __construct(){
         $this->CommonModel = new CommonModel();
+        $this->HomeModel = new HomeModel();
     }
 
     public function index(){
@@ -19,9 +22,28 @@ class Home extends BaseController{
         $data['faq'] = $this->CommonModel->getFaqData('home');
         $data['news'] = $this->CommonModel->getGenericData('tbl_news');
         $data['googlerating'] = $this->CommonModel->getGenericData('tbl_google_rating');
-        // echo '<pre>';
-        // print_r($data['news']);
-        // exit;
+        $where_conditions = array(
+            'home_page' => 1,
+            'status' => 1,
+        );
+        $columnArray = ['title','url'];
+        $data['video'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_youtube_videos',$where_conditions);
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','title','slug','description','image'];
+        $data['testimonial'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_patient_testimonial',$where_conditions);
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','title','price','image'];
+        $data['qoute'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_lowest_quote',$where_conditions);
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','title','description','image'];
+        $data['specialty'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_multi_specialty',$where_conditions);
+
         return $this->loadView('index',$data);
     }
 
@@ -113,6 +135,73 @@ class Home extends BaseController{
 
     public function consult_online(){
         return view('consultonline');
+    }
+
+    public function videos($slug = ''){
+        $data = [];
+        $data['category'] = $this->HomeModel->getCategoryData();
+        $data['video'] = $this->HomeModel->getVideoData($slug);
+        // echo '<pre>';
+        // print_r($data['video']);
+        // exit;
+        return $this->loadView('videos',$data);
+    }
+
+
+    public function knowledge_center($slug = ''){
+        $data = [];
+        return $this->loadView('knowledgecenter',$data);
+    }
+
+    public function patient_testimonials($slug = ''){
+        $data = [];
+        $data['testimonials'] = $this->HomeModel->getTestimonialsData(0,2);
+        $data['testimonialsmore'] = $this->HomeModel->getTestimonialsData(0,2);
+        // echo '<pre>';
+        // echo "-----------";
+        // print_r($data['testimonials']);
+        // exit;
+        return $this->loadView('testimonials',$data);
+    }
+
+    public function patient_testimonial($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['testimonial'] = $this->HomeModel->getTestimonialData($slug);
+        // echo '<pre>';
+        // print_r($data['testimonial']);
+        // exit;
+        return $this->loadView('testimonial',$data);
+    }
+
+
+    public function travel_visa($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        // echo '<pre>';
+        // print_r($data['testimonial']);
+        // exit;
+        return $this->loadView('travelvisa',$data);
+    }
+
+    public function travel_visa_page($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+
+        $where_conditions = array(
+            'slug' => $slug,
+            'status' => 1,
+        );
+        $columnArray = ['*'];
+        $data['visa'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_travel_visa',$where_conditions);
+
+        // echo '<pre>';
+        // print_r($data['testimonial']);
+        // exit;
+        return $this->loadView('visa',$data);
     }
 
     public function test_data(){

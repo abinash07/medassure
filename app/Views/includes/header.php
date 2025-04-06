@@ -41,11 +41,12 @@
                         <a href="<?= base_url(''); ?>" class="vh-logo text-white lh-1" title="Medassure"> 
                             <span class="logo fw-semibold">Medassure.co.in</span> 
                             <span class="tagline text-uppercase border-top border-white">start your life now</span>
+                            <!-- <img class="desktop-nabh" src="<?= base_url(''); ?>assets/img/logo.png" width="56" height="56" alt="Logo" title="Logo"> -->
                         </a> 
                     </div>
                     <div class="col-lg-3 col-md-2 col-sm-3 col-3 headerimgaes"> 
                         <img class="desktop-nabh" src="<?= base_url(''); ?>assets/img/small-logo.png" width="56" height="56" alt="Logo" title="Logo">
-                        <div class="mobile-search align-items-center" id="google_translate_element mobile-lang"> 
+                        <!-- <div class="mobile-search align-items-center" id="google_translate_element mobile-lang"> 
                             <select class="lang_opt gray-600 border border-secondary-subtle">
                                 <option value="">Select Language</option>
                                 <option value="en|en">English</option>
@@ -58,7 +59,7 @@
                                 <option value="en|es">Spanish</option>
                                 <option value="en|pt">Portuguese</option>
                             </select> 
-                        </div>
+                        </div> -->
                     </div> <!-- Nav Bar Start -->
 
                     <div class="col-sm-2 col-3 d-md-none menuhamburger-icon topmenu-btn"> 
@@ -81,7 +82,7 @@
                     </div> <!-- Search Bar End -->
                     <div class="col-lg-2 col-md-2 contactMenu d-none d-md-block">
                         <div id="topContact" class="text-white hidden-xs hidden-xs"> 
-                            <a href="https://www.vaidam.com/lp/consult-online" class="btn btn-danger" title="Get a FREE quote"> Get a FREE quote</a> 
+                            <a href="<?= base_url(''); ?>lp/consult-online" class="btn btn-danger" title="Get a FREE quote"> Get a FREE quote</a> 
                         </div>
                     </div>
                 </div>
@@ -126,82 +127,82 @@
                                                 <ul class="drop-menu nav-bar">
                                                     <li> <a href="#"
                                                             title="CARDIOLOGY">CARDIOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/cosmetic-and-plastic-surgery/turkey"
                                                             title="COSMETIC">COSMETIC</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/gynecology/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/gynecology/turkey"
                                                             title="GYNECOLOGY">GYNECOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/ivf-and-infertility/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/ivf-and-infertility/turkey"
                                                             title="IVF and INFERTILITY">IVF and INFERTILITY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/neurology-and-neurosurgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/neurology-and-neurosurgery/turkey"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/oncology-and-oncosurgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/oncology-and-oncosurgery/turkey"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/orthopedics/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/orthopedics/turkey"
                                                             title="ORTHOPEDICS">ORTHOPEDICS</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/spine-surgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/spine-surgery/turkey"
                                                             title="SPINE SURGERY">SPINE SURGERY</a> </li>
                                                 </ul>
                                             </li>
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
                                                         class="drop-link"
-                                                        href="https://www.vaidam.com/hospitals/thailand"
+                                                        href="<?= base_url(''); ?>hospitals/thailand"
                                                         title="Thailand">Thailand</a> </div>
                                                 <ul class="drop-menu nav-bar">
-                                                    <li> <a href="https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/cardiology-and-cardiac-surgery/thailand"
                                                             title="CARDIOLOGY">CARDIOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/cosmetic-and-plastic-surgery/thailand"
                                                             title="COSMETIC">COSMETIC</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/gynecology/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/gynecology/thailand"
                                                             title="GYNECOLOGY">GYNECOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/ivf-and-infertility/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/ivf-and-infertility/thailand"
                                                             title="IVF and INFERTILITY">IVF and INFERTILITY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/neurology-and-neurosurgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/neurology-and-neurosurgery/thailand"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/oncology-and-oncosurgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/oncology-and-oncosurgery/thailand"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/orthopedics/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/orthopedics/thailand"
                                                             title="ORTHOPEDICS">ORTHOPEDICS</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/spine-surgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/spine-surgery/thailand"
                                                             title="SPINE SURGERY">SPINE SURGERY</a> </li>
                                                 </ul>
                                             </li>
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
                                                         class="drop-link"
-                                                        href="https://www.vaidam.com/hospitals/united-arab-emirates"
+                                                        href="<?= base_url(''); ?>hospitals/united-arab-emirates"
                                                         title="UAE">UAE</a> </div>
                                                 <ul class="drop-menu nav-bar">
-                                                    <li> <a href="https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/cardiology-and-cardiac-surgery/united-arab-emirates"
                                                             title="CARDIOLOGY">CARDIOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/gynecology/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/gynecology/united-arab-emirates"
                                                             title="GYNECOLOGY">GYNECOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/hematology/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/hematology/united-arab-emirates"
                                                             title="HEMATOLOGY">HEMATOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/ivf-and-infertility/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/ivf-and-infertility/united-arab-emirates"
                                                             title="IVF and INFERTILITY">IVF and INFERTILITY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/neurology-and-neurosurgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/neurology-and-neurosurgery/united-arab-emirates"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/oncology-and-oncosurgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/oncology-and-oncosurgery/united-arab-emirates"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/orthopedics/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/orthopedics/united-arab-emirates"
                                                             title="ORTHOPEDICS">ORTHOPEDICS</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/pediatrics-and-pediatric-surgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/pediatrics-and-pediatric-surgery/united-arab-emirates"
                                                             title="PEDIATRICS AND PEDIATRIC SURGERY">PEDIATRICS AND
                                                             PEDIATRIC SURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/spine-surgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/spine-surgery/united-arab-emirates"
                                                             title="SPINE SURGERY">SPINE SURGERY</a> </li>
                                                 </ul>
                                             </li>
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
                                                         class="drop-link"
-                                                        href="https://www.vaidam.com/hospitals/germany"
+                                                        href="<?= base_url(''); ?>hospitals/germany"
                                                         title="Germany">Germany</a> </div>
                                                 <ul class="drop-menu nav-bar">
-                                                    <li> <a href="https://www.vaidam.com/hospitals/neurology-and-neurosurgery/germany"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/neurology-and-neurosurgery/germany"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/hospitals/oncology-and-oncosurgery/germany"
+                                                    <li> <a href="<?= base_url(''); ?>hospitals/oncology-and-oncosurgery/germany"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
                                                 </ul>
                                             </li>
@@ -209,112 +210,112 @@
                                     </li>
                                     <li class="nav-list-item drop">
                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
-                                                href="https://www.vaidam.com/doctors" title="Doctors"
+                                                href="<?= base_url(''); ?>doctors" title="Doctors"
                                                 class="nav-link">Doctors</a> </div>
                                         <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
-                                                        class="drop-link" href="https://www.vaidam.com/doctors/india"
+                                                        class="drop-link" href="<?= base_url(''); ?>doctors/india"
                                                         title="India">India</a> </div>
                                                 <ul class="drop-menu nav-bar">
-                                                    <li> <a href="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/cardiology-and-cardiac-surgery/india"
                                                             title="CARDIOLOGY">CARDIOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/cosmetic-and-plastic-surgery/india"
                                                             title="COSMETIC">COSMETIC</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/gynecology/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/gynecology/india"
                                                             title="GYNECOLOGY">GYNECOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/hematology/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/hematology/india"
                                                             title="HEMATOLOGY">HEMATOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/ivf-and-infertility/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/ivf-and-infertility/india"
                                                             title="IVF and INFERTILITY">IVF and INFERTILITY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/neurology-and-neurosurgery/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/neurology-and-neurosurgery/india"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/oncology-and-oncosurgery/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/oncology-and-oncosurgery/india"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/orthopedics/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/orthopedics/india"
                                                             title="ORTHOPEDICS">ORTHOPEDICS</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/spine-surgery/india"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/spine-surgery/india"
                                                             title="SPINE SURGERY">SPINE SURGERY</a> </li>
                                                 </ul>
                                             </li>
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
-                                                        class="drop-link" href="https://www.vaidam.com/doctors/turkey"
+                                                        class="drop-link" href="<?= base_url(''); ?>doctors/turkey"
                                                         title="Turkey">Turkey</a> </div>
                                                 <ul class="drop-menu nav-bar">
-                                                    <li> <a href="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/cardiology-and-cardiac-surgery/turkey"
                                                             title="CARDIOLOGY">CARDIOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/cosmetic-and-plastic-surgery/turkey"
                                                             title="COSMETIC">COSMETIC</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/gynecology/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/gynecology/turkey"
                                                             title="GYNECOLOGY">GYNECOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/ivf-and-infertility/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/ivf-and-infertility/turkey"
                                                             title="IVF and INFERTILITY">IVF and INFERTILITY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/neurology-and-neurosurgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/neurology-and-neurosurgery/turkey"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/oncology-and-oncosurgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/oncology-and-oncosurgery/turkey"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/orthopedics/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/orthopedics/turkey"
                                                             title="ORTHOPEDICS">ORTHOPEDICS</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/spine-surgery/turkey"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/spine-surgery/turkey"
                                                             title="SPINE SURGERY">SPINE SURGERY</a> </li>
                                                 </ul>
                                             </li>
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
-                                                        class="drop-link" href="https://www.vaidam.com/doctors/thailand"
+                                                        class="drop-link" href="<?= base_url(''); ?>doctors/thailand"
                                                         title="Thailand">Thailand</a> </div>
                                                 <ul class="drop-menu nav-bar">
-                                                    <li> <a href="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/cardiology-and-cardiac-surgery/thailand"
                                                             title="CARDIOLOGY">CARDIOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/cosmetic-and-plastic-surgery/thailand"
                                                             title="COSMETIC">COSMETIC</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/gynecology/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/gynecology/thailand"
                                                             title="GYNECOLOGY">GYNECOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/ivf-and-infertility/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/ivf-and-infertility/thailand"
                                                             title="IVF and INFERTILITY">IVF and INFERTILITY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/neurology-and-neurosurgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/neurology-and-neurosurgery/thailand"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/oncology-and-oncosurgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/oncology-and-oncosurgery/thailand"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/orthopedics/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/orthopedics/thailand"
                                                             title="ORTHOPEDICS">ORTHOPEDICS</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/spine-surgery/thailand"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/spine-surgery/thailand"
                                                             title="SPINE SURGERY">SPINE SURGERY</a> </li>
                                                 </ul>
                                             </li>
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
                                                         class="drop-link"
-                                                        href="https://www.vaidam.com/doctors/united-arab-emirates"
+                                                        href="<?= base_url(''); ?>doctors/united-arab-emirates"
                                                         title="UAE">UAE</a> </div>
                                                 <ul class="drop-menu nav-bar">
-                                                    <li> <a href="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/cardiology-and-cardiac-surgery/united-arab-emirates"
                                                             title="CARDIOLOGY">CARDIOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/cosmetic-and-plastic-surgery/united-arab-emirates"
                                                             title="COSMETIC">COSMETIC</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/gynecology/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/gynecology/united-arab-emirates"
                                                             title="GYNECOLOGY">GYNECOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/ivf-and-infertility/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/ivf-and-infertility/united-arab-emirates"
                                                             title="IVF and INFERTILITY">IVF and INFERTILITY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/neurology-and-neurosurgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/neurology-and-neurosurgery/united-arab-emirates"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/oncology-and-oncosurgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/oncology-and-oncosurgery/united-arab-emirates"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/orthopedics/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/orthopedics/united-arab-emirates"
                                                             title="ORTHOPEDICS">ORTHOPEDICS</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/spine-surgery/united-arab-emirates"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/spine-surgery/united-arab-emirates"
                                                             title="SPINE SURGERY">SPINE SURGERY</a> </li>
                                                 </ul>
                                             </li>
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
-                                                        class="drop-link" href="https://www.vaidam.com/doctors/germany"
+                                                        class="drop-link" href="<?= base_url(''); ?>doctors/germany"
                                                         title="Germany">Germany</a> </div>
                                                 <ul class="drop-menu nav-bar">
-                                                    <li> <a href="https://www.vaidam.com/doctors/neurology-and-neurosurgery/germany"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/neurology-and-neurosurgery/germany"
                                                             title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="https://www.vaidam.com/doctors/oncology-and-oncosurgery/germany"
+                                                    <li> <a href="<?= base_url(''); ?>doctors/oncology-and-oncosurgery/germany"
                                                             title="ONCOLOGY">ONCOLOGY</a> </li>
                                                 </ul>
                                             </li>
@@ -322,7 +323,7 @@
                                     </li>
                                     <li class="nav-list-item drop">
                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
-                                                href="https://www.vaidam.com/search" title="Cost"
+                                                href="<?= base_url(''); ?>search" title="Cost"
                                                 class="nav-link">Cost</a> </div>
                                         <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
                                             <li class="drop-submenu">
@@ -335,7 +336,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="CARDIOLOGY">CARDIOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/heart-surgery/india"
+                                                            <li> <a href="<?= base_url(''); ?>search/heart-surgery/india"
                                                                     title="Heart Surgery">Heart Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -344,7 +345,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="ONCOLOGY">ONCOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/cancer/india"
+                                                            <li> <a href="<?= base_url(''); ?>search/cancer/india"
                                                                     title="Cancer Treatment">Cancer Treatment</a> </li>
                                                         </ul>
                                                     </li>
@@ -353,7 +354,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="NEUROSURGERY">NEUROSURGERY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/neurosurgery-cost-india"
+                                                            <li> <a href="<?= base_url(''); ?>neurosurgery-cost-india"
                                                                     title="Neurosurgery">Neurosurgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -362,7 +363,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="ORTHOPEDICS">ORTHOPEDICS</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/orthopedic-surgery/india"
+                                                            <li> <a href="<?= base_url(''); ?>search/orthopedic-surgery/india"
                                                                     title="Orthopedic Surgery">Orthopedic Surgery</a>
                                                             </li>
                                                         </ul>
@@ -372,7 +373,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="IVF">IVF</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/ivf-treatment-cost-india"
+                                                            <li> <a href="<?= base_url(''); ?>ivf-treatment-cost-india"
                                                                     title="IVF Treatment">IVF Treatment</a> </li>
                                                         </ul>
                                                     </li>
@@ -381,7 +382,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="GYNECOLOGY">GYNECOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/gynecological-surgery-cost-india"
+                                                            <li> <a href="<?= base_url(''); ?>gynecological-surgery-cost-india"
                                                                     title="Gynaecological Surgery">Gynaecological
                                                                     Surgery</a> </li>
                                                         </ul>
@@ -391,7 +392,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="HEMATOLOGY">HEMATOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/bone-marrow-transplant-cost-india"
+                                                            <li> <a href="<?= base_url(''); ?>bone-marrow-transplant-cost-india"
                                                                     title="Bone Marrow Transplant">Bone Marrow
                                                                     Transplant</a> </li>
                                                         </ul>
@@ -401,7 +402,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="COSMETIC">COSMETIC</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/cosmetic-surgery-cost-india"
+                                                            <li> <a href="<?= base_url(''); ?>cosmetic-surgery-cost-india"
                                                                     title="Cosmetic Surgery">Cosmetic Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -410,7 +411,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="SPINE SURGERY">SPINE SURGERY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/spine-surgery-cost-india"
+                                                            <li> <a href="<?= base_url(''); ?>spine-surgery-cost-india"
                                                                     title="Spine Surgery">Spine Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -426,7 +427,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="CARDIOLOGY">CARDIOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/heart-surgery/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/heart-surgery/turkey"
                                                                     title="Heart Surgery">Heart Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -435,7 +436,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="ONCOLOGY">ONCOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/cancer/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/cancer/turkey"
                                                                     title="Cancer Treatment">Cancer Treatment</a> </li>
                                                         </ul>
                                                     </li>
@@ -444,7 +445,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="NEUROSURGERY">NEUROSURGERY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/neurosurgery/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/neurosurgery/turkey"
                                                                     title="Neurosurgery">Neurosurgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -453,7 +454,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="ORTHOPEDICS">ORTHOPEDICS</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/orthopedic-surgery/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/orthopedic-surgery/turkey"
                                                                     title="Orthopedic Surgery">Orthopedic Surgery</a>
                                                             </li>
                                                         </ul>
@@ -463,7 +464,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="IVF">IVF</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/ivf/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/ivf/turkey"
                                                                     title="IVF Treatment">IVF Treatment</a> </li>
                                                         </ul>
                                                     </li>
@@ -472,7 +473,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="GYNECOLOGY">GYNECOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/gynecological-surgery/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/gynecological-surgery/turkey"
                                                                     title="Gynaecological Surgery">Gynaecological
                                                                     Surgery</a> </li>
                                                         </ul>
@@ -482,7 +483,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="COSMETIC">COSMETIC</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/cosmetic/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/cosmetic/turkey"
                                                                     title="Cosmetic Surgery">Cosmetic Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -491,7 +492,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="SPINE SURGERY">SPINE SURGERY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/spine-surgery/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/spine-surgery/turkey"
                                                                     title="Spine Surgery">Spine Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -507,7 +508,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="CARDIOLOGY">CARDIOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/heart-surgery/thailand"
+                                                            <li> <a href="<?= base_url(''); ?>search/heart-surgery/thailand"
                                                                     title="Heart Surgery">Heart Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -516,7 +517,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="ONCOLOGY">ONCOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/cancer/thailand"
+                                                            <li> <a href="<?= base_url(''); ?>search/cancer/thailand"
                                                                     title="Cancer Treatment">Cancer Treatment</a> </li>
                                                         </ul>
                                                     </li>
@@ -525,7 +526,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="NEUROSURGERY">NEUROSURGERY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/neurosurgery/thailand"
+                                                            <li> <a href="<?= base_url(''); ?>search/neurosurgery/thailand"
                                                                     title="Neurosurgery">Neurosurgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -534,7 +535,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="ORTHOPEDICS">ORTHOPEDICS</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/orthopedic-surgery/thailand"
+                                                            <li> <a href="<?= base_url(''); ?>search/orthopedic-surgery/thailand"
                                                                     title="Orthopedic Surgery">Orthopedic Surgery</a>
                                                             </li>
                                                         </ul>
@@ -544,7 +545,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="IVF">IVF</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/ivf/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/ivf/turkey"
                                                                     title="IVF Treatment">IVF Treatment</a> </li>
                                                         </ul>
                                                     </li>
@@ -553,7 +554,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="GYNECOLOGY">GYNECOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/gynecological-surgery/thailand"
+                                                            <li> <a href="<?= base_url(''); ?>search/gynecological-surgery/thailand"
                                                                     title="Gynaecological Surgery">Gynaecological
                                                                     Surgery</a> </li>
                                                         </ul>
@@ -563,7 +564,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="COSMETIC">COSMETIC</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/cosmetic/thailand"
+                                                            <li> <a href="<?= base_url(''); ?>search/cosmetic/thailand"
                                                                     title="Cosmetic Surgery">Cosmetic Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -572,7 +573,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="SPINE SURGERY">SPINE SURGERY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/spine-surgery/thailand"
+                                                            <li> <a href="<?= base_url(''); ?>search/spine-surgery/thailand"
                                                                     title="Spine Surgery">Spine Surgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -588,7 +589,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="ONCOLOGY">ONCOLOGY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/cancer/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/cancer/turkey"
                                                                     title="Cancer Treatment">Cancer Treatment</a> </li>
                                                         </ul>
                                                     </li>
@@ -597,7 +598,7 @@
                                                             <a class="drop-link" href="javascript:void"
                                                                 title="NEUROSURGERY">NEUROSURGERY</a> </div>
                                                         <ul class="drop-menu nav-bar">
-                                                            <li> <a href="https://www.vaidam.com/search/neurosurgery/turkey"
+                                                            <li> <a href="<?= base_url(''); ?>search/neurosurgery/turkey"
                                                                     title="Neurosurgery">Neurosurgery</a> </li>
                                                         </ul>
                                                     </li>
@@ -606,35 +607,32 @@
                                         </ul>
                                     </li>
                                     <li class="nav-list-item drop">
-                                        <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> <a
-                                                href="javascript:void(0)" title="Knowledge"
-                                                class="nav-link">Knowledge</a> </div>
+                                        <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> 
+                                            <a href="javascript:void(0)" title="Knowledge" class="nav-link">Knowledge</a>
+                                        </div>
                                         <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
                                             <li class="drop-submenu">
-                                                <div class="has-arrow"> <a class="drop-link"
-                                                        href="https://www.vaidam.com/knowledge-center">Blogs</a> </div>
+                                                <div class="has-arrow"><a class="drop-link"href="<?= base_url(''); ?>knowledge-center">Blogs</a></div>
                                             </li>
                                             <li class="drop-submenu">
-                                                <div class="has-arrow"> <a class="drop-link"
-                                                        href="https://www.vaidam.com/videos">Videos</a> </div>
+                                                <div class="has-arrow"><a class="drop-link" href="<?= base_url(''); ?>videos">Videos</a></div>
                                             </li>
                                             <li class="drop-submenu">
-                                                <div class="has-arrow"> <a class="drop-link"
-                                                        href="https://www.vaidam.com/travel-visa">Medical Visa</a>
-                                                </div>
+                                                <div class="has-arrow"> <a class="drop-link" href="<?= base_url(''); ?>travel-visa">Medical Visa</a></div>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-list-item"> <a
-                                            href="https://www.vaidam.com/knowledge-center/patient-testimonials"
-                                            title="Patient Stories" class="nav-link">Patient Stories</a> </li>
-                                    <li class="nav-list-item"> <a href="https://www.vaidam.com/lp/consult-online"
-                                            title="FREE Consult" class="nav-link">FREE Consult</a> </li>
+                                    <li class="nav-list-item"> 
+                                        <a href="<?= base_url(''); ?>patient-testimonials" title="Patient Stories" class="nav-link">Patient Stories</a>
+                                    </li>
+                                    <li class="nav-list-item"> 
+                                        <a href="<?= base_url(''); ?>consult-online" title="FREE Consult" class="nav-link">FREE Consult</a> 
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
                     </div>
-                    <div class="desktop-lang col-md-4 sm-12 col-12 d-flex align-items-center justify-content-end"
+                    <!-- <div class="desktop-lang col-md-4 sm-12 col-12 d-flex align-items-center justify-content-end"
                         id="google_translate_element"> <select class="lang_opt gray-600 border border-secondary-subtle">
                             <option value="">Select Language</option>
                             <option value="en|en">English</option>
@@ -646,7 +644,8 @@
                             <option value="en|ro">Romanian</option>
                             <option value="en|es">Spanish</option>
                             <option value="en|pt">Portuguese</option>
-                        </select> </div>
+                        </select> 
+                    </div> -->
                 </div>
             </div>
         </section>

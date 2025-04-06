@@ -49,4 +49,28 @@ class CommonModel extends Model{
     }
 
 
+    ## Get any record
+    // public function row_any_record_where($columnArray,$table,$where_conditions){
+    //     $this->db->select($columnArray);
+    //     $this->db->where($where_conditions);
+    //     $query = $this->db->get($table);
+    //     //echo $this->db->last_query();die;
+    //     $result = $query->result_array();
+    //     return $result;
+    // }
+
+    public function row_any_record_where(array $columnArray, string $table, array $where_conditions){
+        $db      = \Config\Database::connect();
+        $builder = $db->table($table);
+
+        $builder->select(implode(',', $columnArray)); 
+        $builder->where($where_conditions);
+
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+
+
+
+
 }

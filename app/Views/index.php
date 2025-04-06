@@ -440,243 +440,36 @@
                     <p class="mt-3">We cover all medical needs, from hair transplants to heart transplants.</p>
                 </div>
                 <div class="row row-cols-lg-3 row-cols-2 g-3 mt-0 g-xl-4 treatment-cnt">
-                    <div class="col">
-                        <div data-india="https://www.vaidam.com/doctors/oncology-and-oncosurgery/india || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/india || https://www.vaidam.com/search/cancer/india"
-                            data-turkey="https://www.vaidam.com/doctors/oncology-and-oncosurgery/turkey || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/turkey || https://www.vaidam.com/search/cancer/turkey"
-                            data-uae="https://www.vaidam.com/doctors/oncology-and-oncosurgery/united-arab-emirates || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/oncology-and-oncosurgery/thailand || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/thailand || https://www.vaidam.com/search/cancer/thailand"
-                            data-germany="https://www.vaidam.com/doctors/oncology-and-oncosurgery/germany || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/germany"
-                            data-department="Oncology" doctor-info="Best Cancer Doctors"
-                            hospital_info="Best Cancer Hospitals" cost-info="Cancer Treatment Cost"
-                            class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal"
-                            data-bs-target="#treatmentModalOncology">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Oncology.svg"
-                                    alt="Oncology Service" class="img-fluid" title="Oncology Service image"></figure>
-                            <div class="info">
-                                <h3>Oncology</h3>
-                                <p>Advanced cancer treatments with proven results.</p>
+                    <?php foreach($specialty as $k8 => $v8){ ?>
+                        <div class="col">
+                            <div data-india="https://www.vaidam.com/doctors/oncology-and-oncosurgery/india || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/india || https://www.vaidam.com/search/cancer/india"
+                                data-turkey="https://www.vaidam.com/doctors/oncology-and-oncosurgery/turkey || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/turkey || https://www.vaidam.com/search/cancer/turkey"
+                                data-uae="https://www.vaidam.com/doctors/oncology-and-oncosurgery/united-arab-emirates || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/united-arab-emirates"
+                                data-thailand="https://www.vaidam.com/doctors/oncology-and-oncosurgery/thailand || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/thailand || https://www.vaidam.com/search/cancer/thailand"
+                                data-germany="https://www.vaidam.com/doctors/oncology-and-oncosurgery/germany || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/germany"
+                                data-department="Oncology" doctor-info="Best Cancer Doctors"
+                                hospital_info="Best Cancer Hospitals" cost-info="Cancer Treatment Cost"
+                                class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal"
+                                data-bs-target="#treatmentModalOncology">
+                                <figure class="m-0">
+                                    <img loading="lazy" src="<?= base_url(''); ?><?= $v8['image'] ?>" alt="Oncology Service" class="img-fluid" title="<?= $v8['title'] ?>">
+                                </figure>
+                                <div class="info">
+                                    <h3><?= $v8['title'] ?></h3>
+                                    <p><?= $v8['description'] ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div href="javascript:void(0);" doctor-info="Best Neurosurgeons"
-                            hospital_info="Best Neurosurgery Hospitals" cost-info="Brain Tumor Treatment Cost"
-                            data-india="https://www.vaidam.com/doctors/neurosurgery/india || https://www.vaidam.com/hospitals/neurosurgery/india || https://www.vaidam.com/search/neurosurgery/india"
-                            data-turkey="https://www.vaidam.com/doctors/neurosurgery/turkey || https://www.vaidam.com/hospitals/neurosurgery/turkey || https://www.vaidam.com/search/brain-tumor/turkey"
-                            data-uae="https://www.vaidam.com/doctors/neurosurgery/united-arab-emirates || https://www.vaidam.com/hospitals/neurosurgery/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/neurosurgery/thailand || https://www.vaidam.com/hospitals/neurosurgery/thailand || https://www.vaidam.com/search/neurosurgery/thailand"
-                            data-germany="https://www.vaidam.com/doctors/neurosurgery/germany || https://www.vaidam.com/hospitals/neurosurgery/germany"
-                            data-department="Neurosurgery" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalNeurosurgery">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Neurosurgery.png"
-                                    alt="Neurosurgery Service" class="img-fluid" title="Neurosurgery Service image">
-                            </figure>
-                            <div class="info">
-                                <h3>Neurosurgery</h3>
-                                <p>The specialty of neurosurgical care includes both adult and pediatric patients.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div href="javascript:void(0);" doctor-info="Best Spine Surgeons"
-                            hospital_info="Best Spine Hospitals" cost-info="Spine Surgery Cost"
-                            data-india="https://www.vaidam.com/doctors/spine-surgery/india || https://www.vaidam.com/hospitals/spine-surgery/india   || https://www.vaidam.com/search/spine-surgery/india"
-                            data-turkey="https://www.vaidam.com/doctors/spine-surgery/turkey || https://www.vaidam.com/hospitals/spine-surgery/turkey  || https://www.vaidam.com/search/spine-surgery/turkey"
-                            data-uae="https://www.vaidam.com/doctors/spine-surgery/united-arab-emirates || https://www.vaidam.com/hospitals/spine-surgery/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/spine-surgery/thailand || https://www.vaidam.com/hospitals/spine-surgery/thailand  || https://www.vaidam.com/search/spine-surgery/thailand"
-                            data-department="Spine Surgery" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalSpine-Surgery">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Spine Surgery.svg"
-                                    alt="Spine Surgery Services" class="img-fluid" title="Spine Surgery Services image">
-                            </figure>
-                            <div class="info">
-                                <h3>Spine Surgery</h3>
-                                <p>Precision spine surgeries for better mobility.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="Best Cardiac Surgeons" hospital_info="Best Cardiac Hospitals"
-                            cost-info="Heart Bypass Surgery Cost"
-                            data-india="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/india   || https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/india || https://www.vaidam.com/search/heart-surgery/india"
-                            data-turkey="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/turkey || https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/turkey || https://www.vaidam.com/search/heart-surgery/turkey"
-                            data-uae="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/united-arab-emirates ||  https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/thailand || https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/thailand || https://www.vaidam.com/search/heart-surgery/thailand"
-                            data-department="Cardiology" class="treatment_bx d-block d-sm-flex position-relative "
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalCardiology">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Cardiology.svg"
-                                    alt="cardiology Service" class="img-fluid" title="Cardiology Service image">
-                            </figure>
-                            <div class="info">
-                                <h3>Cardiology</h3>
-                                <p>World-class heart care for adults and children.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="Best Orthopedic Doctors" hospital_info="Best Orthopedic Hospitals"
-                            cost-info="Knee Replacement Cost"
-                            data-india="https://www.vaidam.com/doctors/orthopedics/india ||  https://www.vaidam.com/hospitals/orthopedics/india || https://www.vaidam.com/search/orthopedic-surgery/india"
-                            data-turkey="https://www.vaidam.com/doctors/orthopedics/turkey || https://www.vaidam.com/hospitals/orthopedics/turkey || https://www.vaidam.com/search/orthopedic-surgery/turkey"
-                            data-uae="https://www.vaidam.com/doctors/orthopedics/united-arab-emirates || https://www.vaidam.com/hospitals/orthopedics/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/orthopedics/thailand || https://www.vaidam.com/hospitals/orthopedics/thailand   || https://www.vaidam.com/search/orthopedic-surgery/thailand"
-                            data-department="Orthopedics" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalOrthopedics">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Orthopedics.svg"
-                                    alt="Orthopedics Service" class="img-fluid" title="Orthopedics Service image">
-                            </figure>
-                            <div class="info">
-                                <h3>Orthopedics</h3>
-                                <p>Expert joint replacements and bone deformities solutions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="IVF Doctors" hospital_info="IVF Centers" cost-info="IVF Treatment Cost"
-                            data-india="https://www.vaidam.com/doctors/ivf-and-infertility/india || https://www.vaidam.com/hospitals/ivf-and-infertility/india  || https://www.vaidam.com/search/ivf/india"
-                            data-turkey="https://www.vaidam.com/doctors/ivf-and-infertility/turkey ||   https://www.vaidam.com/hospitals/ivf-and-infertility/turkey || https://www.vaidam.com/search/ivf/turkey"
-                            data-uae="https://www.vaidam.com/doctors/ivf-and-infertility/united-arab-emirates ||   https://www.vaidam.com/hospitals/ivf-and-infertility/united-arab-emirates  || https://www.vaidam.com/search/ivf/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/ivf-and-infertility/thailand ||  https://www.vaidam.com/hospitals/ivf-and-infertility/thailand  || https://www.vaidam.com/search/ivf/thailand"
-                            data-department="IVF" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalIVF">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/IVF.svg"
-                                    alt="IVF treatments" class="img-fluid" title="IVF treatments image"></figure>
-                            <div class="info">
-                                <h3>IVF</h3>
-                                <p>Leading fertility treatments with high success.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="Best Gynecologist" hospital_info="Best Gynecology Hospitals"
-                            cost-info="Gynaecological Surgery Cost"
-                            data-india="https://www.vaidam.com/doctors/gynecology/india || https://www.vaidam.com/hospitals/gynecology/india || https://www.vaidam.com/search/gynecological-surgery/india"
-                            data-turkey="https://www.vaidam.com/doctors/gynecology/turkey || https://www.vaidam.com/hospitals/gynecology/turkey || https://www.vaidam.com/search/gynecological-surgery/turkey"
-                            data-uae="https://www.vaidam.com/doctors/gynecology/united-arab-emirates || https://www.vaidam.com/hospitals/gynecology/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/gynecology/thailand || https://www.vaidam.com/hospitals/gynecology/thailand || https://www.vaidam.com/search/gynecological-surgery/thailand"
-                            data-department="Gynecology" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalGynecology">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Gynecology.svg"
-                                    alt="Gynecology Services" class="img-fluid" title="Gynecology Services image">
-                            </figure>
-                            <div class="info">
-                                <h3>Gynecology</h3>
-                                <p>Specialized women's health services.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="Best Cosmetic Surgeons" hospital_info="Best Cosmetic Hospitals"
-                            cost-info="Cosmetic Surgery Cost"
-                            data-india="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/india || https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/india || https://www.vaidam.com/search/cosmetic/india"
-                            data-turkey="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/turkey || https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/turkey || https://www.vaidam.com/search/cosmetic/turkey"
-                            data-uae="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/united-arab-emirates || https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/thailand || https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/thailand || https://www.vaidam.com/search/cosmetic/thailand"
-                            data-department="Cosmetic" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalCosmetic">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Cosmetic And Plastic Surgery.svg"
-                                    alt="cosmetic Service" class="img-fluid" title="Cosmetic Service image"></figure>
-                            <div class="info">
-                                <h3>Cosmetic</h3>
-                                <p>Aesthetic procedures for a new you.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="Best Bariatric Surgeons" hospital_info="Best Bariatric Surgery Hospitals"
-                            cost-info="Bariatric Surgery Cost"
-                            data-india="https://www.vaidam.com/doctors/obesity-or-bariatric-surgery-0/india   || https://www.vaidam.com/hospitals/obesity-or-bariatric-surgery-0/india || https://www.vaidam.com/search/bariatric-surgery-for-weight-loss/india"
-                            data-turkey="https://www.vaidam.com/doctors/obesity-or-bariatric-surgery-0/turkey   || https://www.vaidam.com/hospitals/obesity-or-bariatric-surgery-0/turkey || https://www.vaidam.com/search/bariatric-surgery-for-weight-loss/turkey"
-                            data-uae="https://www.vaidam.com/doctors/obesity-or-bariatric-surgery-0/united-arab-emirates || https://www.vaidam.com/hospitals/obesity-or-bariatric-surgery-0/united-arab-emirates || https://www.vaidam.com/search/bariatric-surgery-for-weight-loss/united-arab-emirates"
-                            data-thailand="https://www.vaidam.com/doctors/obesity-or-bariatric-surgery-0/thailand || https://www.vaidam.com/hospitals/obesity-or-bariatric-surgery-0/thailand || https://www.vaidam.com/search/bariatric-surgery-for-weight-loss/thailand"
-                            data-department="Weight Loss" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalWeight-Loss">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Weight Loss.svg"
-                                    alt="Weight Loss Service" class="img-fluid" title="Weight Loss Service image">
-                            </figure>
-                            <div class="info">
-                                <h3>Weight Loss</h3>
-                                <p>Effective bariatric surgery options.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="Best Liver Transplant Surgeons"
-                            hospital_info="Best Liver Transplant Hospitals" cost-info="Liver Transplant Cost"
-                            data-india="https://www.vaidam.com/doctors/transplant-surgery/india || https://www.vaidam.com/hospitals/transplant-surgery/india || https://www.vaidam.com/search/liver-transplant/india"
-                            data-turkey="https://www.vaidam.com/doctors/transplant-surgery/turkey || https://www.vaidam.com/hospitals/transplant-surgery/turkey"
-                            data-thailand="https://www.vaidam.com/doctors/transplant-surgery/thailand || https://www.vaidam.com/hospitals/transplant-surgery/thailand"
-                            data-department="Liver Transplant" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalLiver-Transplant">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Liver Transplant.svg"
-                                    alt="Liver transplant Services" class="img-fluid"
-                                    title="Liver transplant Services image"></figure>
-                            <div class="info">
-                                <h3>Liver Transplant</h3>
-                                <p>Liver transplant procedures of varying complexity.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="Best Kidney Transplant Surgeons"
-                            hospital_info="Best Kidney Transplant Hospitals" cost-info="Kidney Transplant Cost"
-                            data-india="https://www.vaidam.com/doctors/nephrology/kidney-transplant/india || https://www.vaidam.com/hospitals/nephrology/kidney-transplant/india || https://www.vaidam.com/search/kidney-transplant/india"
-                            data-turkey="https://www.vaidam.com/doctors/nephrology/kidney-transplant/turkey || https://www.vaidam.com/hospitals/nephrology/kidney-transplant/turkey"
-                            data-thailand="https://www.vaidam.com/doctors/nephrology/kidney-transplant/thailand || https://www.vaidam.com/hospitals/nephrology/kidney-transplant/thailand"
-                            data-department="Kidney transplant" class="treatment_bx d-block d-sm-flex position-relative"
-                            data-bs-toggle="modal" data-bs-target="#treatmentModalKidney-transplant">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Kidney transplant.svg"
-                                    alt="Kidney transplant Services" class="img-fluid"
-                                    title="Kidney transplant Services image"></figure>
-                            <div class="info">
-                                <h3>Kidney Transplant</h3>
-                                <p>Expert renal care and transplants.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div doctor-info="Best Bone Marrow Transplant Doctors"
-                            hospital_info="Best Bone Marrow Transplant Hospitals"
-                            cost-info="Bone Marrow Transplant Cost"
-                            data-india="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/india || https://www.vaidam.com/hospitals/hematology/bone-marrow-transplant/india || https://www.vaidam.com/search/bmt-bone-marrow-transplant/india"
-                            data-turkey="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/turkey  || https://www.vaidam.com/hospitals/hematology/turkey"
-                            data-thailand="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/thailand || https://www.vaidam.com/hospitals/hematology/bone-marrow-transplant/thailand"
-                            data-department="Bone Marrow Transplant"
-                            class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal"
-                            data-bs-target="#treatmentModalBMT">
-                            <figure class="m-0"><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Bone-Marrow-Transplant.svg"
-                                    alt="Bone marrow transplant Services" class="img-fluid"
-                                    title="Bone marrow transplant Services image"></figure>
-                            <div class="info">
-                                <h3>Bone Marrow</h3>
-                                <p>Bone marrow transplant options for matched and non matched donors</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
-                <div class="mt-4 pt-3 text-center"> <a
-                        onclick="if (!window.__cfRLUnblockHandlers) return false; setformtype('','','home page enquiry button after multi specialty','','home page','','');"
-                        href="https://www.vaidam.com/lp/consult-online" class="readmore-outline me-2"
-                        title="Consult-Online" data-cf-modified-7c4b08c82de89e199cc1ef36-="">Need Assistance?</a> <a
-                        href="https://api.whatsapp.com/send?phone=919971616131&text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com?source=wpchat_HPTL,%20Thank%20you!"
-                        title="Whatsapp Chat" class="readmore whatsapp-color wa_button_clicked"><img loading="lazy"
-                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/whatsaap-icon01.webp"
-                            alt="Chat with Us" width="30" height="29" class="img-fluid me-1" title="Chat with US image">
-                        Chat</a> </div>
+                <div class="mt-4 pt-3 text-center"> 
+                    <a href="<?= base_url(''); ?>consult-online" class="readmore-outline me-2" title="Consult-Online">Need Assistance?</a> 
+                    <a href="https://api.whatsapp.com/send?phone=919958278202&text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com?source=wpchat_HPTL,%20Thank%20you!" title="Whatsapp Chat" class="readmore whatsapp-color wa_button_clicked">
+                    <img loading="lazy" src="<?= base_url(''); ?>assets/img/whatsaap-icon01.webp" alt="Chat with Us" width="30" height="29" class="img-fluid me-1" title="Chat with US image">Chat</a> 
+                </div>
             </div>
         </section>
+
         <section>
             <div class="container">
                 <div class="section-title mb-4 pb-2 text-center">
@@ -868,210 +661,44 @@
                         Chat</a> </div>
             </div>
         </section>
+
         <section class="pt-0">
             <div class="container">
                 <div class="section-title mb-4 pb-2 text-center">
                     <h2>Lowest Quotes Assured</h2>
-                    <p class="mt-3">We constantly negotiate better prices and alternatives without compromising
-                        treatment quality. Our prices are consistently lower.</p>
+                    <p class="mt-3">We constantly negotiate better prices and alternatives without compromising treatment quality. Our prices are consistently lower.</p>
                 </div>
                 <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-ms-2 g-3 g-xl-4 price-b-cnt">
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/svg/departments/RHEUMATOLOGY-51.svg"
-                                        alt="Knee Replacement" width="48" height="48" class="img-fluid"
-                                        title="Knee Replacement"></figure>
-                                <div class="info">
-                                    <h3 class="title">Knee Replacement</h3>
-                                    <p>Starting <strong>$4000</strong></p>
-                                    <p class="text-danger">Get Quote</p>
+                    <?php foreach($qoute as $k7 => $v7){ ?>
+                        <div class="col">
+                            <div data-bs-toggle="modal" data-bs-target="#get_quote">
+                                <div class="nag_price_bx d-flex align-items-center">
+                                    <figure>
+                                        <img loading="lazy" src="<?= base_url(''); ?><?= $v7['image'] ?>" alt="<?= $v7['title'] ?>" width="48" height="48" class="img-fluid" title="<?= $v7['title'] ?>">
+                                    </figure>
+                                    <div class="info">
+                                        <h3 class="title"><?= $v7['title'] ?></h3>
+                                        <p>Starting <strong>₹<?= $v7['price'] ?></strong></p>
+                                        <p class="text-danger">Get Quote</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Hip Replecement.svg"
-                                        alt="Hip Replacement" width="48" height="48" class="img-fluid"
-                                        title="Hip Replacement"></figure>
-                                <div class="info">
-                                    <h3 class="title">Hip Replacement</h3>
-                                    <p>Starting <strong>$5500</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Brain Tumor.svg"
-                                        alt="Brain Tumor" width="48" height="48" class="img-fluid" title="Brain Tumor">
-                                </figure>
-                                <div class="info">
-                                    <h3 class="title">Brain Tumor</h3>
-                                    <p>Starting <strong>$5000</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Heart Bypass Surgery.svg"
-                                        alt="Heart Bypass Surgery" width="48" height="48" class="img-fluid"
-                                        title="Heart Bypass Surgery"></figure>
-                                <div class="info">
-                                    <h3 class="title">Heart Bypass Surgery</h3>
-                                    <p>Starting <strong>$4500</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Valve Replacement.svg"
-                                        alt="Valve Replacement" width="48" height="48" class="img-fluid"
-                                        title="Valve Replacement"></figure>
-                                <div class="info">
-                                    <h3 class="title">Valve Replacement</h3>
-                                    <p>Starting <strong>$9500</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Breast Cancer.svg"
-                                        alt="Breast Cancer" width="48" height="48" class="img-fluid"
-                                        title="Breast Cancer"></figure>
-                                <div class="info">
-                                    <h3 class="title">Breast Cancer</h3>
-                                    <p>Starting <strong>$5000</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Lung Cancer.svg"
-                                        alt="Lung Cancer" width="48" height="48" class="img-fluid" title="Lung Cancer">
-                                </figure>
-                                <div class="info">
-                                    <h3 class="title">Lung Cancer</h3>
-                                    <p>Starting <strong>$5500</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Rhinoplasty.svg"
-                                        alt="Rhinoplasty" width="48" height="48" class="img-fluid" title="Rhinoplasty">
-                                </figure>
-                                <div class="info">
-                                    <h3 class="title">Rhinoplasty</h3>
-                                    <p>Starting <strong>$1800</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Breast Cancer.svg"
-                                        alt="Breast Implants" width="48" height="48" class="img-fluid"
-                                        title="Breast Implants"></figure>
-                                <div class="info">
-                                    <h3 class="title">Breast Implants</h3>
-                                    <p>Starting <strong>$2750</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Hair Transpalnt.svg"
-                                        alt="Hair Transplant" width="48" height="48" class="img-fluid"
-                                        title="Hair Transplant"></figure>
-                                <div class="info">
-                                    <h3 class="title">Hair Transplant</h3>
-                                    <p>Starting <strong>$1400</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/cervical-cancer.svg"
-                                        alt="Cervical Cancer" width="48" height="48" class="img-fluid"
-                                        title="Cervical Cancer"></figure>
-                                <div class="info">
-                                    <h3 class="title">Cervical Cancer</h3>
-                                    <p>Starting <strong>$4500</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-bs-toggle="modal" data-bs-target="#get_quote">
-                            <div class="nag_price_bx d-flex align-items-center">
-                                <figure><img loading="lazy"
-                                        src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Hysterectomy.svg"
-                                        alt="Hysterectomy" width="48" height="48" class="img-fluid"
-                                        title="Hysterectomy"></figure>
-                                <div class="info">
-                                    <h3 class="title">Hysterectomy</h3>
-                                    <p>Starting <strong>$3000</strong></p>
-                                    <p class="text-danger">Get Quote</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
                 <div class="mt-4 pt-3 text-center d-none d-sm-block">
-                    <p class="mt-3">Discover what we offer!</p> <a
-                        onclick="if (!window.__cfRLUnblockHandlers) return false; setformtype('','','home page enquiry button on after treatment cost','','home page','','');"
-                        href="https://www.vaidam.com/lp/consult-online" class="readmore-outline me-2" title="Get-Quote"
-                        data-cf-modified-7c4b08c82de89e199cc1ef36-="">Get Quote</a> <a
-                        href="https://api.whatsapp.com/send?phone=919971616131&text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com?source=wpchat_HPCL,%20Thank%20you!"
-                        title="Whatsapp Chat" class="readmore whatsapp-color wa_button_clicked"><img loading="lazy"
-                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/whatsaap-icon01.webp"
-                            alt="Chat with Us" width="30" height="29" class="img-fluid me-1" title="Chat with Us">
-                        Chat</a>
+                    <p class="mt-3">Discover what we offer!</p> 
+                    <a href="<?= base_url(''); ?>consult-online" class="readmore-outline me-2" title="Get-Quote">Get Quote</a> 
+                    <a href="https://api.whatsapp.com/send?phone=919958278202&text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com?source=wpchat_HPCL,%20Thank%20you!" title="Whatsapp Chat" class="readmore whatsapp-color wa_button_clicked">
+                        <img loading="lazy" src="<?= base_url(''); ?>assets/img/whatsaap-icon01.webp" alt="Chat with Us" width="30" height="29" class="img-fluid me-1" title="Chat with Us">Chat
+                    </a>
                 </div>
-                <div class="text-center d-sm-none"> <button type="button" class="readmore loadmore-price mt-4">Load
-                        More</button> </div>
+                <div class="text-center d-sm-none"> 
+                    <button type="button" class="readmore loadmore-price mt-4">Load More</button> 
+                </div>
             </div>
         </section>
+
         <section class="how-work position-relative">
             <div class="container upr">
                 <div class="section-title mb-4 pb-2 text-center">
@@ -1122,43 +749,32 @@
                     </div>
                     <div class="col-md-4">
                         <div class="video-bx">
-                            <div class="vaidam_yt_video_block home-page-video-block click-to-play-video know-work"
-                                id="player-XZtyGhf5LJ8"> <img loading="lazy"
-                                    class="img-responsive video-icon-block video-block-imgages"
-                                    src="https://www.vaidam.com/sites/all/themes/vaidam/v0/dist/img/video-icon.png"
-                                    width="70" height="55" loading="lazy" alt="Play Video" title="Play Video"> <img
-                                    loading="lazy"
-                                    class="img-responsive video-image home-page-footer-video-image footer-home-images lazy_img"
-                                    id="XZtyGhf5LJ8" src="https://img.youtube.com/vi/XZtyGhf5LJ8/mqdefault.jpg"
-                                    width="263" height="148" loading="lazy" alt="YouTube" title="YouTube Video">
+                            <div class="vaidam_yt_video_block home-page-video-block click-to-play-video know-work" id="player-H8uaWT6E5Oc"> 
+                                <img loading="lazy" class="img-responsive video-icon-block video-block-imgages" src="<?= base_url(''); ?>assets/img/video-icon.webp" width="70" height="55" loading="lazy" alt="Play Video" title="Play Video"> 
+                                <img loading="lazy" class="img-responsive video-image home-page-footer-video-image footer-home-images lazy_img" id="H8uaWT6E5Oc" src="https://img.youtube.com/vi/H8uaWT6E5Oc/mqdefault.jpg" width="263" height="148" loading="lazy" alt="YouTube" title="YouTube Video">
                                 <p class="text-center play-video-tag">Play Video</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mt-4 pt-3 text-center">
-                    <!-- <button type="button" data-src="https://www.youtube.com/embed/XZtyGhf5LJ8" class="readmore-blue video-btn mb-2 mb-sm-0 me-sm-2" data-bs-toggle="modal" data-bs-target="#videoModal">How does it works? Play Video</button> -->
-                    <a onclick="if (!window.__cfRLUnblockHandlers) return false; setformtype('','','home page enquiry button after how does it work block','','home page','','');"
-                        href="https://www.vaidam.com/lp/consult-online" class="readmore-outline" title="Get-Started"
-                        data-cf-modified-7c4b08c82de89e199cc1ef36-="">Get Started</a>
+                    <a href="<?= base_url(''); ?>consult-online" class="readmore-outline" title="Get-Started">Get Started</a>
                 </div>
             </div>
         </section>
+
         <section>
             <div class="container">
                 <div class="section-title mb-4 pb-2 text-center">
                     <h2>Our Services Cover Every Need</h2>
-                    <p class="mt-3">You will be assisted by a dedicated case manager from our team. List of services you
-                        can expect from us, for FREE!</p>
+                    <p class="mt-3">You will be assisted by a dedicated case manager from our team. List of services you can expect from us, for FREE!</p>
                 </div>
                 <div class="row row-cols-lg-3 row-cols-1 row-cols-sm-2 g-3 g-xl-4 justify-content-center service-cnt">
                     <div class="col">
-                        <div
-                            class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/serv-icon07.webp"
-                                    width="26" height="26" alt="Medical Opinion and Cost Estimations" class="iimg-fluid"
-                                    title="Medical Opinion and Cost Estimations"></figure>
+                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon07.webp" width="26" height="26" alt="Medical Opinion and Cost Estimations" class="iimg-fluid" title="Medical Opinion and Cost Estimations">
+                            </figure>
                             <div class="info">
                                 <h3>Medical Opinion and Cost Estimations</h3>
                                 <p>Expert opinions and cost estimates.</p>
@@ -1166,12 +782,10 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div
-                            class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/serv-icon01.webp"
-                                    width="26" height="26" alt="Pre-Travel Consultations" class="iimg-fluid"
-                                    title="Pre-Travel Consultations"></figure>
+                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon01.webp" width="26" height="26" alt="Pre-Travel Consultations" class="iimg-fluid" title="Pre-Travel Consultations">
+                            </figure>
                             <div class="info">
                                 <h3>Pre-Travel Consultations</h3>
                                 <p>Understand your procedure before traveling.</p>
@@ -1179,11 +793,10 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div
-                            class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/serv-icon02.webp"
-                                    width="26" height="26" alt="Visa" class="iimg-fluid" title="Visa"></figure>
+                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon02.webp" width="26" height="26" alt="Visa" class="iimg-fluid" title="Visa">
+                            </figure>
                             <div class="info">
                                 <h3>Visa Assistance</h3>
                                 <p>Complete medical visa assistance.</p>
@@ -1191,12 +804,10 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div
-                            class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/serv-icon03.webp"
-                                    width="26" height="26" alt="Money Exchange" class="iimg-fluid"
-                                    title="Money Exchange"></figure>
+                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon03.webp" width="26" height="26" alt="Money Exchange" class="iimg-fluid" title="Money Exchange">
+                            </figure>
                             <div class="info">
                                 <h3>Money Exchange</h3>
                                 <p>Convenient currency exchange services in your city.</p>
@@ -1204,12 +815,10 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div
-                            class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/serv-icon04.webp"
-                                    width="26" height="26" alt="Interpreters and Translators" class="iimg-fluid"
-                                    title="Interpreters and Translators"></figure>
+                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon04.webp" width="26" height="26" alt="Interpreters and Translators" class="iimg-fluid" title="Interpreters and Translators">
+                            </figure>
                             <div class="info">
                                 <h3>Interpreters and Translators</h3>
                                 <p>Fluent professionals to break language barriers at every step.</p>
@@ -1217,12 +826,9 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div
-                            class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/serv-icon05.webp"
-                                    width="26" height="26" alt="Arrival, Departure and Transportation Assistance"
-                                    class="iimg-fluid" title="Arrival, Departure and Transportation Assistance">
+                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon05.webp" width="26" height="26" alt="Arrival, Departure and Transportation Assistance" class="iimg-fluid" title="Arrival, Departure and Transportation Assistance">
                             </figure>
                             <div class="info">
                                 <h3>Transportation Assistance</h3>
@@ -1231,11 +837,10 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div
-                            class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/noun-hotel-star.svg"
-                                    width="26" height="26" alt="Others" class="iimg-fluid" title="Others"></figure>
+                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/noun-hotel-star.svg" width="26" height="26" alt="Others" class="iimg-fluid" title="Others">
+                            </figure>
                             <div class="info">
                                 <h3>Accommodation Options</h3>
                                 <p>Near the hospital and matching your budget and needs.</p>
@@ -1243,12 +848,10 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div
-                            class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/serv-icon06.webp"
-                                    width="26" height="26" alt="Admission, Appointment, Pharma Care" class="iimg-fluid"
-                                    title="Admission, Appointment, Pharma Care"></figure>
+                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon06.webp" width="26" height="26" alt="Admission, Appointment, Pharma Care" class="iimg-fluid" title="Admission, Appointment, Pharma Care">
+                            </figure>
                             <div class="info">
                                 <h3>Admission, Appointment, Pharma Care</h3>
                                 <p>Full coordination of medical logistics.</p>
@@ -1258,10 +861,9 @@
                     <div class="col">
                         <div
                             class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure><img loading="lazy"
-                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/serv-icon08.webp"
-                                    width="28" height="26" alt="Private Duty Nursing" class="iimg-fluid"
-                                    title="Private Duty Nursing"></figure>
+                            <figure>
+                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon08.webp" width="28" height="26" alt="Private Duty Nursing" class="iimg-fluid" title="Private Duty Nursing">
+                            </figure>
                             <div class="info">
                                 <h3>Private Duty Nursing</h3>
                                 <p>Arrangements of private nursing care as needed.</p>
@@ -1269,22 +871,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center d-sm-none"> <button type="button" class="readmore loadmore-services mt-4">Load
-                        More</button> </div>
-                <div class="mt-4 pt-3 text-center"> <a
-                        onclick="if (!window.__cfRLUnblockHandlers) return false; setformtype('','','home page enquiry button after our service block','','home page','','');"
-                        href="https://www.vaidam.com/lp/consult-online" class="readmore-outline me-2"
-                        title="Get-FREE-Assistance" data-cf-modified-7c4b08c82de89e199cc1ef36-=""></a> <a
-                        href="https://api.whatsapp.com/send?phone=919971616131&text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com?source=wpchat_HPSS,%20Thank%20you!"
-                        title="Whatsapp Chat" class="readmore whatsapp-color wa_button_clicked"><img
-                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/whatsaap-icon01.webp"
-                            alt="Chat with Us" width="30" height="29" class="img-fluid me-1" title="Chat with Us">
-                        Chat</a>
-                    <p class="mt-3">Our services are <strong>FREE</strong> and by using our services your hospital bill
-                        does not increase!</p>
+                
+                <div class="mt-4 pt-3 text-center"> 
+                    <a href="https://api.whatsapp.com/send?phone=919958278202&text=Hello,%20please%20contact%20me%20regarding%20https://www.medassure.com?source=wpchat_HPSS,%20Thank%20you!" title="Whatsapp Chat" class="readmore whatsapp-color wa_button_clicked">
+                        <img src="<?= base_url(''); ?>assets/img/whatsaap-icon01.webp" alt="Chat with Us" width="30" height="29" class="img-fluid me-1" title="Chat with Us">Chat
+                    </a>
+                    <p class="mt-3">Our services are <strong>FREE</strong> and by using our services your hospital bill does not increase!</p>
                 </div>
             </div>
         </section>
+
         <section class="gray-bg">
             <div class="container">
                 <div class="testimonial-title d-md-flex align-items-center justify-content-between">
@@ -1334,6 +930,7 @@
                 </div>
             </div>
         </section>
+
         <section class="pb-0">
             <div class="container">
                 <div class="row">
@@ -1345,93 +942,25 @@
                         </div>
                         <div class="content-part" id="reviews">
                             <div class="qna patient-stories">
-                                <!-- Case Study Item Start -->
-                                <div class="view-more-bx">
-                                    <div class="q-bx d-flex py-3">
-                                        <figure><img width="140" height="150" loading="lazy"
-                                                src="https://d1ea147o02h74h.cloudfront.net/powo_hilton.jpg"
-                                                alt="Liberian Patient Receives Expert Medical Care in India with Vaidam’s Assistance"
-                                                title="Patient Name"></figure>
-                                        <div class="info">
-                                            <p><strong>Liberian Patient Receives Expert Medical Care in India with
-                                                    Vaidam’s Assistance</strong></p> <a
-                                                href="/knowledge-center/liberian-patient-receives-expert-medical-care-india-vaidams-assistance"
-                                                title="Liberian Patient Receives Expert Medical Care in India with Vaidam’s Assistance">
-                                                <p class="rtejustify">Liberian patient Powo Hilton sought stroke
-                                                    treatment in India with Vaidam’s support, receiving expert care,
-                                                    medication guidance, and a smooth medical journey.</p>
-                                                <!-- <span>Read More</span> --> <span>Liberian Patient Receives Expert
-                                                    Medical Care in India with Vaidam’s Assistance</span>
-                                            </a> </a>
+                                <?php foreach($testimonial as $k6 => $v6){ ?>
+                                    <div class="view-more-bx">
+                                        <div class="q-bx d-flex py-3">
+                                            <figure>
+                                                <img width="140" height="150" loading="lazy" src="<?= base_url(''); ?><?= $v6['image'] ?>" alt="<?= $v6['title'] ?>" title="<?= $v6['title'] ?>">
+                                            </figure>
+                                            <div class="info">
+                                                <p><strong><?= $v6['title'] ?></strong></p>
+                                                <a href="<?= base_url(''); ?>patient-testimonials/<?= $v6['slug'] ?>" title="<?= $v6['title'] ?>">
+                                                    <p class="rtejustify"><?= $v6['description'] ?></p>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> <!-- Case Study Item End -->
-                                <div class="view-more-bx">
-                                    <div class="q-bx d-flex py-3">
-                                        <figure><img width="140" height="150" loading="lazy"
-                                                src="https://d1ea147o02h74h.cloudfront.net/mr._elias_kwande_1.jpg"
-                                                alt="Mr. Elias Kwande from Zimbabwe Gets Successful Prostate Cancer &amp; Hepatitis B Care in India"
-                                                title="Patient Name"></figure>
-                                        <div class="info">
-                                            <p><strong>Mr. Elias Kwande from Zimbabwe Gets Successful Prostate Cancer
-                                                    &amp; Hepatitis B Care in India</strong></p> <a
-                                                href="/knowledge-center/mr-elias-kwande-zimbabwe-gets-successful-prostate-cancer-hepatitis-b-care-india"
-                                                title="Mr. Elias Kwande from Zimbabwe Gets Successful Prostate Cancer &amp; Hepatitis B Care in India">
-                                                <p class="rtejustify" dir="ltr">Explore the determined health journey of
-                                                    a Zimbabwe patient who overcame prostate cancer and hepatitis B with
-                                                    the right treatment in India through Vaidam Health.</p>
-                                                <!-- <span>Read More</span> --> <span>Mr. Elias Kwande from Zimbabwe
-                                                    Gets Successful Prostate Cancer &amp; Hepatitis B Care in
-                                                    India</span>
-                                            </a> </a>
-                                        </div>
-                                    </div>
-                                </div> <!-- Case Study Item End -->
-                                <div class="view-more-bx">
-                                    <div class="q-bx d-flex py-3">
-                                        <figure><img width="140" height="150" loading="lazy"
-                                                src="https://d1ea147o02h74h.cloudfront.net/master._seradjeddine_lakhdari_-_algeria_0.jpg"
-                                                alt="Algerian Child Overcomes Congenital Malformation with Laparoscopic Surgery in India"
-                                                title="Patient Name"></figure>
-                                        <div class="info">
-                                            <p><strong>Algerian Child Overcomes Congenital Malformation with
-                                                    Laparoscopic Surgery in India</strong></p> <a
-                                                href="/knowledge-center/algerian-child-overcomes-congenital-malformation-laparoscopic-surgery-india"
-                                                title="Algerian Child Overcomes Congenital Malformation with Laparoscopic Surgery in India">
-                                                <p class="rtejustify">Witness the journey of Seradjeddine's parents as
-                                                    their worry transforms into relief, thanks to the exceptional care
-                                                    and expertise they found in India. This is a story of hope, healing,
-                                                    and a brighter future for their child.</p>
-                                                <!-- <span>Read More</span> --> <span>Algerian Child Overcomes
-                                                    Congenital Malformation with Laparoscopic Surgery in India</span>
-                                            </a> </a>
-                                        </div>
-                                    </div>
-                                </div> <!-- Case Study Item End -->
-                                <div class="view-more-bx">
-                                    <div class="q-bx d-flex py-3">
-                                        <figure><img width="140" height="150" loading="lazy"
-                                                src="https://d1ea147o02h74h.cloudfront.net/ms._octavia_pipette_-_vanuatu_1.jpg"
-                                                alt="Patient from Vanuatu Undergoes Successful Chemotherapy for Lymphoma in India"
-                                                title="Patient Name"></figure>
-                                        <div class="info">
-                                            <p><strong>Patient from Vanuatu Undergoes Successful Chemotherapy for
-                                                    Lymphoma in India</strong></p> <a
-                                                href="/knowledge-center/patient-vanuatu-undergoes-successful-chemotherapy-lymphoma-india"
-                                                title="Patient from Vanuatu Undergoes Successful Chemotherapy for Lymphoma in India">
-                                                <p class="rtejustify">Ms. Octavia Pipette’s journey from pain to
-                                                    recovery with expert lymphoma treatment in India is supported by
-                                                    Vaidam Health’s seamless care and assistance.</p>
-                                                <!-- <span>Read More</span> --> <span>Patient from Vanuatu Undergoes
-                                                    Successful Chemotherapy for Lymphoma in India</span>
-                                            </a> </a>
-                                        </div>
-                                    </div>
-                                </div> <!-- Case Study Item End -->
+                                <?php } ?>
                             </div>
-                            <div class="d-flex justify-content-center"> <button
-                                    class="more-doctors-btn btn btn-primary bg-vh-theam text-white" id="loadmorefaq"
-                                    title="Show More">Show More</button> </div>
+                            <div class="d-flex justify-content-center"> 
+                                <button class="more-doctors-btn btn btn-primary bg-vh-theam text-white" id="loadmorefaq" title="Show More">Show More</button> 
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-5">
@@ -1439,58 +968,28 @@
                             <h2>Videos Testimonial</h2>
                         </div>
                         <div class="slick-- video-slider">
-                            <!-- Item Start Here -->
-                            <div class="item">
-                                <div class="video-bx">
-                                    <div class="vaidam_yt_video_block home-page-video-block click-to-play-video know-work"
-                                        id="player-OgP8xVRqBsE"> <img loading="lazy"
-                                            class="img-responsive video-icon-block video-block-imgages"
-                                            src="https://www.vaidam.com/sites/all/themes/vaidam/v0/dist/img/video-icon.png"
-                                            width="70" height="55" loading="lazy" alt="Play Video" title="Videos"> <img
-                                            loading="lazy"
-                                            class="img-responsive video-image home-page-footer-video-image footer-home-images lazy_img"
-                                            id="OgP8xVRqBsE" src="https://img.youtube.com/vi/OgP8xVRqBsE/mqdefault.jpg"
-                                            width="263" height="148" loading="lazy"
-                                            alt="Happy Patient from Mauritius I Abscess Surgery and Hernia Repair Surgery in India"
-                                            title="YouTube link"> </div>
+                            <?php 
+                                foreach($video as $k5 => $v5){ 
+                                    $parsed_url = parse_url($v5['url']);
+                                    $video_id = ltrim($parsed_url['path'], '/');
+                                    $thumbnail_url = "https://img.youtube.com/vi/" . $video_id . "/mqdefault.jpg";
+                            ?>
+                                <div class="item">
+                                    <div class="video-bx">
+                                        <div class="vaidam_yt_video_block home-page-video-block click-to-play-video know-work" id="player-OgP8xVRqBsE"> 
+                                            <img loading="lazy" class="img-responsive video-icon-block video-block-imgages" src="https://www.vaidam.com/sites/all/themes/vaidam/v0/dist/img/video-icon.png" width="70" height="55" loading="lazy" alt="Play Video" title="Videos"> 
+                                            <img loading="lazy" class="img-responsive video-image home-page-footer-video-image footer-home-images lazy_img" id="OgP8xVRqBsE" src="<?php echo $thumbnail_url; ?>" width="263" height="148" loading="lazy" alt="Happy Patient from Mauritius I Abscess Surgery and Hernia Repair Surgery in India" title="<?= $v5['title']; ?>"> 
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="video-bx">
-                                    <div class="vaidam_yt_video_block home-page-video-block click-to-play-video know-work"
-                                        id="player-yoI8ICQhtiI"> <img loading="lazy"
-                                            class="img-responsive video-icon-block video-block-imgages"
-                                            src="https://www.vaidam.com/sites/all/themes/vaidam/v0/dist/img/video-icon.png"
-                                            width="70" height="55" loading="lazy" alt="Play Video" title="Videos"> <img
-                                            loading="lazy"
-                                            class="img-responsive video-image home-page-footer-video-image footer-home-images lazy_img"
-                                            id="yoI8ICQhtiI" src="https://img.youtube.com/vi/yoI8ICQhtiI/mqdefault.jpg"
-                                            width="263" height="148" loading="lazy"
-                                            alt="Successful Heart Surgery in India | Happy Patient from Ghana"
-                                            title="YouTube link"> </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="video-bx">
-                                    <div class="vaidam_yt_video_block home-page-video-block click-to-play-video know-work"
-                                        id="player-sxuj3GMvFCs"> <img loading="lazy"
-                                            class="img-responsive video-icon-block video-block-imgages"
-                                            src="https://www.vaidam.com/sites/all/themes/vaidam/v0/dist/img/video-icon.png"
-                                            width="70" height="55" loading="lazy" alt="Play Video" title="Videos"> <img
-                                            loading="lazy"
-                                            class="img-responsive video-image home-page-footer-video-image footer-home-images lazy_img"
-                                            id="sxuj3GMvFCs" src="https://img.youtube.com/vi/sxuj3GMvFCs/mqdefault.jpg"
-                                            width="263" height="148" loading="lazy"
-                                            alt="Happy Patient from Vanuatu I Pacemaker Implantation Treatment in India"
-                                            title="YouTube link"> </div>
-                                </div>
-                            </div> <!-- Item End Here -->
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="gray-bg py-5 mt-4">
+
+        <!-- <section class="gray-bg py-5 mt-4">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5 col-md-12"> <img loading="lazy"
@@ -1511,7 +1010,8 @@
                             allowfullscreen> </iframe> </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <section>
             <div class="container">
                 <div class="row">
