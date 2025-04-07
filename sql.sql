@@ -40,5 +40,8 @@ CREATE TABLE `medassure`.`tbl_multi_specialty` (`id` INT NOT NULL AUTO_INCREMENT
 
 CREATE TABLE `medassure`.`tbl_travel_visa` (`id` INT NOT NULL AUTO_INCREMENT , `slug` VARCHAR(255) NOT NULL , `country_from` VARCHAR(255) NOT NULL , `country_to` VARCHAR(255) NOT NULL , `visa_requirement` VARCHAR(255) NOT NULL , `visa_invitation` VARCHAR(255) NOT NULL , `remark` LONGTEXT NOT NULL , `eligible_for_evisa` VARCHAR(255) NOT NULL , `evisa_fees` VARCHAR(255) NOT NULL , `regular_visa_fee` VARCHAR(255) NOT NULL , `visa_duration` VARCHAR(255) NOT NULL , `visa_application` TEXT NOT NULL , `evisa_application` VARCHAR(255) NOT NULL , `resource` LONGTEXT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
+CREATE TABLE `medassure`.`tbl_blog` (`id` INT NOT NULL AUTO_INCREMENT , `slug` VARCHAR(255) NOT NULL , `author_id` INT NOT NULL , `cat_id` INT NOT NULL , `title` VARCHAR(255) NOT NULL , `image` VARCHAR(255) NOT NULL , `content` LONGTEXT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `medassure`.`tbl_department_master` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `slug` VARCHAR(255) NOT NULL , `country_id` INT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 

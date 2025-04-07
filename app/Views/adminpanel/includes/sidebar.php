@@ -68,6 +68,14 @@
             <li class="" id="candidatesPage">
                 <a href="<?php echo base_url('admin/travelvisa'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Travel Visa</span></a>
             </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/blog'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Blog</span></a>
+            </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/department'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Department</span></a>
+            </li>
             
             <li class="" id="indentsPage">
                 <a href="<?= base_url('admin/adminuser'); ?>"><i class="fa fa-users" aria-hidden="true"></i> <span>Admin Users</span></a>

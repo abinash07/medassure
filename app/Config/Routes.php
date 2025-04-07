@@ -114,9 +114,16 @@ $routes->get('/admin/addtravelvisa','Adminpanel\Home::add_travel_visa');
 $routes->post('/admin/insert_travel_visa','Adminpanel\Home::insert_travel_visa');
 
 
+$routes->get('/admin/blog','Adminpanel\Home::blog');
+$routes->post('/admin/get_all_blog','Adminpanel\Home::get_all_blog');
+$routes->get('/admin/addblog','Adminpanel\Home::add_blog');
+$routes->post('/admin/insert_blog','Adminpanel\Home::insert_blog');
 
 
-
+$routes->get('/admin/department','Adminpanel\Home::department');
+$routes->post('/admin/get_all_department','Adminpanel\Home::get_all_department');
+$routes->get('/admin/adddepartment','Adminpanel\Home::add_department');
+$routes->post('/admin/insert_department','Adminpanel\Home::insert_department');
 
 
 

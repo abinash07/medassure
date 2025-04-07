@@ -1,7 +1,7 @@
 <!-- Main Footer -->
 <footer class="main-footer">
-  <div class="hidden-xs" style="float: right;">Designed and developed by <a class="link-primary" href="https://cnkonline.com/" target="_blank">C&K Management Limited.</a></div>
-  Copyright &copy; <?php echo date('Y'); ?> <a class="footer-privacy__link link-primary" target="_blank" href="https://goodgovern.com">GoodGovern</a> All rights reserved.
+  <div class="hidden-xs" style="float: right;">Designed and developed by <a class="link-primary" href="https://orderitsolution.com/" target="_blank">Order It Solution.</a></div>
+  Copyright &copy; <?php echo date('Y'); ?> <a class="footer-privacy__link link-primary" target="_blank" href="https://medassure.co.in">Medassure</a> All rights reserved.
 </footer>
 
 <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->

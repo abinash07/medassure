@@ -1101,4 +1101,167 @@ class Home extends BaseController{
             ]);
         }
     }
+
+
+    /******************************Blog Testimonials********************/
+
+    public function blog(){
+        $data = [];
+        return $this->loadAdminView('blog',$data); 
+    }
+
+    public function get_all_blog(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_blog($postData);
+        return $this->response->setJSON($response);
+    }
+
+
+    public function add_blog(){
+        $data = [];
+        $data['author'] = $this->CommonModel->getGenericData('tbl_author');
+
+        $where_conditions = array(
+            'status' => 1,
+            'section' => 'blog'
+        );
+        $columnArray = ['id','name'];
+        $data['category'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_category_master',$where_conditions);
+
+        return $this->loadAdminView('addblog',$data); 
+    }
+
+
+    public function insert_blog(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/blog/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'cat_id'   => 'required|trim',
+            'content'   => 'required|trim',
+            'author_id'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/blog/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'slug' =>$this->createSlug($this->request->getPost('title')),
+            'author_id'       => $this->request->getPost('author_id'),
+            'cat_id'       => $this->request->getPost('cat_id'),
+            'title'        => $this->request->getPost('title'),
+            'image' =>$image,
+            'content'       => $this->request->getPost('content'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_blog',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+
+
+
+
+    /**********************Department Section************************/
+    public function department(){
+        $data = [];
+        return $this->loadAdminView('department',$data); 
+    }
+
+    public function get_all_department(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_department($postData);
+        return $this->response->setJSON($response);
+    }
+
+
+    public function add_department(){
+        $data = [];
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        return $this->loadAdminView('adddepartment',$data); 
+    }
+
+
+    public function insert_department(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'country' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'        => $this->request->getPost('name'),
+            'slug'       => $this->createSlug($this->request->getPost('name')),
+            'country_id'     => $this->request->getPost('country'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_department_master',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
 }
