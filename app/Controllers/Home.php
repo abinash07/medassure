@@ -150,8 +150,34 @@ class Home extends BaseController{
 
     public function knowledge_center($slug = ''){
         $data = [];
+        $data['blogs'] = $this->HomeModel->getBlogsData(0,2);
+        $data['blogsmore'] = $this->HomeModel->getBlogsData(0,5);
         return $this->loadView('knowledgecenter',$data);
     }
+
+    public function knowledge_center_page($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['blog'] = $this->HomeModel->getBlogData($slug);
+        // echo '<pre>';
+        // print_r($data['blog']);
+        // exit;
+        return $this->loadView('blog',$data);
+    }
+
+    public function cost($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['blog'] = $this->HomeModel->getBlogData($slug);
+        // echo '<pre>';
+        // print_r($data['blog']);
+        // exit;
+        return $this->loadView('cost',$data);
+    }
+
+    
 
     public function patient_testimonials($slug = ''){
         $data = [];

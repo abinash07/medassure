@@ -1355,4 +1355,68 @@ class ClientModel extends Model{
             "aaData" => $data
         ];
     }
+
+
+    ## Get all treatment
+    public function get_all_treatment($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "tt.status = ".$db->escape($postData['status']) : "tt.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (tt.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR tt.url LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(tt.id) as totalrecord FROM tbl_treatment tt WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(tt.id) as totalrecord FROM tbl_treatment tt WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT tt.*, tdm.name as department
+        FROM tbl_treatment tt 
+        INNER JOIN tbl_department_master tdm ON tt.id = tt.department_id
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "name"=> $record->title,
+                "slug"=> $record->slug,
+                "department" => $record->department,
+                "date" => date('d M, Y - H:i:s A', $record->created_on)
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
+
 }

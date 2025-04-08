@@ -46,4 +46,29 @@ class HomeModel extends Model{
         
         return $result = $query->getResult();
     }
+
+
+    public function getBlogsData($offset,$limit){
+        $db = \Config\Database::connect();
+
+        $query = $db->query("SELECT tb.title, tb.slug, tb.image, tb.created_on, tcm.name as category_name
+        FROM tbl_blog as tb
+        INNER JOIN tbl_category_master as tcm ON tcm.id = tb.cat_id
+        WHERE tb.status=1 ORDER BY tb.id DESC LIMIT $offset, $limit");
+        
+        return $result = $query->getResult();
+    }
+
+
+    public function getBlogData($slug){
+        $db = \Config\Database::connect();
+
+        $query = $db->query("SELECT tb.*, ta.name as author_name, ta.image as author_image, ta.bio as author_description
+        FROM tbl_blog as tb
+        INNER JOIN tbl_author as ta ON ta.id = tb.author_id
+        INNER JOIN tbl_category_master as tcm ON tcm.id = tb.cat_id
+        WHERE tb.slug='$slug'");
+        
+        return $result = $query->getResult();
+    }
 }

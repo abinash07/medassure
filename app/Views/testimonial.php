@@ -130,7 +130,6 @@ iframe {
                 <div class="blog-content">
                     <?php echo $testimonial[0]->content; ?>
                 
-                
                     <div class="row body-form-row mb-5">
                         <div class="col-12">
                             <div class="form-col-box py-4 px-4 bg-vh-secondary rounded-3">

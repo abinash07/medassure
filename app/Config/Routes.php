@@ -29,14 +29,15 @@ $routes->get('/videos', 'Home::videos');
 $routes->get('/videos/(:any)', 'Home::videos/$1');
 
 $routes->get('/knowledge-center', 'Home::knowledge_center');
-$routes->get('/knowledge-center/(:any)', 'Home::knowledge_center/$1');
+$routes->get('/knowledge-center/(:any)', 'Home::knowledge_center_page/$1');
 
 $routes->get('/patient-testimonials', 'Home::patient_testimonials');
 $routes->get('/patient-testimonials/(:any)', 'Home::patient_testimonial/$1');
 
-
 $routes->get('/travel-visa', 'Home::travel_visa');
 $routes->get('/travel-visa/(:any)', 'Home::travel_visa_page/$1');
+
+$routes->get('/cost/(:any)', 'Home::cost/$1');
 
 $routes->get('/consult-online', 'Home::consult_online');
 $routes->get('/test_data', 'Home::test_data');
@@ -126,9 +127,16 @@ $routes->get('/admin/adddepartment','Adminpanel\Home::add_department');
 $routes->post('/admin/insert_department','Adminpanel\Home::insert_department');
 
 
+$routes->get('/admin/cost','Adminpanel\Home::blog');
+$routes->post('/admin/get_all_cost','Adminpanel\Home::get_all_cost');
+$routes->get('/admin/addcost','Adminpanel\Home::add_cost');
+$routes->post('/admin/insert_cost','Adminpanel\Home::insert_cost');
 
 
-
+$routes->get('/admin/treatment','Adminpanel\Home::treatment');
+$routes->post('/admin/get_all_treatment','Adminpanel\Home::get_all_treatment');
+$routes->get('/admin/addtreatment','Adminpanel\Home::add_treatment');
+$routes->post('/admin/insert_treatment','Adminpanel\Home::insert_treatment');
 
 
 
