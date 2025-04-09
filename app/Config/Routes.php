@@ -39,6 +39,9 @@ $routes->get('/travel-visa/(:any)', 'Home::travel_visa_page/$1');
 
 $routes->get('/cost/(:any)', 'Home::cost/$1');
 
+$routes->get('/hospitals', 'Home::hospital');
+$routes->get('/hospitals/(:any)', 'Home::hospital_page/$1');
+
 $routes->get('/consult-online', 'Home::consult_online');
 $routes->get('/test_data', 'Home::test_data');
 $routes->post('/genericform','Home::generic_form');

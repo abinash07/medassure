@@ -230,6 +230,26 @@ class Home extends BaseController{
         return $this->loadView('visa',$data);
     }
 
+
+    public function hospital($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+
+        // echo '<pre>';
+        // print_r($data['blog']);
+        // exit;
+        return $this->loadView('hospital',$data);
+    }
+
+
+    public function hospital_page($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        return $this->loadView('hospitalpage',$data);
+    }
+
     public function test_data(){
         $examStatusCount = $this->CommonModel->getMasterData();
         echo '<pre>';
