@@ -250,6 +250,22 @@ class Home extends BaseController{
         return $this->loadView('hospitalpage',$data);
     }
 
+    public function doctor($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        return $this->loadView('doctor',$data);
+    }
+
+
+    public function doctor_page($slug = ''){
+        $data = [];
+        $data['slug'] = $slug;
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        return $this->loadView('doctorpage',$data);
+    }
+
+
     public function test_data(){
         $examStatusCount = $this->CommonModel->getMasterData();
         echo '<pre>';

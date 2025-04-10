@@ -48,8 +48,8 @@
         <section class="footer-address pb-4">
             <div class="container-fluid">
                 <div class="container">
-                    <div class="row align-items-center row-gap-3 rounded-4 bg-vh-4 p-4 p-md-1">
-                        <div class="col-lg-3 col-md-6 col-12 email-box d-flex gap-3 border-end border-start border-primary-subtle">
+                    <div class="row align-items-center row-gap-3 rounded-4 bg-vh-4 p-4 p-md-4">
+                        <div class="col-lg-3 col-md-6 col-12 email-box d-flex gap-3 border-end  border-primary-subtle">
                             <figure class="icon rounded-circle bg-white d-flex align-items-center justify-content-center">
                                 <a href="mailto:info@medassure.co.in" title="Email">
                                     <img src="<?= base_url(''); ?>assets/img/email-icon.webp" loading="lazy" title="Email" alt="Email" width="32" height="26"> 
@@ -71,9 +71,9 @@
                                 <a class="fs-5 link-dark" title="Whatsapp" href="https://api.whatsapp.com/send?phone=+919958278202&amp;text=Hello, please contact me regarding http://www.medassure.co.in//?source=wpchat, Thank you!" target="_blank">+91 9958278202</a>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-6 phone-box d-flex justify-content-center"> 
+                        <!-- <div class="col-lg-3 col-md-6 col-6 phone-box d-flex justify-content-center"> 
                             <img src="<?= base_url(''); ?>assets/img/great-place-to-work-logo.svg" title="Phone" loading="lazy" alt="Phone" width="100" height="170"> 
-                        </div>
+                        </div> -->
                         <div class="col-lg-3 col-md-6 col-6 footer-social d-flex gap-3 flex-wrap"> 
                             <a href="https://www.youtube.com/@medassurepvtltd" title="YouTube" target="_blank"> 
                                 <img title="YouTube" class="social-icon" src="<?= base_url(''); ?>assets/img/yt-icon.webp" width="42" height="42" loading="lazy" alt="YouTube"> 

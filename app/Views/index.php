@@ -204,39 +204,16 @@
     </style>
     <div class="main-cont">
         <section class="slider position-relative">
-            <figure> 
-                <img class="d-none d-md-block" preload="load" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/slider01.webp" alt="Treatment With Unmatched Personal Care" class="img-fluid d-none d-md-block" title="Treatment With Unmatched Personal Care"> 
+            <figure>
+                <img class="d-none d-md-block" preload="load" src="<?= base_url(''); ?>assets/img/banner.webp" alt="Treatment With Unmatched Personal Care" class="img-fluid d-none d-md-block" title="Treatment With Unmatched Personal Care"> 
                 <img width="375" height="566" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/slider-mob.webp" alt="Treatment With Unmatched Personal Care" class="img-fluid d-md-none" title="Treatment With Unmatched Personal Care"> 
             </figure>
             <div class="container upr">
                 <div class="row align-items-center justify-content-between">
-                    <div class="col-xl-5 col-lg-7 slider-info mb-4 mb-sm-5 mb-lg-0 text-center text-sm-start">
-                        <h1>Medical Treatment With Unmatched Personal Care</h1>
+                    <div class="col-xl-5 col-lg-7 slider-info mb-4 mb-sm-5 mb-lg-0 text-center text-sm-start text-white">
+                        <h1 class="text-white">Medical Treatment With Unmatched Personal Care</h1>
                         <p>World's Most Trusted Medical Travel Assistance Platform</p>
-                        <div class="rating">
-                            <figure>
-                                <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/banner-rating.webp" width="274" height="75" alt="Patients Assisted" class="img-fluid" title="Showing how Patients Assisted">
-                            </figure>
-                            <p><b>1,00,000+</b> Patients Assisted Since 2016</p>
-                            <div class="d-flex justify-content-center justify-content-sm-start rating_cnt">
-                                <div class="google-rating d-flex align-items-center me-3">
-                                    <figure class="m-0 me-3">
-                                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/google-icon.webp" loading="lazy" alt="Google Rating" title="Google Rating Info image">
-                                    </figure>
-                                    <div class="info">
-                                        <div class="icons d-flex align-items-center"> <span>4.7</span>
-                                            <div class="ms-2"> 
-                                                <img alt="Rating Star" src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp" width="13" height="13" title="Doctor Rating image"> 
-                                                <img alt="Rating Star" src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp" width="13" height="13" title="Doctor Rating image"> 
-                                                <img alt="Rating Star" src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp" width="13" height="13" title="Doctor Rating image"> 
-                                                <img alt="Rating Star" src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp" width="13" height="13" title="Doctor Rating image"> 
-                                                <img alt="Rating Star" src="https://d3lclm53tbcdw6.cloudfront.net/v2/doctor_detail/v1/img/full_star.webp" width="13" height="13" title="Doctor Rating image"> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p>Bringing Smiles to 10,000+ International Patients Since 2020 Since its inception in 2020, Medassure Healthcare has assisted 10,000+ overseas patients with top-tier medical care in India. From diagnostics to advanced treatments, we at Medassure ensure seamless care and support, including hospital coordination, travel, and accommodation, offering a hassle-free healthcare journey.</p>
                     </div>
                     <div class="col-lg-5 ps-xl-5">
                         <div class="slider-form">
@@ -390,22 +367,6 @@
                         </a> 
                     </div>
                     <div class="col"> 
-                        <a href="<?= base_url(''); ?>turkey" class="country-bx d-flex align-items-center w-100 h-100" title="Vaidam-Turkey">
-                            <figure>
-                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/turkey-flag.webp" alt="Turkey Flag" width="24" height="24" class="img-fluid" title="Turkey Flag image">
-                                </figure>
-                            <p>Turkey</p>
-                        </a> 
-                    </div>
-                    <div class="col"> 
-                        <a href="<?= base_url(''); ?>thailand" class="country-bx d-flex align-items-center w-100 h-100" title="Vaidam Thailand">
-                            <figure>
-                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/thailand-flag.webp" alt="Thailand Flag" width="24" height="18" class="img-fluid" title="Thailand Flag image">
-                                </figure>
-                            <p>Thailand</p>
-                        </a> 
-                    </div>
-                    <div class="col"> 
                         <button data-bs-toggle="modal" data-bs-target="#get_quote" class="country-bx d-flex align-items-center w-100 h-100">
                             <figure>
                                 <img loading="lazy" src="<?= base_url(''); ?>assets/img/uae-flag.webp" alt="UAE Flag" width="24" height="19" class="img-fluid" title="UAE Flag image">
@@ -474,51 +435,41 @@
             <div class="container">
                 <div class="section-title mb-4 pb-2 text-center">
                     <h2>Network of Top Hospitals</h2>
-                    <p class="mt-3">We rigorously vet hospitals before adding to our panel, ensuring you receive the
-                        best care. We have in-depth knowledge of hospitals in every country we operate in.</p>
+                    <p class="mt-3">We rigorously vet hospitals before adding to our panel, ensuring you receive the best care. We have in-depth knowledge of hospitals in every country we operate in.</p>
                 </div>
                 <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 g-3 g-xl-4">
                     <div class="col">
-                        <div class="col-country"> <a href="https://www.vaidam.com/hospitals/india"
-                                title="Top Hospital in India">
-                                <h4>India <figure><img
-                                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/india-flag.webp"
-                                            alt="India Flag" width="24" height="24" class="img-fluid"
-                                            title="India Flag image"></figure>
+                        <div class="col-country"> 
+                            <a href="https://www.vaidam.com/hospitals/india" title="Top Hospital in India">
+                                <h4>India 
+                                    <figure><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/india-flag.webp" alt="India Flag" width="24" height="24" class="img-fluid" title="India Flag image"></figure>
                                 </h4>
                             </a>
                             <div class="row row-cols-2 g-2 g-lg-3">
-                                <div class="col"> <a href="https://www.vaidam.com/hospitals/medanta-medicity-gurgaon"
-                                        title="Medanta - The Medicity Hospital, Gurgaon"> <img loading="lazy"
-                                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Medanta.webp"
-                                            alt="Medanta - The Medicity Hospital, Gurgaon" class="img-fluid"
-                                            title="Medanta - The Medicity Hospital, Gurgaon">
+                                <div class="col"> 
+                                    <a href="https://www.vaidam.com/hospitals/medanta-medicity-gurgaon" title="Medanta - The Medicity Hospital, Gurgaon"> 
+                                        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Medanta.webp" alt="Medanta - The Medicity Hospital, Gurgaon" class="img-fluid" title="Medanta - The Medicity Hospital, Gurgaon">
                                         <p>Medanta, Gurgaon</p>
-                                    </a> </div>
-                                <div class="col"> <a
-                                        href="https://www.vaidam.com/hospitals/indraprastha-apollo-hospital-new-delhi"
-                                        title="Indraprastha Apollo Hospital New Delhi"> <img loading="lazy"
-                                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/indraprastha apollo hospital new delhi.webp"
-                                            alt="Indraprastha Apollo Hospital New Delhi" class="img-fluid"
-                                            title="Indraprastha Apollo Hospital New Delhi">
+                                    </a> 
+                                </div>
+                                <div class="col"> 
+                                    <a href="https://www.vaidam.com/hospitals/indraprastha-apollo-hospital-new-delhi" title="Indraprastha Apollo Hospital New Delhi"> 
+                                        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/indraprastha apollo hospital new delhi.webp" alt="Indraprastha Apollo Hospital New Delhi" class="img-fluid" title="Indraprastha Apollo Hospital New Delhi">
                                         <p>Indraprastha Apollo, New Delhi</p>
-                                    </a> </div>
-                                <div class="col"> <a
-                                        href="https://www.vaidam.com/hospitals/kokilaben-dhirubhai-ambani-hospital-mumbai"
-                                        title="Kokilaben Dhirubhai Ambani Hospital Mumbai"> <img loading="lazy"
-                                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/kokilaben hospital mumbai.webp"
-                                            alt="Kokilaben Dhirubhai Ambani Hospital Mumbai" class="img-fluid"
-                                            title="Kokilaben Dhirubhai Ambani Hospital Mumbai">
+                                    </a> 
+                                </div>
+                                <div class="col"> 
+                                    <a href="https://www.vaidam.com/hospitals/kokilaben-dhirubhai-ambani-hospital-mumbai" title="Kokilaben Dhirubhai Ambani Hospital Mumbai"> 
+                                        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/kokilaben hospital mumbai.webp" alt="Kokilaben Dhirubhai Ambani Hospital Mumbai" class="img-fluid" title="Kokilaben Dhirubhai Ambani Hospital Mumbai">
                                         <p>Kokilaben, Mumbai</p>
-                                    </a> </div>
-                                <div class="col"> <a
-                                        href="https://www.vaidam.com/hospitals/apollo-hospitals-greams-road-chennai"
-                                        title="Apollo Hospitals, Greams Road, Chennai"> <img loading="lazy"
-                                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/apollo hospital  chennai.webp"
-                                            alt="Apollo Hospitals, Greams Road, Chennai" class="img-fluid"
-                                            title="Apollo Hospitals, Greams Road, Chennai">
+                                    </a> 
+                                </div>
+                                <div class="col"> 
+                                    <a href="https://www.vaidam.com/hospitals/apollo-hospitals-greams-road-chennai" title="Apollo Hospitals, Greams Road, Chennai"> 
+                                        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/apollo hospital  chennai.webp" alt="Apollo Hospitals, Greams Road, Chennai" class="img-fluid" title="Apollo Hospitals, Greams Road, Chennai">
                                         <p>Apollo, Chennai</p>
-                                    </a> </div>
+                                    </a> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -678,7 +629,7 @@
                                     </figure>
                                     <div class="info">
                                         <h3 class="title"><?= $v7['title'] ?></h3>
-                                        <p>Starting <strong>₹<?= $v7['price'] ?></strong></p>
+                                        <!-- <p>Starting <strong>₹<?= $v7['price'] ?></strong></p> -->
                                         <p class="text-danger">Get Quote</p>
                                     </div>
                                 </div>
@@ -883,28 +834,12 @@
 
         <section class="gray-bg">
             <div class="container">
-                <div class="testimonial-title d-md-flex align-items-center justify-content-between">
-                    <div class="rating d-flex align-items-center">
-                        <figure class="m-0">
-                            <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/google-icon.webp" loading="lazy" alt="Google Rating" width="75" height="76" class="img-fluid" title="Google Rating">
-                        </figure>
-                        <div class="info ps-2">
-                            <div class="titl">Google Rating</div> 
-                            <span class="d-flex">4.7 <span class="d-flex ms-2">
-                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
-                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
-                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
-                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
-                            <img alt="Rating Star" src="<?= base_url(''); ?>assets/img/full_star.webp" style="width:13px; height:13px" title="Rating star"> 
-                            </span></span>
-                            <p>See all our reviews</p>
-                        </div>
-                    </div>
+                <div class="testimonial-title d-md-flex align-items-center">
+                    
                     <div class="section-title text-center">
                         <h2>Satisfied Patients, Proud Service</h2>
-                        <p class="my-3">100,000+ patients have trusted us since 2016.</p>
-                    </div> 
-                    <a href="https://bit.ly/4c6iqqQ" target="_blank" title="Google Reviews" class="readmore-outline d-none d-lg-block">View All Reviews</a>
+                        <p class="my-3">Bringing Smiles to 10,000+ International Patients Since 2020.</p>
+                    </div>
                 </div>
                 <div class="owl-carousel testimonial-slider">
                     <?php foreach($googlerating as $k4 => $v4){ ?>
@@ -931,265 +866,9 @@
             </div>
         </section>
 
-        <section class="pb-0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-7 mb-3 mb-sm-4 mb-md-0">
-                        <div
-                            class="section-title text-start mb-4 d-flex  justify-content-between flex-column flex-md-row bloghdng">
-                            <h2>Case Studies</h2>
-                            <p class="mt-3">Stories and Videos of patients that gives you strength and assurance!</p>
-                        </div>
-                        <div class="content-part" id="reviews">
-                            <div class="qna patient-stories">
-                                <?php foreach($testimonial as $k6 => $v6){ ?>
-                                    <div class="view-more-bx">
-                                        <div class="q-bx d-flex py-3">
-                                            <figure>
-                                                <img width="140" height="150" loading="lazy" src="<?= base_url(''); ?><?= $v6['image'] ?>" alt="<?= $v6['title'] ?>" title="<?= $v6['title'] ?>">
-                                            </figure>
-                                            <div class="info">
-                                                <p><strong><?= $v6['title'] ?></strong></p>
-                                                <a href="<?= base_url(''); ?>patient-testimonials/<?= $v6['slug'] ?>" title="<?= $v6['title'] ?>">
-                                                    <p class="rtejustify"><?= $v6['description'] ?></p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                            </div>
-                            <div class="d-flex justify-content-center"> 
-                                <button class="more-doctors-btn btn btn-primary bg-vh-theam text-white" id="loadmorefaq" title="Show More">Show More</button> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-5">
-                        <div class="section-title text-start mb-4">
-                            <h2>Videos Testimonial</h2>
-                        </div>
-                        <div class="slick-- video-slider">
-                            <?php 
-                                foreach($video as $k5 => $v5){ 
-                                    $parsed_url = parse_url($v5['url']);
-                                    $video_id = ltrim($parsed_url['path'], '/');
-                                    $thumbnail_url = "https://img.youtube.com/vi/" . $video_id . "/mqdefault.jpg";
-                            ?>
-                                <div class="item">
-                                    <div class="video-bx">
-                                        <div class="vaidam_yt_video_block home-page-video-block click-to-play-video know-work" id="player-OgP8xVRqBsE"> 
-                                            <img loading="lazy" class="img-responsive video-icon-block video-block-imgages" src="https://www.vaidam.com/sites/all/themes/vaidam/v0/dist/img/video-icon.png" width="70" height="55" loading="lazy" alt="Play Video" title="Videos"> 
-                                            <img loading="lazy" class="img-responsive video-image home-page-footer-video-image footer-home-images lazy_img" id="OgP8xVRqBsE" src="<?php echo $thumbnail_url; ?>" width="263" height="148" loading="lazy" alt="Happy Patient from Mauritius I Abscess Surgery and Hernia Repair Surgery in India" title="<?= $v5['title']; ?>"> 
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
-        <!-- <section class="gray-bg py-5 mt-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-12"> <img loading="lazy"
-                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/womens-day-post.webp"
-                            alt="Happy Wommen's Day" width="600" height="600"> </div>
-                    <div class="col-lg-3 col-md-6 section-title d-flex flex-column gap-3 align-items-center my-4"> <img
-                            loading="lazy"
-                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/women-icon-black.webp"
-                            alt="Women Icon" width="125" height="166">
-                        <p class="w-100 fs-4 text-center mt-0">"Celebrating the Strong and Inspiring Women Behind Vaidam
-                            Health!"</p>
-                        <h2>Happy Women’s Day!</h2>
-                    </div>
-                    <div class="col-lg-4 col-md-6 text-center"> <iframe width="315" height="560"
-                            src="https://www.youtube.com/embed/PaAgwwEH410?si=Zp8CdOIupAVbf5Ql"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen> </iframe> </div>
-                </div>
-            </div>
-        </section> -->
-
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-5 mb-3 mb-sm-4 mb-md-0">
-                        <div class="section-title text-start mb-4">
-                            <h2>Updates and Events</h2>
-                        </div>
-                        <div class="slick-- event-slider">
-                            <div class="item">
-                                <div class="event_bx"> <a
-                                        href="https://www.vaidam.com/event/apollo-fertility-center-at-ethiopia-24th-and-25th-january-2025"
-                                        title="Apollo Fertility Center at Ethiopia 24th and 25th january 2025">
-                                        <figure><img loading="lazy"
-                                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/banner/ethiopia-website-banner-January-2025.jpg"
-                                                alt="Apollo Fertility Center at Ethiopia 24th and 25th january 2025"
-                                                class="img-fluid" title="Ethiopia Image"></figure>
-                                    </a> </div>
-                            </div>
-                            <!-- <div class="item"> <div class="event_bx"> <a href="https://www.vaidam.com/event/shalby-hospital-at-kyrgyzstan-25th-and-26th-november-2024"> <figure><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/banner/Kyrgystan_website_banner.jpg" alt="Kyrgystan camp" class="img-fluid" title="Kyrgyzstan camp image"></figure> </a> </div> </div> -->
-                            <div class="item">
-                                <div class="event_bx">
-                                    <!-- <a href="https://www.vaidam.com/event/shalby-hospital-at-kyrgyzstan-25th-and-26th-november-2024"> -->
-                                    <figure><img loading="lazy"
-                                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/banner/successful_camp_Zambia-09-12-24.jpg"
-                                            alt="Successful Camp Zambia" class="img-fluid"
-                                            title="Successful Camp Zambia"></figure> <!-- </a> -->
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="event_bx"> <a href="https://www.vaidam.com/videos/patient-testimonials"
-                                        title="Fiji Happy Patient">
-                                        <figure><img loading="lazy"
-                                                src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/fiji-happy-patient-386.png"
-                                                alt="Fiji Happy Patient" class="img-fluid"
-                                                title="Fiji Happy Patient image"></figure>
-                                    </a> </div>
-                            </div>
-                            <div class="item">
-                                <div class="event_bx">
-                                    <figure><img loading="lazy"
-                                            src="https://d3lclm53tbcdw6.cloudfront.net/v2/images/nabh-386.jpg"
-                                            alt="NABH" class="img-fluid" title="NABH image"></figure>
-                                </div>
-                            </div> <!-- Item End Here -->
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-7">
-                        <div
-                            class="section-title text-start mb-4 d-flex align-items-center justify-content-between bloghdng">
-                            <h2>Latest Blogs</h2>
-                            <!-- <a href="javascript:void(0);" class="readmore-outline">View All Blogs</a> -->
-                        </div>
-                        <div class="row row-cols-2 g-3 g-xl-4 blogboxes">
-                            <!-- Item Start Here  -->
-                            <div class="col">
-                                <div class="blog_bx d-flex align-items-start">
-                                    <!-- <a href="/knowledge-center/vaidam-health-certified-great-place-work-milestone-worth-celebrating" title="Vaidam Health: Certified as a Great Place to Work - A Milestone Worth Celebrating!"> -->
-                                    <figure><img loading="lazy"
-                                            alt="Vaidam Health: Certified as a Great Place to Work - A Milestone Worth Celebrating!"
-                                            title="Vaidam Health: Certified as a Great Place to Work - A Milestone Worth Celebrating!"
-                                            src="https://d1ea147o02h74h.cloudfront.net/_vaidam_health_certified_as_a_great_place_to_work_1.jpg"
-                                            class="img-fluid" title="Blog Data"></figure>
-                                    <div class="info"> <span>Published On</span>: 28 Mar 2025 <h3><a
-                                                href="/knowledge-center/vaidam-health-certified-great-place-work-milestone-worth-celebrating"
-                                                title="Vaidam Health: Certified as a Great Place to Work - A Milestone Worth Celebrating!">Vaidam
-                                                Health: Certified as a Great Place to Work - A Milestone Worth
-                                                Celebrating!</a></h3>
-                                    </div> <!-- </a> -->
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="blog_bx d-flex align-items-start">
-                                    <!-- <a href="/knowledge-center/understanding-relapsed-and-refractory-blood-cancers-treatment-options-and" title="Understanding Relapsed and Refractory Blood Cancers: Treatment Options and Strategies"> -->
-                                    <figure><img loading="lazy"
-                                            alt="Understanding Relapsed and Refractory Blood Cancers: Treatment Options and Strategies"
-                                            title="Understanding Relapsed and Refractory Blood Cancers: Treatment Options and Strategies"
-                                            src="https://d1ea147o02h74h.cloudfront.net/understanding_relapsed_and_refractory_blood_cancers_treatment_options_and_strategies.jpg"
-                                            class="img-fluid" title="Blog Data"></figure>
-                                    <div class="info"> <span>Published On</span>: 25 Mar 2025 <h3><a
-                                                href="/knowledge-center/understanding-relapsed-and-refractory-blood-cancers-treatment-options-and"
-                                                title="Understanding Relapsed and Refractory Blood Cancers: Treatment Options and Strategies">Understanding
-                                                Relapsed and Refractory Blood Cancers: Treatment Options and
-                                                Strategies</a></h3>
-                                    </div> <!-- </a> -->
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="blog_bx d-flex align-items-start">
-                                    <!-- <a href="/knowledge-center/how-thai-massage-and-traditional-therapies-promote-physical-and-mental-health" title="How Thai Massage and Traditional Therapies Promote Physical and Mental Health"> -->
-                                    <figure><img loading="lazy"
-                                            alt="How Thai Massage and Traditional Therapies Promote Physical and Mental Health"
-                                            title="How Thai Massage and Traditional Therapies Promote Physical and Mental Health"
-                                            src="https://d1ea147o02h74h.cloudfront.net/how_thai_massage_and_traditional_therapies_promote_physical_and_mental_health.jpg"
-                                            class="img-fluid" title="Blog Data"></figure>
-                                    <div class="info"> <span>Published On</span>: 20 Mar 2025 <h3><a
-                                                href="/knowledge-center/how-thai-massage-and-traditional-therapies-promote-physical-and-mental-health"
-                                                title="How Thai Massage and Traditional Therapies Promote Physical and Mental Health">How
-                                                Thai Massage and Traditional Therapies Promote Physical and Mental
-                                                Health</a></h3>
-                                    </div> <!-- </a> -->
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="blog_bx d-flex align-items-start">
-                                    <!-- <a href="/knowledge-center/navigating-post-surgical-recovery-abroad-practical-tips-smooth-healing-process" title="Navigating Post-Surgical Recovery Abroad: Practical Tips for a Smooth Healing Process"> -->
-                                    <figure><img loading="lazy"
-                                            alt="Navigating Post-Surgical Recovery Abroad: Practical Tips for a Smooth Healing Process"
-                                            title="Navigating Post-Surgical Recovery Abroad: Practical Tips for a Smooth Healing Process"
-                                            src="https://d1ea147o02h74h.cloudfront.net/navigating_post-surgical_recovery_abroad_practical_tips_for_a_smooth_healing_process.jpg"
-                                            class="img-fluid" title="Blog Data"></figure>
-                                    <div class="info"> <span>Published On</span>: 16 Mar 2025 <h3><a
-                                                href="/knowledge-center/navigating-post-surgical-recovery-abroad-practical-tips-smooth-healing-process"
-                                                title="Navigating Post-Surgical Recovery Abroad: Practical Tips for a Smooth Healing Process">Navigating
-                                                Post-Surgical Recovery Abroad: Practical Tips for a Smooth Healing
-                                                Process</a></h3>
-                                    </div> <!-- </a> -->
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="blog_bx d-flex align-items-start">
-                                    <!-- <a href="/knowledge-center/choosing-right-ivf-clinic-what-look-and-questions-ask" title="Choosing the Right IVF Clinic: What to Look for and Questions to Ask"> -->
-                                    <figure><img loading="lazy"
-                                            alt="Choosing the Right IVF Clinic: What to Look for and Questions to Ask"
-                                            title="Choosing the Right IVF Clinic: What to Look for and Questions to Ask"
-                                            src="https://d1ea147o02h74h.cloudfront.net/choosing_the_right_ivf_clinic_what_to_look_for_and_questions_to_ask.jpg"
-                                            class="img-fluid" title="Blog Data"></figure>
-                                    <div class="info"> <span>Published On</span>: 15 Mar 2025 <h3><a
-                                                href="/knowledge-center/choosing-right-ivf-clinic-what-look-and-questions-ask"
-                                                title="Choosing the Right IVF Clinic: What to Look for and Questions to Ask">Choosing
-                                                the Right IVF Clinic: What to Look for and Questions to Ask</a></h3>
-                                    </div> <!-- </a> -->
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="blog_bx d-flex align-items-start">
-                                    <!-- <a href="/knowledge-center/affordable-heart-transplants-and-valve-replacements-abroad-top-medical-tourism" title="Affordable Heart Transplants and Valve Replacements Abroad: Top Medical Tourism Destinations"> -->
-                                    <figure><img loading="lazy"
-                                            alt="Affordable Heart Transplants and Valve Replacements Abroad: Top Medical Tourism Destinations"
-                                            title="Affordable Heart Transplants and Valve Replacements Abroad: Top Medical Tourism Destinations"
-                                            src="https://d1ea147o02h74h.cloudfront.net/affordable_heart_transplants_and_valve_replacements_abroad_top_medical_tourism_destinations.jpg"
-                                            class="img-fluid" title="Blog Data"></figure>
-                                    <div class="info"> <span>Published On</span>: 12 Mar 2025 <h3><a
-                                                href="/knowledge-center/affordable-heart-transplants-and-valve-replacements-abroad-top-medical-tourism"
-                                                title="Affordable Heart Transplants and Valve Replacements Abroad: Top Medical Tourism Destinations">Affordable
-                                                Heart Transplants and Valve Replacements Abroad: Top Medical Tourism
-                                                Destinations</a></h3>
-                                    </div> <!-- </a> -->
-                                </div>
-                            </div> <!-- Item  End here -->
-                            <div class="col-12 mt-4 pt-3 text-center"> <a href="https://www.vaidam.com/knowledge-center"
-                                    target="_blank" title="Blogs" class="readmore-outline">View All Blogs</a> </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <section class="py-0">
-            <div class="container">
-                <div class="section-title text-start mb-4 d-flex align-items-center justify-content-between bloghdng">
-                    <h2>Medassure In News</h2>
-                </div>
-                <div class="slick-- news-slider vaidam-news">
-                    <?php foreach($news as $k3 => $v3){ ?>
-                        <div class="item">
-                            <figure>
-                                <img loading="lazy" src="<?= base_url(''); ?><?= $v3->image; ?>" alt="Medassure In News" class="img-fluid" title="Medassure In news">
-                            </figure>
-                            <div class="card-body news-card-body"> 
-                                <a class="card-link" href="<?= base_url(''); ?>/knowledge-center/news/vaidam-health-gets-covered-medical-travel-today-authoritative-newsletter-medical"
-                                    title="Vaidam health Coverage by Medical Travel">
-                                    <p class="card-text news-card-text text-dark"><?= $v3->title; ?></p> Read more
-                                </a> 
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
-                <!-- <div class="blogallbtn text-center mt-4"> <a href="javascript:void(0);" class="readmore-outline">View All Stories</a> </div> -->
-            </div>
-        </section>
+        
         <section>
             <div class="container">
                 <div class="section-title text-start mb-4">
