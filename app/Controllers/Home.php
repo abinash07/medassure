@@ -134,7 +134,8 @@ class Home extends BaseController{
     }
 
     public function consult_online(){
-        return view('consultonline');
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        return view('consultonline',$data);
     }
 
     public function videos($slug = ''){
@@ -231,14 +232,26 @@ class Home extends BaseController{
     }
 
 
-    public function hospital($slug = ''){
+    public function hospital($city = ''){
         $data = [];
-        $data['slug'] = $slug;
+        $data['slug'] = $city;
         $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['faq'] = $this->CommonModel->getFaqData('hospital');
+        $data['citymenu'] = $city;
 
-        // echo '<pre>';
-        // print_r($data['blog']);
-        // exit;
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['department'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_department_master',$where_conditions);
+
         return $this->loadView('hospital',$data);
     }
 
@@ -247,13 +260,106 @@ class Home extends BaseController{
         $data = [];
         $data['slug'] = $slug;
         $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['hospital'] = $this->HomeModel->getHospitalData($slug);
+
+        // echo '<pre>';
+        // print_r($data['hospital']);
+        // exit;
         return $this->loadView('hospitalpage',$data);
+    }
+
+
+    
+    public function get_hospital_data(){
+        $country = $this->request->getPost('country');
+        $city = $this->request->getPost('city');
+        $department = $this->request->getPost('department');
+        $page = $this->request->getPost('page') ? intval($this->request->getPost('page')) : 1;
+        $limit = 9;
+        $offset = ($page - 1) * $limit;
+
+        $result = $this->HomeModel->get_hospital_data($offset,$limit,$country,$city,$department);
+        $countdata = $this->HomeModel->get_hospital_data_count();
+
+
+        $count = ceil($countdata->total/$limit);
+
+        if ($result) {
+            echo json_encode([
+                'status' => true,
+                'message' => 'Success',
+                'result' => $result,
+                'count' => $count
+            ]);
+        } else {
+            echo json_encode([
+                'status' => false,
+                'message' => 'Error'
+            ]);
+        }
+    }
+
+
+    public function get_doctor_data(){
+        $country = $this->request->getPost('country');
+        $city = $this->request->getPost('city');
+        $department = $this->request->getPost('department');
+        $treatment = $this->request->getPost('treatment');
+        $hospital = $this->request->getPost('hospital');
+        $page = $this->request->getPost('page') ? intval($this->request->getPost('page')) : 1;
+        $limit = 9;
+        $offset = ($page - 1) * $limit;
+
+        $result = $this->HomeModel->get_doctor_data($offset,$limit,$country,$city,$department,$treatment,$hospital);
+        $countdata = $this->HomeModel->get_doctor_data_count();
+        $count = ceil($countdata->total/$limit);
+
+        if ($result) {
+            echo json_encode([
+                'status' => true,
+                'message' => 'Success',
+                'result' => $result,
+                'count' => $count
+            ]);
+        } else {
+            echo json_encode([
+                'status' => false,
+                'message' => 'Error'
+            ]);
+        }
     }
 
     public function doctor($slug = ''){
         $data = [];
         $data['slug'] = $slug;
         $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['faq'] = $this->CommonModel->getFaqData('doctor');
+
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['department'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_department_master',$where_conditions);
+
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['treatment'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_treatment',$where_conditions);
+
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['hospital'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_hospital',$where_conditions);
+
         return $this->loadView('doctor',$data);
     }
 
@@ -262,8 +368,16 @@ class Home extends BaseController{
         $data = [];
         $data['slug'] = $slug;
         $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['doctor'] = $this->HomeModel->getDoctorlData($slug);
+        // echo '<pre>';
+        // print_r($data['doctor']);
+        // exit;
         return $this->loadView('doctorpage',$data);
     }
+
+
+
+
 
 
     public function test_data(){

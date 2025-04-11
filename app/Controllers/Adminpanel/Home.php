@@ -1425,4 +1425,291 @@ class Home extends BaseController{
             ]);
         }
     }
+
+
+
+    /**********************Hospital Section************************/
+    public function hospital(){
+        $data = [];
+        return $this->loadAdminView('hospital',$data); 
+    }
+
+    public function get_all_hospital(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_hospital($postData);
+        return $this->response->setJSON($response);
+    }
+
+
+    public function add_hospital(){
+        $data = [];
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['department'] = $this->CommonModel->getGenericData('tbl_department_master');
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+        return $this->loadAdminView('addhospital',$data); 
+    }
+
+
+    public function insert_hospital(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/hospital/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        $resizedsecondaryimg = $this->request->getPost('resizedsecondaryimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'city' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/hospital/'.$profile_uniqueFilename;
+        }
+
+
+        if(isset($resizedsecondaryimg) && !empty($resizedsecondaryimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedsecondaryimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image2 = '/docs/hospital/'.$profile_uniqueFilename;
+        }
+
+        $accreditation = $this->request->getPost('accreditation');
+        $comfort_during_stay = $this->request->getPost('comfort_during_stay');
+        $money_matters = $this->request->getPost('money_matters');
+        $food = $this->request->getPost('food');
+        $treatment_related = $this->request->getPost('treatment_related');
+        $language = $this->request->getPost('language');
+        $transportation = $this->request->getPost('transportation');
+
+        if(!empty($accreditation)){
+            $accreditationdata = implode(',',$accreditation);
+        }else{
+            $accreditationdata = "";
+        }
+        if(!empty($comfort_during_stay)){
+            $comfort_during_stay_data = implode(',',$comfort_during_stay);
+        }else{
+            $comfort_during_stay_data = "";
+        }
+        if(!empty($money_matters)){
+            $money_matters_data = implode(',',$money_matters);
+        }else{
+            $money_matters_data = "";
+        }
+        if(!empty($food)){
+            $fooddata = implode(',',$food);
+        }else{
+            $fooddata = "";
+        }
+        if(!empty($treatment_related)){
+            $treatment_related_data = implode(',',$treatment_related);
+        }else{
+            $treatment_related_data = "";
+        }
+        if(!empty($language)){
+            $languagedata = implode(',',$language);
+        }else{
+            $languagedata = "";
+        }
+        if(!empty($transportation)){
+            $transportationdata = implode(',',$transportation);
+        }else{
+            $transportationdata = "";
+        }
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'  => $this->request->getPost('name'),
+            'slug'  => $this->createSlug($this->request->getPost('name')),
+            'primary_image'        =>$image,
+            'secondary_img'        =>$image2,
+            'city' => $this->request->getPost('city'),
+            'department' => $this->request->getPost('department'),
+            'established' => $this->request->getPost('established'),
+            'accreditation' => $accreditationdata,
+            'specialty' => $this->request->getPost('specialty'),
+            'number_of_bed' => $this->request->getPost('number_of_bed'),
+            'about' => $this->request->getPost('about'),
+            'team_and_specialities' => $this->request->getPost('team_and_specialities'),
+            'comfort_during_stay' => $comfort_during_stay_data,
+            'money_matters' => $money_matters_data,
+            'food' => $fooddata,
+            'treatment_related' => $treatment_related_data,
+            'language' => $languagedata,
+            'transportation' => $transportationdata,
+            'infrastructure' => $this->request->getPost('infrastructure'),
+            'address' => $this->request->getPost('address'),
+            'map' => $this->request->getPost('map'),
+            'location' => $this->request->getPost('location'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_hospital',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+    /**********************Doctor Section************************/
+    public function doctor(){
+        $data = [];
+        return $this->loadAdminView('doctor',$data); 
+    }
+
+    public function get_all_doctor(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_doctor($postData);
+        return $this->response->setJSON($response);
+    }
+
+
+    public function add_doctor(){
+        $data = [];
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['hospital'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_hospital',$where_conditions);
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['department'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_department_master',$where_conditions);
+
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['treatment'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_treatment',$where_conditions);
+
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+        return $this->loadAdminView('adddoctor',$data); 
+    }
+
+
+    public function insert_doctor(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/doctor/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'designation' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/doctor/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'  => $this->request->getPost('name'),
+            'slug'  => $this->createSlug($this->request->getPost('name')),
+            'image'        =>$image,
+            'designation' => $this->request->getPost('designation'),
+            'qualification' => $this->request->getPost('qualification'),
+            'experience' => $this->request->getPost('experience'),
+            'about' => $this->request->getPost('about'),
+            'monday' => $this->request->getPost('monday'),
+            'tuesday' => $this->request->getPost('tuesday'),
+            'wednesday' => $this->request->getPost('wednesday'),
+            'thursday' => $this->request->getPost('thursday'),
+            'friday' => $this->request->getPost('friday'),
+            'saturday' => $this->request->getPost('saturday'),
+            'medical_problems' => $this->request->getPost('medical_problems'),
+            'medical_procedures' => $this->request->getPost('medical_procedures'),
+            'hospital_id' => $this->request->getPost('hospital_id'),
+            'city_id' => $this->request->getPost('city_id'),
+            'department_id' => $this->request->getPost('department_id'),
+            'treatment_id' => $this->request->getPost('treatment_id'),
+            'education_training' => $this->request->getPost('education_training'),
+            'honours_awards' => $this->request->getPost('honours_awards'),
+            'work_experience' => $this->request->getPost('work_experience'),
+            'status'      => 1,
+            'created_by'   => session()->get('id'),
+            'created_on'   => time() + 12600,
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->add_record('tbl_doctor',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
 }

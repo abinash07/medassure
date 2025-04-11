@@ -152,9 +152,12 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
         <div class="main-box">
             <div class="row m-heading position-relative">
                 <div class="col-md-9">
-                    <p class="star-view d-flex column-gap-2 align-items-center lh-1 d-none d-md-block"><span><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Star.webp" alt="Reviewing" title="Reviewing" width="18" height="18"></span><span class="text-danger">You are viewing our top rated Hospital</span> </p>
+                    <p class="star-view d-flex column-gap-2 align-items-center lh-1 d-none d-md-block">
+                        <span><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Star.webp" alt="Reviewing" title="Reviewing" width="18" height="18"></span>
+                        <span class="text-danger">You are viewing our top rated Hospital</span>
+                    </p>
                     <div class="page-heding d-flex flex-wrap gap-3 mb-2 align-items-center">
-                        <h1 class="fs-3 fw-bolder mb-0">Indraprastha Apollo Hospital New Delhi</h1>
+                        <h1 class="fs-3 fw-bolder mb-0"><?= $hospital->name; ?></h1>
                         <!-- Hospital rating  --> 
                         <div class="rating d-flex flex-row gap-2 align-items-center">
                         <ul class="chkd-stars-list mb-0 lh-0">
@@ -168,7 +171,10 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                         </div>
                         <!-- Hospital rating end --> 
                     </div>
-                    <p class="hospital-location text-secondary d-flex column-gap-2 align-items-center lh-base"><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-small.webp" title="location" alt="location" width="24" height="24"><small>New Delhi, India</small></p>
+                    <p class="hospital-location text-secondary d-flex column-gap-2 align-items-center lh-base">
+                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-small.webp" title="location" alt="location" width="24" height="24">
+                        <small><?= $hospital->city; ?></small>
+                    </p>
                 </div>
                 <div class="col-md-3 d-none d-md-block">
                     <div class="patients-like p-2 bg-success-subtle border border-2 border-success rounded-4 d-flex column-gap-2 align-items-center">
@@ -181,75 +187,91 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                 </div>
             </div>
             <div class="row hos-img-statics">
-                <div class="col-md-6"> <img class="hospital-pic rounded-4" alt="Apollo Hospital Delhi, Reception " title="Apollo Hospital Delhi, Reception " src="https://d1pkj1wi9lp6qx.cloudfront.net/50/files/hospitals/Apollo%20Hospital%20Delhi.webp" width="505" height="310"> </div>
-                <div class="col-md-6 d-none d-md-block"> <img class="hospital-pic rounded-4" alt="Apollo Hospital Delhi" title="Apollo Hospital Delhi" src="https://d1pkj1wi9lp6qx.cloudfront.net/50/files/hospitals/indraprastha_apollo_outside-min.webp" width="505" height="310"> </div>
+                <div class="col-md-6">
+                    <img class="hospital-pic rounded-4" alt="<?= $hospital->name; ?>" title="<?= $hospital->name; ?>" src="<?= base_url(''); ?><?= $hospital->primary_image; ?>" width="505" height="310">
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <img class="hospital-pic rounded-4" alt="<?= $hospital->name; ?>" title="<?= $hospital->name; ?>" src="<?= base_url(''); ?><?= $hospital->secondary_img; ?>" width="505" height="310">
+                </div>
                 <div class="col-12 hos-number-box">
                     <div class="hos-statics mt-4 px-0 rounded-4 overflow-hidden border bg-light d-flex align-content-start flex-wrap">
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
-                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Doctors.webp" width="27" height="20" title="International" alt="International"> 
-                        <div class="num-box-item lh-1">
-                            <p class=" mb-1">Doctors List</p>
-                            <a class="fw-bolder" title="Find Doctor" href="#find_doc"> <span class="fw-bolder">Click Here</span> </a> 
-                        </div>
+                            <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Doctors.webp" width="27" height="20" title="International" alt="International"> 
+                            <div class="num-box-item lh-1">
+                                <p class=" mb-1">Doctors List</p>
+                                <a class="fw-bolder" title="Find Doctor" href="#find_doc"> <span class="fw-bolder">Click Here</span> </a> 
+                            </div>
                         </div>
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
-                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-blue-solid.webp" width="20" title="Location" height="20" alt="Location"> 
-                        <div class="num-box-item lh-1">
-                            <p class="mb-1">Location</p>
-                            <span class="fw-bolder">New Delhi</span> 
-                        </div>
+                            <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-blue-solid.webp" width="20" title="Location" height="20" alt="Location"> 
+                            <div class="num-box-item lh-1">
+                                <p class="mb-1">Location</p>
+                                <span class="fw-bolder"><?= $hospital->city; ?></span> 
+                            </div>
                         </div>
                         <!-- Established --> 
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
-                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Established.webp" width="20" title="Established" height="20" alt="Established"> 
-                        <div class="num-box-item lh-1">
-                            <p class="mb-1">Established in</p>
-                            <span class="fw-bolder">1995</span> 
-                        </div>
+                            <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Established.webp" width="20" title="Established" height="20" alt="Established"> 
+                            <div class="num-box-item lh-1">
+                                <p class="mb-1">Established in</p>
+                                <span class="fw-bolder"><?= $hospital->established; ?></span> 
+                            </div>
                         </div>
                         <div class="nuber-box p-3 border">
-                        <div class="accrediation lh-1">
-                            <p class="mb-1">Accreditations</p>
-                            <div class="d-flex column-gap-2 mt-2"> <span class="d-flex flex-column row-gap-1"><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/accreditations_83.jpg" width="30" title="NABH" height="30" alt="NABH"> <strong>JCI</strong></span> <span class="d-flex flex-column row-gap-1"><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/nabl.webp" width="30" title="NABH" height="30" alt="NABH"> <strong>NABL</strong></span> </div>
-                        </div>
+                            <div class="accrediation lh-1">
+                                <p class="mb-1">Accreditations</p>
+                                <div class="d-flex column-gap-2 mt-2">
+                                    <?php
+                                        $accreditation = explode(",", $hospital->accreditation);
+                                        foreach($accreditation as $k => $v){
+                                    ?>
+                                        <span class="d-flex flex-column row-gap-1">
+                                            <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/accreditations_83.jpg" width="30" title="NABH" height="30" alt="NABH"> 
+                                            <strong><?= $v; ?></strong>
+                                        </span>
+                                    <?php } ?>
+                                </div>
+                            </div>
                         </div>
                         <!-- Specialities --> 
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
-                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Specialty.webp" width="21" title="Specialty" height="20" alt="Specialty"> 
-                        <div class="num-box-item lh-1">
-                            <p class="mb-1">Specialty</p>
-                            <span class="fw-bolder">Multi Specialty</span> 
-                        </div>
+                            <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Specialty.webp" width="21" title="Specialty" height="20" alt="Specialty"> 
+                            <div class="num-box-item lh-1">
+                                <p class="mb-1">Specialty</p>
+                                <span class="fw-bolder"><?= $hospital->specialty; ?></span> 
+                            </div>
                         </div>
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
-                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/International-dr.webp" width="20" title="International" height="20" alt="International"> 
-                        <div class="num-box-item lh-1">
-                            <p class="mb-1">Images</p>
-                            <a class="fw-bolder" title="Images" href="#images"> <span class="fw-bolder">Click Here</span> </a> 
-                        </div>
+                            <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/International-dr.webp" width="20" title="International" height="20" alt="International"> 
+                            <div class="num-box-item lh-1">
+                                <p class="mb-1">Images</p>
+                                <a class="fw-bolder" title="Images" href="#images"> <span class="fw-bolder">Click Here</span> </a> 
+                            </div>
                         </div>
                         <!-- No of Beds --> 
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
                         <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Number-of-beds.webp" width="22" height="20" title="Number of beds" alt="Number of beds"> 
                         <div class="num-box-item lh-1">
                             <p class="mb-1">Number of beds</p>
-                            <span class="fw-bolder">710</span> 
+                            <span class="fw-bolder"><?= $hospital->number_of_bed; ?></span> 
                         </div>
                         </div>
                         <!-- Facilites --> 
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
-                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Facilities.webp" width="16" height="20" title="Facilities" alt="Facilities"> 
-                        <div class="num-box-item lh-1">
-                            <p class="mb-1">Facilities</p>
-                            <a title="Facilities" href="#facilities"> <span class="fw-bolder">Click Here</span></a> 
-                        </div>
+                            <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Facilities.webp" width="16" height="20" title="Facilities" alt="Facilities"> 
+                            <div class="num-box-item lh-1">
+                                <p class="mb-1">Facilities</p>
+                                <a title="Facilities" href="#facilities"> <span class="fw-bolder">Click Here</span></a> 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row buttons-box py-3 shadow">
                 <div class="col-md-12 btns-top d-flex justify-content-center column-gap-3">
-                    <a onclick="if (!window.__cfRLUnblockHandlers) return false; setformtype('Indraprastha Apollo Hospital, New Delhi','https:\/\/www.vaidam.com/lp/consult-online?hospital=2522','Book Appointment Sticky Button','https:\/\/www.vaidam.com/lp/consult-online?hospital=2522','Hospital Detail Page','','','Indraprastha Apollo Hospital, New Delhi');" class="btn px-xm-1 px-sm-4 btn-danger book-apt-btn doctor-apt-btn" href="https:\/\/www.vaidam.com/lp/consult-online?hospital=2522" title="Book Appointment" style="display: inline-block;">Book Appointment</a> <a style="display: none;" onclick="if (!window.__cfRLUnblockHandlers) return false; setformtype('Indraprastha Apollo Hospital, New Delhi','https:\/\/www.vaidam.com/lp/consult-online?hospital=2522','Send Enquiry Sticky Button','','Hospital Detail Page','','','Indraprastha Apollo Hospital, New Delhi');" class="btn px-xm-1 px-sm-4 btn-danger book-apt-btn send-enq-btn" href="https://www.vaidam.com/lp/consult-online" title="Contact Hospital">Contact Hospital</a> <!-- <a class="btn px-xm-1 px-sm-4 py-2 btn-danger" href="#">Contact Hospital</a> --> <a title="Whatsapp Us" class="btn px-xm-1 px-sm-4 btn-success btn-whatsapp wa_button_clicked" href="https://api.whatsapp.com/send?phone=919971616131&amp;text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com/hospitals/indraprastha-apollo-hospital-new-delhi?source=wpchat_HDSB,%20Thank%20you!"><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/whatsapp-icon-white.png" alt="Whatsapp Us" title="Whatsapp Us" style="margin-right: 6px;" width="22" height="22"><span>Whatsapp Us</span></a> 
+                    <a onclick="setformtype('Indraprastha Apollo Hospital, New Delhi','https:\/\/www.vaidam.com/lp/consult-online?hospital=2522','Book Appointment Sticky Button','https:\/\/www.vaidam.com/lp/consult-online?hospital=2522','Hospital Detail Page','','','Indraprastha Apollo Hospital, New Delhi');" class="btn px-xm-1 px-sm-4 btn-danger book-apt-btn doctor-apt-btn" href="https:\/\/www.vaidam.com/lp/consult-online?hospital=2522" title="Book Appointment" style="display: inline-block;">Book Appointment</a>
+                    <a style="display: none;" onclick="setformtype('Indraprastha Apollo Hospital, New Delhi','https:\/\/www.vaidam.com/lp/consult-online?hospital=2522','Send Enquiry Sticky Button','','Hospital Detail Page','','','Indraprastha Apollo Hospital, New Delhi');" class="btn px-xm-1 px-sm-4 btn-danger book-apt-btn send-enq-btn" href="https://www.vaidam.com/lp/consult-online" title="Contact Hospital">Contact Hospital</a>
+                    <a title="Whatsapp Us" class="btn px-xm-1 px-sm-4 btn-success btn-whatsapp wa_button_clicked" href="https://api.whatsapp.com/send?phone=919971616131&amp;text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com/hospitals/indraprastha-apollo-hospital-new-delhi?source=wpchat_HDSB,%20Thank%20you!"><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/whatsapp-icon-white.png" alt="Whatsapp Us" title="Whatsapp Us" style="margin-right: 6px;" width="22" height="22"><span>Whatsapp Us</span></a> 
                 </div>
             </div>
         </div>
@@ -465,45 +487,145 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
             <div class="row">
                 <div class="col-12 about-hospital list-w-circle readmorebox collapse" id="aboutHospital">
                     <h2 class="fs-3 mb-4 mt-5 mt-md-4">About Hospital</h2>
-                    <ul>
-                        <li class="rtejustify">Established in 1995, Indraprastha Apollo Hospital is part of the Apollo Hospitals Group, India’s largest healthcare chain.&nbsp;</li>
-                        <li class="rtejustify">It is located in Sarita Vihar, Delhi, and was set up in collaboration with the Government of Delhi.&nbsp;</li>
-                        <li class="rtejustify">In 2005, it became the first hospital in India to receive international accreditation from the Joint Commission International (JCI).&nbsp;</li>
-                        <li class="rtejustify">It was re-accredited by JCI in 2008, 2011, and 2014, becoming the first facility in India to achieve this milestone four times.</li>
-                        <li class="rtejustify">The hospital ranked first in Neurosciences, Renal Sciences, Oncology, Paediatrics, Gynaecology and Obstetrics, and Emergency Care in the Times of India Healthcare Survey 2016.</li>
-                        <li class="rtejustify">It was also ranked as the 6th Best Private Hospital in India for Cardiology in The WEEK’s Best Hospital Survey 2013.</li>
-                        <li class="rtejustify">The facility received a Special Commendation for the Golden Peacock Environment Management Award for its environmental practices, awarded by a jury led by Justice P. N. Bhagwati, former Chief Justice of India.</li>
-                        <li class="rtejustify">In November 1998, it performed the first successful paediatric and adult liver transplants in India.</li>
-                        <li class="rtejustify">It has one of the busiest Liver and Kidney transplant programs in the country.</li>
-                        <li class="rtejustify">The facility has NABL-accredited clinical laboratories and a state-of-the-art blood bank.</li>
-                        <li class="rtejustify">It implements International Patient Safety Goals and uses an in-house developed protocol called CAPS scoring to ensure patient safety.</li>
-                        <li class="rtejustify">ACE@25 (Apollo Clinical Excellence) monitors clinical outcomes and various parameters to stay among the best medical institutions globally.</li>
-                        <li>As a flagship hospital of the Apollo Hospitals Group, it is known for providing advanced care in cardiology, neurology, and other specialities.</li>
-                        <li class="rtejustify">The facility is recognised for its clinical excellence and holistic approach to medical care for both domestic and international patients.</li>
-                        <li class="rtejustify">
-                            <strong><strong>International Patient Services;</strong></strong> 
-                            <ul>
-                                <li class="rtejustify">Understanding the challenges of seeking medical treatment abroad, the hospital offers a range of services for international patients.</li>
-                                <li class="rtejustify">The International Patient Lounge, located near Gate No. 10, offers free airport pickup and drop, visa assistance, airport transfers, travel arrangements, sightseeing options, car hire, coordination for group patient movements, and accommodations for patients and their companions.</li>
-                                <li class="rtejustify">The lounge also provides internet with Wi-Fi, mobile SIM cards, lockers, shopping and recreational options, and various cuisines to meet different tastes.</li>
-                                <li class="rtejustify">The hospital can assist you in getting the Medical Visa (MED) by providing the necessary documents.</li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <?= $hospital->about; ?>
                 </div>
 
                 <div class="col-12 pt-5 specialities-box" id="Specialities"> 
                     <div class="specialities p-3 rounded-4 border bg-theam-2"> 
                         <h2 class="fs-3 mb-4 fw-semibold"> Team and Specialities </h2> 
-                        <div id="specilities_1" class="readmorebox collapse d-flex mb-3 list-w-circle">  <ul> <li class="rtejustify">Indraprastha Apollo Hospitals engages top consultants through a rigorous credentialing process and supports them with regular training programs, conferences, and continuing medical education. This ensures that the staff remains knowledgeable about the latest medical advancements and provides the best care to patients.</li> <li class="rtejustify">The facility offers 52 specialities under one roof, including the major specialities being anaesthesia, cardiology, cardiac surgery, cancer, paediatrics, critical care, emergency care, foetal medicine, gastroenterology and hepatology, obstetrics &amp; gynaecology, interventional radiology, IVF, liver and kidney transplant, nuclear medicine, nephrology, neurosciences, ophthalmology, orthopaedics, otolaryngology (ENT), paediatrics, paediatric surgery, psychiatry and clinical psychology, plastic &amp; reconstructive surgery, respiratory &amp; sleep medicine, rheumatology, spine surgery, urology and andrology and vascular and endovascular surgery.</li> <li class="rtejustify">It has dedicated Centres of Excellence for Cardiology, Oncology, Emergency Care, Gastroenterology, Neurology/Neurosurgery, Orthopedics, Robotic Surgery, and Transplant Services. These centres focus on delivering specialised care with the latest technologies and techniques.</li> <li class="rtejustify">The Apollo Heart Institutes at the Indraprastha Apollo Hospital is part of one of the largest cardiovascular groups in the world. The Apollo Heart Institutes at Indraprastha Apollo Hospital is part of one of the largest cardiovascular groups in the world with over 1,70,000+ heart surgeries, which include complicated coronary artery bypass operations, surgery for all types of valvular heart disease, and infant and neonatal heart surgery – with success rates comparable to international standards.</li> <li class="rtejustify">The facility offers a comprehensive range of advanced medical procedures, including Brain Tumour Surgery, Bone Marrow Transplant, Bioresorbable Vascular Scaffold (BVS), Breast Cancer Treatments, Chemotherapy, Cosmetic Surgery, Coronary Artery Bypass Graft (CABG), CyberKnife® for precise cancer treatment, Da Vinci® Robotic Surgical System for minimally invasive surgeries, Endoscopic Carpal Tunnel Release, Fractional Flow Reserve (FFR), Hand Microsurgery, Hip Arthroscopy, Kidney and Liver Transplants, Minimally Invasive Coronary Bypass Surgery, Novalis Tx for advanced cancer treatment, Optical Coherence Tomography (OCT), Oral &amp; Maxillofacial Surgery, Proton Therapy, Radiation Therapy, Radixact X9 Tomotherapy, Spine Surgery, Surgery for Parkinson’s Disease, Total Hip Replacement (THR), Total Knee Replacement (TKR), and TrueBeam STX with 320 Slice Advanced Technology.</li> </ul> </div> <p class="mb-0 text-end w-100"><a class="readmore-btn collapsed" data-bs-toggle="collapse" title="Specilities" href="#specilities_1"></a> </p> </div> 
+                        <div id="specilities_1" class="readmorebox collapse d-flex mb-3 list-w-circle">   
+                            <?= $hospital->team_and_specialities; ?>
+                        </div>
+                    </div> 
                 </div>
 
-                <div class="col-12 facilities pt-5" id="facilities"> <h2 class="fs-3 mb-4 fw-semibold">Facilities</h2> <div class="accordion position-relative" id="accordionFacilities"> <div class="accordion-item rounded-2"> <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Comfort During Stay </button> </h3> <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFacilities"> <div class="accordion-body list-w-circle"> <ul><br> <li>TV in room</li> <li>Private rooms</li> <li>Free Wifi</li> <li>Phone in Room</li> <li>Mobility accessible rooms</li> <li>Family accommodation</li> <li>Laundry</li> <li>Welcome</li> <li>Safe in the room</li> <li>Nursery / Nanny services</li> <li>Dry cleaning</li> <li>Personal assistance / Concierge</li> <li>Religious facilities</li> <li>Spa and wellness</li> <li>Café</li> <li>Business centre services</li> <li>Shop</li> <li>Dedicated smoking areas</li> <li>Special offer for group stays</li> <li>Parking available</li> </ul> </div> </div> </div> <div class="accordion-item rounded-2"> <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Money Matters </button> </h3> <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities"> <div class="accordion-body list-w-circle"> <ul> <li>Health insurance coordination</li> <li>Medical travel insurance</li> <li>Foreign currency exchange</li> <li>ATM</li> <li>Credit Card</li> <li>Debit Card</li> <li>Netbanking</li> <!-- <li>Credit Card</li> <li>Debit Card</li> <li>Netbanking</li> --> </ul> </div> </div> </div> <div class="accordion-item rounded-2"> <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix"> Food </button> </h3> <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities"> <div class="accordion-body list-w-circle"> <ul> <li>Diet on Request</li> <li>Restaurant</li> <li>International Cuisine</li> </ul> </div> </div> </div> <div class="accordion-item rounded-2"> <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive"> Treatment Related </button> </h3> <div id="collapsefive" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities"> <div class="accordion-body list-w-circle"> <ul> <li>Medical records transfer</li> <li>Online doctor consultation</li> <li>Rehabilitation</li> <li>Pharmacy</li> <li>Document legalisation</li> <li>Post operative followup</li> </ul> </div> </div> </div> <div class="accordion-item rounded-2"> <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour"> Language </button> </h3> <div id="collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities"> <div class="accordion-body list-w-circle"> <ul> <li>Interpreter</li> <li>Translation services</li> </ul> </div> </div> </div> <div class="accordion-item rounded-2"> <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven"> Transportation </button> </h3> <div id="collapseseven" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities"> <div class="accordion-body list-w-circle"> <ul> <li>Airport pickup</li> <li>Local tourism options</li> <li>Local transportation booking</li> <li>Visa / Travel office</li> <li>Car Hire</li> <li>Air ambulance</li> </ul> </div> </div> </div> </div> </div>
 
-                <div id="infra_1" class="readmorebox collapse col-12 infrastructure mt-5 list-w-circle"> <h2 class="fs-3 mb-4">Infrastructure</h2> <ul> <li class="rtejustify">Located in the heart of the capital, the facility spans over 15 acres with a built-up area of over 600,000 square feet and offers 710 beds.</li> <li class="rtejustify">It boasts the largest number of ICU beds among private hospitals in India.</li> <li class="rtejustify">Apollo Cancer Institute offers comprehensive cancer care with a multi-specialty approach and advanced Radiation Oncology services.</li> <li class="rtejustify">State-of-the-art technologies for advanced cancer care include the Da Vinci Robotic Surgery System, BrainLab Navigation System, and NovalisTx.</li> <li class="rtejustify">The facility features cutting-edge diagnostic equipment, such as PET-MR, PET-CT, a Portable CT Scanner, a 3 Tesla MRI, and a 128-slice CT Scanner.</li> <li class="rtejustify">Other notable technologies include Cobalt-based HDR Brachytherapy, Tilting MRI, DSA Lab, Hyperbaric Chamber, Fibroscan, and Endosonography.</li> <li class="rtejustify">A dedicated 6-bed bone marrow transplant unit with stringent infection control practices is available.</li> <li class="rtejustify">It has one of Asia’s largest Sleep Labs and one of India’s largest Dialysis Units.</li> <li class="rtejustify">Additional facilities include car parking, a temple, and an on-site gift shop.</li> <li class="rtejustify">A communication centre, ATM, and food court are provided for convenience.</li> <li class="rtejustify">Patients can enjoy private rooms with TV and free Wi-Fi.</li> <li class="rtejustify">Food can be ordered from the food court, and wheelchairs are accessible for ease of movement.</li> <li class="rtejustify">Attendant accommodation and laundry services are also available.</li> <li class="rtejustify">The facility offers health insurance options, including Indian and international health insurance.</li> <li class="rtejustify">Patients have access to a prayer room, language translators, and a pharmacy.</li> </ul> </div>
+                <div class="col-12 facilities pt-5" id="facilities">
+                    <h2 class="fs-3 mb-4 fw-semibold">Facilities</h2>
+                    <div class="accordion position-relative" id="accordionFacilities">
+                        <div class="accordion-item rounded-2">
+                            <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Comfort During Stay </button> </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFacilities">
+                                <div class="accordion-body list-w-circle">
+                                    <ul>
+                                        <br>
+                                        <?php
+                                            $comfort_during_stay = explode(",", $hospital->comfort_during_stay);
+                                            foreach($comfort_during_stay as $k2 => $v2){
+                                        ?>
+                                        <li><?= $v2; ?></li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-2">
+                            <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Money Matters </button> </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities">
+                                <div class="accordion-body list-w-circle">
+                                    <ul>
+                                        <?php
+                                            $money_matters = explode(",", $hospital->money_matters);
+                                            foreach($money_matters as $k3 => $v3){
+                                        ?>
+                                        <li><?= $v3; ?></li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-2">
+                            <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix"> Food </button> </h3>
+                            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities">
+                                <div class="accordion-body list-w-circle">
+                                    <ul>
+                                        <?php
+                                            $food = explode(",", $hospital->food);
+                                            foreach($food as $k4 => $v4){
+                                        ?>
+                                        <li><?= $v4; ?></li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-2">
+                            <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive"> Treatment Related </button> </h3>
+                            <div id="collapsefive" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities">
+                                <div class="accordion-body list-w-circle">
+                                    <ul>
+                                        <?php
+                                            $treatment_related = explode(",", $hospital->treatment_related);
+                                            foreach($treatment_related as $k5 => $v5){
+                                        ?>
+                                        <li><?= $v5; ?></li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-2">
+                            <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour"> Language </button> </h3>
+                            <div id="collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities">
+                                <div class="accordion-body list-w-circle">
+                                    <ul>
+                                        <?php
+                                            $language = explode(",", $hospital->language);
+                                            foreach($language as $k6 => $v6){
+                                        ?>
+                                        <li><?= $v6; ?></li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-2">
+                            <h3 class="accordion-header"> <button class="accordion-button bg-theam-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven"> Transportation </button> </h3>
+                            <div id="collapseseven" class="accordion-collapse collapse" data-bs-parent="#accordionFacilities">
+                                <div class="accordion-body list-w-circle">
+                                    <ul>
+                                        <?php
+                                            $transportation = explode(",", $hospital->transportation);
+                                            foreach($transportation as $k7 => $v7){
+                                        ?>
+                                        <li><?= $v7; ?></li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-                <div class="col-12 location-box pt-4"> <div class="hos-statics p-3 rounded-4 border bg-light"> <!-- <h2 class="fs-3">Location</h2> --> <div class="row"> <div class="col-md-6 d-flex flex-row"> <div class="location-column"> <h2 class="fs-3 mb-4 theam-color">Address</h2> <p><strong>Indraprastha Apollo Hospitals, Sarita Vihar, Delhi Mathura Road</strong></p> <p>New Delhi, 110076</p> <p>India</p> <a class="btn px-xm-1 px-sm-4 btn-danger mb-2" target="_blank" href="https://www.google.com/maps?q=28.5411,77.283"><span>Direction <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-white.webp" alt="direction" title="direction" width="16" height="17"></span></a> </div> </div> <div class="col-md-6 d-flex flex-row"> <div class="location-column"> <h2 class="fs-3 mb-4 theam-color">Location</h2> <p class="rtejustify"><strong>Airport (Indira Gandhi International Airport (DEL)):</strong></p> <ul> <li class="rtejustify">Distance: 22 Km</li> <li class="rtejustify">Duration: 30-40 mins by car</li> </ul> <p class="rtejustify"><strong>Metro (Indraprastha Metro Station):</strong></p> <ul> <li class="rtejustify">Distance: 2.5 Km</li> <li class="rtejustify">Duration: 5-10 minutes by car&nbsp;</li> </ul> <p class="rtejustify"><strong>Railway Station (New Delhi Railway Station):</strong></p> <ul> <li class="rtejustify">Distance: 8 Km</li> <li class="rtejustify">Duration: 15-25 minutes by car&nbsp;</li> </ul> </div> </div> </div> </div> </div>
+                <div id="infra_1" class="readmorebox collapse col-12 infrastructure mt-5 list-w-circle">
+                    <h2 class="fs-3 mb-4">Infrastructure</h2>
+                    <?= $hospital->infrastructure; ?>
+                </div>
+
+
+                <div class="col-12 location-box pt-4">
+                    <div class="hos-statics p-3 rounded-4 border bg-light">
+                        <!-- <h2 class="fs-3">Location</h2> --> 
+                        <div class="row">
+                            <div class="col-md-6 d-flex flex-row">
+                                <div class="location-column">
+                                    <h2 class="fs-3 mb-4 theam-color">Address</h2>
+                                    <p><?= $hospital->address; ?></p>
+                                    <a class="btn px-xm-1 px-sm-4 btn-danger mb-2" target="_blank" href="<?= $hospital->map; ?>">
+                                        <span>Direction <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-white.webp" alt="direction" title="direction" width="16" height="17"></span>
+                                    </a> 
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex flex-row">
+                                <div class="location-column">
+                                    <h2 class="fs-3 mb-4 theam-color">Location</h2>
+                                    <?= $hospital->location; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
 
             </div>
         </div>

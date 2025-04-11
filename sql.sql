@@ -48,5 +48,26 @@ CREATE TABLE `medassure`.`tbl_cost` (`id` INT NOT NULL AUTO_INCREMENT , `title` 
 
 CREATE TABLE `medassure`.`tbl_treatment` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `slug` VARCHAR(255) NOT NULL , `department_id` INT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
+CREATE TABLE `medassure`.`tbl_city_master` (`id` INT NOT NULL AUTO_INCREMENT , `country_id` INT NOT NULL , `name` VARCHAR(255) NOT NULL , `slug` VARCHAR(255) NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `medassure`.`tbl_hospital` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `slug` VARCHAR(255) NOT NULL , `city` INT NOT NULL , `established` VARCHAR(255) NOT NULL , `accreditation` TEXT NOT NULL , `specialty` VARCHAR(255) NOT NULL , `number_of_bed` INT NOT NULL , `about` LONGTEXT NOT NULL , `team_and_specialities` TEXT NOT NULL , `comfort_during_stay` TEXT NOT NULL , `money_matters` TEXT NOT NULL , `food` TEXT NOT NULL , `treatment_related` TEXT NOT NULL , `language` TEXT NOT NULL , `transportation` LONGTEXT NOT NULL , `infrastructure` LONGTEXT NOT NULL , `address` TEXT NOT NULL , `location` TEXT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `tbl_hospital` ADD `primary_image` VARCHAR(255) NOT NULL AFTER `slug`, ADD `secondary_img` VARCHAR(255) NOT NULL AFTER `primary_image`;
+
+ALTER TABLE `tbl_hospital` ADD `department` INT NOT NULL AFTER `city`;
+
+ALTER TABLE `tbl_hospital` ADD `map` VARCHAR(255) NOT NULL AFTER `address`;
+
+CREATE TABLE `medassure`.`tbl_doctor` (`id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `slug` VARCHAR(255) NOT NULL , `about` LONGTEXT NOT NULL , `monday` VARCHAR(255) NOT NULL , `tuesday` VARCHAR(255) NOT NULL , `wednesday` VARCHAR(255) NOT NULL , `thursday` VARCHAR(255) NOT NULL , `friday` VARCHAR(255) NOT NULL , `saturday` VARCHAR(255) NOT NULL , `medical_problems` LONGTEXT NOT NULL , `medical_procedures` VARCHAR(255) NOT NULL , `hospital_id` INT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `tbl_doctor` ADD `designation` VARCHAR(255) NOT NULL AFTER `slug`, ADD `qualification` VARCHAR(255) NOT NULL AFTER `designation`;
+
+ALTER TABLE `tbl_doctor` ADD `experience` VARCHAR(255) NOT NULL AFTER `qualification`;
+
+ALTER TABLE `tbl_doctor` ADD `image` VARCHAR(255) NOT NULL AFTER `slug`;
+
+ALTER TABLE `tbl_doctor` ADD `education_training` LONGTEXT NOT NULL AFTER `hospital_id`, ADD `honours_awards` LONGTEXT NOT NULL AFTER `education_training`, ADD `work_experience` LONGTEXT NOT NULL AFTER `honours_awards`;
+
+ALTER TABLE `tbl_doctor` ADD `city_id` INT NOT NULL AFTER `hospital_id`, ADD `department_id` INT NOT NULL AFTER `city_id`, ADD `treatment_id` INT NOT NULL AFTER `department_id`;
 
 

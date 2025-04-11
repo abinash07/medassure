@@ -71,4 +71,101 @@ class HomeModel extends Model{
         
         return $result = $query->getResult();
     }
+
+    public function getHospitalData($slug){
+        $db = \Config\Database::connect();
+
+        $query = $db->query("SELECT th.*, tc.name as city, tdm.name as department_name
+        FROM tbl_hospital as th
+        INNER JOIN tbl_city_master as tc ON tc.id = th.city
+        INNER JOIN tbl_department_master as tdm ON tdm.id = th.department
+        WHERE th.slug='$slug'");
+        
+        return $result = $query->getRow();
+    }
+
+
+    public function get_hospital_data($offset,$limit,$country,$city,$department){
+
+        $searchQuery = "";
+        $search_arr = array();
+
+        if($city !='' && $city != 0){
+            $search_arr[] = "(th.city = '$city')";
+        }
+        if($department !='' && $department != 0){
+            $search_arr[] = "(th.department = '$department')";
+        }
+
+        if(count($search_arr) > 0){
+            $searchQuery = ' and '.implode(" and ",$search_arr);
+        }
+
+        $query = $this->db->query("SELECT th.name, th.slug, th.primary_image, tc.name as city, th.established, th.specialty, th.number_of_bed, LEFT(th.about, 1000) as about
+        FROM tbl_hospital as th 
+        INNER JOIN tbl_city_master as tc ON tc.id = th.city
+        WHERE th.status = 1 $searchQuery ORDER BY 1 DESC LIMIT $offset, $limit"
+        );
+        return $query->getResult();
+    }
+
+    public function get_hospital_data_count(){
+        $query = $this->db->query("SELECT COUNT(*) as total FROM tbl_hospital WHERE status = 1");
+        return $query->getRow();
+    }
+
+
+    public function get_doctor_data($offset,$limit,$country,$city,$department,$treatment,$hospital){
+
+        $searchQuery = "";
+        $search_arr = array();
+
+        if($city !='' && $city != 0){
+            $search_arr[] = "(th.city = '$city')";
+        }
+        if($department !='' && $department != 0){
+            $search_arr[] = "(th.department = '$department')";
+        }
+        if($treatment !='' && $treatment != 0){
+            $search_arr[] = "(th.treatment = '$treatment')";
+        }
+        if($hospital !='' && $hospital != 0){
+            $search_arr[] = "(th.hospital = '$hospital')";
+        }
+
+        if(count($search_arr) > 0){
+            $searchQuery = ' and '.implode(" and ",$search_arr);
+        }
+
+        $query = $this->db->query("SELECT td.name, td.slug, td.image, td.designation, td.experience, LEFT(td.about, 1000) as about, th.name as hospital_name, th.slug as hospital_slug, tc.name as city_name, tdm.name as department_name, ttm.name as treatment_name
+        FROM tbl_doctor as td 
+        INNER JOIN tbl_hospital as th ON th.id = td.hospital_id
+        INNER JOIN tbl_city_master as tc ON tc.id = td.city_id
+        INNER JOIN tbl_department_master as tdm ON tdm.id = td.department_id
+        INNER JOIN tbl_treatment as ttm ON ttm.id = td.treatment_id
+        WHERE td.status = 1 $searchQuery ORDER BY 1 DESC LIMIT $offset, $limit"
+        );
+        return $query->getResult();
+    }
+
+
+    public function get_doctor_data_count(){
+        $query = $this->db->query("SELECT COUNT(*) as total FROM tbl_doctor WHERE status = 1");
+        return $query->getRow();
+    }
+
+
+    public function getDoctorlData($slug){
+        $db = \Config\Database::connect();
+
+        $query = $db->query("SELECT td.*, tc.name as city, tdm.name as department_name, th.name as hospital_name, th.primary_image, th.slug as hospital_slug
+        FROM tbl_doctor as td
+        INNER JOIN tbl_city_master as tc ON tc.id = td.city_id
+        INNER JOIN tbl_department_master as tdm ON tdm.id = td.department_id
+        INNER JOIN tbl_hospital as th ON th.id = td.hospital_id
+        WHERE td.slug='$slug'");
+        
+        return $result = $query->getRow();
+    }
+
 }

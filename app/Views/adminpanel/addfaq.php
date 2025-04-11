@@ -46,6 +46,8 @@
 																<option selected="selected" value="">Select Page</option>
                                                                 <option value="home">Home Page</option>
                                                                 <option value="faq">FAQ Page</option>
+                                                                <option value="hospital">Hospitals</option>
+                                                                <option value="doctor">Doctor</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -116,7 +118,7 @@
                 if(data.status == true){
                     swal(data.message);
                     $('#addFaq').trigger('reset');
-                    $('#summernote').summernote('reset');
+                    $('#content').summernote('reset');
                     //$('#summernote').summernote('code', '');
                 }if((data.status == false)){
                     swal(data.message);

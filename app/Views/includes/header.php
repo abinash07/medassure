@@ -155,24 +155,44 @@
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
-                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/india" title="India">India</a> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/cardiology-and-cardiac-surgery" title="CARDIOLOGY">CARDIOLOGY</a> 
                                                 </div>
-                                                <ul class="drop-menu nav-bar">
-                                                    <li> <a href="<?= base_url(''); ?>doctors/cardiology-and-cardiac-surgery/india" title="CARDIOLOGY">CARDIOLOGY</a> </li>
-                                                    <li> <a href="<?= base_url(''); ?>doctors/cosmetic-and-plastic-surgery/india" title="COSMETIC">COSMETIC</a> </li>
-                                                    <li> <a href="<?= base_url(''); ?>doctors/gynecology/india" title="GYNECOLOGY">GYNECOLOGY</a> </li>
-                                                    <li> <a href="<?= base_url(''); ?>doctors/hematology/india" title="HEMATOLOGY">HEMATOLOGY</a> </li>
-                                                    <li> <a href="<?= base_url(''); ?>doctors/ivf-and-infertility/india" title="IVF and INFERTILITY">IVF and INFERTILITY</a> </li>
-                                                    <li> <a href="<?= base_url(''); ?>doctors/neurology-and-neurosurgery/india" title="NEUROSURGERY">NEUROSURGERY</a> </li>
-                                                    <li> <a href="<?= base_url(''); ?>doctors/oncology-and-oncosurgery/india" title="ONCOLOGY">ONCOLOGY</a> </li>
-                                                    <li> <a href="<?= base_url(''); ?>doctors/orthopedics/india" title="ORTHOPEDICS">ORTHOPEDICS</a> </li>
-                                                    <li> <a href="<?= base_url(''); ?>doctors/spine-surgery/india" title="SPINE SURGERY">SPINE SURGERY</a> </li>
-                                                </ul>
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/cosmetic-and-plastic-surgery" title="COSMETIC">COSMETIC</a> 
+                                                </div>
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/gynecology" title="GYNECOLOGY">GYNECOLOGY</a> 
+                                                </div>
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/hematology" title="HEMATOLOGY">HEMATOLOGY</a> 
+                                                </div>
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/ivf-and-infertility" title="IVF and INFERTILITY">IVF and INFERTILITY</a> 
+                                                </div>
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/neurology-and-neurosurgery" title="NEUROSURGERY">NEUROSURGERY</a> 
+                                                </div>
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/oncology-and-oncosurgery" title="ONCOLOGY">ONCOLOGY</a> 
+                                                </div>
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/orthopedics" title="ORTHOPEDICS">ORTHOPEDICS</a> 
+                                                </div>
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/spine-surgery" title="SPINE SURGERY">SPINE SURGERY</a> 
+                                                </div>
                                             </li>
-                                            
                                         </ul>
                                     </li>
-                                    <li class="nav-list-item drop">
+                                    <!-- <li class="nav-list-item drop">
                                         <div class="has-arrow"> 
                                             <span class="ms-nav-arrow">&nbsp;</span> 
                                             <a href="<?= base_url(''); ?>search" title="Cost" class="nav-link">Cost</a> 
@@ -268,7 +288,7 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-list-item drop">
                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> 
                                             <a href="javascript:void(0)" title="Knowledge" class="nav-link">Knowledge</a>

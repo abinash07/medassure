@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Dashboard</title>
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-		<link rel="icon" href="../assets/images/favicon.png" sizes="32x32" />
+		<link rel="icon" href="<?= base_url(); ?>admin_assets/img/favicon.png" sizes="32x32" />
 		
 		<link rel="stylesheet" href="<?= base_url('admin_assets/css/bootstrap.min.css'); ?>">
 		<link rel="stylesheet" href="<?= base_url('admin_assets/fontawesome/css/all.min.css'); ?>">

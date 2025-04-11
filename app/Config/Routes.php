@@ -40,10 +40,14 @@ $routes->get('/travel-visa/(:any)', 'Home::travel_visa_page/$1');
 $routes->get('/cost/(:any)', 'Home::cost/$1');
 
 $routes->get('/hospitals', 'Home::hospital');
-$routes->get('/hospitals/(:any)', 'Home::hospital_page/$1');
+$routes->get('/hospitals/(:any)', 'Home::hospital/$1');
+$routes->get('/hospital/(:any)', 'Home::hospital_page/$1');
+$routes->post('/gethospital','Home::get_hospital_data');
 
 $routes->get('/doctors', 'Home::doctor');
-$routes->get('/doctors/(:any)', 'Home::doctor_page/$1');
+$routes->get('/doctors/(:any)', 'Home::doctor/$1');
+$routes->get('/doctor/(:any)', 'Home::doctor_page/$1');
+$routes->post('/getdoctor','Home::get_doctor_data');
 
 $routes->get('/consult-online', 'Home::consult_online');
 $routes->get('/test_data', 'Home::test_data');
@@ -145,8 +149,16 @@ $routes->get('/admin/addtreatment','Adminpanel\Home::add_treatment');
 $routes->post('/admin/insert_treatment','Adminpanel\Home::insert_treatment');
 
 
+$routes->get('/admin/hospital','Adminpanel\Home::hospital');
+$routes->post('/admin/get_all_hospital','Adminpanel\Home::get_all_hospital');
+$routes->get('/admin/addhospital','Adminpanel\Home::add_hospital');
+$routes->post('/admin/insert_hospital','Adminpanel\Home::insert_hospital');
 
 
+$routes->get('/admin/doctor','Adminpanel\Home::doctor');
+$routes->post('/admin/get_all_doctor','Adminpanel\Home::get_all_doctor');
+$routes->get('/admin/adddoctor','Adminpanel\Home::add_doctor');
+$routes->post('/admin/insert_doctor','Adminpanel\Home::insert_doctor');
 
 
 
