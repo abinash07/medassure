@@ -26,26 +26,12 @@ class Home extends BaseController{
 
     public function index(){
         $data = [];
-        //$examStatusCount = $this->clientModel->getCompletedCounts();
-        // if($examStatusCount['completed_count']){
-        //     $data['completed'] = $examStatusCount['completed_count'];
-        // }else{
-        //     $data['completed'] = 0;
-        // }
-        $data['completed'] = 0;
         
-        // if($examStatusCount['in_completed_count']){
-        //     $data['incompleted'] = $examStatusCount['in_completed_count'];
-        // }else{
-        //     $data['incompleted'] = 0;
-        // }
-        $data['incompleted'] = 0;
+        $data['total_hospial'] = $this->clientModel->getTotalHospital();
+        $data['total_doctor'] = $this->clientModel->getTotalDoctor();
+        $data['total_enquiry'] = $this->clientModel->getTotalEnquiry();
+        $data['total_video'] = $this->clientModel->getTotalVideos();
 
-        // $data['total_user'] = $this->clientModel->getTotalUser();
-        // $data['total_question'] = $this->clientModel->getTotalQuestion();
-
-        $data['total_user'] = 0;
-        $data['total_question'] = 0;
         return $this->loadAdminView('home',$data);
     }
 
@@ -1710,6 +1696,21 @@ class Home extends BaseController{
                 'message' => 'Something error, Try after sometime!'
             ]);
         }
+    }
+
+
+
+    /**********************Enquiry Section************************/
+    public function enquiry(){
+        $data = [];
+        return $this->loadAdminView('enquiry',$data); 
+    }
+
+    public function get_all_enquiry(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_enquiry($postData);
+        return $this->response->setJSON($response);
     }
 
 }

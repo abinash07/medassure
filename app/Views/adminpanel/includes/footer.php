@@ -71,8 +71,8 @@
   if(page == 'index.php' || page == '' || page == 'admin'){
     $('#indexPage').addClass('active');
   }
-  if(page == 'examinee' || page == 'addexaminee' || page == 'report'){
-    $('#boardMemberPage').addClass('active');
+  if(page == 'doctor' || page == 'adddoctor' || page == 'report'){
+    $('#doctor').addClass('active');
   }
   if(page == 'partners' || page == 'partnerprofile'){
     $('#partnersPage').addClass('active');

@@ -119,6 +119,7 @@
                                     </div>
                                     <div class="form-group label-controls">
                                         <div class="col-sm-12 text-center">
+                                            <p id="consult_msg"></p>
                                             <button type="submit" class="btn online-consult-button lp_form">SUBMIT</button>
                                         </div>
                                     </div>

@@ -37,6 +37,54 @@ class ClientModel extends Model{
     }
 
 
+
+    public function getTotalHospital(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_hospital')
+                ->select('COUNT(id) AS total_hospital')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_hospital'] : 0;
+    }
+
+    public function getTotalDoctor(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_doctor')
+                ->select('COUNT(id) AS total_doctor')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_doctor'] : 0;
+    }
+
+
+    public function getTotalEnquiry(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_enquiry')
+                ->select('COUNT(id) AS total_enquiry')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_enquiry'] : 0;
+    }
+
+
+    public function getTotalVideos(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_youtube_videos')
+                ->select('COUNT(id) AS total_videos')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_videos'] : 0;
+    }
+
+
     public function getTotalQuestion(){
         $db = \Config\Database::connect();
 
@@ -1535,6 +1583,74 @@ class ClientModel extends Model{
                 "designation"=> $record->designation,
                 "qualification" => $record->qualification,
                 "experience" => $record->experience,
+                "date" => date('d M, Y - H:i:s A', $record->created_on)
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
+
+
+
+
+
+    ## Get all doctor
+    public function get_all_enquiry($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "te.status = ".$db->escape($postData['status']) : "te.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (te.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR te.url LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(te.id) as totalrecord FROM tbl_enquiry te WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(te.id) as totalrecord FROM tbl_enquiry te WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT te.*
+        FROM tbl_enquiry te 
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "name"=> $record->name,
+                "email"=> $record->email,
+                "mobile" => $record->mobile,
+                "other" => $record->other,
+                "description" => $record->description,
+                "age" => $record->age,
                 "date" => date('d M, Y - H:i:s A', $record->created_on)
             ];
             $slno++;

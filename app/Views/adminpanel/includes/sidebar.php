@@ -34,8 +34,12 @@
                 <a href="<?= base_url('admin/hospital'); ?>"><i class="fa fa-users" aria-hidden="true"></i> <span>Hospital</span></a>
             </li>
 
-            <li class="" id="indentsPage">
+            <li class="" id="doctor">
                 <a href="<?= base_url('admin/doctor'); ?>"><i class="fa fa-user-md" aria-hidden="true"></i> <span>Doctor</span></a>
+            </li>
+
+            <li class="" id="candidatesPage">
+                <a href="<?php echo base_url('admin/enquiry'); ?>"><i class="fa fa-question" aria-hidden="true"></i> <span>Enquiry</span></a>
             </li>
 
             <li class="" id="candidatesPage">

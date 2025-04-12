@@ -22791,13 +22791,15 @@ $("#genericForm").submit(function (e) {
 
     // Submit the form data via AJAX
     $.post(base_url_lp + "genericform", $("#genericForm").serialize(), function (data) {
-        console.log(data);
-
-        // After successful submission, redirect to the next step
-        window.location.replace(base_url_lp + "/consult-online?form_step_1=done");
+        $('#genericForm').trigger('reset');
+        $('#consult_msg').delay(1000).fadeOut('slow', function() {
+            $('#consult_msg').html('');
+            $('#consult_msg').show();
+        });
+        $('#consult_msg').html('<span class="text-success">Successfully Saved!!</span>');
     });
 
-    return false; // Prevent the default form submission
+    return false;
 });
 
 

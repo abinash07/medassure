@@ -54,8 +54,8 @@
                             <a href="<?php echo base_url('admin/examinee'); ?>">
                                 <div class="small-box bg-info">
                                     <div class="inner">
-                                        <h3 class="text-white"><?= $total_user; ?></h3>
-                                        <p class="text-white">Total Board Members</p>
+                                        <h3 class="text-white"><?= $total_hospial; ?></h3>
+                                        <p class="text-white">Total Hospitals</p>
                                     </div>
                                     <div class="icon"><i class="fa fa-users"></i></div>
                                     <p class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></p>
@@ -67,8 +67,22 @@
                             <a href="<?php echo base_url('admin/examinee?exstatus=completed'); ?>">
                                 <div class="small-box" style="background-color: #17A328;">
                                     <div class="inner">
-                                        <h3 class="text-white"><?= $completed; ?><sup style="font-size: 20px"></sup></h3>
-                                        <p class="text-white">Survey Completed</p>
+                                        <h3 class="text-white"><?= $total_doctor; ?><sup style="font-size: 20px"></sup></h3>
+                                        <p class="text-white">Total Doctors</p>
+                                    </div>
+                                    <div class="icon"><i class="fa fa-briefcase"></i></div>
+                                    <p class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></p>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="col-lg-3 col-6">
+                            <a href="#">
+                                <div class="small-box bg-info">
+                                    <div class="inner">
+                                        <h3 class="text-white"><?= $total_video; ?></h3>
+                                        <p class="text-white">Total Videos</p>
                                     </div>
                                     <div class="icon"><i class="fa fa-briefcase"></i></div>
                                     <p class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></p>
@@ -80,8 +94,8 @@
                             <a href="<?php echo base_url('admin/examinee?exstatus=pending'); ?>">
                                 <div class="small-box bg-warning">
                                     <div class="inner">
-                                        <h3><?= $incompleted; ?></h3>
-                                        <p>Survey Pending</p>
+                                        <h3><?= $total_enquiry; ?></h3>
+                                        <p>Total Enquiry</p>
                                     </div>
                                     <div class="icon"><i class="fa fa-briefcase"></i></div>
                                     <p class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></p>
@@ -89,45 +103,16 @@
                             </a>
                         </div>
 
-                        <?php if($loginRoleId == 1){ ?>
-                            <div class="col-lg-3 col-6">
-                                <a href="#">
-                                    <div class="small-box bg-info">
-                                        <div class="inner">
-                                            <h3 class="text-white"><?= $total_question; ?></h3>
-                                            <p class="text-white">Total Questions</p>
-                                        </div>
-                                        <div class="icon"><i class="fa fa-briefcase"></i></div>
-                                        <p class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></p>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php } ?>
-                        <?php if($loginRoleId == 2){ ?>
-                            <div class="col-lg-3 col-6">
-                                <a href="<?php echo base_url('admin/examinee?exstatus=completed'); ?>">
-                                    <div class="small-box bg-info">
-                                        <div class="inner">
-                                            <h3 class="text-white"><?= $completed; ?></h3>
-                                            <p class="text-white">Reports</p>
-                                        </div>
-                                        <div class="icon"><i class="fa fa-dashboard"></i></div>
-                                        <p class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></p>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php } ?>
-
                     </div>
                 </div>
 
-                <?php if($loginRoleId == 1){ ?>
+                <?php //if($loginRoleId == 1){ ?>
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-9">
                             <div class="box box-danger">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title">Assessment Overview</h3>
+                                    <h3 class="box-title">Dashboard Overview</h3>
                                 </div>
                                 <div class="box-body">
                                     <div class="row">
@@ -177,7 +162,7 @@
                     </div>
 
                 </div>
-                <?php } ?>
+                <?php //} ?>
             </div>
         </div>
     </section>

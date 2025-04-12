@@ -161,6 +161,11 @@ $routes->get('/admin/adddoctor','Adminpanel\Home::add_doctor');
 $routes->post('/admin/insert_doctor','Adminpanel\Home::insert_doctor');
 
 
+$routes->get('/admin/enquiry','Adminpanel\Home::enquiry');
+$routes->post('/admin/get_all_enquiry','Adminpanel\Home::get_all_enquiry');
+$routes->get('/admin/addenquiry','Adminpanel\Home::add_enquiry');
+$routes->post('/admin/insert_enquiry','Adminpanel\Home::insert_enquiry');
+
 
 
 
