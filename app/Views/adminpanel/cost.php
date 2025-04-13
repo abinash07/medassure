@@ -44,11 +44,10 @@
                                                     <thead>
                                                         <tr>
                                                             <th>#</th> 
-                                                            <th>Author Name</th> 
                                                             <th>Title</th>
-                                                            <!-- <th>Description</th> -->
-                                                            <th>Image</th>
+                                                            <th>Slug</th>
                                                             <th>Created On</th>
+                                                            <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                 </table>
@@ -67,29 +66,75 @@
 
 
 <script>
+    $(document).ready(function(){
+        var crudTable = $('#crudTable').DataTable({
+            'processing': true,
+            'serverSide': true,
+            'serverMethod': 'post',
+            'order': [[0, 'desc']],
+            'ajax': {
+                'url':'<?=base_url('admin/get_all_cost') ?>',
+                'data': function(data){
+                    data.status = "1";
+                }
+            },
+            "columnDefs": [],
+            'columns': [
+                { data: 'id' },
+                { data: 'title' },
+                { data: 'slug' },
+                { data: 'date' },
+                { data: 'action' },
+            ],
+        });
 
-$(document).ready(function(){
-    var crudTable = $('#crudTable').DataTable({
-        'processing': true,
-        'serverSide': true,
-        'serverMethod': 'post',
-        'order': [[0, 'desc']],
-        'ajax': {
-            'url':'<?=base_url('admin/get_all_blog') ?>',
-            'data': function(data){
-                data.status = "1";
-            }
-        },
-        "columnDefs": [],
-        'columns': [
-            { data: 'id' },
-            { data: 'author_name' },
-            { data: 'title' },
-            //{ data: 'description' },
-            { data: 'image' },
-            { data: 'date' },
-        ],
+        crudTable.on('draw.dt', function() {
+            deleteMe();
+        });
+
+        function showDeleteConfirmation(table,id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You are about to delete this item.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it',
+                cancelButtonText: 'Cancel',
+                allowOutsideClick: false,
+            }).then((result) => {
+                if(result.isConfirmed){
+                    $.ajax({
+                        url: "<?php echo base_url('admin/delete_me'); ?>",
+                        method: "POST",
+                        data: {table: table, id: id},
+                        dataType: 'JSON',         
+                        beforeSend: function () {
+
+                        },
+                        success: function(data){
+                            if(data.status == true){
+                                crudTable.draw();
+                            }
+                            if(data.status == false){
+                                crudTable.draw();
+                            }
+                        },
+                        complete: function () {
+
+                        }
+                    });
+                }
+            });
+        }
+            
+        function deleteMe(){
+            $('.delete-me').on('click',function(e){
+                e.preventDefault();
+                var table = $(this).data('tablename');
+                var id = $(this).data('tableid');
+                showDeleteConfirmation(table,id);
+            })
+        }
     });
-});
 </script>
 

@@ -1,44 +1,4 @@
-<script src="<?php echo base_url('admin_assets/js') ?>/jquery.easy-pie-chart.js"></script>
-<style>
-    /* .home-stats{
-        background-color: #FFFFFF;
-    }
-    .legend-div{
-        padding: 10px;
-        line-height: 0.5;
-        font-size: 13px;
-        font-weight: 600;
-    } */
-    .chart-box{
-        background-color: #FFF;
-    }
-    .chart-box-chart{
-        width: 500px;
-    }
-    .chart-header{
-        padding: 15px;
-        font-weight: 600;
-    }
-    table.tile_info {
-        width: 100%;
-    }
-    table.tile_info td i {
-        margin-right: 8px;
-        font-size: 17px;
-        float: left;
-        width: 18px;
-        line-height: 28px;
-    }
-    table.tile_info td p {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 0;
-        line-height: 28px;
-    }
 
-
-</style>
 <div class="content-wrapper">
 
     <?php // echo '<pre>'; print_r($counts); exit; ?>
@@ -48,10 +8,10 @@
     <section class="content py-5">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mb-4">
                     <div class="row">
                         <div class="col-lg-3 col-6">
-                            <a href="<?php echo base_url('admin/examinee'); ?>">
+                            <a href="<?php echo base_url('admin/hospital'); ?>">
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                         <h3 class="text-white"><?= $total_hospial; ?></h3>
@@ -64,7 +24,7 @@
                         </div>
 
                         <div class="col-lg-3 col-6">
-                            <a href="<?php echo base_url('admin/examinee?exstatus=completed'); ?>">
+                            <a href="<?php echo base_url('admin/doctor'); ?>">
                                 <div class="small-box" style="background-color: #17A328;">
                                     <div class="inner">
                                         <h3 class="text-white"><?= $total_doctor; ?><sup style="font-size: 20px"></sup></h3>
@@ -78,7 +38,7 @@
 
 
                         <div class="col-lg-3 col-6">
-                            <a href="#">
+                            <a href="<?php echo base_url('admin/video'); ?>">
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                         <h3 class="text-white"><?= $total_video; ?></h3>
@@ -91,7 +51,7 @@
                         </div>
 
                         <div class="col-lg-3 col-6">
-                            <a href="<?php echo base_url('admin/examinee?exstatus=pending'); ?>">
+                            <a href="<?php echo base_url('admin/enquiry'); ?>">
                                 <div class="small-box bg-warning">
                                     <div class="inner">
                                         <h3><?= $total_enquiry; ?></h3>
@@ -116,32 +76,9 @@
                                 </div>
                                 <div class="box-body">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="chart-box-chart">
-                                                <canvas id="candidateChart" ></canvas>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="chart-box-legend mb-5">
-                                                <table class="tile_info">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <p><i class="fa fa-square blue" style="color: #2962ff;"></i>Completed </p>
-                                                        </td>
-                                                        <td>10%</td>
-                                                        <td id="completed"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <p><i class="fa fa-square blue" style="color: #3498DB;"></i>In-Completed</p>
-                                                        </td>
-                                                        <td>90%</td>
-                                                        <td id="incompleted"></td>
-                                                    </tr>
-                                            
-                                                    </tbody>
-                                                </table>
+                                                <canvas id="barChart"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -154,8 +91,11 @@
                                     <h3 class="box-title">Stats</h3>
                                 </div>
                                 <div class="box-body">
-                                    <p>Online Users: 10</p>
-                                    <p>Last 1 hr Active Users: 10</p>
+                                    <p>Total FAQ: <?= $total_faq; ?></p>
+                                    <p>Total Author: <?= $total_author; ?></p>
+                                    <p>Total Google Rating: <?= $total_rating; ?></p>
+                                    <p>Total Department: <?= $total_department; ?></p>
+                                    <p>Total Treatment: <?= $total_treatment; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -167,76 +107,119 @@
         </div>
     </section>
 </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 <script>
-    
 
-    //candidateStage();
-    function candidateStage(){
-        $.ajax({
-            url: "<?php echo base_url('index.php/home/get_candidate_stage'); ?>",
-            method: "POST",
-            dataType: 'JSON',
-            beforeSend: function () {
-                //$(".loaders").show();
-            },
-            success: function (data){
-                console.log(data.result.nostage);
-                if(data.status == true){
-                    $('#completed').html(Math.ceil(data.result.nostage/data.result.totalcandidate*100)+" %");
-                    $('#incompleted').html(Math.ceil(data.result.pool/data.result.totalcandidate*100)+" %");
-                    batchData = [
-                        data.result.nostage, 
-                        data.result.pool
-                    ];
-                    piechart(batchData);
-                }else{
-                    
-                }
-            },
-            complete: function () {
-                //$(".loaders").hide();
-            },
-        });
-    }
+    var sellsCount = [];
+    var sellsDate = [];
+    var sellsBgColor1 = [];
+    var sellsBgColor2 = [];
+    $.ajax({
+        url: "<?php echo base_url('admin/get_sells_data'); ?>",
+        method: "POST",
+        data: {},
+        dataType: 'JSON',         
+        beforeSend: function () {
+
+        },
+        success: function(data){
+            if(data.status == true){
+                $.each(data.result, function(key, val){
+                    sellsCount.push(parseInt(val.total_sales));
+                    sellsDate.push(val.date);
+                    sellsBgColor1.push('#2097e1');
+                    sellsBgColor2.push('#bdd9e6');
+                });
+                sellsChart(sellsCount,sellsDate,sellsBgColor1,sellsBgColor2);
+            }else{
+
+            }
+        },
+        complete: function () {
+
+        }
+    });
 
 
-    var batchData = [
-        10, 
-        15
-    ];
 
-    <?php if($loginRoleId == 1){ ?>
-    piechart(batchData);
-    <?php } ?>
-    
-    function piechart(batchData){
-        var oilCanvas = document.getElementById("candidateChart");
 
-        var oilData = {
-            labels: [
-                "Completed",
-                "In-Completed",
-            ],
+
+    function sellsChart(sellsCount,sellsDate){
+        var canvas = document.getElementById("barChart");
+        var ctx = canvas.getContext("2d");
+
+        // Global Options:
+        Chart.defaults.global.defaultFontColor = "#2097e1";
+        Chart.defaults.global.defaultFontSize = 11;
+
+        // Data with datasets options
+        var data = {
+            labels: sellsDate,
             datasets: [
                 {
-                    data: batchData,
-                    backgroundColor: [
-                        "#17A328",
-                        "#FAA61A",
-                    ]
-                }]
+                    label: "Enquiry Stats",
+                    fill: true,
+                    backgroundColor: sellsBgColor1,
+                    data: sellsCount
+                },
+                // {
+                //     label: "Community avg.",
+                //     fill: true,
+                //     backgroundColor: sellsBgColor2,
+                //     data: sellsCount
+                // }
+            ]
         };
-        var option = {
-            showLines: true,
-            legend: {
-              display: false
+
+        // Notice how nested the beginAtZero is
+        var options = {
+            title: {
+                display: true,
+                text: "Last 1 month enquiry",
+                position: "bottom"
+            },
+            scales: {
+                xAxes: [
+                    {
+                        gridLines: {
+                            display: true,
+                            drawBorder: true,
+                            drawOnChartArea: false
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }
+                ]
             }
         };
-          
-        var pieChart = new Chart(oilCanvas, {
-          type: 'pie',
-          data: oilData,
-          options: option
+
+        // added custom plugin to wrap label to new line when \n escape sequence appear
+        var labelWrap = [
+            {
+                beforeInit: function (chart) {
+                    chart.data.labels.forEach(function (e, i, a) {
+                        if (/\n/.test(e)) {
+                            a[i] = e.split(/\n/);
+                        }
+                    });
+                }
+            }
+        ];
+
+        // Chart declaration:
+        var myBarChart = new Chart(ctx, {
+            type: "bar",
+            data: data,
+            options: options,
+            plugins: labelWrap
         });
     }
 </script>

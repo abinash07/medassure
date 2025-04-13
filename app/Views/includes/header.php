@@ -39,37 +39,20 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-7 col-6 text-start"> 
                         <a href="<?= base_url(''); ?>" class="vh-logo text-white lh-1" title="Medassure"> 
-                            <span class="logo fw-semibold">Medassure.co.in</span> 
-                            <span class="tagline text-uppercase border-top border-white">start your life now</span>
-                            <!-- <img class="desktop-nabh" src="<?= base_url(''); ?>assets/img/logo.png" width="56" height="56" alt="Logo" title="Logo"> -->
+                            <img class="desktop-nabh" src="<?= base_url(''); ?>assets/img/logo.png" alt="Logo" title="Logo" style="height: auto; width: 100%;">
                         </a> 
                     </div>
                     <div class="col-lg-3 col-md-2 col-sm-3 col-3 headerimgaes"> 
-                        <img class="desktop-nabh" src="<?= base_url(''); ?>assets/img/small-logo.png" width="56" height="56" alt="Logo" title="Logo">
-                        <!-- <div class="mobile-search align-items-center" id="google_translate_element mobile-lang"> 
-                            <select class="lang_opt gray-600 border border-secondary-subtle">
-                                <option value="">Select Language</option>
-                                <option value="en|en">English</option>
-                                <option value="en|fr">French</option>
-                                <option value="en|ar">Arabic</option>
-                                <option value="en|ru">Russian</option>
-                                <option value="en|bn">Bengali</option>
-                                <option value="en|hi">Hindi</option>
-                                <option value="en|ro">Romanian</option>
-                                <option value="en|es">Spanish</option>
-                                <option value="en|pt">Portuguese</option>
-                            </select> 
-                        </div> -->
-                    </div> <!-- Nav Bar Start -->
-
+                        <!-- <img class="desktop-nabh" src="<?= base_url(''); ?>assets/img/small-logo.png" width="56" height="56" alt="Logo" title="Logo"> -->
+                    </div>
                     <div class="col-sm-2 col-3 d-md-none menuhamburger-icon topmenu-btn"> 
                         <a href="javascript:void" class="icon" id="menu-bar" title="Menu-Bar">
                             <img src="<?= base_url(''); ?>assets/img/white-hamburger-icon.png" width="52" height="44" class="menuhamburger" alt="menu items" title="Menu Items">
                         </a>
-                    </div> <!-- Nav Bar End -->
+                    </div>
                     <!-- Search Bar Start -->
                     <div class="col-md-4 sm-12 col-12 vh-search d-flex align-items-center">
-                        <div class="banner-search hide-for-mobile">
+                        <!-- <div class="banner-search hide-for-mobile">
                             <div class="searchbar-home col-12">
                                 <div class="searchbar"> 
                                     <input type="text"class="searchTerm border border-secondary-subtle" id="search_find_new" placeholder="Search by disease, procedure, doctor or hospital" /> 
@@ -78,8 +61,9 @@
                                 <img class="mobile-nabh" src="<?= base_url(''); ?>assets/img/small-logo.png" width="56" height="56" alt="Logo" title="Logo"> 
                                 <span class="bg-danger close-serach-100 text-white fw-bolder fs-5 rounded-circle">X</span>
                             </div>
-                        </div>
-                    </div> <!-- Search Bar End -->
+                        </div> -->
+                    </div>
+                    <!-- Search Bar End -->
                     <div class="col-lg-2 col-md-2 contactMenu d-none d-md-block">
                         <div id="topContact" class="text-white hidden-xs hidden-xs"> 
                             <a href="<?= base_url(''); ?>consult-online" class="btn btn-danger" title="Get a FREE quote"> Get a FREE quote</a> 
@@ -111,7 +95,7 @@
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
-                                                    <a class="drop-link" href="#" title="gurugram">Gurugram</a> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>hospitals/gurugram" title="gurugram">Gurugram</a> 
                                                 </div>
                                             </li>
                                             <li class="drop-submenu">
@@ -129,7 +113,7 @@
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
-                                                    <a class="drop-link" href="<?= base_url(''); ?>hospitals/apollo-proton-chennai" title="Apollo Proton Chennai">Germany</a> 
+                                                    <a class="drop-link" href="<?= base_url(''); ?>hospitals/apollo-proton-chennai" title="Apollo Proton Chennai">Apollo Proton Chennai</a> 
                                                 </div>
                                             </li>
                                             <li class="drop-submenu">
@@ -157,34 +141,50 @@
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/cardiology-and-cardiac-surgery" title="CARDIOLOGY">CARDIOLOGY</a> 
                                                 </div>
+                                            </li>
+                                            <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/cosmetic-and-plastic-surgery" title="COSMETIC">COSMETIC</a> 
                                                 </div>
+                                            </li>
+                                            <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/gynecology" title="GYNECOLOGY">GYNECOLOGY</a> 
                                                 </div>
+                                            </li>
+                                            <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/hematology" title="HEMATOLOGY">HEMATOLOGY</a> 
                                                 </div>
+                                            </li>
+                                            <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/ivf-and-infertility" title="IVF and INFERTILITY">IVF and INFERTILITY</a> 
                                                 </div>
+                                            </li>
+                                            <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/neurology-and-neurosurgery" title="NEUROSURGERY">NEUROSURGERY</a> 
                                                 </div>
+                                            </li>
+                                            <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/oncology-and-oncosurgery" title="ONCOLOGY">ONCOLOGY</a> 
                                                 </div>
+                                            </li>
+                                            <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/orthopedics" title="ORTHOPEDICS">ORTHOPEDICS</a> 
                                                 </div>
+                                            </li>
+                                            <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/spine-surgery" title="SPINE SURGERY">SPINE SURGERY</a> 
@@ -192,103 +192,123 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <!-- <li class="nav-list-item drop">
+
+                                    <li class="nav-list-item drop">
                                         <div class="has-arrow"> 
                                             <span class="ms-nav-arrow">&nbsp;</span> 
-                                            <a href="<?= base_url(''); ?>search" title="Cost" class="nav-link">Cost</a> 
+                                            <a href="#" title="Cost" class="nav-link">Cost</a> 
                                         </div>
                                         <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> 
-                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="India">India</a>
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="CARDIOLOGY">CARDIOLOGY</a>
                                                 </div>
                                                 <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void" title="CARDIOLOGY">CARDIOLOGY</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>search/heart-surgery/india" title="Heart Surgery">Heart Surgery</a> </li>
-                                                        </ul>
+                                                            <a href="<?= base_url(''); ?>cost/heart-surgery-cost-in-india" title="Heart Surgery">Heart Surgery</a>
+                                                        </div>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="drop-submenu">
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="ONCOLOGY">ONCOLOGY</a>
+                                                </div>
+                                                <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void"
-                                                                title="ONCOLOGY">ONCOLOGY</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>search/cancer/india"
-                                                                    title="Cancer Treatment">Cancer Treatment</a> </li>
-                                                        </ul>
+                                                            <a href="<?= base_url(''); ?>cost/cancer" title="Cancer Treatment">Cancer Treatment</a>
+                                                        </div>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="drop-submenu">
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="NEUROSURGERY">NEUROSURGERY</a>
+                                                </div>
+                                                <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void"
-                                                                title="NEUROSURGERY">NEUROSURGERY</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>neurosurgery-cost-india"
-                                                                    title="Neurosurgery">Neurosurgery</a> </li>
-                                                        </ul>
+                                                            <a href="<?= base_url(''); ?>cost/neurosurgery" title="Neurosurgery">Neurosurgery</a>
+                                                        </div>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="drop-submenu">
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="ORTHOPEDICS">ORTHOPEDICS</a>
+                                                </div>
+                                                <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void"
-                                                                title="ORTHOPEDICS">ORTHOPEDICS</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>search/orthopedic-surgery/india"
-                                                                    title="Orthopedic Surgery">Orthopedic Surgery</a>
-                                                            </li>
-                                                        </ul>
+                                                        <a href="<?= base_url(''); ?>cost/orthopedic-surgery" title="Orthopedic Surgery">Orthopedic Surgery</a>
+                                                        </div>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="drop-submenu">
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="IVF">IVF</a>
+                                                </div>
+                                                <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void"
-                                                                title="IVF">IVF</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>ivf-treatment-cost-india"
-                                                                    title="IVF Treatment">IVF Treatment</a> </li>
-                                                        </ul>
+                                                            <a href="<?= base_url(''); ?>cost/ivf-treatment" title="IVF Treatment">IVF Treatment</a>
+                                                        </div>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="drop-submenu">
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="GYNECOLOGY">GYNECOLOGY</a>
+                                                </div>
+                                                <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void"
-                                                                title="GYNECOLOGY">GYNECOLOGY</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>gynecological-surgery-cost-india"
-                                                                    title="Gynaecological Surgery">Gynaecological
-                                                                    Surgery</a> </li>
-                                                        </ul>
+                                                        <a href="<?= base_url(''); ?>cost/gynecological-surgery" title="Gynaecological Surgery">Gynaecological Surgery</a>
+                                                        </div>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="drop-submenu">
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="HEMATOLOGY">HEMATOLOGY</a>
+                                                </div>
+                                                <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void"
-                                                                title="HEMATOLOGY">HEMATOLOGY</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>bone-marrow-transplant-cost-india"
-                                                                    title="Bone Marrow Transplant">Bone Marrow
-                                                                    Transplant</a> </li>
-                                                        </ul>
+                                                            <a href="<?= base_url(''); ?>cost/bone-marrow-transplant" title="Bone Marrow Transplant">Bone Marrow Transplant</a>
+                                                        </div>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="drop-submenu">
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="COSMETIC">COSMETIC</a>
+                                                </div>
+                                                <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void"
-                                                                title="COSMETIC">COSMETIC</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>cosmetic-surgery-cost-india"
-                                                                    title="Cosmetic Surgery">Cosmetic Surgery</a> </li>
-                                                        </ul>
+                                                            <a href="<?= base_url(''); ?>cost/cosmetic-surgery" title="Cosmetic Surgery">Cosmetic Surgery</a>
+                                                        </div>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="drop-submenu">
+                                                <div class="has-arrow"> 
+                                                    <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="SPINE SURGERY">SPINE SURGERY</a>
+                                                </div>
+                                                <ul class="drop-menu">
                                                     <li class="drop-submenu">
                                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span>
-                                                            <a class="drop-link" href="javascript:void"
-                                                                title="SPINE SURGERY">SPINE SURGERY</a> </div>
-                                                        <ul class="drop-menu nav-bar">
-                                                            <li> <a href="<?= base_url(''); ?>spine-surgery-cost-india"
-                                                                    title="Spine Surgery">Spine Surgery</a> </li>
-                                                        </ul>
+                                                            <a href="<?= base_url(''); ?>cost/spine-surgery" title="Spine Surgery">Spine Surgery</a>
+                                                        </div>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li> -->
+                                    </li>
                                     <li class="nav-list-item drop">
                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> 
                                             <a href="javascript:void(0)" title="Knowledge" class="nav-link">Knowledge</a>

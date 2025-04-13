@@ -17,7 +17,7 @@
                             <div class="link-list">
                                 <div class="fs-4 fw-bolder mt-3">For Hospital</div> 
                                 <a href="<?= base_url(''); ?>medassure-hospital-services" title="Our Services">Our Services</a> 
-                                <a href="<?= base_url(''); ?>opd-camps" title="OPD Camps">OPD Camps</a>
+                                <!-- <a href="<?= base_url(''); ?>opd-camps" title="OPD Camps">OPD Camps</a> -->
                                 <div class="fs-4 fw-bolder mt-3">For Doctors</div>
                                 <a href="<?= base_url(''); ?>medassure-doctor-services" title="Our Services">Our Services</a>
                                 <div class="fs-4 fw-bolder mt-3">For Partners</div> 
@@ -31,9 +31,9 @@
                             </div>
                             <div class="link-list">
                                 <div class="fs-4 fw-bolder mt-3">Medical Destinations</div> 
-                                <a href="<?= base_url(''); ?>india" title="India">India</a> 
-                                <a href="<?= base_url(''); ?>turkey" title="Turkey">Turkey</a> 
-                                <a href="<?= base_url(''); ?>thailand" title="Thailand">Thailand</a>
+                                <a href="<?= base_url(''); ?>" title="India">India</a> 
+                                <!-- <a href="<?= base_url(''); ?>turkey" title="Turkey">Turkey</a> 
+                                <a href="<?= base_url(''); ?>thailand" title="Thailand">Thailand</a> -->
                             </div>
                             <div class="link-list office-address">
                                 <div class="fs-4 fw-bolder mt-3">Our offices</div>

@@ -48,10 +48,10 @@
 
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label class="control-label">Country <span class="star">*</span></label>
-                                                            <select class="form-control" name="country" id="country" required="">
-                                                                <option selected="selected" value="">Select Country</option>
-                                                                <?php foreach($countryList as $k => $v) { ?>
+                                                            <label class="control-label">Department <span class="star">*</span></label>
+                                                            <select class="form-control" name="department_id" id="department_id" required="">
+                                                                <option selected="selected" value="">Select Department</option>
+                                                                <?php foreach($department as $k => $v) { ?>
                                                                     <option value="<?= $v->id; ?>"><?= $v->name; ?></option>
                                                                 <?php } ?>
                                                             </select>
@@ -93,7 +93,7 @@
         var submitBtn = $('#addBtn');
 
         $.ajax({
-            url: "<?= base_url('admin/insert_department'); ?>",
+            url: "<?= base_url('admin/insert_treatment'); ?>",
             method: "POST",
             enctype: "multipart/form-data",
             data: formdata,

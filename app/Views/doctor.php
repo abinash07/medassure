@@ -740,10 +740,8 @@
                             <div class="col-12">
                                 <div class="form-col-box bg-theam-2 p-4 rounded-3">
                                     <div class="ms_v_cta_heading d-flex align-items-center justify-content-center column-gap-2 mb-4">
-                                        <img class="mr-2" loading="lazy" src="https://www.vaidam.com/assets/landingpage/v2/images/icons/int/6.svg" width="50" height="50" alt="Know more" title="Know more">
                                         <span class="d-flex justify-content-center flex-column lh-base">
                                             <strong class="fs-4">Find the Best Doctor for You </strong>
-                                            <!-- <small> Treatment plan and quote within 2 days </small> -->
                                         </span>
                                     </div>
                                     <div id="custom-form-doctor-card col-12">
@@ -761,24 +759,21 @@
                                             <div class="col-12 mb-3">
                                                 <label for="inputState" class="form-label">Country </label>
                                                 <select class="form-select country" id="country-sfil" placeholder="Select Country" name="country" required="true">
-                                                    <option selected="">Select Country</option>
                                                     <option value="IN">India</option>
-                                                    
                                                 </select>
                                             </div>
-                                            <div class="col-12 mb-3 autocomplete stategroup-sfil" style="display: block;">
+                                            <div class="col-12 mb-3 autocomplete stategroup-sfil">
                                                 <label for="inputCity" class="form-label">City </label>
-                                                <input type="text" class="form-control" name="city" id="city-sfil" placeholder="Enter city">
-                                                <input type="hidden" id="state-sfil" name="state">
+                                                <input type="text" class="form-control" name="other" id="other" placeholder="Enter city">
                                             </div>
                                             <div class="col-12 mb-3">
                                                 <label for="inputPhone" class="form-label">Phone Number </label>
                                                 <div class="input-group">
-                                                    <input class="input-group-text country_phone_code" id="country_phone_code-sfil" name="country_phone_code" placeholder="Code" style="width: 65px;">
+                                                    <input class="input-group-text country_phone_code" id="country_phone_code-sfil" name="country_phone_code" placeholder="Code" value="+91" style="width: 65px;">
                                                     <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter Phone no.">
                                                 </div>
                                             </div>
-                                            <div class="col-12 mb-3" id="ageblock-sfil" style="display: block;">
+                                            <div class="col-12 mb-3" id="ageblock-sfil">
                                                 <label for="inputAddress2" class="form-label">Patient's Age or Date Of Birth </label>
                                                 <input type="text" class="form-control new-form-control" id="age" placeholder="Example: 30 Yrs or 29-05-1985" name="age">
                                             </div>
@@ -786,20 +781,17 @@
                                                 <label for="medicalIssue" class="form-label">Medical Issue </label>
                                                 <textarea type="text" class="form-control" id="medical_problem" name="medical_problem" placeholder="Describe The Current Medical Problem."></textarea>
                                             </div>
-                                            <div class="col-12 mb-3" id="emirates-id-block" style="display: none;">
-                                                <label for="inputCity" class="form-label">Emirates ID </label>
-                                                <input type="text" class="form-control new-form-control" name="emirates-id" id="emirates-id" placeholder="Enter Emirates ID (To be shared with hospital)">
-                                            </div>
                                             <div class="col-12 mt-2">
                                                 <div class="d-grid">
-                                                    <button type="submit" id="search-main-form-btn" class="btn btn-danger online-consult-button-sfil submit-form-btn in_page_form">Contact Us Now </button>
+                                                    <p id="category_master_msg"></p>
+                                                    <button type="submit" id="categoryBtn" name="submit" class="btn btn-danger online-consult-button-sfil submit-form-btn in_page_form">Contact Us Now </button>
                                                 </div>
                                             </div>
                                         </form>
                                         <span class="formtns-triger d-block text-black-50 text-center fs-6 mt-4">
-                                            By submitting the form I agree to the <a title="Terms of Use" href="/terms-of-use" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formTerms">Terms of Use </a>
-                                            and <a title="Privacy Policy" href="/privacy-policy" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formPrivacyPolicy">Privacy Policy </a>
-                                            of Vaidam Health. 
+                                            By submitting the form I agree to the 
+                                            <a title="Terms of Use" href="<?= base_url(); ?>terms-use" target="_blank" class="terms_of_use">Terms of Use </a> and 
+                                            <a title="Privacy Policy" href="<?= base_url(); ?>privacy-policy" target="_blank" class="terms_of_use">Privacy Policy </a> of Vaidam Health. 
                                         </span>
                                     </div>
                                 </div>
@@ -880,9 +872,9 @@
 
 
 <div id="menu-bottom" class="bottom-menu">
-    <a onclick="setformtype('','','enquiry sticky button','','Footer','','');" href="https://www.vaidam.com/lp/consult-online" class="readmore-outline me-2" title="Need Help">Need Help?</a>
-    <a href="https://api.whatsapp.com/send?phone=919971616131&amp;text=Hello,%20please%20contact%20me%20regarding%20http://www.vaidam.com/doctors?source=wpchat_DASB,%20Thank%20you!" title="Whatsapp Chat" class="readmore whatsapp-color">
-        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/whatsaap-icon01.webp" alt="Chat with Us" title="Chat with Us" width="30" height="29" class="img-fluid me-1">Chat
+    <a href="<?= base_url(''); ?>consult-online" class="readmore-outline me-2" title="Need Help">Need Help?</a>
+    <a href="https://api.whatsapp.com/send?phone=919958278202&amp;text=Hello,%20please%20contact%20me%20regarding%20http://www.medassure.co.in/doctors?source=wpchat_DASB,%20Thank%20you!" title="Whatsapp Chat" class="readmore whatsapp-color">
+        <img loading="lazy" src="<?= base_url(''); ?>assets/img/whatsaap-icon01.webp" alt="Chat with Us" title="Chat with Us" width="30" height="29" class="img-fluid me-1">Chat
     </a>
 </div>
 
@@ -892,7 +884,7 @@
         <img src="https://www.vaidam.com/assets/dr_list_v1/images/filter-icon.webp" alt="Filter" title="Filter" width="26" height="26">
         <span>Filter</span>
     </button>
-    <a class="whatsapp-btn-mob wa_button_clicked" href="https://api.whatsapp.com/send?phone=919971616131&amp;text=Hello,%20please%20contact%20me%20regarding%20http://www.vaidam.com/doctors?source=wpchat_DASB,%20Thank%20you!">
+    <a class="whatsapp-btn-mob wa_button_clicked" href="https://api.whatsapp.com/send?phone=919958278202&amp;text=Hello,%20please%20contact%20me%20regarding%20http://www.medassure.co.in/doctors?source=wpchat_DASB,%20Thank%20you!">
         <img src="https://www.vaidam.com/assets/v2/hospital_details/images/whatsapp-icon-white.png" title="Whatsapp Us" alt="Whatsapp Us">
         <span>Whatsapp Us</span>
     </a>
@@ -1027,6 +1019,20 @@
         $('#doctor_list').html('');
         const end_point = '<?= base_url(''); ?>';
         var department = $('#department_filter option:selected').val() || '';
+        if(department == '' ){
+            if(get_department != ''){
+                if(get_department == 'cardiology-and-cardiac-surgery'){department = 1}
+                if(get_department == 'cosmetic-and-plastic-surgery'){department = 2}
+                if(get_department == 'gynecology'){department = 11}
+                if(get_department == 'hematology'){department = 6}
+                if(get_department == 'ivf-and-infertility'){department = 10}
+                if(get_department == 'neurology-and-neurosurgery'){department = 7}
+                if(get_department == 'oncology-and-oncosurgery'){department = 5}
+                if(get_department == 'orthopedics'){department = 9}
+                if(get_department == 'spine-surgery'){department = 8}
+
+            }
+        }
         let country = $('#country_filter option:selected').val() || '';
         let city = $('#city_filter option:selected').val() || '';
         let treatment = $('#treatment_filter option:selected').val() || '';
@@ -1074,9 +1080,8 @@
                             '</div>'+
                             '<div class="dr-card-rt d-flex flex-wrap gap-3">'+
                                 '<div class="dr-card-btn d-grid gap-3 align-content-center">'+
-                                    '<a href="https://www.vaidam.com/lp/consult-online" title="Contact Doctor" class="btn px-xm-1 px-sm-4 btn-danger geo-other doctor_list_cd_button" onclick="setdata(this)" doc-name="Dr. Y K Mishra " doc-url="https://www.vaidam.com//lp/consult-online?doctor=3536" btn-type="Submit Enquiry Button on List Element" page-type="Doctor List Page" doc-depart="CARDIOLOGY AND CARDIAC SURGERY" doc-speciality="Cardiac Surgeon" doc-hosp="Manipal Hospitals Dwarka  Delhi" style="display: none;">Contact Doctor</a>'+
-                                    '<a href="https://www.vaidam.com/lp/consult-online?doctor=3536" title="Book Appointment with Dr. Y K Mishra " class="btn px-xm-1 px-sm-4 btn-danger geo-in doctor_list_ba_button" onclick="getDataOnClick(this)" style="display: block;" userintentname="Dr. Y K Mishra " userintenturl="https://www.vaidam.com//lp/consult-online?doctor=3536" btntype="Book Appointment Button on List Element" pagetype="Doctor List Page" urldepartment="CARDIOLOGY AND CARDIAC SURGERY" urlspeciality="Cardiac Surgeon" hospitalname="Manipal Hospitals Dwarka  Delhi" clickurl="https://www.vaidam.com//lp/consult-online?doctor=3536" data-link="https://www.vaidam.com//lp/consult-online?doctor=3536">Book Appointment</a>'+
-                                    '<a href="https://api.whatsapp.com/send?phone=919971616131&amp;text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com/doctors/dr-y-k-mishra-cardiac-surgeon?source=wpchat_DLLC%20,%20Thank%20you!" title="Whatsapp About Dr. Y K Mishra " target="_blank" class="btn px-xm-1 px-sm-4 btn-wp doctor_list_wp_button wa_button_clicked">Whatsapp Us</a>'+
+                                    '<a href="<?= base_url(); ?>consult-online" title="'+val.name+'" class="btn px-xm-1 px-sm-4 btn-danger geo-in doctor_list_ba_button" style="display: block;"  btntype="Book Appointment Button on List Element" pagetype="Doctor List Page" >Book Appointment</a>'+
+                                    '<a href="https://api.whatsapp.com/send?phone=919958278202&amp;text=Hello,%20please%20contact%20me%20regarding%20https://www.medassure.co.in/doctor/'+val.name+'?source=wpchat_DLLC%20,%20Thank%20you!" title="Whatsapp About Dr. Y K Mishra " target="_blank" class="btn px-xm-1 px-sm-4 btn-wp doctor_list_wp_button wa_button_clicked">Whatsapp Us</a>'+
                                 '</div>'+
                             '</div>'+
                             '<div class="dr-card-main mb-4 mt-4 p-3 d-flex flex-wrap border border-info-subtle rounded-3 shadow-sm" id="doctor_3536">'+val.about+'</div>'+
@@ -1110,5 +1115,42 @@
                 $(".vh-search").removeClass("search-100-on-mob");
             });
         }
+    });
+</script>
+
+<script>
+    $('#secondFormInList').submit(function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            url: "<?= base_url(); ?>genericform",
+            method: "POST",
+            enctype: "multipart/form-data",
+            data: formData,
+            dataType: 'JSON',
+            processData: false,
+            contentType: false,     
+            beforeSend: function () {
+                $('#categoryBtn').html('<span class="btn-spinner"><i class="fa fa-refresh fa-spin"></i></span> Loading...');
+                $('#categoryBtn').attr('disabled', true);
+            },
+            success: function(data){
+                if(data.status == true){
+                    $('#secondFormInList').trigger('reset');
+                    $('#category_master_msg').delay(1000).fadeOut('slow', function() {
+                        $('#category_master_msg').html('');
+                        $('#category_master_msg').show();
+                    });
+                    $('#category_master_msg').html('<span class="text-success">Successfully Saved!!</span>');
+                }
+                if(data.status == false){
+                    $('#category_master_msg').html('<span class="text-danger">Something error, Try after sometime!!</span>');
+                }
+            },
+            complete: function () {
+                $('#categoryBtn').html('Save');
+                $('#categoryBtn').attr('disabled', false);
+            }
+        });
     });
 </script>

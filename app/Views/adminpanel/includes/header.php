@@ -28,6 +28,8 @@
 		<script src="<?php echo base_url( ); ?>admin_assets/js/main.js" type="text/javascript"></script>
 		<link rel="stylesheet" href="<?php echo base_url('admin_assets/css/multidate.css'); ?>">
 		<script src="<?php echo base_url( ); ?>admin_assets/js/moment.min.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	</head>
 	
 	<div class="page-loader" style="display: none;">

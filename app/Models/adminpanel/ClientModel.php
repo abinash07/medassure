@@ -85,6 +85,85 @@ class ClientModel extends Model{
     }
 
 
+    public function getTotalFaq(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_faq')
+                ->select('COUNT(id) AS total_faq')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_faq'] : 0;
+    }
+
+
+    public function getTotalAuthor(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_author')
+                ->select('COUNT(id) AS total_author')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_author'] : 0;
+    }
+
+
+    public function getTotalRating(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_google_rating')
+                ->select('COUNT(id) AS total_rating')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_rating'] : 0;
+    }
+
+
+    public function getTotalDepartment(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_department_master')
+                ->select('COUNT(id) AS total_department')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_department'] : 0;
+    }
+
+
+    public function getTotalTreatment(){
+        $db = \Config\Database::connect();
+        $query = $db->table('tbl_treatment')
+                ->select('COUNT(id) AS total_treatment')
+                ->where('status',1)
+                ->get();
+        
+        $result = $query->getRowArray();
+        return $result ? $result['total_treatment'] : 0;
+    }
+
+    public function getSellsCount(){
+        $db = \Config\Database::connect();
+        
+        $sql = "SELECT SUM(sells) AS total_sales, date
+            FROM (
+                SELECT COUNT(DISTINCT tts.id) AS sells, 
+                    DATE_FORMAT(FROM_UNIXTIME(tts.created_on), '%d %b, %y') AS date
+                FROM tbl_enquiry AS tts
+                WHERE tts.created_on >= UNIX_TIMESTAMP(CURDATE() - INTERVAL 30 DAY)
+                GROUP BY DATE_FORMAT(FROM_UNIXTIME(tts.created_on), '%d %b, %y')
+            ) AS sales_by_date
+            GROUP BY date
+        ";
+
+        $query = $db->query($sql);
+        return $query->getResultArray();
+    }
+
+
+
     public function getTotalQuestion(){
         $db = \Config\Database::connect();
 
@@ -441,7 +520,7 @@ class ClientModel extends Model{
         $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
 
         ## Fetch records with pagination & sorting
-        $query = $db->query("SELECT ta.id, ta.name, ta.username, ta.email, ta.phone, ta.role_id, ta.image, ta.created_by, ta.created_on
+        $query = $db->query("SELECT ta.*
         FROM tbl_admin ta 
         WHERE $status $searchQuery 
         ORDER BY $columnName $columnSortOrder 
@@ -457,11 +536,8 @@ class ClientModel extends Model{
                 "id" => $slno,
                 "name" => $record->name,
                 "username"=> $record->username,
-                "email"=> $record->email,
-                "phone"=> $record->phone,
-                "role_id"=> $record->role_id,
-                "image"=> $record->image,
-                "created_at" => date('d M, Y - H:i:s A', strtotime($record->created_on))
+                "created_at" => date('d M, Y - H:i:s A', strtotime($record->craeted_on)),
+                "action" => '<a href="'.base_url('admin/editadmin/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_admin" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -653,10 +729,13 @@ class ClientModel extends Model{
                 "page" => $record->page,
                 "title"=> $record->title,
                 "content"=> $record->content,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editfaq/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_faq" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
+
+        //<a href="'.base_url('adminpanel/editservice/').$record->id.'"><i class="fa fa-edit"></i></a> 
 
         ## JSON Response
         return [
@@ -787,7 +866,8 @@ class ClientModel extends Model{
                 "name"=> $record->name,
                 "bio"=> $record->bio,
                 "image"=> $record->image,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editauthor/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_author" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -850,7 +930,8 @@ class ClientModel extends Model{
                 "name"=> $record->name,
                 "review"=> $record->review,
                 "image"=> $record->image,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editgooglerating/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_google_rating" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -915,7 +996,8 @@ class ClientModel extends Model{
                 "name"=> $record->name,
                 "slug"=> $record->slug,
                 "section"=> $record->section,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editcategory/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_category_master" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -980,7 +1062,8 @@ class ClientModel extends Model{
                 "category_name" => $record->category_name,
                 "title"=> $record->title,
                 "url"=> $record->url,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editvideo/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_youtube_videos" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -1052,7 +1135,8 @@ class ClientModel extends Model{
                 "title"=> $record->title,
                 "description"=> $record->description,
                 "image"=> $record->image,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editpatienttestimonial/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_patient_testimonial" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -1117,7 +1201,8 @@ class ClientModel extends Model{
                 "title"=> $record->title,
                 "price"=> $record->price,
                 "image"=> $record->image,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editlowestquote/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_lowest_quote" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -1182,7 +1267,8 @@ class ClientModel extends Model{
                 "title"=> $record->title,
                 "description"=> $record->description,
                 "image"=> $record->image,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editmultispecialty/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_multi_specialty" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -1361,7 +1447,7 @@ class ClientModel extends Model{
         ## Search Query
         $searchQuery = "";
         if (!empty($searchValue)) {
-            $searchQuery = " AND (tdm.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR tdm.url LIKE '%".$db->escapeLikeString($searchValue)."%')";
+            $searchQuery = " AND (tdm.name LIKE '%".$db->escapeLikeString($searchValue)."%' OR tdm.url LIKE '%".$db->escapeLikeString($searchValue)."%')";
         }
 
         ## Total records without filtering
@@ -1387,10 +1473,11 @@ class ClientModel extends Model{
         foreach ($records as $record) {
             $data[] = [
                 "id" => $slno,
-                "name"=> $record->title,
+                "name"=> $record->name,
                 "slug"=> $record->slug,
                 "country" => $record->country,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editdepartment/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_department_master" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -1424,7 +1511,7 @@ class ClientModel extends Model{
         ## Search Query
         $searchQuery = "";
         if (!empty($searchValue)) {
-            $searchQuery = " AND (tt.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR tt.url LIKE '%".$db->escapeLikeString($searchValue)."%')";
+            $searchQuery = " AND (tt.name LIKE '%".$db->escapeLikeString($searchValue)."%' OR tt.url LIKE '%".$db->escapeLikeString($searchValue)."%')";
         }
 
         ## Total records without filtering
@@ -1450,10 +1537,11 @@ class ClientModel extends Model{
         foreach ($records as $record) {
             $data[] = [
                 "id" => $slno,
-                "name"=> $record->title,
+                "name"=> $record->name,
                 "slug"=> $record->slug,
                 "department" => $record->department,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/edittreatment/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_treatment" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -1519,7 +1607,8 @@ class ClientModel extends Model{
                 "established" => $record->established,
                 "specialty" => $record->specialty,
                 "number_of_bed" => $record->number_of_bed,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/edithospital/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_hospital" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -1583,7 +1672,8 @@ class ClientModel extends Model{
                 "designation"=> $record->designation,
                 "qualification" => $record->qualification,
                 "experience" => $record->experience,
-                "date" => date('d M, Y - H:i:s A', $record->created_on)
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editdoctor/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_doctor" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
             ];
             $slno++;
         }
@@ -1601,7 +1691,7 @@ class ClientModel extends Model{
 
 
 
-    ## Get all doctor
+    ## Get all enquiry
     public function get_all_enquiry($postData = null){
         $db = db_connect();
 
@@ -1652,6 +1742,135 @@ class ClientModel extends Model{
                 "description" => $record->description,
                 "age" => $record->age,
                 "date" => date('d M, Y - H:i:s A', $record->created_on)
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
+
+
+
+    ## Get all cost
+    public function get_all_cost($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "tc.status = ".$db->escape($postData['status']) : "tc.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (tc.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR tc.slug LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(tc.id) as totalrecord FROM tbl_cost tc WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(tc.id) as totalrecord FROM tbl_cost tc WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT tc.*
+        FROM tbl_cost tc 
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "title"=> $record->title,
+                "slug"=> $record->slug,
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editcost/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_cost" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
+
+
+
+
+    ## Get all doctor
+    public function get_all_top_hospital($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "th.status = ".$db->escape($postData['status']) : "th.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (th.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR th.url LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(th.id) as totalrecord FROM top_hospital th WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(th.id) as totalrecord FROM top_hospital th WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT th.*, tho.name as hospital_name, tcm.name as city_name
+        FROM top_hospital th 
+        INNER JOIN tbl_hospital as tho ON tho.id = th.hospital_id
+        INNER JOIN tbl_city_master as tcm ON tcm.id = th.city_id
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "city_name"=> $record->city_name,
+                "hospital_name"=> $record->hospital_name,
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/edittophospital/').$record->id.'"><i class="fa fa-edit"></i></a>',
             ];
             $slno++;
         }

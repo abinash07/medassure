@@ -31,8 +31,31 @@ class Home extends BaseController{
         $data['total_doctor'] = $this->clientModel->getTotalDoctor();
         $data['total_enquiry'] = $this->clientModel->getTotalEnquiry();
         $data['total_video'] = $this->clientModel->getTotalVideos();
+        
+
+        $data['total_faq'] = $this->clientModel->getTotalFaq();
+        $data['total_author'] = $this->clientModel->getTotalAuthor();
+        $data['total_rating'] = $this->clientModel->getTotalRating();
+        $data['total_department'] = $this->clientModel->getTotalDepartment();
+        $data['total_treatment'] = $this->clientModel->getTotalTreatment();
 
         return $this->loadAdminView('home',$data);
+    }
+
+    public function get_sells_data(){
+        $result = $this->clientModel->getSellsCount();
+        if($result){
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'Record found',
+                'result' => $result
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'Record not found'
+            ]);
+        }
     }
 
     
@@ -374,6 +397,57 @@ class Home extends BaseController{
     }
 
 
+    public function edit_faq($id){
+        $data = [];
+        $data['faq'] = $this->CommonModel->getSingleTableData('tbl_faq',$id);
+        return $this->loadAdminView('editfaq',$data); 
+    }
+
+    public function update_faq(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'page'      => 'required|trim',
+            'title' => 'required|trim',
+            'content'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+        $id = $this->request->getPost('id');
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'page'        => $this->request->getPost('page'),
+            'title'       => $this->request->getPost('title'),
+            'content'       => $this->request->getPost('content'),            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_faq',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+
+
     /*********************************News Sction***************************/
 
 
@@ -550,6 +624,79 @@ class Home extends BaseController{
     }
 
 
+    public function edit_author($id){
+        $data = [];
+        $data['author'] = $this->CommonModel->getSingleTableData('tbl_author',$id);
+        return $this->loadAdminView('editauthor',$data); 
+    }
+
+
+    public function update_author(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/author/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'bio'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+        $old_profile_img = $this->request->getPost('oldProfileImg');
+        $image = '';
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_profile_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_profile_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image = '/docs/author/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'        => $this->request->getPost('name'),
+            'bio'       => $this->request->getPost('bio'),
+        ];
+        if($image){$data['image'] = $image;}
+        
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_author',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
     /**********************************Google Rating*****************************/
 
 
@@ -629,6 +776,79 @@ class Home extends BaseController{
     }
 
 
+
+    public function edit_google_rating($id){
+        $data = [];
+        $data['googlerating'] = $this->CommonModel->getSingleTableData('tbl_google_rating',$id);
+        return $this->loadAdminView('editgooglerating',$data); 
+    }
+
+
+    public function update_google_rating(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/googlerating/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'review'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+        $old_profile_img = $this->request->getPost('oldProfileImg');
+        $image = '';
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_profile_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_profile_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image = '/docs/googlerating/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'        => $this->request->getPost('name'),
+            'review'       => $this->request->getPost('review'),
+        ];
+        if($image){$data['image'] = $image;}
+        
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_google_rating',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
     /**********************Category Section************************/
     public function category(){
         $data = [];
@@ -693,6 +913,56 @@ class Home extends BaseController{
         }
     }
 
+
+    
+    public function edit_category($id){
+        $data = [];
+        $data['category'] = $this->CommonModel->getSingleTableData('tbl_category_master',$id);
+        return $this->loadAdminView('editcategory',$data); 
+    }
+
+    public function update_category(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'section' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+        $id = $this->request->getPost('id');
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'        => $this->request->getPost('name'),
+            'slug'        => $this->createSlug($this->request->getPost('name')),
+            'section'     => $this->request->getPost('section'),
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_category_master',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+    
     /******************************************Video Section*********************/
 
     public function video(){
@@ -761,6 +1031,56 @@ class Home extends BaseController{
         }
     }
 
+
+    public function edit_video($id){
+        $data = [];
+        $data['category'] = $this->CommonModel->getGenericData('tbl_category_master');
+        $data['video'] = $this->CommonModel->getSingleTableData('tbl_youtube_videos',$id);
+        return $this->loadAdminView('editvideo',$data); 
+    }
+
+    public function update_video(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'url' => 'required|trim',
+            'cat_id' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+        $id = $this->request->getPost('id');
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'url'       => $this->request->getPost('url'),
+            'cat_id'       => $this->request->getPost('cat_id'),
+            'home_page'       => $this->request->getPost('home_page'),
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_youtube_videos',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
     /******************************Patient Testimonials********************/
 
     public function patient_testimonial(){
@@ -845,6 +1165,89 @@ class Home extends BaseController{
         }
     }
 
+
+
+    
+    public function edit_patient_testimonial($id){
+        $data = [];
+        $data['author'] = $this->CommonModel->getGenericData('tbl_author');
+        $data['testimonial'] = $this->CommonModel->getSingleTableData('tbl_patient_testimonial',$id);
+        return $this->loadAdminView('editpatienttestimonial',$data); 
+    }
+
+
+    public function update_patient_testimonial(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/testimonial/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'description'   => 'required|trim',
+            'content'   => 'required|trim',
+            'author_id'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+        $old_profile_img = $this->request->getPost('oldProfileImg');
+        $image = '';
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_profile_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_profile_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image = '/docs/testimonial/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'slug' =>$this->createSlug($this->request->getPost('title')),
+            'description'       => $this->request->getPost('description'),
+            'content'       => $this->request->getPost('content'),
+            'author_id'       => $this->request->getPost('author_id'),
+        ];
+        if($image){$data['image'] = $image;}
+        
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_patient_testimonial',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+
+
     /************************************lowest Qoutes******************/
 
     public function lowest_quote(){
@@ -924,6 +1327,80 @@ class Home extends BaseController{
     }
 
 
+
+
+    public function edit_lowest_quote($id){
+        $data = [];
+        $data['quote'] = $this->CommonModel->getSingleTableData('tbl_lowest_quote',$id);
+        return $this->loadAdminView('editlowestquote',$data); 
+    }
+
+
+    public function update_lowest_quote(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/qoute/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'price'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+        $old_profile_img = $this->request->getPost('oldProfileImg');
+        $image = '';
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_profile_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_profile_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image = '/docs/qoute/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'price'       => $this->request->getPost('price'),
+        ];
+        if($image){$data['image'] = $image;}
+        
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_lowest_quote',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
     /********************************Multi Specialty***************/
 
     public function multi_specialty(){
@@ -1000,6 +1477,78 @@ class Home extends BaseController{
         }
     }
 
+
+    public function edit_multi_specialty($id){
+        $data = [];
+        $data['specialty'] = $this->CommonModel->getSingleTableData('tbl_multi_specialty',$id);
+        return $this->loadAdminView('editmultispecialty',$data); 
+    }
+
+
+    public function update_multi_specialty(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/specialty/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'description'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+        $old_profile_img = $this->request->getPost('oldProfileImg');
+        $image = '';
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_profile_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_profile_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image = '/docs/specialty/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'        => $this->request->getPost('title'),
+            'description'  => $this->request->getPost('description'),
+        ];
+        if($image){$data['image'] = $image;}
+        
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_multi_specialty',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
 
     /********************************Travel Visa***************/
 
@@ -1252,6 +1801,57 @@ class Home extends BaseController{
     }
 
 
+    public function edit_department($id){
+        $data = [];
+        $data['department'] = $this->CommonModel->getSingleTableData('tbl_department_master',$id);
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        return $this->loadAdminView('editdepartment',$data); 
+    }
+
+
+    public function update_department(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'country' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'        => $this->request->getPost('name'),
+            'slug'       => $this->createSlug($this->request->getPost('name')),
+            'country_id'     => $this->request->getPost('country'),
+        ];
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_department_master',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
 
     /******************************Cost Section********************/
 
@@ -1270,14 +1870,6 @@ class Home extends BaseController{
 
     public function add_cost(){
         $data = [];
-        $data['author'] = $this->CommonModel->getGenericData('tbl_author');
-
-        $where_conditions = array(
-            'status' => 1,
-            'section' => 'blog'
-        );
-        $columnArray = ['id','name'];
-        $data['category'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_category_master',$where_conditions);
 
         return $this->loadAdminView('addcost',$data); 
     }
@@ -1285,15 +1877,10 @@ class Home extends BaseController{
 
     public function insert_cost(){
         $session = session();
-        $uploadDirectory = PUBPATH. '/docs/blog/';
-        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
-        
+
         ## ✅ Validation Rules
         $validationRules = [
             'title'      => 'required|trim',
-            'cat_id'   => 'required|trim',
-            'content'   => 'required|trim',
-            'author_id'   => 'required|trim',
         ];
 
         ## ✅ Validate Input
@@ -1305,33 +1892,19 @@ class Home extends BaseController{
             ]);
         }
 
-        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
-            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
-            $img = str_replace(' ', '+', $img);
-            $profile_file_binary = base64_decode($img);
-            $profile_uniqueFilename = uniqid() . '.jpeg';
-            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
-            file_put_contents($profile_filepath, $profile_file_binary);
-            $image = '/docs/blog/'.$profile_uniqueFilename;
-        }
-
 
         ## ✅ Fetch Data from POST Request
         $data = [
-            'slug' =>$this->createSlug($this->request->getPost('title')),
-            'author_id'       => $this->request->getPost('author_id'),
-            'cat_id'       => $this->request->getPost('cat_id'),
-            'title'        => $this->request->getPost('title'),
-            'image' =>$image,
-            'content'       => $this->request->getPost('content'),
-            'status'      => 1,
-            'created_by'   => session()->get('id'),
-            'created_on'   => time() + 12600,
-            
+            'title'      => $this->request->getPost('title'),
+            'slug'       =>$this->createSlug($this->request->getPost('title')),
+            'content'    => $this->request->getPost('content'),
+            'status'     => 1,
+            'created_by' => session()->get('id'),
+            'created_on' => time() + 12600,
         ];
 
         ## ✅ Insert into Database
-        $result = $this->CommonModel->add_record('tbl_blog',$data);
+        $result = $this->CommonModel->add_record('tbl_cost',$data);
         if($result){
             return $this->response->setJSON([
                 'status'  => true,
@@ -1345,6 +1918,59 @@ class Home extends BaseController{
         }
     }
 
+
+
+    
+    public function edit_cost($id){
+        $data = [];
+        $data['cost'] = $this->CommonModel->getSingleTableData('tbl_cost',$id);
+        return $this->loadAdminView('editcost',$data); 
+    }
+
+
+    public function update_cost(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title'      => 'required|trim',
+            'content' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'      => $this->request->getPost('title'),
+            'slug'       =>$this->createSlug($this->request->getPost('title')),
+            'content'    => $this->request->getPost('content'),
+        ];
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_cost',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
 
 
     /**********************Treatment Section************************/
@@ -1363,7 +1989,7 @@ class Home extends BaseController{
 
     public function add_treatment(){
         $data = [];
-        $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['department'] = $this->CommonModel->getGenericData('tbl_department_master');
         return $this->loadAdminView('addtreatment',$data); 
     }
 
@@ -1374,7 +2000,7 @@ class Home extends BaseController{
         ## ✅ Validation Rules
         $validationRules = [
             'name'      => 'required|trim',
-            'country' => 'required|trim',
+            'department_id' => 'required|trim',
         ];
 
         ## ✅ Validate Input
@@ -1390,7 +2016,7 @@ class Home extends BaseController{
         $data = [
             'name'        => $this->request->getPost('name'),
             'slug'       => $this->createSlug($this->request->getPost('name')),
-            'country_id'     => $this->request->getPost('country'),
+            'department_id'     => $this->request->getPost('department_id'),
             'status'      => 1,
             'created_by'   => session()->get('id'),
             'created_on'   => time() + 12600,
@@ -1398,7 +2024,7 @@ class Home extends BaseController{
         ];
 
         ## ✅ Insert into Database
-        $result = $this->CommonModel->add_record('tbl_department_master',$data);
+        $result = $this->CommonModel->add_record('tbl_treatment',$data);
         if($result){
             return $this->response->setJSON([
                 'status'  => true,
@@ -1413,6 +2039,57 @@ class Home extends BaseController{
     }
 
 
+    public function edit_treatment($id){
+        $data = [];
+        $data['treatment'] = $this->CommonModel->getSingleTableData('tbl_treatment',$id);
+        $data['department'] = $this->CommonModel->getGenericData('tbl_department_master');
+        return $this->loadAdminView('edittreatment',$data); 
+    }
+
+
+    public function update_treatment(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'department_id' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'        => $this->request->getPost('name'),
+            'slug'       => $this->createSlug($this->request->getPost('name')),
+            'department_id'     => $this->request->getPost('department_id'),
+        ];
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_treatment',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
 
     /**********************Hospital Section************************/
     public function hospital(){
@@ -1572,6 +2249,116 @@ class Home extends BaseController{
         }
     }
 
+    public function edit_hospital($id){
+        $data = [];
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['department'] = $this->CommonModel->getGenericData('tbl_department_master');
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+        $data['hospital'] = $this->CommonModel->getSingleTableData('tbl_hospital',$id);
+        return $this->loadAdminView('edithospital',$data); 
+    }
+
+
+
+    public function update_hospital(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/hospital/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        $resizedsecondaryimg = $this->request->getPost('resizedsecondaryimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'city'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+        $old_profile_img = $this->request->getPost('oldProfileImg');
+        $old_secondary_img = $this->request->getPost('oldSecondaryImg');
+        $image = '';
+        $image2 = '';
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_profile_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_profile_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image = '/docs/hospital/'.$profile_uniqueFilename;
+        }
+
+        if(isset($resizedsecondaryimg) && !empty($resizedsecondaryimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedsecondaryimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_secondary_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_secondary_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image2 = '/docs/hospital/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'  => $this->request->getPost('name'),
+            'slug'  => $this->createSlug($this->request->getPost('name')),
+            'city' => $this->request->getPost('city'),
+            'department' => $this->request->getPost('department'),
+            'established' => $this->request->getPost('established'),
+            'specialty' => $this->request->getPost('specialty'),
+            'number_of_bed' => $this->request->getPost('number_of_bed'),
+            'about' => $this->request->getPost('about'),
+            'team_and_specialities' => $this->request->getPost('team_and_specialities'),
+            'infrastructure' => $this->request->getPost('infrastructure'),
+            'address' => $this->request->getPost('address'),
+            'map' => $this->request->getPost('map'),
+            'location' => $this->request->getPost('location'),
+        ];
+        if($image){$data['primary_image'] = $image;}
+        if($image2){$data['secondary_img'] = $image2;}
+        
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_hospital',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
 
     /**********************Doctor Section************************/
     public function doctor(){
@@ -1699,6 +2486,127 @@ class Home extends BaseController{
     }
 
 
+    public function edit_doctor($id){
+        $data = [];
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['hospital'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_hospital',$where_conditions);
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['department'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_department_master',$where_conditions);
+
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name','slug'];
+        $data['treatment'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_treatment',$where_conditions);
+
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+        $data['doctor'] = $this->CommonModel->getSingleTableData('tbl_doctor',$id);
+        return $this->loadAdminView('editdoctor',$data); 
+    }
+
+
+    public function update_doctor(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/doctor/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'name'      => 'required|trim',
+            'designation'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+        $old_profile_img = $this->request->getPost('oldProfileImg');
+        $image = '';
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_profile_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_profile_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image = '/docs/doctor/'.$profile_uniqueFilename;
+        }
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'name'  => $this->request->getPost('name'),
+            'slug'  => $this->createSlug($this->request->getPost('name')),
+            'designation' => $this->request->getPost('designation'),
+            'qualification' => $this->request->getPost('qualification'),
+            'experience' => $this->request->getPost('experience'),
+            'about' => $this->request->getPost('about'),
+            'monday' => $this->request->getPost('monday'),
+            'tuesday' => $this->request->getPost('tuesday'),
+            'wednesday' => $this->request->getPost('wednesday'),
+            'thursday' => $this->request->getPost('thursday'),
+            'friday' => $this->request->getPost('friday'),
+            'saturday' => $this->request->getPost('saturday'),
+            'medical_problems' => $this->request->getPost('medical_problems'),
+            'medical_procedures' => $this->request->getPost('medical_procedures'),
+            'hospital_id' => $this->request->getPost('hospital_id'),
+            'city_id' => $this->request->getPost('city_id'),
+            'department_id' => $this->request->getPost('department_id'),
+            'treatment_id' => $this->request->getPost('treatment_id'),
+            'education_training' => $this->request->getPost('education_training'),
+            'honours_awards' => $this->request->getPost('honours_awards'),
+            'work_experience' => $this->request->getPost('work_experience'),
+        ];
+        if($image){$data['primary_image'] = $image;}
+        
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_doctor',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
 
     /**********************Enquiry Section************************/
     public function enquiry(){
@@ -1711,6 +2619,100 @@ class Home extends BaseController{
         $postData = $this->request->getPost();
         $response = $this->clientModel->get_all_enquiry($postData);
         return $this->response->setJSON($response);
+    }
+
+
+    public function delete_me(){
+        $id = $this->request->getPost('id');
+        $table = $this->request->getPost('table');
+        $data['status'] = 0;
+        $result = $this->CommonModel->updateRecord('id',$id,$table,$data);
+        if($result){
+            echo json_encode(array('status'=>true, 'message' => 'Success'));
+        }else{
+            echo json_encode(array('status'=>false, 'message' => 'Error'));
+        }
+    }
+
+
+    /**********************Top Hospital Section************************/
+
+    public function top_hospital(){
+        $data = [];
+        return $this->loadAdminView('tophospital',$data); 
+    }
+
+
+    public function get_all_top_hospital(){
+        $clientModel = new ClientModel();
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_top_hospital($postData);
+        return $this->response->setJSON($response);
+    }
+
+    public function edit_top_hospital($id){
+        $data = [];
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['hospitallist'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_hospital',$where_conditions);
+        $where_conditions = array(
+            'country_id' => 96,
+            'status' => 1,
+        );
+        $columnArray = ['id','name'];
+        $data['city'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_city_master',$where_conditions);
+
+        $data['hospital'] = $this->CommonModel->getSingleTableData('top_hospital',$id);
+        return $this->loadAdminView('edittophospital',$data); 
+    }
+
+
+    
+    public function update_top_hospital(){
+        $session = session();
+ 
+        ## ✅ Validation Rules
+        $validationRules = [
+            'city_id'      => 'required|trim',
+            'hospital_id'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        $id = $this->request->getPost('id');
+
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'city_id'  => $this->request->getPost('city_id'),
+            'hospital_id'  => $this->createSlug($this->request->getPost('hospital_id')),
+        ];
+        
+
+        //echo '<pre>';print_r($data);die;
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'top_hospital',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully Updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
     }
 
 }

@@ -728,10 +728,8 @@
                                 <div class="col-12">
                                     <div class="form-col-box bg-theam-2 p-4 rounded-3">
                                         <div class="ms_v_cta_heading d-flex align-items-center justify-content-center column-gap-2 mb-4">
-                                            <img class="mr-2" loading="lazy" src="https://www.vaidam.com/assets/landingpage/v2/images/icons/int/6.svg" width="50" height="50" alt="Know more" title="Know more">
                                             <span class="d-flex justify-content-center flex-column lh-base">
                                                 <strong class="fs-4">Need Help </strong>
-                                                <!-- <small> Treatment plan and quote within 2 days </small> -->
                                             </span>
                                         </div>
                                         <div id="custom-form-doctor-card col-12">
@@ -749,24 +747,25 @@
                                                 <div class="col-12 mb-3">
                                                     <label for="inputState" class="form-label">Country </label>
                                                     <select class="form-select country" id="country-sfil" placeholder="Select Country" name="country" required="true">
-                                                        <option selected="">Select Country</option>
                                                         <option value="IN">India</option>
-                                                        
                                                     </select>
                                                 </div>
-                                                <div class="col-12 mb-3 autocomplete stategroup-sfil" style="display: block;">
+                                                <!-- <div class="col-12 mb-3 autocomplete stategroup-sfil">
                                                     <label for="inputCity" class="form-label">City </label>
-                                                    <input type="text" class="form-control" name="city" id="city-sfil" placeholder="Enter city">
-                                                    <input type="hidden" id="state-sfil" name="state">
+                                                    <input type="text" class="form-control" name="other" id="other" placeholder="Enter city">
+                                                </div> -->
+                                                <div class="col-12 mb-3">
+                                                    <label class="control-label col-sm-12" for="state">City<span class="red">*</span></label>
+                                                    <input class="form-control new-form-control" type="text" id="other" name="other" placeholder="Enter City"> 
                                                 </div>
                                                 <div class="col-12 mb-3">
                                                     <label for="inputPhone" class="form-label">Phone Number </label>
                                                     <div class="input-group">
-                                                        <input class="input-group-text country_phone_code" id="country_phone_code-sfil" name="country_phone_code" placeholder="Code" style="width: 65px;">
-                                                        <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter Phone no.">
+                                                        <input class="input-group-text country_phone_code" id="country_phone_code-sfil" name="country_phone_code" placeholder="Code" value="+91" style="width: 65px;">
+                                                        <input type="text" class="form-control" id="phone_number" name="phone_number"  placeholder="Enter Phone no.">
                                                     </div>
                                                 </div>
-                                                <div class="col-12 mb-3" id="ageblock-sfil" style="display: block;">
+                                                <div class="col-12 mb-3" id="ageblock-sfil">
                                                     <label for="inputAddress2" class="form-label">Patient's Age or Date Of Birth </label>
                                                     <input type="text" class="form-control new-form-control" id="age" placeholder="Example: 30 Yrs or 29-05-1985" name="age">
                                                 </div>
@@ -774,20 +773,18 @@
                                                     <label for="medicalIssue" class="form-label">Medical Issue </label>
                                                     <textarea type="text" class="form-control" id="medical_problem" name="medical_problem" placeholder="Describe The Current Medical Problem."></textarea>
                                                 </div>
-                                                <div class="col-12 mb-3" id="emirates-id-block" style="display: none;">
-                                                    <label for="inputCity" class="form-label">Emirates ID </label>
-                                                    <input type="text" class="form-control new-form-control" name="emirates-id" id="emirates-id" placeholder="Enter Emirates ID (To be shared with hospital)">
-                                                </div>
+                                                
                                                 <div class="col-12 mt-2">
                                                     <div class="d-grid">
-                                                        <button type="submit" id="search-main-form-btn" class="btn btn-danger online-consult-button-sfil submit-form-btn in_page_form">Contact Us Now </button>
+                                                        <p id="category_master_msg"></p>
+                                                        <button type="submit" id="categoryBtn" name="submit" class="btn btn-danger online-consult-button-sfil submit-form-btn in_page_form">Contact Us Now </button>
                                                     </div>
                                                 </div>
                                             </form>
                                             <span class="formtns-triger d-block text-black-50 text-center fs-6 mt-4">
-                                                By submitting the form I agree to the <a title="Terms of Use" href="/terms-of-use" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formTerms">Terms of Use </a>
-                                                and <a title="Privacy Policy" href="/privacy-policy" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formPrivacyPolicy">Privacy Policy </a>
-                                                of Vaidam Health. 
+                                                By submitting the form I agree to the 
+                                                <a title="Terms of Use" href="<?= base_url(); ?>terms-use" target="_blank" class="terms_of_use">Terms of Use </a> and 
+                                                <a title="Privacy Policy" href="<?= base_url(); ?>privacy-policy" target="_blank" class="terms_of_use">Privacy Policy </a> of Vaidam Health. 
                                             </span>
                                         </div>
                                     </div>
@@ -849,6 +846,17 @@
             let department = $('#department_filter1 option:selected').val() || '';
             let country = $('#country_filter option:selected').val() || '';
             city = $('#city_filter option:selected').val() || '';
+            if(city == '' ){
+                if(get_city != ''){
+                    if(get_city == 'delhi'){city = 15}
+                    if(get_city == 'gurugram'){city = 6}
+                    if(get_city == 'noida'){city = 16}
+                    if(get_city == 'faridabad'){city = 5}
+                    if(get_city == 'apollo-proton-chennai'){city = 4}
+                    if(get_city == 'fortis-wb-west-bengal'){city = 11}
+                    if(get_city == 'max-nanawati-mumbai'){city = 13}                    
+                }
+            }
 
             var errorMessage = document.getElementById("country_error");
             let search = document.getElementById('search_btn');
@@ -875,7 +883,7 @@
                                     '<div class="card drcard mb-3 mb-md-0 border-0">'+
                                         '<div class="row g-0 text-body-secondary">'+
                                             '<div class="col-md-3">'+
-                                                '<img alt="'+val.name+'" title="'+val.name+'" src="<?php echo base_url(); ?>'+val.primary_image+'" width="332" height="190" class="hospital-img-list shadow-sm rounded-3">'+
+                                                '<img alt="'+val.name+'" title="'+val.name+'" src="<?= base_url(); ?>'+val.primary_image+'" width="332" height="190" class="hospital-img-list shadow-sm rounded-3">'+
                                             '</div>'+
                                             '<div class="col-md-9 py-3 py-md-0">'+
                                                 '<div class="card-body px-0 px-0 px-md-3 mt-md-0 py-0 lh-md">'+
@@ -892,19 +900,17 @@
                                         '<p class="d-flex flex-row gap-2 align-items-flex-start lh-1"> <img src="https://www.vaidam.com/assets/img/Icons/Established-grey.webp" title="Established" alt="Established in: 1996" width="14" height="14"> <span>Established in: '+val.established+'</span> </p>'+
                                         '<p class="d-flex flex-row gap-2 align-items-flex-start lh-1"> <img src="https://www.vaidam.com/assets/img/Icons/Doctors-greay.webp" title="Doctors" alt="Doctors: 150" width="19" height="14"> <span>Number of Beds: '+val.number_of_bed+'</span> </p>'+
                                         '<p class="d-flex flex-row gap-2 align-items-flex-start lh-1"> <img src="https://www.vaidam.com/assets/img/Icons/beds-grey.webp" title="Specialty" alt="Specialty: Multi Specialty" width="16" height="14"> <span>'+val.specialty+'</span> </p>'+
-                                        '<p class="d-flex flex-row gap-2 align-items-flex-start lh-1"> <img src="https://www.vaidam.com/assets/img/Icons/Location-grey.webp" title="Location" alt="Location: India , '+val.city+'" width="14" height="14"> <span>Location: India, '+val.city+'</span> </p>'+
+                                        '<p class="d-flex flex-row gap-2 align-items-flex-start lh-1"> <img src="https://www.vaidam.com/assets/img/Icons/Location-grey.webp" title="Location" alt="Location: India , '+val.city+'" style="height: 14px; width: 14px;"> <span>Location: India, '+val.city+'</span> </p>'+
                                     '</div>'+
                                 '</div>'+
                                 '<div class="d-flex flex-wrap flex-column-reverse flex-md-row">'+
                                     '<div class="dr-card-lt">'+
                                         '<div class="mt-3">'+val.about+'...</div>'+
-                                        '<p class="mb-0 text-end w-100"><a title="Show More" class="" href="https://www.vaidam.com/hospitals/nova-ivi-fertility-ahmedabad" aria-label="Learn more about the hospital, its specialties, and patient care">Show More</a></p>'+
                                     '</div>'+
-                                    '<div class="dr-card-rt">'+
+                                    '<div class="dr-card-rt mt-2">'+
                                         '<div class="card-btn d-grid gap-3">'+
-                                            '<a onclick="setdata(this)" doc-name="Nova IVI Fertility, Ahmedabad" doc-url="https://www.vaidam.com/lp/consult-online?hospital=8558" btn-type="Contact Hospital Button on List Element" page-type="Hospital List Page" doc-depart="" doc-speciality="" doc-hosp="Nova IVI Fertility, Ahmedabad" href="https://www.vaidam.com/lp/consult-online" title="Contact Hospital" class="doctor-book-appointment btn px-xm-1 px-sm-3 btn-danger geo-other" data-link="https://www.vaidam.com/lp/consult-online" style="display: none;">Contact Hospital</a>'+
-                                            '<a style="display: block;" onclick="setdata(this)" doc-name="Nova IVI Fertility, Ahmedabad" doc-url="https://www.vaidam.com/lp/consult-online?hospital=8558" btn-type="Book Apointment Button on List Element" page-type="Hospital List Page" doc-depart="" doc-speciality="" doc-hosp="Nova IVI Fertility, Ahmedabad" class="btn px-xm-1 px-sm-3 btn-danger geo-in" href="https://www.vaidam.com/lp/consult-online?hospital=8558" title="Book Apointment" data-link="https://www.vaidam.com/lp/consult-online?hospital=8558">Book Apointment</a>'+
-                                            '<a style="display:block;" class="btn px-xm-1 px-sm-3 btn-wp wa_button_clicked" target="_blank" href="https://api.whatsapp.com/send?phone=919971616131&amp;text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com/hospitals/nova-ivi-fertility-ahmedabad?source=wpchat_HLLC%20,%20Thank%20you!" title="Whatsapp Chat">WhatsApp Us</a>'+
+                                            '<a style="display: block;" btn-type="Book Apointment Button on List Element" page-type="Hospital List Page" doc-depart="" doc-speciality="" class="btn px-xm-1 px-sm-3 btn-danger geo-in" href="<?= base_url(); ?>consult-online" title="Book Apointment" data-link="<?= base_url(); ?>consult-online">Book Apointment</a>'+
+                                            '<a style="display: block;" class="btn px-xm-1 px-sm-3 btn-wp wa_button_clicked" target="_blank" href="https://api.whatsapp.com/send?phone=919958278202&amp;text=Hello,%20please%20contact%20me%20regarding%20https://www.medassure.co.in/hospital/'+val.slug+'?source=wpchat_HLLC%20,%20Thank%20you!" title="Whatsapp Chat">WhatsApp Us</a>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
@@ -1073,3 +1079,40 @@
         }); 
 </script>
 
+
+<script>
+    $('#secondFormInList').submit(function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            url: "<?= base_url(); ?>genericform",
+            method: "POST",
+            enctype: "multipart/form-data",
+            data: formData,
+            dataType: 'JSON',
+            processData: false,
+            contentType: false,     
+            beforeSend: function () {
+                $('#categoryBtn').html('<span class="btn-spinner"><i class="fa fa-refresh fa-spin"></i></span> Loading...');
+                $('#categoryBtn').attr('disabled', true);
+            },
+            success: function(data){
+                if(data.status == true){
+                    $('#secondFormInList').trigger('reset');
+                    $('#category_master_msg').delay(1000).fadeOut('slow', function() {
+                        $('#category_master_msg').html('');
+                        $('#category_master_msg').show();
+                    });
+                    $('#category_master_msg').html('<span class="text-success">Successfully Saved!!</span>');
+                }
+                if(data.status == false){
+                    $('#category_master_msg').html('<span class="text-danger">Something error, Try after sometime!!</span>');
+                }
+            },
+            complete: function () {
+                $('#categoryBtn').html('Save');
+                $('#categoryBtn').attr('disabled', false);
+            }
+        });
+    });
+</script>

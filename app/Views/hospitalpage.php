@@ -144,7 +144,20 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
 } 
 </style>
 
-<section class="breadcrumb-section bg-light border-bottom border-2 border-light-subtle hospital-details" data-gtm-vis-recent-on-screen2242002_282="387" data-gtm-vis-first-on-screen2242002_282="387" data-gtm-vis-total-visible-time2242002_282="100" data-gtm-vis-has-fired2242002_282="1"> <div class="container"> <div class="row"> <div class="col-12"> <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb"> <ol class="breadcrumb mt-3"> <li class="breadcrumb-item"><a class="text-secondary" href="https://www.vaidam.com" title="Home">Home</a></li> <li class="breadcrumb-item"><a class="text-secondary" href="https://www.vaidam.com/hospitals" title="Hospitals">Hospitals</a></li> <!-- sagar --> <li class="breadcrumb-item"><a class="text-secondary" href="https://www.vaidam.com/hospitals/india" title="Country">India</a></li> <li class="breadcrumb-item"><a class="text-secondary" href="https://www.vaidam.com/hospitals/india/new-delhi" title="City">New Delhi</a></li> <li class="breadcrumb-item"><span class="text-secondary">Indraprastha Apollo Hospital New Delhi</span></li> </ol> </nav> </div> </div> </div>
+<section class="breadcrumb-section bg-light border-bottom border-2 border-light-subtle hospital-details" data-gtm-vis-recent-on-screen2242002_282="387" data-gtm-vis-first-on-screen2242002_282="387" data-gtm-vis-total-visible-time2242002_282="100" data-gtm-vis-has-fired2242002_282="1">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb"> 
+                    <ol class="breadcrumb mt-3">
+                        <li class="breadcrumb-item"><a class="text-secondary" href="<?= base_url(); ?>" title="Home">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-secondary" href="<?= base_url(); ?>hospitals" title="Hospitals">Hospitals</a></li>
+                        <li class="breadcrumb-item"><span class="text-secondary"><?= $slug; ?></span></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="main py-4 py-md-5 position-relative">
@@ -171,7 +184,7 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                         </div>
                         <!-- Hospital rating end --> 
                     </div>
-                    <p class="hospital-location text-secondary d-flex column-gap-2 align-items-center lh-base">
+                    <p class="hospital-location text-secondary d-flex column-gap-2 align-items-center lh-base mb-3">
                         <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-small.webp" title="location" alt="location" width="24" height="24">
                         <small><?= $hospital->city; ?></small>
                     </p>
@@ -195,13 +208,13 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                 </div>
                 <div class="col-12 hos-number-box">
                     <div class="hos-statics mt-4 px-0 rounded-4 overflow-hidden border bg-light d-flex align-content-start flex-wrap">
-                        <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
+                        <!-- <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
                             <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Doctors.webp" width="27" height="20" title="International" alt="International"> 
                             <div class="num-box-item lh-1">
                                 <p class=" mb-1">Doctors List</p>
                                 <a class="fw-bolder" title="Find Doctor" href="#find_doc"> <span class="fw-bolder">Click Here</span> </a> 
                             </div>
-                        </div>
+                        </div> -->
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
                             <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-blue-solid.webp" width="20" title="Location" height="20" alt="Location"> 
                             <div class="num-box-item lh-1">
@@ -241,20 +254,20 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                                 <span class="fw-bolder"><?= $hospital->specialty; ?></span> 
                             </div>
                         </div>
-                        <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
+                        <!-- <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
                             <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/International-dr.webp" width="20" title="International" height="20" alt="International"> 
                             <div class="num-box-item lh-1">
                                 <p class="mb-1">Images</p>
                                 <a class="fw-bolder" title="Images" href="#images"> <span class="fw-bolder">Click Here</span> </a> 
                             </div>
-                        </div>
+                        </div> -->
                         <!-- No of Beds --> 
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
-                        <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Number-of-beds.webp" width="22" height="20" title="Number of beds" alt="Number of beds"> 
-                        <div class="num-box-item lh-1">
-                            <p class="mb-1">Number of beds</p>
-                            <span class="fw-bolder"><?= $hospital->number_of_bed; ?></span> 
-                        </div>
+                            <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Number-of-beds.webp" width="22" height="20" title="Number of beds" alt="Number of beds"> 
+                            <div class="num-box-item lh-1">
+                                <p class="mb-1">Number of beds</p>
+                                <span class="fw-bolder"><?= $hospital->number_of_bed; ?></span> 
+                            </div>
                         </div>
                         <!-- Facilites --> 
                         <div class="nuber-box p-3 border d-flex flex-wrap column-gap-2 align-items-center">
@@ -275,211 +288,6 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                 </div>
             </div>
         </div>
-
-        <div class="right-form"> 
-            <div class="custom-form-container mt-5 mt-md-0 bg-theam-2 rounded-4 p-3 position-sticky"> 
-                <p class="fs-4 form-heading fw-semibold mb-0">Contact Hospital</p> 
-                <p class="form-heading">Treatment plan and quote within 2 days</p> <!-- Start Form --> 
-                <div id="custom-form"> 
-                    <div class="dynamic_content"> <div class="main_container"> <style type="text/css"> .primary-form{background-color: #f7f7f7;}
-            .primary-form-field{width: 75%;
-            margin: 0 auto;} </style> <section class="selected-doctor ms_v_cta_hide"> <div class="container block-container"> <div class="panel panel-default"> <div class="panel-body panel-doctor-pif"> <div class="modeofconsultation h2 bold" style="text-align:center;">Send Your Enquiry</div> </div> </div> </div> </section> <div class="container block-container"> <div class="panel panel-default"> <div class="panel-body"> <form class="form-horizontal form-customize" id="genericForm" autocomplete="off"> <input type="hidden" name="_token" id="_token" value="lL213S6ypzXlyAzlDecEWfVLS4moFQ1BuEopBxUt"> <input type="hidden" name="pagetype" value=""> <input type="hidden" name="page_source" id="page_source" value="https://www.vaidam.com/hospitals/indraprastha-apollo-hospital-new-delhi#find_doc"> <input type="hidden" name="lang1" id="lang1" value="https://www.vaidam.com/hospitals/indraprastha-apollo-hospital-new-delhi#find_doc"> <input type="hidden" name="preferredLocation" id="preferredLocation" value="India"> <input type="hidden" name="Page_Type" id="Page_Type" value="Hospital Detail Page"> <input type="hidden" name="Form_Location" id="Form_Location" value="Main Form"> <input type="hidden" name="hospitalName" id="hospitalName" value="Indraprastha Apollo Hospital, New Delhi"> <input type="hidden" name="c_url" id="c_url" value=""> <div class="form-group label-controls"> <label class="control-label col-sm-12" for="name">Name<span class="red">*</span></label> <div class="col-sm-12"> <input type="text" class="form-control new-form-control" id="name" placeholder="Patient Name" name="name" required=""> </div> </div> <div class="form-group label-controls"> <label class="control-label col-sm-12" for="email">Email<span class="red">*</span></label> <div class="col-sm-12"> <input type="email" class="form-control new-form-control" id="email" placeholder="Enter email" name="email" required=""> </div> </div> <div class="form-group label-controls"> <label class="control-label col-sm-12" for="country">Country<span class="red">*</span></label> <div class="col-sm-12"> <select class="form-control new-form-control form-select" id="country" placeholder="Select Country" name="country" required="true"> <option value="" selected="selected">Country</option><option value="AF">Afghanistan</option><option value="AX">Aland Islands</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="BQ">Caribbean Netherlands</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo (Brazzaville)</option><option value="CD">Congo (Kinshasa)</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CW">Curaçao</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island and McDonald Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong S.A.R., China</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="CI">Ivory Coast</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="XK">Kosovo</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macao S.A.R., China</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="MP">Northern Mariana Islands</option><option value="KP">North Korea</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestinian Territory</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="BL">Saint Barthélemy</option><option value="SH">Saint Helena</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="MF">Saint Martin (French part)</option><option value="PM">Saint Pierre and Miquelon</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SX">Sint Maarten</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia and the South Sandwich Islands</option><option value="KR">South Korea</option><option value="SS">South Sudan</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="VI">U.S. Virgin Islands</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UM">United States Minor Outlying Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis and Futuna</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option> </select> </div> </div> <div class="form-group label-controls stategroup" style=""> <label class="control-label col-sm-12" for="state">City<span class="red">*</span></label> <div class="col-sm-12"> <div class="autocomplete"> <input id="city" class="form-control new-form-control" type="text" name="city" placeholder="Select City"> <input type="hidden" id="state" name="state"> </div> </div> </div> <div class="form-group label-controls phn-block"> <label class="control-label col-sm-12" for="phone">Phone Number<span class="red">*</span></label> <div class="col-sm-12"> <input type="text" id="country_phone_code" name="country_phone_code" class="form-control new-form-control col-md-2" value="" readonly="" style="width: 15%; float: left;"> <input type="tel" class="form-control new-form-control col-md-10" id="phone_number" placeholder="Your Phone number" name="phone_number" required="" style="width: 84%"> </div> </div> <div class="col-md-12"> <div class="form-group"> <label for="medicalissue">Medical Issue <span class="red">*</span></label><br> <textarea cols="5" rows="5" id="medical_problem" name="medical_problem" placeholder="Describe The Current Medical Problem .." style="height:100%; width:100%; resize: vertical;" required=""></textarea> </div> </div> <div class="form-group label-controls" id="ageblock" style=""> <label class="control-label col-sm-12" for="email">Patient's Age or Date Of Birth<span class="red">*</span></label> <div class="col-sm-12"> <input type="text" class="form-control new-form-control" id="age" placeholder="Example: 30 Yrs or 29-05-1985" name="age"> </div> </div> <div class="form-group label-controls" id="emirates-id-block" style="display: none;"> <label for="inputCity" class="form-label"> Emirates ID </label> <input type="text" class="form-control new-form-control" name="emirates-id" id="emirates-id" placeholder="Enter Emirates ID (To be shared with hospital)"> </div> <div class="form-group label-controls"> <div class="col-sm-12 text-center"> <button type="submit" id="search-main-form-btn" class="btn online-consult-button in_page_form">SUBMIT DETAILS</button> <!-- <button type="submit" id="search-main-form-btn" class="btn online-consult-button">SUBMIT DETAILS</button>--> </div> </div> </form> <div style="width: 100%;" class="form-group label-controls"> <div class="col-sm-12 text-center"> <span class="formtns-triger text-muted">By submitting the form I agree to the <a title="Terms of Use" href="/terms-of-use" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formTerms">Terms of Use</a> and <a title="Privacy Policy" href="/privacy-policy" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formPrivacyPolicy">Privacy Policy</a> of Vaidam Health.</span> </div> </div> <!-- Model open  --> <!-- Model open  --> <!-- Start Modal Privacy Policy --> <div class="modal fade" id="formTerms" tabindex="-1" role="dialog" aria-labelledby="termsModalCenterTitle" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered" role="document"> <div class="modal-content"> <div class="modal-header"> <span class="modal-title" style="font-weight: bold" id="">Terms of Use</span> <button type="button" class="close px-2 py-1 lh-1" data-bs-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> </div> <div class="modal-body" id="terms_of_use"> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary px-4 py-1" data-bs-dismiss="modal">Close</button> <!-- <button type="button" class="btn btn-primary">Save changes</button> --> </div> </div> </div> </div> <!-- End Modal Terms --> <!-- Start Modal Privacy Policy --> <div class="modal fade" id="formPrivacyPolicy" tabindex="-1" role="dialog" aria-labelledby="PrivacyPolicyCenterTitle" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered" role="document"> <div class="modal-content"> <div class="modal-header"> <span class="modal-title" style="font-weight: bold" id="">Privacy Policy</span> <button type="button" class="close px-2 py-1 lh-1" data-bs-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> </div> <div class="modal-body" id="privacy_policy"> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary px-4 py-1" data-bs-dismiss="modal">Close</button> <!-- <button type="button" class="btn btn-primary">Save changes</button> --> </div> </div> </div> </div> <!-- End Modal Privacy Policy --> <style type="text/css"> #formTerms,#formPrivacyPolicy{font-size:14px;color:#666;top:30px}
-            #formTerms .modal-dialog,#formPrivacyPolicy .modal-dialog{margin: 0px auto;}
-            #formTerms .modal-title,#formPrivacyPolicy .modal-title{color:#666;font-size:16px;margin:10px}
-            .formtns-triger{opacity:.6;font-size:14px;cursor:pointer;}
-            #formTerms .modal-header,#formPrivacyPolicy .modal-header{background:unset;padding:0 5px;border:0}
-            #formTerms .close,#formPrivacyPolicy .close{font-size:30px;color:#e43939;position:absolute;opacity:1;top:1px;right:5px;z-index:999}
-            #formTerms .modal-body,#formPrivacyPolicy .modal-body{padding:5px 15px;max-height:420px;overflow:auto;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
-            #formTerms .modal-footer,#formPrivacyPolicy .modal-footer{padding:5px;border-top:0}
-            #formTerms .modal-footer .btn,#formPrivacyPolicy .modal-footer .btn{background:#e43939;color:#fff;font-size:14px;line-height:1;border-radius:5px;padding:5px 8px}
-            .modal-open .modal{overflow-x:hidden;overflow-y:hidden;}
-            #formTerms h2,#formPrivacyPolicy h2{font-size:16px;color:#666}
-            #formTerms ul,#formPrivacyPolicy ul,#formTerms ol,#formPrivacyPolicy ol{padding-left:15px}
-            #formTerms .modal-content, #formPrivacyPolicy .modal-content{background: #ffffff}
-            .modal-backdrop.fade.in{opacity:0.5}
-            .modal-backdrop {
-            --bs-backdrop-zindex: 0;  
-            }
-            @media    only screen and (max-width: 520px){
-            div#formPrivacyPolicy{top:36px}
-            #formTerms .modal-body, #formPrivacyPolicy .modal-body{max-height:480px}
-            }
-            .formtns-triger a {color: #164399;} </style> </div> </div> </div> </div> </div> <script type="text/javascript"> $(document).ready(function () {
-                // When page is ready, check if there is a pre-selected country
-                // var urlCountry = getCookie("SetPageCountry");
-
-
-            function autocomplete(inp, arr) {
-                /*the autocomplete function takes two arguments,
-            the text field element and an array of possible autocompleted values:*/
-                var currentFocus;
-                /*execute a function when someone writes in the text field:*/
-                if (inp) {
-                inp.addEventListener("input", function (e) {
-                    var a,
-                        b,
-                        i,
-                        val = this.value;
-                    /*close any already open lists of autocompleted values*/
-                    closeAllLists();
-                    if (!val) {
-                        return false;
-                    }
-                    currentFocus = -1;
-                    /*create a DIV element that will contain the items (values):*/
-                    a = document.createElement("DIV");
-                    a.setAttribute("id", this.id + "autocomplete-list");
-                    a.setAttribute("class", "autocomplete-items");
-                    /*append the DIV element as a child of the autocomplete container:*/
-                    this.parentNode.appendChild(a);
-                    /*for each item in the array...*/
-                    for (i = 0; i < arr.length; i++) {
-                        /*check if the item starts with the same letters as the text field value:*/
-                        if (arr[i]["city"].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                            /*create a DIV element for each matching element:*/
-                            b = document.createElement("DIV");
-                            /*make the matching letters bold:*/
-                            b.innerHTML = "<strong>" + arr[i]["city"].substr(0, val.length) + "</strong>";
-                            b.innerHTML += arr[i]["city"].substr(val.length);
-                            /*insert a input field that will hold the current array item's value:*/
-                            b.innerHTML += "<input type='hidden' value='" + arr[i]["city"] + "'>";
-                            if (arr[i]["city"] != undefined) {
-                                //document.getElementById("state").value = arr[i]["state"];
-                                var stateElement = document.getElementById("state");
-                                if (stateElement) {
-                                    stateElement.value = arr[i]["state"];
-                                }
-                            }
-                            /*execute a function when someone clicks on the item value (DIV element):*/
-                            b.addEventListener("click", function (e) {
-                                /*insert the value for the autocomplete text field:*/
-                                inp.value = this.getElementsByTagName("input")[0].value;
-            
-                                /*close the list of autocompleted values,
-                        (or any other open lists of autocompleted values:*/
-                                closeAllLists();
-                            });
-                            a.appendChild(b);
-                        }
-                    }
-                });
-                }
-                /*execute a function presses a key on the keyboard:*/
-                if (inp) {
-                inp.addEventListener("keydown", function (e) {
-                    var x = document.getElementById(this.id + "autocomplete-list");
-                    if (x) x = x.getElementsByTagName("div");
-                    if (e.keyCode == 40) {
-                        /*If the arrow DOWN key is pressed,
-                    increase the currentFocus variable:*/
-                        currentFocus++;
-                        /*and and make the current item more visible:*/
-                        addActive(x);
-                    } else if (e.keyCode == 38) {
-                        //up
-                        /*If the arrow UP key is pressed,
-                    decrease the currentFocus variable:*/
-                        currentFocus--;
-                        /*and and make the current item more visible:*/
-                        addActive(x);
-                    } else if (e.keyCode == 13) {
-                        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-                        e.preventDefault();
-                        if (currentFocus > -1) {
-                            /*and simulate a click on the "active" item:*/
-                            if (x) x[currentFocus].click();
-                        }
-                    }
-                });
-                }
-                function addActive(x) {
-                    /*a function to classify an item as "active":*/
-                    if (!x) return false;
-                    /*start by removing the "active" class on all items:*/
-                    removeActive(x);
-                    if (currentFocus >= x.length) currentFocus = 0;
-                    if (currentFocus < 0) currentFocus = x.length - 1;
-                    /*add class "autocomplete-active":*/
-                    x[currentFocus].classList.add("autocomplete-active");
-                }
-                function removeActive(x) {
-                    /*a function to remove the "active" class from all autocomplete items:*/
-                    for (var i = 0; i < x.length; i++) {
-                        x[i].classList.remove("autocomplete-active");
-                    }
-                }
-                function closeAllLists(elmnt) {
-                    /*close all autocomplete lists in the document,
-                except the one passed as an argument:*/
-                    var x = document.getElementsByClassName("autocomplete-items");
-                    for (var i = 0; i < x.length; i++) {
-                        if (elmnt != x[i] && elmnt != inp) {
-                            x[i].parentNode.removeChild(x[i]);
-                        }
-                    }
-                }
-                /*execute a function when someone clicks in the document:*/
-                document.addEventListener("click", function (e) {
-                    closeAllLists(e.target);
-                });
-            }
-                
-                function getCookie(cname){
-                var name=cname+"=";
-                var decodedCookie=decodeURIComponent(document.cookie);
-                var ca=decodedCookie.split(';');
-                for(var i=0;i<ca.length;i++){
-                    var c=ca[i];while(c.charAt(0)==' '){c=c.substring(1);}
-                    if(c.indexOf(name)==0){return c.substring(name.length,c.length);}
-                }
-                return "";
-                }
-                var preferredLocation = getCookie("preferredLocation").replace(/\+/g, ' ');
-                var countryCode = getCookie("countryCode");
-
-                // Check for UAE and show emirates ID and city dropdown
-                if (preferredLocation == 'United Arab Emirates' && countryCode == 'AE') {
-                    $('#emirates-id-block').show();  
-                    $('.stategroup').show();        
-                    $('#city').attr('placeholder', 'Enter Emirates');  
-                    $('#city').replaceWith('<select id="city" class="form-control new-form-control" name="city"><option value="">Select Emirates</option><option value="Abu Dhabi">Abu Dhabi</option><option value="Ajman">Ajman</option><option value="Al Ain">Al Ain</option><option value="Al Qusais">Al Qusais</option><option value="Dubai">Dubai</option><option value="Ras Al Khaimah">Ras Al Khaimah</option><option value="Sharjah">Sharjah</option></select>');
-                } else if (countryCode == 'IN') {
-                    $('#emirates-id-block').hide();
-                    $('.stategroup').show();       
-                // $('#city').attr('placeholder', 'Enter city');
-                
-                    //$('#city').replaceWith('<input id="city" class="form-control new-form-control" type="text" name="city" placeholder="Enter City">');
-                //autocomplete(document.getElementById("city"), cities);
-                    
-                } else {  
-                    $('#emirates-id-block').hide();
-                    $('.stategroup').hide();  
-                }
-
-                // Handle country selection change event
-                $('#country').on('change', function() {
-                    var selectedCountry = $(this).val();
-                    console.log(selectedCountry);    
-                    if (selectedCountry == 'AE') {
-                        $('#emirates-id-block').show();  
-                    $('.stategroup').show();  
-                    $('.stategroup').removeAttr('style').show(); 
-                        $('#city').attr('placeholder', 'Enter Emirates');  
-                        $('#city').replaceWith('<select id="city" class="form-control new-form-control" name="city"><option value="">Select Emirates</option><option value="Abu Dhabi">Abu Dhabi</option><option value="Ajman">Ajman</option><option value="Al Ain">Al Ain</option><option value="Al Qusais">Al Qusais</option><option value="Dubai">Dubai</option><option value="Ras Al Khaimah">Ras Al Khaimah</option><option value="Sharjah">Sharjah</option></select>');
-                    } else if (selectedCountry == "IN") {
-                        $('#emirates-id-block').hide();  
-                        $('.stategroup').show();     
-                        $('#city').attr('placeholder', 'Enter city');
-                        $('#city').replaceWith('<input id="city" class="form-control new-form-control" type="text" name="city" placeholder="Enter City">');
-                        autocomplete(document.getElementById("city"), cities); 
-                    }   
-                    else {
-                        $('#emirates-id-block').hide();  
-                        $('.stategroup').hide(); 
-                    }
-                });
-            }); </script> </div> <!-- End Form --> </div> 
-        </div>
     </div>
 
     <div class="container d-flex flex-wrap flex-column-reverse flex-md-row">
@@ -498,7 +306,6 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                         </div>
                     </div> 
                 </div>
-
 
                 <div class="col-12 facilities pt-5" id="facilities">
                     <h2 class="fs-3 mb-4 fw-semibold">Facilities</h2>
@@ -597,12 +404,10 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                     </div>
                 </div>
 
-
                 <div id="infra_1" class="readmorebox collapse col-12 infrastructure mt-5 list-w-circle">
                     <h2 class="fs-3 mb-4">Infrastructure</h2>
                     <?= $hospital->infrastructure; ?>
                 </div>
-
 
                 <div class="col-12 location-box pt-4">
                     <div class="hos-statics p-3 rounded-4 border bg-light">
@@ -613,7 +418,7 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                                     <h2 class="fs-3 mb-4 theam-color">Address</h2>
                                     <p><?= $hospital->address; ?></p>
                                     <a class="btn px-xm-1 px-sm-4 btn-danger mb-2" target="_blank" href="<?= $hospital->map; ?>">
-                                        <span>Direction <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-white.webp" alt="direction" title="direction" width="16" height="17"></span>
+                                        <span>Direction <img src="https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/Location-white.webp" alt="direction" title="direction" width="16" height="17" style="margin-top: -5px;"></span>
                                     </a> 
                                 </div>
                             </div>
@@ -625,217 +430,136 @@ a.readmore-btn:not(.collapsed):after{content:'- See Less'}
                             </div>
                         </div>
                     </div>
-                    </div>
-
+                </div>
             </div>
         </div>
-
-
         <div class="right-form"> 
             <div class="custom-form-container mt-5 mt-md-0 bg-theam-2 rounded-4 p-3 position-sticky"> 
                 <p class="fs-4 form-heading fw-semibold mb-0">Contact Hospital</p> 
-                <p class="form-heading">Treatment plan and quote within 2 days</p> <!-- Start Form --> 
+                <p class="form-heading">Treatment plan and quote within 2 days</p> 
                 <div id="custom-form"> 
-                    <div class="dynamic_content"> <div class="main_container"> <style type="text/css"> .primary-form{background-color: #f7f7f7;}
-            .primary-form-field{width: 75%;
-            margin: 0 auto;} </style> <section class="selected-doctor ms_v_cta_hide"> <div class="container block-container"> <div class="panel panel-default"> <div class="panel-body panel-doctor-pif"> <div class="modeofconsultation h2 bold" style="text-align:center;">Send Your Enquiry</div> </div> </div> </div> </section> <div class="container block-container"> <div class="panel panel-default"> <div class="panel-body"> <form class="form-horizontal form-customize" id="genericForm" autocomplete="off"> <input type="hidden" name="_token" id="_token" value="lL213S6ypzXlyAzlDecEWfVLS4moFQ1BuEopBxUt"> <input type="hidden" name="pagetype" value=""> <input type="hidden" name="page_source" id="page_source" value="https://www.vaidam.com/hospitals/indraprastha-apollo-hospital-new-delhi#find_doc"> <input type="hidden" name="lang1" id="lang1" value="https://www.vaidam.com/hospitals/indraprastha-apollo-hospital-new-delhi#find_doc"> <input type="hidden" name="preferredLocation" id="preferredLocation" value="India"> <input type="hidden" name="Page_Type" id="Page_Type" value="Hospital Detail Page"> <input type="hidden" name="Form_Location" id="Form_Location" value="Main Form"> <input type="hidden" name="hospitalName" id="hospitalName" value="Indraprastha Apollo Hospital, New Delhi"> <input type="hidden" name="c_url" id="c_url" value=""> <div class="form-group label-controls"> <label class="control-label col-sm-12" for="name">Name<span class="red">*</span></label> <div class="col-sm-12"> <input type="text" class="form-control new-form-control" id="name" placeholder="Patient Name" name="name" required=""> </div> </div> <div class="form-group label-controls"> <label class="control-label col-sm-12" for="email">Email<span class="red">*</span></label> <div class="col-sm-12"> <input type="email" class="form-control new-form-control" id="email" placeholder="Enter email" name="email" required=""> </div> </div> <div class="form-group label-controls"> <label class="control-label col-sm-12" for="country">Country<span class="red">*</span></label> <div class="col-sm-12"> <select class="form-control new-form-control form-select" id="country" placeholder="Select Country" name="country" required="true"> <option value="" selected="selected">Country</option><option value="AF">Afghanistan</option><option value="AX">Aland Islands</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="BQ">Caribbean Netherlands</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo (Brazzaville)</option><option value="CD">Congo (Kinshasa)</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CW">Curaçao</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard Island and McDonald Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong S.A.R., China</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="CI">Ivory Coast</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="XK">Kosovo</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macao S.A.R., China</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="MP">Northern Mariana Islands</option><option value="KP">North Korea</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestinian Territory</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="BL">Saint Barthélemy</option><option value="SH">Saint Helena</option><option value="KN">Saint Kitts and Nevis</option><option value="LC">Saint Lucia</option><option value="MF">Saint Martin (French part)</option><option value="PM">Saint Pierre and Miquelon</option><option value="VC">Saint Vincent and the Grenadines</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SX">Sint Maarten</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia and the South Sandwich Islands</option><option value="KR">South Korea</option><option value="SS">South Sudan</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard and Jan Mayen</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="VI">U.S. Virgin Islands</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UM">United States Minor Outlying Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis and Futuna</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option> </select> </div> </div> <div class="form-group label-controls stategroup" style=""> <label class="control-label col-sm-12" for="state">City<span class="red">*</span></label> <div class="col-sm-12"> <div class="autocomplete"> <input id="city" class="form-control new-form-control" type="text" name="city" placeholder="Select City"> <input type="hidden" id="state" name="state"> </div> </div> </div> <div class="form-group label-controls phn-block"> <label class="control-label col-sm-12" for="phone">Phone Number<span class="red">*</span></label> <div class="col-sm-12"> <input type="text" id="country_phone_code" name="country_phone_code" class="form-control new-form-control col-md-2" value="" readonly="" style="width: 15%; float: left;"> <input type="tel" class="form-control new-form-control col-md-10" id="phone_number" placeholder="Your Phone number" name="phone_number" required="" style="width: 84%"> </div> </div> <div class="col-md-12"> <div class="form-group"> <label for="medicalissue">Medical Issue <span class="red">*</span></label><br> <textarea cols="5" rows="5" id="medical_problem" name="medical_problem" placeholder="Describe The Current Medical Problem .." style="height:100%; width:100%; resize: vertical;" required=""></textarea> </div> </div> <div class="form-group label-controls" id="ageblock" style=""> <label class="control-label col-sm-12" for="email">Patient's Age or Date Of Birth<span class="red">*</span></label> <div class="col-sm-12"> <input type="text" class="form-control new-form-control" id="age" placeholder="Example: 30 Yrs or 29-05-1985" name="age"> </div> </div> <div class="form-group label-controls" id="emirates-id-block" style="display: none;"> <label for="inputCity" class="form-label"> Emirates ID </label> <input type="text" class="form-control new-form-control" name="emirates-id" id="emirates-id" placeholder="Enter Emirates ID (To be shared with hospital)"> </div> <div class="form-group label-controls"> <div class="col-sm-12 text-center"> <button type="submit" id="search-main-form-btn" class="btn online-consult-button in_page_form">SUBMIT DETAILS</button> <!-- <button type="submit" id="search-main-form-btn" class="btn online-consult-button">SUBMIT DETAILS</button>--> </div> </div> </form> <div style="width: 100%;" class="form-group label-controls"> <div class="col-sm-12 text-center"> <span class="formtns-triger text-muted">By submitting the form I agree to the <a title="Terms of Use" href="/terms-of-use" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formTerms">Terms of Use</a> and <a title="Privacy Policy" href="/privacy-policy" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formPrivacyPolicy">Privacy Policy</a> of Vaidam Health.</span> </div> </div> <!-- Model open  --> <!-- Model open  --> <!-- Start Modal Privacy Policy --> <div class="modal fade" id="formTerms" tabindex="-1" role="dialog" aria-labelledby="termsModalCenterTitle" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered" role="document"> <div class="modal-content"> <div class="modal-header"> <span class="modal-title" style="font-weight: bold" id="">Terms of Use</span> <button type="button" class="close px-2 py-1 lh-1" data-bs-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> </div> <div class="modal-body" id="terms_of_use"> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary px-4 py-1" data-bs-dismiss="modal">Close</button> <!-- <button type="button" class="btn btn-primary">Save changes</button> --> </div> </div> </div> </div> <!-- End Modal Terms --> <!-- Start Modal Privacy Policy --> <div class="modal fade" id="formPrivacyPolicy" tabindex="-1" role="dialog" aria-labelledby="PrivacyPolicyCenterTitle" aria-hidden="true"> <div class="modal-dialog modal-dialog-centered" role="document"> <div class="modal-content"> <div class="modal-header"> <span class="modal-title" style="font-weight: bold" id="">Privacy Policy</span> <button type="button" class="close px-2 py-1 lh-1" data-bs-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button> </div> <div class="modal-body" id="privacy_policy"> </div> <div class="modal-footer"> <button type="button" class="btn btn-secondary px-4 py-1" data-bs-dismiss="modal">Close</button> <!-- <button type="button" class="btn btn-primary">Save changes</button> --> </div> </div> </div> </div> <!-- End Modal Privacy Policy --> <style type="text/css"> #formTerms,#formPrivacyPolicy{font-size:14px;color:#666;top:30px}
-            #formTerms .modal-dialog,#formPrivacyPolicy .modal-dialog{margin: 0px auto;}
-            #formTerms .modal-title,#formPrivacyPolicy .modal-title{color:#666;font-size:16px;margin:10px}
-            .formtns-triger{opacity:.6;font-size:14px;cursor:pointer;}
-            #formTerms .modal-header,#formPrivacyPolicy .modal-header{background:unset;padding:0 5px;border:0}
-            #formTerms .close,#formPrivacyPolicy .close{font-size:30px;color:#e43939;position:absolute;opacity:1;top:1px;right:5px;z-index:999}
-            #formTerms .modal-body,#formPrivacyPolicy .modal-body{padding:5px 15px;max-height:420px;overflow:auto;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
-            #formTerms .modal-footer,#formPrivacyPolicy .modal-footer{padding:5px;border-top:0}
-            #formTerms .modal-footer .btn,#formPrivacyPolicy .modal-footer .btn{background:#e43939;color:#fff;font-size:14px;line-height:1;border-radius:5px;padding:5px 8px}
-            .modal-open .modal{overflow-x:hidden;overflow-y:hidden;}
-            #formTerms h2,#formPrivacyPolicy h2{font-size:16px;color:#666}
-            #formTerms ul,#formPrivacyPolicy ul,#formTerms ol,#formPrivacyPolicy ol{padding-left:15px}
-            #formTerms .modal-content, #formPrivacyPolicy .modal-content{background: #ffffff}
-            .modal-backdrop.fade.in{opacity:0.5}
-            .modal-backdrop {
-            --bs-backdrop-zindex: 0;  
-            }
-            @media    only screen and (max-width: 520px){
-            div#formPrivacyPolicy{top:36px}
-            #formTerms .modal-body, #formPrivacyPolicy .modal-body{max-height:480px}
-            }
-            .formtns-triger a {color: #164399;} </style> </div> </div> </div> </div> </div> <script type="text/javascript"> $(document).ready(function () {
-                // When page is ready, check if there is a pre-selected country
-                // var urlCountry = getCookie("SetPageCountry");
+                    <div class="dynamic_content">
+                        <div class="main_container">
+                            <style type="text/css"> 
+                                .primary-form{background-color: #f7f7f7;}
+                                .primary-form-field{width: 75%; margin: 0 auto;} 
+                            </style>
+                            <section class="selected-doctor ms_v_cta_hide">
+                                <div class="container block-container">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body panel-doctor-pif">
+                                            <div class="modeofconsultation h2 bold" style="text-align:center;">Send Your Enquiry</div>
+                                        </div>
+                                    </div> 
+                                </div> 
+                            </section>
 
-
-            function autocomplete(inp, arr) {
-                /*the autocomplete function takes two arguments,
-            the text field element and an array of possible autocompleted values:*/
-                var currentFocus;
-                /*execute a function when someone writes in the text field:*/
-                if (inp) {
-                inp.addEventListener("input", function (e) {
-                    var a,
-                        b,
-                        i,
-                        val = this.value;
-                    /*close any already open lists of autocompleted values*/
-                    closeAllLists();
-                    if (!val) {
-                        return false;
-                    }
-                    currentFocus = -1;
-                    /*create a DIV element that will contain the items (values):*/
-                    a = document.createElement("DIV");
-                    a.setAttribute("id", this.id + "autocomplete-list");
-                    a.setAttribute("class", "autocomplete-items");
-                    /*append the DIV element as a child of the autocomplete container:*/
-                    this.parentNode.appendChild(a);
-                    /*for each item in the array...*/
-                    for (i = 0; i < arr.length; i++) {
-                        /*check if the item starts with the same letters as the text field value:*/
-                        if (arr[i]["city"].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                            /*create a DIV element for each matching element:*/
-                            b = document.createElement("DIV");
-                            /*make the matching letters bold:*/
-                            b.innerHTML = "<strong>" + arr[i]["city"].substr(0, val.length) + "</strong>";
-                            b.innerHTML += arr[i]["city"].substr(val.length);
-                            /*insert a input field that will hold the current array item's value:*/
-                            b.innerHTML += "<input type='hidden' value='" + arr[i]["city"] + "'>";
-                            if (arr[i]["city"] != undefined) {
-                                //document.getElementById("state").value = arr[i]["state"];
-                                var stateElement = document.getElementById("state");
-                                if (stateElement) {
-                                    stateElement.value = arr[i]["state"];
-                                }
-                            }
-                            /*execute a function when someone clicks on the item value (DIV element):*/
-                            b.addEventListener("click", function (e) {
-                                /*insert the value for the autocomplete text field:*/
-                                inp.value = this.getElementsByTagName("input")[0].value;
-            
-                                /*close the list of autocompleted values,
-                        (or any other open lists of autocompleted values:*/
-                                closeAllLists();
-                            });
-                            a.appendChild(b);
-                        }
-                    }
-                });
-                }
-                /*execute a function presses a key on the keyboard:*/
-                if (inp) {
-                inp.addEventListener("keydown", function (e) {
-                    var x = document.getElementById(this.id + "autocomplete-list");
-                    if (x) x = x.getElementsByTagName("div");
-                    if (e.keyCode == 40) {
-                        /*If the arrow DOWN key is pressed,
-                    increase the currentFocus variable:*/
-                        currentFocus++;
-                        /*and and make the current item more visible:*/
-                        addActive(x);
-                    } else if (e.keyCode == 38) {
-                        //up
-                        /*If the arrow UP key is pressed,
-                    decrease the currentFocus variable:*/
-                        currentFocus--;
-                        /*and and make the current item more visible:*/
-                        addActive(x);
-                    } else if (e.keyCode == 13) {
-                        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-                        e.preventDefault();
-                        if (currentFocus > -1) {
-                            /*and simulate a click on the "active" item:*/
-                            if (x) x[currentFocus].click();
-                        }
-                    }
-                });
-                }
-                function addActive(x) {
-                    /*a function to classify an item as "active":*/
-                    if (!x) return false;
-                    /*start by removing the "active" class on all items:*/
-                    removeActive(x);
-                    if (currentFocus >= x.length) currentFocus = 0;
-                    if (currentFocus < 0) currentFocus = x.length - 1;
-                    /*add class "autocomplete-active":*/
-                    x[currentFocus].classList.add("autocomplete-active");
-                }
-                function removeActive(x) {
-                    /*a function to remove the "active" class from all autocomplete items:*/
-                    for (var i = 0; i < x.length; i++) {
-                        x[i].classList.remove("autocomplete-active");
-                    }
-                }
-                function closeAllLists(elmnt) {
-                    /*close all autocomplete lists in the document,
-                except the one passed as an argument:*/
-                    var x = document.getElementsByClassName("autocomplete-items");
-                    for (var i = 0; i < x.length; i++) {
-                        if (elmnt != x[i] && elmnt != inp) {
-                            x[i].parentNode.removeChild(x[i]);
-                        }
-                    }
-                }
-                /*execute a function when someone clicks in the document:*/
-                document.addEventListener("click", function (e) {
-                    closeAllLists(e.target);
-                });
-            }
-                
-                function getCookie(cname){
-                var name=cname+"=";
-                var decodedCookie=decodeURIComponent(document.cookie);
-                var ca=decodedCookie.split(';');
-                for(var i=0;i<ca.length;i++){
-                    var c=ca[i];while(c.charAt(0)==' '){c=c.substring(1);}
-                    if(c.indexOf(name)==0){return c.substring(name.length,c.length);}
-                }
-                return "";
-                }
-                var preferredLocation = getCookie("preferredLocation").replace(/\+/g, ' ');
-                var countryCode = getCookie("countryCode");
-
-                // Check for UAE and show emirates ID and city dropdown
-                if (preferredLocation == 'United Arab Emirates' && countryCode == 'AE') {
-                    $('#emirates-id-block').show();  
-                    $('.stategroup').show();        
-                    $('#city').attr('placeholder', 'Enter Emirates');  
-                    $('#city').replaceWith('<select id="city" class="form-control new-form-control" name="city"><option value="">Select Emirates</option><option value="Abu Dhabi">Abu Dhabi</option><option value="Ajman">Ajman</option><option value="Al Ain">Al Ain</option><option value="Al Qusais">Al Qusais</option><option value="Dubai">Dubai</option><option value="Ras Al Khaimah">Ras Al Khaimah</option><option value="Sharjah">Sharjah</option></select>');
-                } else if (countryCode == 'IN') {
-                    $('#emirates-id-block').hide();
-                    $('.stategroup').show();       
-                // $('#city').attr('placeholder', 'Enter city');
-                
-                    //$('#city').replaceWith('<input id="city" class="form-control new-form-control" type="text" name="city" placeholder="Enter City">');
-                //autocomplete(document.getElementById("city"), cities);
-                    
-                } else {  
-                    $('#emirates-id-block').hide();
-                    $('.stategroup').hide();  
-                }
-
-                // Handle country selection change event
-                $('#country').on('change', function() {
-                    var selectedCountry = $(this).val();
-                    console.log(selectedCountry);    
-                    if (selectedCountry == 'AE') {
-                        $('#emirates-id-block').show();  
-                    $('.stategroup').show();  
-                    $('.stategroup').removeAttr('style').show(); 
-                        $('#city').attr('placeholder', 'Enter Emirates');  
-                        $('#city').replaceWith('<select id="city" class="form-control new-form-control" name="city"><option value="">Select Emirates</option><option value="Abu Dhabi">Abu Dhabi</option><option value="Ajman">Ajman</option><option value="Al Ain">Al Ain</option><option value="Al Qusais">Al Qusais</option><option value="Dubai">Dubai</option><option value="Ras Al Khaimah">Ras Al Khaimah</option><option value="Sharjah">Sharjah</option></select>');
-                    } else if (selectedCountry == "IN") {
-                        $('#emirates-id-block').hide();  
-                        $('.stategroup').show();     
-                        $('#city').attr('placeholder', 'Enter city');
-                        $('#city').replaceWith('<input id="city" class="form-control new-form-control" type="text" name="city" placeholder="Enter City">');
-                        autocomplete(document.getElementById("city"), cities); 
-                    }   
-                    else {
-                        $('#emirates-id-block').hide();  
-                        $('.stategroup').hide(); 
-                    }
-                });
-            }); </script> </div> <!-- End Form --> </div> 
+                            <div class="container block-container">
+                                <div class="panel panel-default">
+                                    <div class="panel-body"> 
+                                        <form class="form-horizontal form-customize" id="genericForm_hospital" autocomplete="off">
+                                            <div class="form-group label-controls"> 
+                                                <label class="control-label col-sm-12" for="name">Name<span class="red">*</span></label> 
+                                                <div class="col-sm-12"> 
+                                                    <input type="text" class="form-control new-form-control" id="name" placeholder="Patient Name" name="name" required="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group label-controls">
+                                                <label class="control-label col-sm-12" for="email">Email<span class="red">*</span></label>
+                                                <div class="col-sm-12"> 
+                                                    <input type="email" class="form-control new-form-control" id="email" placeholder="Enter email" name="email" required="">
+                                                </div>
+                                            </div> 
+                                            <div class="form-group label-controls">
+                                                <label class="control-label col-sm-12" for="country">Country<span class="red">*</span></label>
+                                                <div class="col-sm-12">
+                                                    <select class="form-control new-form-control form-select" id="country" placeholder="Select Country" name="country" required="true"> 
+                                                        <option value="IN" selected="selected">India</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group label-controls stategroup" style="">
+                                                <label class="control-label col-sm-12" for="state">City<span class="red">*</span></label>
+                                                <input class="form-control new-form-control" type="text" name="other" id="other" placeholder="Select City"> 
+                                            </div>
+                                            <div class="form-group label-controls phn-block">
+                                                <label class="control-label col-sm-12" for="phone">Phone Number<span class="red">*</span></label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" id="country_phone_code" name="country_phone_code" class="form-control new-form-control col-md-2" value="+91" readonly="" style="width: 15%; float: left;">
+                                                    <input type="tel" class="form-control new-form-control col-md-10" id="phone_number" placeholder="Your Phone number" name="phone_number" required="" style="width: 84%">
+                                                </div> 
+                                            </div>
+                                            <div class="col-md-12"> 
+                                                <div class="form-group"> 
+                                                    <label for="medicalissue">Medical Issue <span class="red">*</span></label><br>
+                                                    <textarea cols="5" rows="5" id="medical_problem" name="medical_problem" placeholder="Describe The Current Medical Problem .." style="height:100%; width:100%; resize: vertical;" required=""></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group label-controls" id="ageblock" style="">
+                                                <label class="control-label col-sm-12" for="email">Patient's Age or Date Of Birth<span class="red">*</span></label>
+                                                <div class="col-sm-12"> 
+                                                    <input type="text" class="form-control new-form-control" id="age" placeholder="Example: 30 Yrs or 29-05-1985" name="age">
+                                                </div>
+                                            </div>
+                                            <div class="form-group label-controls">
+                                                <div class="col-sm-12 text-center">
+                                                <p id="category_master_msg"></p>
+                                                    <button type="submit" id="categoryBtn" name="submit" class="btn online-consult-button in_page_form">SUBMIT DETAILS</button>
+                                                </div>
+                                            </div>
+                                        </form> 
+                                        <div style="width: 100%;" class="form-group label-controls">
+                                            <div class="col-sm-12 text-center"> 
+                                                <span class="formtns-triger text-muted">By submitting the form I agree to the 
+                                                    <a title="Terms of Use" href="<?= base_url(); ?>terms-use" target="_blank" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formTerms">Terms of Use</a> and 
+                                                    <a title="Privacy Policy" href="<?= base_url(); ?>privacy-policy" target="_blank" class="terms_of_use" data-bs-toggle="modal" data-bs-target="#formPrivacyPolicy">Privacy Policy</a> of Vaidam Health.
+                                                </span> 
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
         </div>
-
-        
     </div>
 </section>
+
+<script>
+    $('#genericForm_hospital').submit(function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            url: "<?= base_url(); ?>genericform",
+            method: "POST",
+            enctype: "multipart/form-data",
+            data: formData,
+            dataType: 'JSON',
+            processData: false,
+            contentType: false,     
+            beforeSend: function () {
+                $('#categoryBtn').html('<span class="btn-spinner"><i class="fa fa-refresh fa-spin"></i></span> Loading...');
+                $('#categoryBtn').attr('disabled', true);
+            },
+            success: function(data){
+                if(data.status == true){
+                    $('#genericForm_hospital').trigger('reset');
+                    $('#category_master_msg').delay(1000).fadeOut('slow', function() {
+                        $('#category_master_msg').html('');
+                        $('#category_master_msg').show();
+                    });
+                    $('#category_master_msg').html('<span class="text-success">Successfully Saved!!</span>');
+                }
+                if(data.status == false){
+                    $('#category_master_msg').html('<span class="text-danger">Something error, Try after sometime!!</span>');
+                }
+            },
+            complete: function () {
+                $('#categoryBtn').html('Save');
+                $('#categoryBtn').attr('disabled', false);
+            }
+        });
+    });
+</script>

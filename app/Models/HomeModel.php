@@ -168,4 +168,26 @@ class HomeModel extends Model{
         return $result = $query->getRow();
     }
 
+
+    public function getCostData($slug){
+        $db = \Config\Database::connect();
+
+        $query = $db->query("SELECT tc.*
+        FROM tbl_cost as tc
+        WHERE tc.slug='$slug'");
+        
+        return $result = $query->getRow();
+    }
+
+    public function getTopHospitalData($city_id){
+        $db = \Config\Database::connect();
+
+        $query = $db->query("SELECT th.*, tc.name as city, tho.name as hospital_name, tho.primary_image, tho.slug as hospital_slug
+        FROM top_hospital as th
+        INNER JOIN tbl_city_master as tc ON tc.id = th.city_id
+        INNER JOIN tbl_hospital as tho ON tho.id = th.hospital_id
+        WHERE th.city_id=$city_id");
+        
+        return $result = $query->getResult();
+    }
 }

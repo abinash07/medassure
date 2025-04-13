@@ -211,8 +211,8 @@
             <div class="container upr">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-xl-5 col-lg-7 slider-info mb-4 mb-sm-5 mb-lg-0 text-center text-sm-start text-white">
-                        <h1 class="text-white">Medical Treatment With Unmatched Personal Care</h1>
-                        <p>World's Most Trusted Medical Travel Assistance Platform</p>
+                        <h1 class="text-white">Make an Appointment</h1>
+                        <p></p>
                         <p>Bringing Smiles to 10,000+ International Patients Since 2020 Since its inception in 2020, Medassure Healthcare has assisted 10,000+ overseas patients with top-tier medical care in India. From diagnostics to advanced treatments, we at Medassure ensure seamless care and support, including hospital coordination, travel, and accommodation, offering a hassle-free healthcare journey.</p>
                     </div>
                     <div class="col-lg-5 ps-xl-5">
@@ -398,34 +398,18 @@
                         <div class="col-country"> 
                             <a href="<?= base_url(''); ?>hospitals/india" title="Top Hospital in India">
                                 <h4>Delhi 
-                                    <figure><img src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/india-flag.webp" alt="India Flag" width="24" height="24" class="img-fluid" title="India Flag image"></figure>
+                                    <figure><img src="<?= base_url(''); ?>assets/img/india-flag.webp" alt="India Flag" width="24" height="24" class="img-fluid" title="India Flag image"></figure>
                                 </h4>
                             </a>
                             <div class="row row-cols-2 g-2 g-lg-3">
-                                <div class="col"> 
-                                    <a href="<?= base_url(''); ?>hospitals/medanta-medicity-gurgaon" title="Medanta - The Medicity Hospital, Gurgaon"> 
-                                        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Medanta.webp" alt="Medanta - The Medicity Hospital, Gurgaon" class="img-fluid" title="Medanta - The Medicity Hospital, Gurgaon">
-                                        <p>Medanta, Gurgaon</p>
-                                    </a> 
-                                </div>
-                                <div class="col"> 
-                                    <a href="<?= base_url(''); ?>hospitals/indraprastha-apollo-hospital-new-delhi" title="Indraprastha Apollo Hospital New Delhi"> 
-                                        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/indraprastha apollo hospital new delhi.webp" alt="Indraprastha Apollo Hospital New Delhi" class="img-fluid" title="Indraprastha Apollo Hospital New Delhi">
-                                        <p>Indraprastha Apollo, New Delhi</p>
-                                    </a> 
-                                </div>
-                                <div class="col"> 
-                                    <a href="<?= base_url(''); ?>hospitals/kokilaben-dhirubhai-ambani-hospital-mumbai" title="Kokilaben Dhirubhai Ambani Hospital Mumbai"> 
-                                        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/kokilaben hospital mumbai.webp" alt="Kokilaben Dhirubhai Ambani Hospital Mumbai" class="img-fluid" title="Kokilaben Dhirubhai Ambani Hospital Mumbai">
-                                        <p>Kokilaben, Mumbai</p>
-                                    </a> 
-                                </div>
-                                <div class="col"> 
-                                    <a href="<?= base_url(''); ?>hospitals/apollo-hospitals-greams-road-chennai" title="Apollo Hospitals, Greams Road, Chennai"> 
-                                        <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/apollo hospital  chennai.webp" alt="Apollo Hospitals, Greams Road, Chennai" class="img-fluid" title="Apollo Hospitals, Greams Road, Chennai">
-                                        <p>Apollo, Chennai</p>
-                                    </a> 
-                                </div>
+                                <?php foreach($delhitophospital as $k9 => $v9){ ?>
+                                    <div class="col"> 
+                                        <a href="<?= base_url(''); ?>hospital/<?= $v9->hospital_slug; ?>" title="<?= $v9->hospital_name; ?>"> 
+                                            <img loading="lazy" src="<?= base_url(); ?><?= $v9->primary_image; ?>" alt="<?= $v9->hospital_name; ?>" class="img-fluid" title="<?= $v9->hospital_name; ?>">
+                                            <p><?= $v9->hospital_name; ?></p>
+                                        </a> 
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -436,54 +420,37 @@
                                     <a href="<?= base_url(''); ?>hospitals/turkey" title="Top Hospital in Gurugram">
                                         <h4>Gurugram 
                                             <figure>
-                                                <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/turkey-flag.webp" alt="Thailand Flag" width="24" height="18" class="img-fluid" title="Thailand Flag image">
+                                            <img src="<?= base_url(''); ?>assets/img/india-flag.webp" alt="India Flag" width="24" height="24" class="img-fluid" title="India Flag image">
                                             </figure>
                                         </h4>
                                     </a>
                                     <div class="row g-3">
-                                        <div class="col"> <a
-                                                href="<?= base_url(''); ?>hospitals/medical-park-group-istanbul"
-                                                title="Medical Park Group, Istanbul"> <img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Medical Park, Istanbul.webp"
-                                                    alt="Medical Park Group, Istanbul" class="img-fluid"
-                                                    title="Medical Park Group, Istanbul">
-                                                <p>Medical Park, Istanbul</p>
-                                            </a> </div>
-                                        <div class="col"> <a
-                                                href="<?= base_url(''); ?>hospitals/memorial-hospitals-group-istanbul"
-                                                title="Memorial Hospitals Group, İstanbul"> <img loading="lazy"
-                                                    src=" https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Memorial Hospital istanbul.webp"
-                                                    alt="Memorial Hospitals Group, İstanbul" class="img-fluid"
-                                                    title="Memorial Hospitals Group, İstanbul">
-                                                <p>Memorial Hospitals, İstanbul</p>
-                                            </a> </div>
+                                        <?php foreach($gurugramtophospital as $k9 => $v9){ ?>
+                                            <div class="col"> 
+                                                <a href="<?= base_url(''); ?>hospital/<?= $v9->hospital_slug; ?>" title="<?= $v9->hospital_name; ?>"> 
+                                                    <img loading="lazy" src="<?= base_url(); ?><?= $v9->primary_image; ?>" alt="<?= $v9->hospital_name; ?>" class="img-fluid" title="<?= $v9->hospital_name; ?>">
+                                                    <p><?= $v9->hospital_name; ?></p>
+                                                </a> 
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="col-country"> <a href="<?= base_url(''); ?>hospitals/thailand"
+                                <div class="col-country"> 
+                                    <a href="<?= base_url(''); ?>hospitals/thailand"
                                         title="Top Hospital in Thailand">
-                                        <h4>Noida <figure><img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/thailand-flag.webp"
-                                                    alt="Thailand Flag" width="24" height="18" class="img-fluid"
-                                                    title="Thailand Flag"></figure>
-                                        </h4>
+                                        <h4>Noida <figure><img src="<?= base_url(''); ?>assets/img/india-flag.webp" alt="India Flag" width="24" height="24" class="img-fluid" title="India Flag image"></figure></h4>
                                     </a>
                                     <div class="row g-3">
-                                        <div class="col"> <a
-                                                href="<?= base_url(''); ?>hospitals/bumrungrad-international-hospital-bangkok"
-                                                title="Bumrungrad International Hospital, Bangkok"> <img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Bumrungrad, Bangkok.webp"
-                                                    alt="Bumrungrad International Hospital, Bangkok" class="img-fluid"
-                                                    title="Bumrungrad International Hospital, Bangkok">
-                                                <p>Bumrungrad, Bangkok</p>
-                                            </a> </div>
-                                        <div class="col"> <a href="<?= base_url(''); ?>hospitals/bangkok-hospital"
-                                                title="Bangkok Hospital"> <img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Bangkok Hospital, Bangkok, Bangkok.webp  "
-                                                    alt="Bangkok Hospital" class="img-fluid" title="Bangkok Hospital">
-                                                <p>Bangkok Hospital, Bangkok</p>
-                                            </a> </div>
+                                        <?php foreach($noidatophospital as $k9 => $v9){ ?>
+                                            <div class="col"> 
+                                                <a href="<?= base_url(''); ?>hospital/<?= $v9->hospital_slug; ?>" title="<?= $v9->hospital_name; ?>"> 
+                                                    <img loading="lazy" src="<?= base_url(); ?><?= $v9->primary_image; ?>" alt="<?= $v9->hospital_name; ?>" class="img-fluid" title="<?= $v9->hospital_name; ?>">
+                                                    <p><?= $v9->hospital_name; ?></p>
+                                                </a> 
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -492,61 +459,37 @@
                     <div class="col">
                         <div class="row row-cols-1 g-3 g-xl-4">
                             <div class="col">
-                                <div class="col-country"> <a
-                                        href="<?= base_url(''); ?>hospitals/united-arab-emirates"
+                                <div class="col-country"> 
+                                    <a href="<?= base_url(''); ?>hospitals/united-arab-emirates"
                                         title="Top Hospital in UAE">
-                                        <h4>Faridabad <figure><img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/uae-flag.webp"
-                                                    width="24" height="24" alt="UAE Flag" class="img-fluid"
-                                                    title="UAE Flag"></figure>
-                                        </h4>
+                                        <h4>Faridabad <figure><img src="<?= base_url(''); ?>assets/img/india-flag.webp" alt="India Flag" width="24" height="24" class="img-fluid" title="India Flag image"></figure></h4>
                                     </a>
                                     <div class="row g-3">
-                                        <div class="col"> <a
-                                                href="<?= base_url(''); ?>hospitals/burjeel-hospital-abu-dhabi"
-                                                title="Burjeel Hospital, Abu Dhabi"> <img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Burjeel, Abu Dhabi.webp "
-                                                    alt="Burjeel Hospital, Abu Dhabi" class="img-fluid"
-                                                    title="Burjeel Hospital, Abu Dhabi">
-                                                <p>Burjeel, Abu Dhabi</p>
-                                            </a> </div>
-                                        <div class="col"> <a
-                                                href="<?= base_url(''); ?>hospitals/saudi-german-hospital-dubai"
-                                                title="Saudi German Hospital, Dubai"> <img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Saudi German, Dubai.webp"
-                                                    alt="Saudi German Hospital, Dubai" class="img-fluid"
-                                                    title="Saudi German Hospital, Dubai">
-                                                <p>Saudi German, Dubai</p>
-                                            </a> </div>
+                                        <?php foreach($faridabadtophospital as $k9 => $v9){ ?>
+                                            <div class="col"> 
+                                                <a href="<?= base_url(''); ?>hospital/<?= $v9->hospital_slug; ?>" title="<?= $v9->hospital_name; ?>"> 
+                                                    <img loading="lazy" src="<?= base_url(); ?><?= $v9->primary_image; ?>" alt="<?= $v9->hospital_name; ?>" class="img-fluid" title="<?= $v9->hospital_name; ?>">
+                                                    <p><?= $v9->hospital_name; ?></p>
+                                                </a> 
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="col-country"> <a href="<?= base_url(''); ?>hospitals/germany"
-                                        title="Top Hospital in Germany">
-                                        <h4>Apollo proton chennai <figure><img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/germany-flag.webp"
-                                                    alt="Thailand Flag" width="24" height="18" class="img-fluid"
-                                                    title="Top Hospital in Germany"></figure>
-                                        </h4>
+                                <div class="col-country"> 
+                                    <a href="<?= base_url(''); ?>hospitals/germany" title="Top Hospital in Germany">
+                                        <h4>Apollo proton chennai <figure><img src="<?= base_url(''); ?>assets/img/india-flag.webp" alt="India Flag" width="24" height="24" class="img-fluid" title="India Flag image"></figure></h4>
                                     </a>
                                     <div class="row g-3">
-                                        <div class="col"> <a
-                                                href="<?= base_url(''); ?>hospitals/charite-university-hospital"
-                                                title="Charite University Hospital"> <img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Charite, Berlin.webp "
-                                                    alt="Charite University Hospital" class="img-fluid"
-                                                    title="Charite University Hospital">
-                                                <p>Charite, Berlin</p>
-                                            </a> </div>
-                                        <div class="col"> <a
-                                                href="<?= base_url(''); ?>hospitals/university-hospital-heidelberg"
-                                                title="University Hospital Heidelberg"> <img loading="lazy"
-                                                    src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/Heidelberg University, Heidelberg.webp"
-                                                    alt="University Hospital Heidelberg" class="img-fluid"
-                                                    title="University Hospital Heidelberg">
-                                                <p>Heidelberg University, Heidelberg</p>
-                                            </a> </div>
+                                        <?php foreach($channaitophospital as $k9 => $v9){ ?>
+                                            <div class="col"> 
+                                                <a href="<?= base_url(''); ?>hospital/<?= $v9->hospital_slug; ?>" title="<?= $v9->hospital_name; ?>"> 
+                                                    <img loading="lazy" src="<?= base_url(); ?><?= $v9->primary_image; ?>" alt="<?= $v9->hospital_name; ?>" class="img-fluid" title="<?= $v9->hospital_name; ?>">
+                                                    <p><?= $v9->hospital_name; ?></p>
+                                                </a> 
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -621,7 +564,7 @@
                             <div class="col position-relative">
                                 <div class="work_bx">
                                     <figure>
-                                        <img loading="lazy" src="<?= base_url(''); ?>assets/img/images/Cost.svg" alt="Receive cost estimate in 48 Hours" width="56" height="56" class="img-fluid" title="Receive cost estimate in 48 Hours"><span class="d-lg-none">02</span>
+                                        <img loading="lazy" src="<?= base_url(''); ?>assets/img/Cost.svg" alt="Receive cost estimate in 48 Hours" width="56" height="56" class="img-fluid" title="Receive cost estimate in 48 Hours"><span class="d-lg-none">02</span>
                                     </figure>
                                     <h3>Receive medical opinion and cost estimate within 48 Hours</h3>
                                 </div>
@@ -637,7 +580,7 @@
                             <div class="col position-relative">
                                 <div class="work_bx">
                                     <figure>
-                                        <img loading="lazy" src="<?= base_url(''); ?>assets/img/images/noun-follow-up.svg" alt="Get treated and fly back" width="56" height="56" class="img-fluid" title="Get treated and fly back"><span class="d-lg-none">04</span>
+                                        <img loading="lazy" src="<?= base_url(''); ?>assets/img/noun-follow-up.svg" alt="Get treated and fly back" width="56" height="56" class="img-fluid" title="Get treated and fly back"><span class="d-lg-none">04</span>
                                     </figure>
                                     <h3>Get treated and fly back. We stay in touch with you for follow ups</h3>
                                 </div>
@@ -783,8 +726,8 @@
                 <div class="testimonial-title align-items-center">
                     
                     <div class="section-title text-center">
-                        <h2>Satisfied Patients, Proud Service</h2>
-                        <p class="my-3">Bringing Smiles to 10,000+ International Patients Since 2020.</p>
+                        <h2>Bringing Smiles to 10,000+ International Patients Since 2020.</h2>
+                        <p class="my-3"></p>
                     </div>
                 </div>
                 <div class="owl-carousel testimonial-slider">

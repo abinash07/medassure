@@ -71,16 +71,54 @@
   if(page == 'index.php' || page == '' || page == 'admin'){
     $('#indexPage').addClass('active');
   }
-  if(page == 'doctor' || page == 'adddoctor' || page == 'report'){
-    $('#doctor').addClass('active');
+  if(page == 'hospital' || page == 'addhospital' || page == 'edithospital'){
+    $('#hospitalPage').addClass('active');
   }
-  if(page == 'partners' || page == 'partnerprofile'){
-    $('#partnersPage').addClass('active');
+  if(page == 'doctor' || page == 'adddoctor' || page == 'editdoctor'){
+    $('#doctorPage').addClass('active');
   }
-  if(page == 'indeed' || page == 'indeeddetails' || page == 'acceptedindent'){
-    $('#indentsPage').addClass('active');
+  if(page == 'enquiry'){
+    $('#enquiryPage').addClass('active');
   }
-
+  if(page == 'faq' || page == 'addfaq' || page == 'editfaq'){
+    $('#faqPage').addClass('active');
+  }
+  if(page == 'author' || page == 'addauthor' || page == 'editauthor'){
+    $('#authorPage').addClass('active');
+  }
+  if(page == 'googlerating' || page == 'addgooglerating' || page == 'editgooglerating'){
+    $('#googleratingPage').addClass('active');
+  }
+  if(page == 'category' || page == 'addcategory' || page == 'editcategory'){
+    $('#categoryPage').addClass('active');
+  }
+  if(page == 'video' || page == 'addvideo' || page == 'editvideo'){
+    $('#videoPage').addClass('active');
+  }
+  if(page == 'patienttestimonial' || page == 'addpatienttestimonial' || page == 'editpatienttestimonial'){
+    $('#patienttestimonialPage').addClass('active');
+  }
+  if(page == 'lowestquote' || page == 'addlowestquote' || page == 'editlowestquote'){
+    $('#lowestquotePage').addClass('active');
+  }
+  if(page == 'multispecialty' || page == 'addmultispecialty' || page == 'editmultispecialty'){
+    $('#multispecialtyPage').addClass('active');
+  }
+  if(page == 'tophospital' || page == 'edittophospital'){
+    $('#tophospitalPage').addClass('active');
+  }
+  if(page == 'department' || page == 'adddepartment' || page == 'editdepartment'){
+    $('#departmentPage').addClass('active');
+  }
+  if(page == 'treatment' || page == 'addtreatment' || page == 'edittreatment'){
+    $('#treatmentPage').addClass('active');
+  }
+  if(page == 'cost' || page == 'addcost' || page == 'editcost'){
+    $('#costPage').addClass('active');
+  }
+  if(page == 'adminuser' || page == 'addadminuser' || page == 'editadminuser'){
+    $('#adminuserPage').addClass('active');
+  }
   console.log(page);
   
 </script>

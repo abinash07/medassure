@@ -70,4 +70,6 @@ ALTER TABLE `tbl_doctor` ADD `education_training` LONGTEXT NOT NULL AFTER `hospi
 
 ALTER TABLE `tbl_doctor` ADD `city_id` INT NOT NULL AFTER `hospital_id`, ADD `department_id` INT NOT NULL AFTER `city_id`, ADD `treatment_id` INT NOT NULL AFTER `department_id`;
 
+CREATE TABLE `medassure`.`top_hospital` (`id` INT NOT NULL AUTO_INCREMENT , `city_id` INT NOT NULL , `hospital_id` INT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
 

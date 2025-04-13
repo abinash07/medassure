@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?= base_url('admin/home'); ?>"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="breadcrumb-item">Board Members</li>
+                                <li class="breadcrumb-item">FAQ</li>
                             </ol>
                         </nav>
                     </div>
@@ -29,7 +29,7 @@
                                 <div class="box-header with-border">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <!-- <h3 class="box-title pull-left">List of Examinees </h3> -->
+                                            <h3 class="box-title pull-left">List of FAQ's </h3>
                                         </div>
                                         <div class="col-md-6" style="text-align: right;">
                                             <a href="<?= base_url('admin/addfaq'); ?>" class="btn btn-primary btn-sm">Add New FAQ</a>
@@ -48,6 +48,7 @@
                                                             <th>Title</th>
                                                             <th>Content</th>
                                                             <th>Created On</th>
+                                                            <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                 </table>
@@ -86,8 +87,58 @@ $(document).ready(function(){
             { data: 'title' },
             { data: 'content' },
             { data: 'date' },
+            { data: 'action' },
         ],
     });
+
+    crudTable.on('draw.dt', function() {
+        deleteMe();
+    });
+
+    function showDeleteConfirmation(table,id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You are about to delete this item.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it',
+            cancelButtonText: 'Cancel',
+            allowOutsideClick: false,
+        }).then((result) => {
+            if(result.isConfirmed){
+                $.ajax({
+                    url: "<?php echo base_url('admin/delete_me'); ?>",
+                    method: "POST",
+                    data: {table: table, id: id},
+                    dataType: 'JSON',         
+                    beforeSend: function () {
+
+                    },
+                    success: function(data){
+                        if(data.status == true){
+                            crudTable.draw();
+                        }
+                        if(data.status == false){
+                            crudTable.draw();
+                        }
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        });
+    }
+        
+    function deleteMe(){
+        $('.delete-me').on('click',function(e){
+            e.preventDefault();
+            var table = $(this).data('tablename');
+            var id = $(this).data('tableid');
+            showDeleteConfirmation(table,id);
+        })
+    }
+
 });
 </script>
 

@@ -71,6 +71,26 @@ class CommonModel extends Model{
     }
 
 
+    public function updateRecord(string $columnName, $columnValue, string $table, array $data): bool{
+        $db = \Config\Database::connect();
+
+        $builder = $db->table($table);
+        $builder->where($columnName, $columnValue);
+        
+        $query = $builder->update($data);
+
+        return $query;
+    }
+
+    public function getSingleTableData(string $table, $id){
+        $db = \Config\Database::connect();
+
+        $builder = $db->table($table);
+        $builder->where('id', $id);
+        $query = $builder->get();
+
+        return $query->getRow();
+    }
 
 
 }

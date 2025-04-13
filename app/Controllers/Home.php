@@ -43,7 +43,11 @@ class Home extends BaseController{
         );
         $columnArray = ['id','title','description','image'];
         $data['specialty'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_multi_specialty',$where_conditions);
-
+        $data['delhitophospital'] = $this->HomeModel->getTopHospitalData(15);
+        $data['gurugramtophospital'] = $this->HomeModel->getTopHospitalData(6);
+        $data['faridabadtophospital'] = $this->HomeModel->getTopHospitalData(5);
+        $data['noidatophospital'] = $this->HomeModel->getTopHospitalData(16);
+        $data['channaitophospital'] = $this->HomeModel->getTopHospitalData(4);
         return $this->loadView('index',$data);
     }
 
@@ -170,10 +174,10 @@ class Home extends BaseController{
     public function cost($slug = ''){
         $data = [];
         $data['slug'] = $slug;
-        $data['countryList'] = $this->CommonModel->getMasterData();
-        $data['blog'] = $this->HomeModel->getBlogData($slug);
+        $data['cost'] = $this->HomeModel->getCostData($slug);
+        //$data['blog'] = $this->HomeModel->getBlogData($slug);
         // echo '<pre>';
-        // print_r($data['blog']);
+        // print_r($data['cost']);
         // exit;
         return $this->loadView('cost',$data);
     }
