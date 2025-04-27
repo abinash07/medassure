@@ -2715,4 +2715,123 @@ class Home extends BaseController{
         }
     }
 
+    /************************************Service Section*********************************/
+    public function service(){
+        $data = [];
+        return $this->loadAdminView('service',$data);
+    }
+    public function get_all_service(){
+        $postData = $this->request->getPost();
+        $response = $this->clientModel->get_all_service($postData);
+        return $this->response->setJSON($response);
+    }
+    public function add_service(){
+        $data = [];
+        return $this->loadAdminView('addservice',$data); 
+    }
+    public function insert_service(){
+        $session = session();
+        $uploadDirectory = PUBPATH. '/docs/service/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'title' => 'required|trim',
+            'description' => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if(!$this->validate($validationRules)){
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            file_put_contents($profile_filepath, $profile_file_binary);
+            $image = '/docs/service/'.$profile_uniqueFilename;
+        }
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'title'       => $this->request->getPost('title'),
+            'slug'        => $this->createSlug($this->request->getPost('title')),
+            'image'       => $image,
+            'description' => $this->request->getPost('description'),
+            'content'     => $this->request->getPost('content'),
+            'status'      => 1,
+            'created_by'  => session()->get('id'),
+            'created_on'  => time() + 12600,
+        ];
+
+        ## ✅ Insert into database
+        $result = $this->CommonModel->add_record('tbl_service',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'New Member Registered successfully'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
+    public function edit_service($id){
+        $data = [];
+        $data['faq'] = $this->CommonModel->getSingleTableData('tbl_faq',$id);
+        return $this->loadAdminView('editfaq',$data); 
+    }
+
+    public function update_service(){
+        $session = session();
+        
+        ## ✅ Validation Rules
+        $validationRules = [
+            'page'      => 'required|trim',
+            'title' => 'required|trim',
+            'content'   => 'required|trim',
+        ];
+
+        ## ✅ Validate Input
+        if (!$this->validate($validationRules)) {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => '*** Please fill the form correctly',
+                'errors'  => $this->validator->getErrors()
+            ]);
+        }
+        $id = $this->request->getPost('id');
+
+        ## ✅ Fetch Data from POST Request
+        $data = [
+            'page'        => $this->request->getPost('page'),
+            'title'       => $this->request->getPost('title'),
+            'content'       => $this->request->getPost('content'),            
+        ];
+
+        ## ✅ Insert into Database
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_faq',$data);
+        if($result){
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Successfully updated'
+            ]);
+        }else{
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Something error, Try after sometime!'
+            ]);
+        }
+    }
+
 }

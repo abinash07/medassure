@@ -116,6 +116,9 @@
   if(page == 'cost' || page == 'addcost' || page == 'editcost'){
     $('#costPage').addClass('active');
   }
+  if(page == 'service' || page == 'addservice' || page == 'editservice'){
+    $('#servicesPage').addClass('active');
+  }
   if(page == 'adminuser' || page == 'addadminuser' || page == 'editadminuser'){
     $('#adminuserPage').addClass('active');
   }

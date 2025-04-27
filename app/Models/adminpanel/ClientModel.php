@@ -1355,6 +1355,71 @@ class ClientModel extends Model{
     }
 
 
+    ## Get all service 
+    public function get_all_service($postData = null){
+        $db = db_connect();
+
+        ## Read values from DataTable request
+        $draw = $postData['draw'];
+        $start = $postData['start'];
+        $rowperpage = $postData['length']; 
+        $columnIndex = $postData['order'][0]['column']; 
+        $columnName = $postData['columns'][$columnIndex]['data']; 
+        $columnSortOrder = $postData['order'][0]['dir']; 
+        $searchValue = $postData['search']['value']; 
+
+        ## Custom filter
+        $status = isset($postData['status']) && $postData['status'] != '' ? "ts.status = ".$db->escape($postData['status']) : "ts.status = 1";
+
+        ## Search Query
+        $searchQuery = "";
+        if (!empty($searchValue)) {
+            $searchQuery = " AND (ts.title LIKE '%".$db->escapeLikeString($searchValue)."%' OR ts.description LIKE '%".$db->escapeLikeString($searchValue)."%')";
+        }
+
+        ## Total records without filtering
+        $totalRecordsQuery = $db->query("SELECT COUNT(ts.id) as totalrecord FROM tbl_service ts WHERE $status");
+        $totalRecords = $totalRecordsQuery->getRow()->totalrecord;
+
+        ## Total records with filtering
+        $filteredRecordsQuery = $db->query("SELECT COUNT(ts.id) as totalrecord FROM tbl_service ts WHERE $status $searchQuery");
+        $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
+
+        ## Fetch records with pagination & sorting
+        $query = $db->query("SELECT *
+        FROM tbl_service ts 
+        WHERE $status $searchQuery 
+        ORDER BY $columnName $columnSortOrder 
+        LIMIT $start, $rowperpage");
+        $records = $query->getResult();
+
+        ## Formatting response data
+        $data = [];
+        $slno = $start + 1;
+        foreach ($records as $record) {
+            $data[] = [
+                "id" => $slno,
+                "title"=> $record->title,
+                "slug"=> $record->title,
+                "description"=> $record->description,
+                "image"=> $record->image,
+                "date" => date('d M, Y - H:i:s A', $record->created_on),
+                "action" => '<a href="'.base_url('admin/editservice/').$record->id.'"><i class="fa fa-edit"></i></a> <a href="javascript:void(0);" class="delete-me" data-tablename="tbl_service" data-tableid="'.$record->id.'"><i class="fa fa-trash text-danger"></i></a>',
+            ];
+            $slno++;
+        }
+
+        ## JSON Response
+        return [
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordwithFilter,
+            "aaData" => $data
+        ];
+    }
+    
+
+
 
 
 

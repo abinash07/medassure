@@ -7,26 +7,26 @@
                         <div class="col-12 footer-link-box">
                             <div class="link-list"> 
                                 <a href="<?= base_url(''); ?>about-us" class="fs-4 fw-bolder mt-3" title="About Us">About Us</a> 
-                                <a href="<?= base_url(''); ?>medassure-services" title="Our Services">Our Services</a>
+                                <!-- <a href="<?= base_url(''); ?>medassure-services" title="Our Services">Our Services</a> -->
                                 <a href="<?= base_url(''); ?>medassure-vision-mission-objective" title="Vision">Vision</a> 
-                                <a href="<?= base_url(''); ?>our-team" title="Team">Team</a> 
+                                <!-- <a href="<?= base_url(''); ?>our-team" title="Team">Team</a> -->
                                 <a href="<?= base_url(''); ?>frequently-asked-questions" title="FAQ">FAQ</a> 
                                 <a href="<?= base_url(''); ?>contact" title="Contact Us">Contact Us</a> 
                                 <a href="<?= base_url(''); ?>jobs-medassure" title="Jobs">Jobs</a> 
                             </div>
-                            <div class="link-list">
+                            <!-- <div class="link-list">
                                 <div class="fs-4 fw-bolder mt-3">For Hospital</div> 
                                 <a href="<?= base_url(''); ?>medassure-hospital-services" title="Our Services">Our Services</a> 
-                                <!-- <a href="<?= base_url(''); ?>opd-camps" title="OPD Camps">OPD Camps</a> -->
+                                <a href="<?= base_url(''); ?>opd-camps" title="OPD Camps">OPD Camps</a>
                                 <div class="fs-4 fw-bolder mt-3">For Doctors</div>
                                 <a href="<?= base_url(''); ?>medassure-doctor-services" title="Our Services">Our Services</a>
                                 <div class="fs-4 fw-bolder mt-3">For Partners</div> 
                                 <a href="<?= base_url(''); ?>partner-medassure" title="Refer to Us">Refer to Us</a>
-                            </div>
+                            </div> -->
                             <div class="link-list">
                                 <div class="fs-4 fw-bolder mt-3">Policy</div> 
                                 <a href="<?= base_url(''); ?>privacy-policy" title="Privacy Policy">Privacy Policy</a> 
-                                <a href="<?= base_url(''); ?>editorial-policy" title="Editorial Policy">Editorial Policy</a> 
+                                <!-- <a href="<?= base_url(''); ?>editorial-policy" title="Editorial Policy">Editorial Policy</a>  -->
                                 <a href="<?= base_url(''); ?>terms-use" title="Terms of Use">Terms of Use</a>
                             </div>
                             <div class="link-list">
@@ -36,7 +36,7 @@
                                 <a href="<?= base_url(''); ?>thailand" title="Thailand">Thailand</a> -->
                             </div>
                             <div class="link-list office-address">
-                                <div class="fs-4 fw-bolder mt-3">Our offices</div>
+                                <div class="fs-4 fw-bolder mt-3">Our office</div>
                                 <ul><li>OFFICE NUMBER 2 FIRST FLOOR TDI CENTRE JASOLA VIHAR DELHI 110025</li></ul>
                             </div>
                         </div>

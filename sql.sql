@@ -72,4 +72,14 @@ ALTER TABLE `tbl_doctor` ADD `city_id` INT NOT NULL AFTER `hospital_id`, ADD `de
 
 CREATE TABLE `medassure`.`top_hospital` (`id` INT NOT NULL AUTO_INCREMENT , `city_id` INT NOT NULL , `hospital_id` INT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
+ALTER TABLE `tbl_country_master` ADD `menu` INT NOT NULL AFTER `code`;
 
+ALTER TABLE `tbl_city_master` ADD `menu` INT NOT NULL AFTER `slug`;
+
+ALTER TABLE `tbl_country_master` ADD `sequence` INT NOT NULL AFTER `menu`;
+
+CREATE TABLE `medassure`.`tbl_service` (`id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(255) NOT NULL , `slug` VARCHAR(255) NOT NULL , `content` LONGTEXT NOT NULL , `status` INT NOT NULL , `created_by` INT NOT NULL , `created_on` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `tbl_service` ADD `description` VARCHAR(255) NOT NULL AFTER `slug`;
+
+ALTER TABLE `tbl_service` ADD `image` VARCHAR(255) NOT NULL AFTER `slug`;

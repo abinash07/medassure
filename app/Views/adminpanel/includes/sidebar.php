@@ -81,6 +81,9 @@
             <li class="" id="costPage">
                 <a href="<?= base_url('admin/cost'); ?>"><i class="fa fa-inr" aria-hidden="true"></i> <span>Cost</span></a>
             </li>
+            <li class="" id="servicesPage">
+                <a href="<?= base_url('admin/service'); ?>"><i class="fa fa-inr" aria-hidden="true"></i> <span>Our Services</span></a>
+            </li>
 
             <li class="" id="adminuserPage">
                 <a href="<?= base_url('admin/adminuser'); ?>"><i class="fa fa-users" aria-hidden="true"></i> <span>Admin Users</span></a>

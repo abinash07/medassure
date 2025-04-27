@@ -1,17 +1,299 @@
-<section class="breadcrumb-section bg-light border-bottom border-2 border-light-subtle"> <div class="container"> <div class="row"> <div class="col-12"> <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb"> <ol class="breadcrumb mt-3"> <li class="breadcrumb-item"><a class="text-secondary" href="https://www.vaidam.com">Home</a></li><li class="breadcrumb-item"><a class="text-secondary" href="https://www.vaidam.com/privacy-policy">Privacy Policy</a></li> </ol> </nav> </div> </div> </div> 
+<section class="breadcrumb-section bg-light border-bottom border-2 border-light-subtle"> 
+    <div class="container"> 
+        <div class="row"> 
+            <div class="col-12"> 
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb"> 
+                    <ol class="breadcrumb mt-3"> 
+                        <li class="breadcrumb-item"><a class="text-secondary" href="<?= base_url(); ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-secondary" href="<?= base_url(); ?>privacy-policy">Privacy Policy</a></li> 
+                    </ol> 
+                </nav> 
+            </div> 
+        </div> 
+    </div> 
 </section>
 
+<section class="py-5 bg-light">
+   <div class="container-fluid">
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <section class="we-planned bg-vh-2">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-8 col-lg-7 d-flex flex-column justify-content-center mt-4 mt-md-0">
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Privacy Policy</span></span></p>
 
-<section class="py-5 bg-light"> <div class="container-fluid"> <div class="container"> <div class="row"> <div class="col-12"> <style> .list-w-circle {
-            padding-left: 0;
-        }
-        .list-w-circle li {
-            margin-bottom: 6px;
-            padding-left: 25px;
-            list-style: none;
-            background-image: url(https://d3lclm53tbcdw6.cloudfront.net/v2/hospital_details/images/circle-green.webp);
-            background-repeat: no-repeat;
-            background-position: left top 3px;
-            background-size: 15px;
-        } </style> <section class="we-planned bg-vh-2"> <div class="container-fluid"> <div class="container"> <div class="row"> <div class="col-xl-8 col-lg-7 d-flex flex-column justify-content-center mt-4 mt-md-0"> <h1 class="fs-2">Privacy Policy</h1> <p>Vaidam Health Private Limited or Vaidam Health (“we”) are committed to safeguarding the privacy of our website visitors and registered users of the Vaidam Health platform; this Policy sets out how we will treat your personal data when we act as the custodian of that data.</p> <h2 class="fs-4 mt-4">What personal data do we collect?</h2> <p>We may collect, store and use the following kinds of information and personal data (“Collected Information”):</p> <p><strong>A.</strong> Information and personal data about your visits to and use of this website and our platform. We collect personal data about your computer and your visits to this website or the platform, including your IP address, geographical location, browser type, referral source, length of visit and number of page views, all of which are also Collected Information.</p> <p><strong>B.</strong> Information about any transactions carried out between you and us on this website, including information relating to any enquiry&nbsp;you make of our goods or services. We collect:</p> <ul class="list-w-circle"> <li>First and last name</li> <li>Title</li> <li>Contact information (email, phone)</li> <li>Professional life data</li> <li>Personal life data</li> <li>Connection data</li> <li>Localisation data</li> <li>Application usage data</li> <li>Email communication data</li> <li>Call recording data</li> </ul> <p><strong>C.</strong> Information that you provide to us for the purpose of registering with us on the website or platform and/or subscribing to our website services and/or email notifications. We collect first and last name, email address, and phone number for these purposes.</p> <p><strong>D.</strong> Medical report documents to be shared with hospital(s)/doctor(s) or a related entity, for the sole purpose of knowing your case better, as part of our services. It is not shared with any advertising platform or an entity not linked with providing services as asked by you.</p> <h3 class="fs-4 mt-3">Cookies and other tracking technologies we use</h3> <p>We use cookies on this website. A cookie is a text file sent by a web server to a web browser, and stored by that browser. The text file is then sent back to the server each time the browser requests a page from the server. This enables the web server to identify and track the web browser. We may send one or more cookies which may be stored by your browser on your computer. The information we obtain from cookies is part of the Collected Information. Our advertisers and service providers may also send you cookies.</p> <p>Most browsers allow you to refuse to accept cookies. (For example, in Internet Explorer you can refuse all cookies by clicking “Tools”, “Internet Options”, “Privacy”, and selecting “Block all cookies” using the sliding selector.) This will, however, have a negative impact upon the usability of many websites, including this one. To improve our services and this site, we may retain third party service providers to operate this site and help us monitor, collect and analyze information regarding your interactions with this website and data you input, including through the use of such providers’ cookies on your computer. For more information about cookies and other tracking technologies we use, please see our Cookies Policy.</p> <h2 class="fs-4 mt-4">Why we use collected information</h2> <h4 class="fs-6"><strong>Collected Information, including personal data, will be used to:</strong></h4> <p><strong>A.</strong> Contact you through email, phone, messages and the other publicly available platforms for communication.</p> <p><strong>B.</strong> Administer and improve this website’s and the platform’s usability;</p> <p><strong>C.</strong> Improve your browsing experience by modification and replacement of text, images,videos or links to increase relevance to the visitor;</p> <p><strong>D.</strong> Send to you marketing and other communications relating to our business or the businesses of carefully selected third parties which we think may be of interest to you by post or, where you have specifically consented, by email or similar technology.</p> <p><strong>E.</strong> Provide other companies with statistical information about our users. Information we provide to other companies will not identify any individual user.</p> <p><strong>F.</strong> Allow us to see what enquiries made through our system get responded to, though we restrict who can see the text of the responses.</p> <p><strong>G.</strong> To deliver advertising, marketing and event-based communication. If the User choses to opt out of receiving such marketing and event-based communication by emailing at hello@vaidam.com or by clicking the “unsubscribe” button present at the bottom of the email newsletter, Vaidam Health will ensure that new data collected about the User(s) from then on will not be used for any targeted advertising purposes. However, Vaidam Health may use existing information of the User(s) to customize the website accordingly.</p> <p><strong>H.</strong> To educate other users about experiences in the form of blogs, articles, pictures and videos. If the user has any concern about content, it can be reported (at hello@vaidam.com) and appropriate action can be taken.</p> <h4 class="fs-6">Lawful grounds</h4> <p>If you are a registered platform user, or a website user, the lawful grounds for processing your Collected Information is our legitimate interest in understanding how users interact with this website and the platform, and to improve how we promote our products and services.</p> <h4 class="fs-6">Sharing collected information</h4> <p>We may share Collected Information about you:</p> <p><strong>A.</strong> To enable our service providers (third party sub-processors) to provide data centre hosting services, database hosting services, dialer infrastructure services, email sync services and to enable our third party processors to provide sales and marketing operations services;</p> <p><strong>B.</strong> To the extent that we are required to do so by law;</p> <p><strong>C.</strong> In connection with any legal proceedings or prospective legal proceedings;</p> <p><strong>D.</strong> In order to establish, exercise or defend our legal rights (including providing information to others for the purposes of fraud prevention and reducing credit risk).</p> <p><strong>E.</strong> In response to lawful requests by public authorities, including to meet national security or law enforcement requirements.</p> <h3 class="fs-4 mt-4">Security of collected information</h3> <p>We will take reasonable precautions to prevent the loss, misuse or alteration of your personal data. Data transmission over the Internet is inherently unsecure and we cannot guarantee the security of data sent over the Internet. We will store all the personal data you provide or that we collect about you on our secure servers. You are responsible for keeping your passwords confidential. We will not ask you for your passwords.</p> <h3 class="fs-4 mt-4">Transfers of Collected Information</h3> <p>We are located in Gurgaon, India. Submitting your personal data via this website or the platform will transfer your personal data to us. We will process transferred personal data pursuant to India and the EU-US. We may transfer your personal data to third parties, as described in Sharing Collected Information, pursuant to the onward transfer principles of the IT rules and regulations for data privacy. We use these third-parties to perform certain functions offered as part of our products and services, e.g. data centre hosting services, CRM Management, Group Email Services, SaaS survey solutions and SaaS IT service management software. These providers all certify compliance with the latest data privacy rules and regulations and are restricted from direct access to your personal data but, if necessary, may be granted access to your personal data only to the extent necessary to permit them to perform their contracted services. They are bound by confidentiality agreements and are restricted from using the personal data for other purposes.</p> <h3 class="fs-4 mt-4">Retention of your personal data</h3> <p>We retain your personal data until data is requested to be purged from our systems by you or an authorized member of your organization. We may purge the data at our discretion for the maintenance and upkeep of our systems.</p> <h3 class="fs-4 mt-4">Changes to this notice</h3> <p>We may update this privacy policy from time-to-time by posting a new version on our website. You should check this page occasionally to ensure you are happy with any changes.</p> <h3 class="fs-4 mt-4">Third party websites</h3> <p>The website contains links to other websites. We are not responsible for the privacy policies of third party websites or such site operators’ actions including the collection or use of your personal data.</p> <h3 class="fs-4 mt-4">Access to your personal data</h3> <p>If you use this website, upon request, Vaidam Health will grant you access to your personal data and allow you to correct, amend or delete information that is demonstrated to be inaccurate or incomplete. See Contact Us details on our website. If you are a platform user, we depend on you to update and correct your personal data to the extent necessary for the purposes for which that data was collected, such as contact information you provide to us so that we can provide you with invoicing information.</p> <h3 class="fs-4 mt-4">Your rights</h3> <p>You are entitled to have any inadequate, incomplete or incorrect personal data corrected (that is, rectified). You also have the right to request access to your personal data (including receiving a copy thereof). If we ever process your personal data, with the lawful grounds of your consent, you have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal. Furthermore, you are entitled to have your personal data erased under certain circumstances.</p> <p>You also have the right to lodge a complaint with the supervisory authority of your habitual residence, place of work or place of alleged infringement, if you consider that the processing of your personal data infringes an applicable law. You may contact us if you wish to exercise any of your rights in respect of your personal data processed by this website or the platform. Contact Us for any further information.</p> </div> <div class="col-1"></div> <div class="col-xl-3 col-lg-4 lh-1 position-relative"> <div class="sticy-box sticky-lg-top sticky-lg-top p-3 bg-light rounded-3"> <p class="fs-3 mb-1">Got questions or feedback?</p> <p>Reach us and we’ll gladly answer.</p> <a href="https://www.vaidam.com/lp/consult-online" class="btn btn-danger px-5 mt-3">CONTACT US</a> </div> </div> </div> </div> </div> </section> </div> </div> </div> </div> 
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Last updated: August 29, 2024</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/" style="color:blue; text-decoration:underline">Free Privacy Policy Generator</a>.</span></span></p>
+
+                                    <h2 style="margin-left:0in; margin-right:0in"><span style="font-size:13pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Interpretation and Definitions</span></span></span></h2>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Interpretation</span></span></span></h3>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</span></span></p>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Definitions</span></span></span></h3>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">For the purposes of this Privacy Policy:</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Medassure, OFFICE NUMBER 2 FIRST FLOOR TDI CENTRE JASOLA VIHAR DELHI 110025.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Country</strong> refers to: Delhi, India</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Service</strong> refers to the Website.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Third-party Social Media Service</strong> refers to any website or any social network website through which a User can log in or create an account to use the Service.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Website</strong> refers to Medassure, accessible from <a href="https://www.medassure.co.in/" style="color:blue; text-decoration:underline">https://www.medassure.co.in/</a></span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</span></span></p>
+
+                                    <h2 style="margin-left:0in; margin-right:0in"><span style="font-size:13pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Collecting and Using Your Personal Data</span></span></span></h2>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Types of Data Collected</span></span></span></h3>
+
+                                    <h4 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd"><em>Personal Data</em></span></span></span></h4>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Email address</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">First name and last name</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Phone number</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Address, State, Province, ZIP/Postal code, City</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Usage Data</span></span></p>
+
+                                    <h4 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd"><em>Usage Data</em></span></span></span></h4>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Usage Data is collected automatically when using the Service.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</span></span></p>
+
+                                    <h4 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd"><em>Information from Third-Party Social Media Services</em></span></span></span></h4>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Google</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Facebook</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Instagram</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Twitter</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>LinkedIn</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as Your name, Your email address, Your activities or Your contact list associated with that account.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.</span></span></p>
+
+                                    <h4 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd"><em>Tracking Technologies and Cookies</em></span></span></span></h4>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span><strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span><strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies on the <a href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking" style="color:blue; text-decoration:underline">Free Privacy Policy website</a> article.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">We use both Session and Persistent Cookies for the purposes set out below:</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Necessary / Essential Cookies</strong></span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Type: Session Cookies</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Administered by: Us</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Cookies Policy / Notice Acceptance Cookies</strong></span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Type: Persistent Cookies</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Administered by: Us</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Purpose: These Cookies identify if users have accepted the use of cookies on the Website.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>Functionality Cookies</strong></span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Type: Persistent Cookies</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Administered by: Us</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</span></span></p>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Use of Your Personal Data</span></span></span></h3>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">The Company may use Personal Data for the following purposes:</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>To manage Your Account:</strong> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">We may share Your personal information in the following situations:</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span><strong>For business transfers:</strong> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span><strong>With Affiliates:</strong> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span><strong>With business partners:</strong> We may share Your information with Our business partners to offer You certain products, services or promotions.</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span><strong>With other users:</strong> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside. If You interact with other users or register through a Third-Party Social Media Service, Your contacts on the Third-Party Social Media Service may see Your name, profile, pictures and description of Your activity. Similarly, other users will be able to view descriptions of Your activity, communicate with You and view Your profile.</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your consent.</span></span></p>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Retention of Your Personal Data</span></span></span></h3>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</span></span></p>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Transfer of Your Personal Data</span></span></span></h3>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</span></span></p>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Delete Your Personal Data</span></span></span></h3>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Our Service may give You the ability to delete certain information about You from within the Service.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.</span></span></p>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Disclosure of Your Personal Data</span></span></span></h3>
+
+                                    <h4 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd"><em>Business Transactions</em></span></span></span></h4>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</span></span></p>
+
+                                    <h4 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd"><em>Law enforcement</em></span></span></span></h4>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</span></span></p>
+
+                                    <h4 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd"><em>Other legal requirements</em></span></span></span></h4>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Comply with a legal obligation</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Protect and defend the rights or property of the Company</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Prevent or investigate possible wrongdoing in connection with the Service</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Protect the personal safety of Users of the Service or the public</span></span></p>
+
+                                    <p style="margin-left:0.25in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;"><span style="font-family:Symbol">· </span>Protect against legal liability</span></span></p>
+
+                                    <h3 style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Security of Your Personal Data</span></span></span></h3>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</span></span></p>
+
+                                    <h2 style="margin-left:0in; margin-right:0in"><span style="font-size:13pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Children's Privacy</span></span></span></h2>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</span></span></p>
+
+                                    <h2 style="margin-left:0in; margin-right:0in"><span style="font-size:13pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Links to Other Websites</span></span></span></h2>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</span></span></p>
+
+                                    <h2 style="margin-left:0in; margin-right:0in"><span style="font-size:13pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Changes to this Privacy Policy</span></span></span></h2>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</span></span></p>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</span></span></p>
+
+                                    <h2 style="margin-left:0in; margin-right:0in"><span style="font-size:13pt"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"><span style="color:#4f81bd">Contact Us</span></span></span></h2>
+
+                                    <p style="margin-left:0in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">If you have any questions about this Privacy Policy, You can contact us:</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">By email: info@medassure.co.in</span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">By visiting this page on our website: <a href="https://www.medassure.co.in/" style="color:blue; text-decoration:underline">https://www.medassure.co.in/</a></span></span></p>
+
+                                    <p style="margin-left:0.5in; margin-right:0in"><span style="font-size:11pt"><span style="font-family:&quot;Cambria&quot;,&quot;serif&quot;">By phone number: +91 9958278202</span></span></p>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 lh-1 position-relative">
+                                    <div class="sticy-box sticky-lg-top sticky-lg-top p-3 bg-light rounded-3"> 
+                                        <p class="fs-3 mb-1">Got questions or feedback?</p> 
+                                        <p>Reach us and we’ll gladly answer.</p> 
+                                        <a href="<?= base_url(); ?>consult-online" class="btn btn-danger px-5 mt-3">CONTACT US</a> <p class="fs-4 mt-5">Follow us</p> 
+                                        <div class="d-flex gap-3 justify-content-start"> 
+                                            <a href="https://www.youtube.com/@medassurepvtltd" title="YouTube" target="_blank"> 
+                                                <img title="YouTube" class="social-icon" src="<?= base_url(''); ?>assets/img/yt-icon.webp" width="42" height="42" loading="lazy" alt="YouTube"> 
+                                            </a>
+                                            <a title="LinkedIn" href="https://www.linkedin.com/company/72506410/admin/notifications/all/" target="_blank">
+                                                <img title="LinkedIn" class="social-icon" src="<?= base_url(''); ?>assets/img/linkedIn-icon.webp" width="42" height="42" loading="lazy" alt="LinkedIn">
+                                            </a> 
+                                            <a title="Facebook" href="https://www.facebook.com/medassurepvtltd" target="_blank">
+                                                <img title="Facebook" class="social-icon" src="<?= base_url(''); ?>assets/img/fb-icon.webp" width="42" height="42" loading="lazy" alt="Facebook"> 
+                                            </a> 
+                                            <a title="Instagram" href="https://www.instagram.com/medassurepvtltd/" target="_blank"> 
+                                                <img title="Instagram" class="social-icon" src="<?= base_url(''); ?>assets/img/insta-icon.webp" width="42" height="42" loading="lazy" alt="Instagram"> 
+                                            </a> 
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </section>
+            </div>
+         </div>
+      </div>
+   </div>
 </section>

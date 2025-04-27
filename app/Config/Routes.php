@@ -24,6 +24,7 @@ $routes->get('/terms-use', 'Home::terms_use');
 $routes->get('/india', 'Home::india');
 $routes->get('/turkey', 'Home::turkey');
 $routes->get('/thailand', 'Home::thailand');
+$routes->get('/service/(:any)', 'Home::service/$1');
 
 $routes->get('/videos', 'Home::videos');
 $routes->get('/videos/(:any)', 'Home::videos/$1');
@@ -201,7 +202,12 @@ $routes->post('/admin/update_top_hospital','Adminpanel\Home::update_top_hospital
 $routes->post('/admin/delete_me','Adminpanel\Home::delete_me');
 
 
-
+$routes->get('/admin/service','Adminpanel\Home::service');
+$routes->post('/admin/get_all_service','Adminpanel\Home::get_all_service');
+$routes->get('/admin/addservice','Adminpanel\Home::add_service');
+$routes->post('/admin/insert_service','Adminpanel\Home::insert_service');
+$routes->get('/admin/editservice/(:any)','Adminpanel\Home::edit_service/$1');
+$routes->post('/admin/update_service','Adminpanel\Home::update_service');
 
 
 

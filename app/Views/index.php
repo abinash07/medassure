@@ -211,9 +211,9 @@
             <div class="container upr">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-xl-5 col-lg-7 slider-info mb-4 mb-sm-5 mb-lg-0 text-center text-sm-start text-white">
-                        <h1 class="text-white">Make an Appointment</h1>
+                        <h1 class="text-white">Bringing Smiles to 10,000+ International Patients Since 2020 Since its inception in 2020</h1>
                         <p></p>
-                        <p>Bringing Smiles to 10,000+ International Patients Since 2020 Since its inception in 2020, Medassure Healthcare has assisted 10,000+ overseas patients with top-tier medical care in India. From diagnostics to advanced treatments, we at Medassure ensure seamless care and support, including hospital coordination, travel, and accommodation, offering a hassle-free healthcare journey.</p>
+                        <!-- <p> Medassure Healthcare has assisted 10,000+ overseas patients with top-tier medical care in India. From diagnostics to advanced treatments, we at Medassure ensure seamless care and support, including hospital coordination, travel, and accommodation, offering a hassle-free healthcare journey.</p> -->
                     </div>
                     <div class="col-lg-5 ps-xl-5">
                         <div class="slider-form">
@@ -318,7 +318,7 @@
         <section>
             <div class="container">
                 <div class="section-title mb-2 mb-sm-4 text-center">
-                    <h2>Top Medical Destinations</h2>
+                    <h2>Medical Destinations</h2>
                     <p class="mt-3">Our network spans the top medical tourism hubs worldwide - giving you the choice of cities, doctors and price.</p>
                 </div>
                 <div class="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-2 justify-content-center g-3 mt-0 cntry-bxes">
@@ -330,7 +330,7 @@
                             <p>India</p>
                         </button>
                     </div>
-                    <div class="col"> 
+                    <!-- <div class="col"> 
                         <button data-bs-toggle="modal" data-bs-target="#get_quote" class="country-bx d-flex align-items-center w-100 h-100">
                             <figure>
                                 <img loading="lazy" src="<?= base_url(''); ?>assets/img/uae-flag.webp" alt="UAE Flag" width="24" height="19" class="img-fluid" title="UAE Flag image">
@@ -353,7 +353,7 @@
                             </figure>
                             <p>Germany</p>
                         </button> 
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -611,15 +611,17 @@
                 </div>
                 <div class="row row-cols-lg-3 row-cols-1 row-cols-sm-2 g-3 g-xl-4 justify-content-center service-cnt">
                     <div class="col">
-                        <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
-                            <figure>
-                                <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon07.webp" width="26" height="26" alt="Medical Opinion and Cost Estimations" class="iimg-fluid" title="Medical Opinion and Cost Estimations">
-                            </figure>
-                            <div class="info">
-                                <h3>Medical Opinion and Cost Estimations</h3>
-                                <p>Expert opinions and cost estimates.</p>
+                        <a href="">
+                            <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
+                                <figure>
+                                    <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon07.webp" width="26" height="26" alt="Medical Opinion and Cost Estimations" class="iimg-fluid" title="Medical Opinion and Cost Estimations">
+                                </figure>
+                                <div class="info">
+                                    <h3>Medical Opinion and Cost Estimations</h3>
+                                    <p>Expert opinions and cost estimates.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
                         <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">

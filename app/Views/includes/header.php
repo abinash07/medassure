@@ -86,6 +86,42 @@
                                             <a href="<?= base_url(''); ?>hospitals" title="Hospitals">Hospitals</a>
                                         </div>
                                         <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
+                                            <?php foreach($hospitalmenu as $country => $cities){ ?>
+                                                <li class="drop-submenu"> 
+                                                    <div class="has-arrow">
+                                                        <span class="ms-nav-arrow">&nbsp;</span> 
+                                                        <a class="drop-link" href="<?= base_url(); ?>hospitals/<?php echo strtolower($country); ?>" title="<?php echo $country; ?>">
+                                                            <?php echo $country; ?>
+                                                        </a> 
+                                                    </div> 
+                                                    <ul class="drop-menu nav-bar">
+                                                        <?php foreach($cities as $city => $cityData){ ?>
+                                                            <li class="drop-submenu"> 
+                                                                <div class="has-arrow">
+                                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                                    <a class="drop-link" href="<?= base_url(); ?>hospitals/<?php echo $cityData['slug']; ?>" title="<?php echo $city; ?>">
+                                                                        <?php echo $city; ?>
+                                                                    </a> 
+                                                                </div> 
+                                                                <ul class="drop-menu nav-bar">
+                                                                    <?php foreach($cityData['hospitals'] as $hospital){ ?>
+                                                                        <li>
+                                                                            <a href="<?= base_url(); ?>hospital/<?php echo $hospital['slug']; ?>" title="<?php echo $hospital['name']; ?>">
+                                                                                <?php echo $hospital['name']; ?>
+                                                                            </a> 
+                                                                        </li>
+                                                                    <?php } ?>
+                                                                </ul>
+                                                            </li>
+                                                        <?php } ?>
+                                                    </ul>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                        
+
+
+                                        <!-- <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
                                             <li class="drop-submenu">
                                                 <div class="has-arrow">
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
@@ -128,7 +164,7 @@
                                                     <a class="drop-link" href="<?= base_url(''); ?>hospitals/max-nanawati-mumbai" title="Max Nanawati Mumbai">Max Nanawati Mumbai</a> 
                                                 </div>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li class="nav-list-item drop">
                                         <div class="has-arrow"> 

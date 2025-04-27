@@ -190,4 +190,68 @@ class HomeModel extends Model{
         
         return $result = $query->getResult();
     }
+
+    // public function getHospitalMenuData(){
+    //     $db = \Config\Database::connect();
+
+    //     $query = $db->query("SELECT tcm.name as country_name, tccm.name as city_name, th.name as hospital_name
+    //     FROM tbl_country_master as tcm
+    //     LEFT JOIN tbl_city_master as tccm ON (tccm.country_id = tcm.id and tccm.menu = 1)
+    //     LEFT JOIN tbl_hospital as th ON th.city = tccm.id
+    //     WHERE tcm.status = 1 and tcm.menu = 1");
+        
+    //     return $result = $query->getResult();
+    // }
+
+
+    public function getHospitalMenuData() {
+        $db = \Config\Database::connect();
+    
+        $query = $db->query("SELECT 
+            tcm.name as country_name, 
+            tccm.name as city_name, 
+            tccm.slug as city_slug,
+            th.name as hospital_name,
+            th.slug as hospital_slug
+            FROM tbl_country_master as tcm
+            INNER JOIN tbl_city_master as tccm ON (tccm.country_id = tcm.id AND tccm.menu = 1)
+            INNER JOIN tbl_hospital as th ON th.city = tccm.id
+            WHERE tcm.status = 1 AND tcm.menu = 1
+            ORDER BY tcm.sequence, tccm.name, th.name
+        ");
+    
+        $result = $query->getResultArray(); // get as array
+    
+        $finalData = [];
+    
+        foreach ($result as $row) {
+            $country = $row['country_name'];
+            $city = $row['city_name'];
+            $city_slug = $row['city_slug'];
+            $hospital = $row['hospital_name'];
+            $hospital_slug = $row['hospital_slug'];
+    
+            if (!isset($finalData[$country])) {
+                $finalData[$country] = [];
+            }
+    
+            if (!isset($finalData[$country][$city])) {
+                $finalData[$country][$city] = [
+                    'slug' => $city_slug,
+                    'hospitals' => []
+                ];
+            }
+    
+            if (!empty($hospital)) {
+                $finalData[$country][$city]['hospitals'][] = [
+                    'name' => $hospital,
+                    'slug' => $hospital_slug
+                ];
+            }
+        }
+    
+        return $finalData;
+    }
+    
+    
 }
