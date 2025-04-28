@@ -66,7 +66,8 @@
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label class="control-label">Content <span class="star">*</span></label>
-                                                            <input type="text" class="form-control" name="content" id="content" placeholder="Enter Author Name" required="">
+                                                            <!-- <input type="text" class="form-control" name="content" id="content" placeholder="Enter Author Name" required=""> -->
+                                                            <textarea class="form-control" id="content" name="content" rows="5" placeholder="Enter About" required=""></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -273,7 +274,7 @@
                         if(data.status == true){
                             $('#addFaq').attr('reset');
                             $('#content').summernote('reset');
-                            //showSuccessAndReload();
+                            showSuccessAndReload();
                         }
                         if(data.status == false){
                             $('#message').html('<span class="text-danger">Something error, Try after sometime!!</span>');

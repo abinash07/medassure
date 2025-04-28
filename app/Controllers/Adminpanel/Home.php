@@ -2788,17 +2788,19 @@ class Home extends BaseController{
 
     public function edit_service($id){
         $data = [];
-        $data['faq'] = $this->CommonModel->getSingleTableData('tbl_faq',$id);
-        return $this->loadAdminView('editfaq',$data); 
+        $data['service'] = $this->CommonModel->getSingleTableData('tbl_service',$id);
+        return $this->loadAdminView('editservice',$data); 
     }
 
     public function update_service(){
         $session = session();
+        $uploadDirectory = PUBPATH. '/docs/service/';
+        $resizedprofileimg = $this->request->getPost('resizedprofileimg');
         
         ## ✅ Validation Rules
         $validationRules = [
-            'page'      => 'required|trim',
             'title' => 'required|trim',
+            'description' => 'required|trim',
             'content'   => 'required|trim',
         ];
 
@@ -2810,17 +2812,41 @@ class Home extends BaseController{
                 'errors'  => $this->validator->getErrors()
             ]);
         }
+
         $id = $this->request->getPost('id');
+        $old_profile_img = $this->request->getPost('oldProfileImg');
+        $image = '';
+
+
+        if(isset($resizedprofileimg) && !empty($resizedprofileimg)){
+            $img = str_replace('data:image/jpeg;base64,', '', $resizedprofileimg);
+            $img = str_replace(' ', '+', $img);
+            $profile_file_binary = base64_decode($img);
+            $profile_uniqueFilename = uniqid() . '.jpeg';
+            $profile_filepath = $uploadDirectory .$profile_uniqueFilename;
+            if(file_put_contents($profile_filepath, $profile_file_binary)){
+                if(!empty($old_profile_img)){
+                    $profile_filepath = PUBPATH.'/'.$old_profile_img;
+                    if(file_exists($profile_filepath)){ unlink($profile_filepath); }
+                }
+            }
+            $image = '/docs/service/'.$profile_uniqueFilename;
+        }
+
 
         ## ✅ Fetch Data from POST Request
         $data = [
-            'page'        => $this->request->getPost('page'),
             'title'       => $this->request->getPost('title'),
-            'content'       => $this->request->getPost('content'),            
+            'slug'        => $this->createSlug($this->request->getPost('title')),
+            'image'       => $image,
+            'description' => $this->request->getPost('description'),
+            'content'     => $this->request->getPost('content'),         
         ];
 
+        if($image){$data['image'] = $image;}
+
         ## ✅ Insert into Database
-        $result = $this->CommonModel->updateRecord('id',$id,'tbl_faq',$data);
+        $result = $this->CommonModel->updateRecord('id',$id,'tbl_service',$data);
         if($result){
             return $this->response->setJSON([
                 'status'  => true,

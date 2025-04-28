@@ -610,20 +610,22 @@
                     <p class="mt-3">You will be assisted by a dedicated case manager from our team. List of services you can expect from us, for FREE!</p>
                 </div>
                 <div class="row row-cols-lg-3 row-cols-1 row-cols-sm-2 g-3 g-xl-4 justify-content-center service-cnt">
+                    <?php foreach($service as $k11 => $v11){ ?>
                     <div class="col">
-                        <a href="">
+                        <a href="<?= base_url(''); ?>service/<?=$v11['slug'] ?>">
                             <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
                                 <figure>
-                                    <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon07.webp" width="26" height="26" alt="Medical Opinion and Cost Estimations" class="iimg-fluid" title="Medical Opinion and Cost Estimations">
+                                    <img loading="lazy" src="<?= base_url(''); ?><?= $v11['image']; ?>" width="26" height="26" alt="<?= $v11['title']; ?>" class="iimg-fluid" title="<?= $v11['title']; ?>">
                                 </figure>
                                 <div class="info">
-                                    <h3>Medical Opinion and Cost Estimations</h3>
-                                    <p>Expert opinions and cost estimates.</p>
+                                    <h3><?= $v11['title']; ?></h3>
+                                    <p><?= $v11['description']; ?></p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <?php } ?>
+                    <!-- <div class="col">
                         <div class="serv_bx d-flex d-sm-block d-md-flex align-items-start text-start text-sm-center text-md-start">
                             <figure>
                                 <img loading="lazy" src="<?= base_url(''); ?>assets/img/serv-icon01.webp" width="26" height="26" alt="Pre-Travel Consultations" class="iimg-fluid" title="Pre-Travel Consultations">
@@ -711,7 +713,7 @@
                                 <p>Arrangements of private nursing care as needed.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <div class="mt-4 pt-3 text-center"> 

@@ -47,7 +47,6 @@
                                                             <th>Title</th> 
                                                             <th>Slug</th>
                                                             <th>Service</th>
-                                                            <th>Content</th>
                                                             <th>Created On</th>
                                                             <th>Action</th>
                                                         </tr>
@@ -87,7 +86,6 @@ $(document).ready(function(){
             { data: 'title' },
             { data: 'slug' },
             { data: 'description' },
-            { data: 'content' },
             { data: 'date' },
             { data: 'action' },
         ],

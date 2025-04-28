@@ -49,6 +49,11 @@ class Home extends BaseController{
         );
         $columnArray = ['id','name'];
         $header['country'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_country_master',$where_conditions);
+        $where_conditions = array(
+            'status' => 1,
+        );
+        $columnArray = ['id','title','slug','description','image'];
+        $data['service'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_service',$where_conditions);
         $data['delhitophospital'] = $this->HomeModel->getTopHospitalData(15);
         $data['gurugramtophospital'] = $this->HomeModel->getTopHospitalData(6);
         $data['faridabadtophospital'] = $this->HomeModel->getTopHospitalData(5);
@@ -175,6 +180,13 @@ class Home extends BaseController{
         $data = [];
         $data['slug'] = $slug;
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+
+        $where_conditions = array(
+            'slug' => $slug,
+        );
+        $columnArray = ['id','title','slug','description','image','content'];
+        $data['service'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_service',$where_conditions);
+
         return $this->loadView('service',$data,$header);
     }
 
