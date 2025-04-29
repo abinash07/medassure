@@ -29,6 +29,37 @@
     <link rel="stylesheet" href="<?= base_url(''); ?>assets/css/style.css?v=1" as="style" />
     <link rel="stylesheet" href="<?= base_url(''); ?>assets/css/home.css" as="style" />
     <script src="<?= base_url(''); ?>assets/js/lib.js" type="text/javascript"></script>
+    <!-- Preload the script -->
+    <link rel="preload" href="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" as="script">
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        body {
+        top: 0 !important;
+        }
+
+        body>.skiptranslate, .goog-logo-link, .gskiptranslate, .goog-te-gadget span, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, div#goog-gt-tt {
+        display: none !important;
+        }
+
+        .goog-te-gadget {
+        color: transparent !important;
+        font-size: 0px;
+        }
+
+        .goog-text-highlight {
+        background: transparent !important;
+        box-shadow: transparent !important;
+        }
+
+        #google_translate_element select {
+        /* background: #2b1a12;
+        color: #fff4e4;
+        border: none;
+        font-weight: bold;
+        border-radius: 3px;
+        padding: 8px 12px */
+        }
+    </style>
 </head>
 
 <body>
@@ -371,8 +402,10 @@
                             </div>
                         </nav>
                     </div>
-                    <!-- <div class="desktop-lang col-md-4 sm-12 col-12 d-flex align-items-center justify-content-end"
-                        id="google_translate_element"> <select class="lang_opt gray-600 border border-secondary-subtle">
+                    <div class="desktop-lang col-md-4 sm-12 col-12 d-flex align-items-center justify-content-end" id='google_translate_element'>
+                    </div>
+                    <!-- <div class="desktop-lang col-md-4 sm-12 col-12 d-flex align-items-center justify-content-end" id="google_translate_element"> 
+                        <select class="lang_opt gray-600 border border-secondary-subtle">
                             <option value="">Select Language</option>
                             <option value="en|en">English</option>
                             <option value="en|fr">French</option>
@@ -383,10 +416,22 @@
                             <option value="en|ro">Romanian</option>
                             <option value="en|es">Spanish</option>
                             <option value="en|pt">Portuguese</option>
-                        </select> 
+                        </select>
                     </div> -->
                 </div>
             </div>
         </section>
     </header>
     <!-------/Header------->
+
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: 'true',
+        includedLanguages:'fr,ar,ru,bn,hi,ro,es,pt,en', // <- remove this line to show all language
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+}
+</script>
+

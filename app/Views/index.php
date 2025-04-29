@@ -358,6 +358,129 @@
             </div>
         </section>
 
+
+<!-- 
+<section class="gray-bg">
+   <div class="container">
+      <div class="section-title mb-2 mb-sm-3 text-center">
+         <h2>Multi-Specialty Focus</h2>
+         <p class="mt-3">We cover all medical needs, from hair transplants to heart transplants.</p>
+      </div>
+      <div class="row row-cols-lg-3 row-cols-2 g-3 mt-0 g-xl-4 treatment-cnt">
+         <div class="col">
+            <div data-india="https://www.vaidam.com/doctors/oncology-and-oncosurgery/india || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/india || https://www.vaidam.com/search/cancer/india" data-turkey="https://www.vaidam.com/doctors/oncology-and-oncosurgery/turkey || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/turkey || https://www.vaidam.com/search/cancer/turkey" data-uae="https://www.vaidam.com/doctors/oncology-and-oncosurgery/united-arab-emirates || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/oncology-and-oncosurgery/thailand || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/thailand || https://www.vaidam.com/search/cancer/thailand" data-germany="https://www.vaidam.com/doctors/oncology-and-oncosurgery/germany || https://www.vaidam.com/hospitals/oncology-and-oncosurgery/germany" data-department="Oncology" doctor-info="Best Cancer Doctors" hospital_info="Best Cancer Hospitals" cost-info="Cancer Treatment Cost" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalOncology">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Oncology.svg" alt="Oncology Service" class="img-fluid" title="Oncology Service image"></figure>
+               <div class="info">
+                  <h3>Oncology</h3>
+                  <p>Advanced cancer treatments with proven results.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div href="javascript:void(0);" doctor-info="Best Neurosurgeons" hospital_info="Best Neurosurgery Hospitals" cost-info="Brain Tumor Treatment Cost" data-india="https://www.vaidam.com/doctors/neurosurgery/india || https://www.vaidam.com/hospitals/neurosurgery/india || https://www.vaidam.com/search/neurosurgery/india" data-turkey="https://www.vaidam.com/doctors/neurosurgery/turkey || https://www.vaidam.com/hospitals/neurosurgery/turkey || https://www.vaidam.com/search/brain-tumor/turkey" data-uae="https://www.vaidam.com/doctors/neurosurgery/united-arab-emirates || https://www.vaidam.com/hospitals/neurosurgery/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/neurosurgery/thailand || https://www.vaidam.com/hospitals/neurosurgery/thailand || https://www.vaidam.com/search/neurosurgery/thailand" data-germany="https://www.vaidam.com/doctors/neurosurgery/germany || https://www.vaidam.com/hospitals/neurosurgery/germany" data-department="Neurosurgery" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalNeurosurgery">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Neurosurgery.png" alt="Neurosurgery Service" class="img-fluid" title="Neurosurgery Service image"></figure>
+               <div class="info">
+                  <h3>Neurosurgery</h3>
+                  <p>The specialty of neurosurgical care includes both adult and pediatric patients.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div href="javascript:void(0);" doctor-info="Best Spine Surgeons" hospital_info="Best Spine Hospitals" cost-info="Spine Surgery Cost" data-india="https://www.vaidam.com/doctors/spine-surgery/india || https://www.vaidam.com/hospitals/spine-surgery/india   || https://www.vaidam.com/search/spine-surgery/india" data-turkey="https://www.vaidam.com/doctors/spine-surgery/turkey || https://www.vaidam.com/hospitals/spine-surgery/turkey  || https://www.vaidam.com/search/spine-surgery/turkey" data-uae="https://www.vaidam.com/doctors/spine-surgery/united-arab-emirates || https://www.vaidam.com/hospitals/spine-surgery/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/spine-surgery/thailand || https://www.vaidam.com/hospitals/spine-surgery/thailand  || https://www.vaidam.com/search/spine-surgery/thailand" data-department="Spine Surgery" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalSpine-Surgery">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Spine Surgery.svg" alt="Spine Surgery Services" class="img-fluid" title="Spine Surgery Services image"></figure>
+               <div class="info">
+                  <h3>Spine Surgery</h3>
+                  <p>Precision spine surgeries for better mobility.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="Best Cardiac Surgeons" hospital_info="Best Cardiac Hospitals" cost-info="Heart Bypass Surgery Cost" data-india="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/india   || https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/india || https://www.vaidam.com/search/heart-surgery/india" data-turkey="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/turkey || https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/turkey || https://www.vaidam.com/search/heart-surgery/turkey" data-uae="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/united-arab-emirates ||  https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/cardiology-and-cardiac-surgery/thailand || https://www.vaidam.com/hospitals/cardiology-and-cardiac-surgery/thailand || https://www.vaidam.com/search/heart-surgery/thailand" data-department="Cardiology" class="treatment_bx d-block d-sm-flex position-relative " data-bs-toggle="modal" data-bs-target="#treatmentModalCardiology">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Cardiology.svg" alt="cardiology Service" class="img-fluid" title="Cardiology Service image"></figure>
+               <div class="info">
+                  <h3>Cardiology</h3>
+                  <p>World-class heart care for adults and children.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="Best Orthopedic Doctors" hospital_info="Best Orthopedic Hospitals" cost-info="Knee Replacement Cost" data-india="https://www.vaidam.com/doctors/orthopedics/india ||  https://www.vaidam.com/hospitals/orthopedics/india || https://www.vaidam.com/search/orthopedic-surgery/india" data-turkey="https://www.vaidam.com/doctors/orthopedics/turkey || https://www.vaidam.com/hospitals/orthopedics/turkey || https://www.vaidam.com/search/orthopedic-surgery/turkey" data-uae="https://www.vaidam.com/doctors/orthopedics/united-arab-emirates || https://www.vaidam.com/hospitals/orthopedics/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/orthopedics/thailand || https://www.vaidam.com/hospitals/orthopedics/thailand   || https://www.vaidam.com/search/orthopedic-surgery/thailand" data-department="Orthopedics" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalOrthopedics">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Orthopedics.svg" alt="Orthopedics Service" class="img-fluid" title="Orthopedics Service image"></figure>
+               <div class="info">
+                  <h3>Orthopedics</h3>
+                  <p>Expert joint replacements and bone deformities solutions.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="IVF Doctors" hospital_info="IVF Centers" cost-info="IVF Treatment Cost" data-india="https://www.vaidam.com/doctors/ivf-and-infertility/india || https://www.vaidam.com/hospitals/ivf-and-infertility/india  || https://www.vaidam.com/search/ivf/india" data-turkey="https://www.vaidam.com/doctors/ivf-and-infertility/turkey ||   https://www.vaidam.com/hospitals/ivf-and-infertility/turkey || https://www.vaidam.com/search/ivf/turkey" data-uae="https://www.vaidam.com/doctors/ivf-and-infertility/united-arab-emirates ||   https://www.vaidam.com/hospitals/ivf-and-infertility/united-arab-emirates  || https://www.vaidam.com/search/ivf/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/ivf-and-infertility/thailand ||  https://www.vaidam.com/hospitals/ivf-and-infertility/thailand  || https://www.vaidam.com/search/ivf/thailand" data-department="IVF" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalIVF">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/IVF.svg" alt="IVF treatments" class="img-fluid" title="IVF treatments image"></figure>
+               <div class="info">
+                  <h3>IVF</h3>
+                  <p>Leading fertility treatments with high success.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="Best Gynecologist" hospital_info="Best Gynecology Hospitals" cost-info="Gynaecological Surgery Cost" data-india="https://www.vaidam.com/doctors/gynecology/india || https://www.vaidam.com/hospitals/gynecology/india || https://www.vaidam.com/search/gynecological-surgery/india" data-turkey="https://www.vaidam.com/doctors/gynecology/turkey || https://www.vaidam.com/hospitals/gynecology/turkey || https://www.vaidam.com/search/gynecological-surgery/turkey" data-uae="https://www.vaidam.com/doctors/gynecology/united-arab-emirates || https://www.vaidam.com/hospitals/gynecology/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/gynecology/thailand || https://www.vaidam.com/hospitals/gynecology/thailand || https://www.vaidam.com/search/gynecological-surgery/thailand" data-department="Gynecology" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalGynecology">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Gynecology.svg" alt="Gynecology Services" class="img-fluid" title="Gynecology Services image"></figure>
+               <div class="info">
+                  <h3>Gynecology</h3>
+                  <p>Specialized women's health services.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="Best Cosmetic Surgeons" hospital_info="Best Cosmetic Hospitals" cost-info="Cosmetic Surgery Cost" data-india="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/india || https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/india || https://www.vaidam.com/search/cosmetic/india" data-turkey="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/turkey || https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/turkey || https://www.vaidam.com/search/cosmetic/turkey" data-uae="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/united-arab-emirates || https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/cosmetic-and-plastic-surgery/thailand || https://www.vaidam.com/hospitals/cosmetic-and-plastic-surgery/thailand || https://www.vaidam.com/search/cosmetic/thailand" data-department="Cosmetic" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalCosmetic">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Cosmetic And Plastic Surgery.svg" alt="cosmetic Service" class="img-fluid" title="Cosmetic Service image"></figure>
+               <div class="info">
+                  <h3>Cosmetic</h3>
+                  <p>Aesthetic procedures for a new you.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="Best Bariatric Surgeons" hospital_info="Best Bariatric Surgery Hospitals" cost-info="Bariatric Surgery Cost" data-india="https://www.vaidam.com/doctors/obesity-or-bariatric-surgery-0/india   || https://www.vaidam.com/hospitals/obesity-or-bariatric-surgery-0/india || https://www.vaidam.com/search/bariatric-surgery-for-weight-loss/india" data-turkey="https://www.vaidam.com/doctors/obesity-or-bariatric-surgery-0/turkey   || https://www.vaidam.com/hospitals/obesity-or-bariatric-surgery-0/turkey || https://www.vaidam.com/search/bariatric-surgery-for-weight-loss/turkey" data-uae="https://www.vaidam.com/doctors/obesity-or-bariatric-surgery-0/united-arab-emirates || https://www.vaidam.com/hospitals/obesity-or-bariatric-surgery-0/united-arab-emirates || https://www.vaidam.com/search/bariatric-surgery-for-weight-loss/united-arab-emirates" data-thailand="https://www.vaidam.com/doctors/obesity-or-bariatric-surgery-0/thailand || https://www.vaidam.com/hospitals/obesity-or-bariatric-surgery-0/thailand || https://www.vaidam.com/search/bariatric-surgery-for-weight-loss/thailand" data-department="Weight Loss" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalWeight-Loss">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Weight Loss.svg" alt="Weight Loss Service" class="img-fluid" title="Weight Loss Service image"></figure>
+               <div class="info">
+                  <h3>Weight Loss</h3>
+                  <p>Effective bariatric surgery options.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="Best Liver Transplant Surgeons" hospital_info="Best Liver Transplant Hospitals" cost-info="Liver Transplant Cost" data-india="https://www.vaidam.com/doctors/transplant-surgery/india || https://www.vaidam.com/hospitals/transplant-surgery/india || https://www.vaidam.com/search/liver-transplant/india" data-turkey="https://www.vaidam.com/doctors/transplant-surgery/turkey || https://www.vaidam.com/hospitals/transplant-surgery/turkey" data-thailand="https://www.vaidam.com/doctors/transplant-surgery/thailand || https://www.vaidam.com/hospitals/transplant-surgery/thailand" data-department="Liver Transplant" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalLiver-Transplant">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Liver Transplant.svg" alt="Liver transplant Services" class="img-fluid" title="Liver transplant Services image"></figure>
+               <div class="info">
+                  <h3>Liver Transplant</h3>
+                  <p>Liver transplant procedures of varying complexity.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="Best Kidney Transplant Surgeons" hospital_info="Best Kidney Transplant Hospitals" cost-info="Kidney Transplant Cost" data-india="https://www.vaidam.com/doctors/nephrology/kidney-transplant/india || https://www.vaidam.com/hospitals/nephrology/kidney-transplant/india || https://www.vaidam.com/search/kidney-transplant/india" data-turkey="https://www.vaidam.com/doctors/nephrology/kidney-transplant/turkey || https://www.vaidam.com/hospitals/nephrology/kidney-transplant/turkey" data-thailand="https://www.vaidam.com/doctors/nephrology/kidney-transplant/thailand || https://www.vaidam.com/hospitals/nephrology/kidney-transplant/thailand" data-department="Kidney transplant" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalKidney-transplant">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Kidney transplant.svg" alt="Kidney transplant Services" class="img-fluid" title="Kidney transplant Services image"></figure>
+               <div class="info">
+                  <h3>Kidney Transplant</h3>
+                  <p>Expert renal care and transplants.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col">
+            <div doctor-info="Best Bone Marrow Transplant Doctors" hospital_info="Best Bone Marrow Transplant Hospitals" cost-info="Bone Marrow Transplant Cost" data-india="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/india || https://www.vaidam.com/hospitals/hematology/bone-marrow-transplant/india || https://www.vaidam.com/search/bmt-bone-marrow-transplant/india" data-turkey="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/turkey  || https://www.vaidam.com/hospitals/hematology/turkey" data-thailand="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/thailand || https://www.vaidam.com/hospitals/hematology/bone-marrow-transplant/thailand" data-department="Bone Marrow Transplant" class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalBMT">
+               <figure class="m-0"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/department/Bone-Marrow-Transplant.svg" alt="Bone marrow transplant Services" class="img-fluid" title="Bone marrow transplant Services image"></figure>
+               <div class="info">
+                  <h3>Bone Marrow</h3>
+                  <p>Bone marrow transplant options for matched and non matched donors</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="mt-4 pt-3 text-center"> <a onclick="if (!window.__cfRLUnblockHandlers) return false; setformtype('','','home page enquiry button after multi specialty','','home page','','');" href="https://www.vaidam.com/lp/consult-online" class="readmore-outline me-2" title="Consult-Online">Need Assistance?</a> <a href="https://api.whatsapp.com/send?phone=919971616131&amp;text=Hello,%20please%20contact%20me%20regarding%20https://www.vaidam.com?source=wpchat_HPTL,%20Thank%20you!" title="Whatsapp Chat" class="readmore whatsapp-color wa_button_clicked"><img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/whatsaap-icon01.webp" alt="Chat with Us" width="30" height="29" class="img-fluid me-1" title="Chat with US image"> Chat</a> </div>
+   </div>
+</section> -->
+
+
         <section class="gray-bg">
             <div class="container">
                 <div class="section-title mb-2 mb-sm-3 text-center">
@@ -367,7 +490,7 @@
                 <div class="row row-cols-lg-3 row-cols-2 g-3 mt-0 g-xl-4 treatment-cnt">
                     <?php foreach($specialty as $k8 => $v8){ ?>
                         <div class="col">
-                            <div class="treatment_bx d-block d-sm-flex position-relative">
+                            <div class="treatment_bx d-block d-sm-flex position-relative" data-bs-toggle="modal" data-bs-target="#treatmentModalBMT">
                                 <figure class="m-0">
                                     <img loading="lazy" src="<?= base_url(''); ?><?= $v8['image'] ?>" alt="Oncology Service" class="img-fluid" title="<?= $v8['title'] ?>">
                                 </figure>
@@ -386,6 +509,48 @@
                 </div>
             </div>
         </section>
+
+
+        <div class="modal fade custom-modal treatmentsModal" id="treatmentModalBMT" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body position-static">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button> 
+                        <div class="mod-head">
+                            <div class="country d-flex align-items-center my-2">
+                                <ul class="nav nav-pills" role="tablist">
+                                    <li><button data-bs-toggle="pill" href="#indiaBMT" class="active" aria-selected="true" role="tab"><span> <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/india-flag.webp" alt="India" title="Country India image"></span> India</button> </li>
+                                    <li id="li_tr"><button data-bs-toggle="pill" href="#turkeyBMT" aria-selected="false" tabindex="-1" role="tab"><span> <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/turkey-flag.webp" alt="Turkey" title="Country Turkey image"></span> Turkey</button> </li>
+                                    <li id="li_th"><button data-bs-toggle="pill" href="#thailandBMT" aria-selected="false" tabindex="-1" role="tab"><span> <img loading="lazy" src="https://d3lclm53tbcdw6.cloudfront.net/v2/new-home/images/thailand-flag.webp" alt="Thailand" title="Country Thailand image"></span> Thailand</button> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cntry-cnt">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="indiaBMT" role="tabpanel">
+                                <ul>
+                                    <li><a href="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/india" title="Best Bone Marrow Transplant Doctors in India">Best Bone Marrow Transplant Doctors in India</a></li>
+                                    <li><a href="https://www.vaidam.com/hospitals/hematology/bone-marrow-transplant/india" title="Best Bone Marrow Transplant Hospitals In India">Best Bone Marrow Transplant Hospitals In India</a></li>
+                                    <li><a href="https://www.vaidam.com/search/bmt-bone-marrow-transplant/india" title="Bone Marrow Transplant Cost in India">Bone Marrow Transplant Cost in India</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="turkeyBMT" role="tabpanel">
+                                <ul>
+                                    <li><a href="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/turkey" title="Best Bone Marrow Transplant Doctors in Turkey">Best Bone Marrow Transplant Doctors in Turkey</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="thailandBMT" role="tabpanel">
+                                <ul>
+                                    <li><a href="https://www.vaidam.com/doctors/hematology/bone-marrow-transplant/thailand" title="Best Bone Marrow Transplant Doctors in Thailand">Best Bone Marrow Transplant Doctors in Thailand</a></li>
+                                    <li><a href="https://www.vaidam.com/hospitals/hematology/bone-marrow-transplant/thailand" title="Best Bone Marrow Transplant Hospitals In Thailand">Best Bone Marrow Transplant Hospitals In Thailand</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section>
             <div class="container">
