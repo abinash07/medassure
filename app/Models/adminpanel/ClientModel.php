@@ -1853,8 +1853,10 @@ class ClientModel extends Model{
         $totalRecordwithFilter = $filteredRecordsQuery->getRow()->totalrecord;
 
         ## Fetch records with pagination & sorting
-        $query = $db->query("SELECT tc.*
+        $query = $db->query("SELECT tc.*, tcm.name as country_name, tdm.name as department_name
         FROM tbl_cost tc 
+        LEFT JOIN tbl_country_master tcm ON tcm.id = tc.country_id
+        LEFT JOIN tbl_department_master tdm ON tdm.id = tc.department_id
         WHERE $status $searchQuery 
         ORDER BY $columnName $columnSortOrder 
         LIMIT $start, $rowperpage");
@@ -1866,6 +1868,8 @@ class ClientModel extends Model{
         foreach ($records as $record) {
             $data[] = [
                 "id" => $slno,
+                "country_name"=> $record->country_name,
+                "department_name"=> $record->department_name,
                 "title"=> $record->title,
                 "slug"=> $record->slug,
                 "date" => date('d M, Y - H:i:s A', $record->created_on),

@@ -253,5 +253,55 @@ class HomeModel extends Model{
         return $finalData;
     }
     
+
+    public function getCostMenuData() {
+        $db = \Config\Database::connect();
+    
+        $query = $db->query("SELECT 
+            tcm.name as country_name, 
+            tdm.short_name as department_name, 
+            tdm.slug as department_slug,
+            tc.title as cost_name,
+            tc.slug as cost_slug
+            FROM tbl_country_master as tcm
+            INNER JOIN tbl_department_master as tdm ON (tdm.country_id = tcm.id AND tdm.menu = 1)
+            INNER JOIN tbl_cost as tc ON tc.department_id = tdm.id
+            WHERE tcm.status = 1 AND tcm.menu = 1
+            ORDER BY tcm.sequence, tdm.sequence, tc.title
+        ");
+    
+        $result = $query->getResultArray();
+
+
+        $finalData = [];
+    
+        foreach ($result as $row) {
+            $country = $row['country_name'];
+            $department = $row['department_name'];
+            $department_slug = $row['department_slug'];
+            $cost = $row['cost_name'];
+            $cost_slug = $row['cost_slug'];
+    
+            if (!isset($finalData[$country])) {
+                $finalData[$country] = [];
+            }
+    
+            if (!isset($finalData[$country][$department])) {
+                $finalData[$country][$department] = [
+                    'slug' => $department_slug,
+                    'cost' => []
+                ];
+            }
+    
+            if (!empty($cost)) {
+                $finalData[$country][$department]['cost'][] = [
+                    'name' => $cost,
+                    'slug' => $cost_slug
+                ];
+            }
+        }
+    
+        return $finalData;
+    }
     
 }

@@ -266,6 +266,39 @@
                                             <a href="#" title="Cost" class="nav-link">Cost</a> 
                                         </div>
                                         <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
+                                            <?php foreach($costmenu as $country => $departments){ ?>
+                                                <li class="drop-submenu"> 
+                                                    <div class="has-arrow">
+                                                        <span class="ms-nav-arrow">&nbsp;</span> 
+                                                        <a class="drop-link" href="#" title="<?php echo $country; ?>">
+                                                            <?php echo $country; ?>
+                                                        </a> 
+                                                    </div> 
+                                                    <ul class="drop-menu nav-bar">
+                                                        <?php foreach($departments as $department => $departmentData){ ?>
+                                                            <li class="drop-submenu"> 
+                                                                <div class="has-arrow">
+                                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                                    <a class="drop-link" href="#" title="<?php echo $department; ?>">
+                                                                        <?php echo $department; ?>
+                                                                    </a> 
+                                                                </div> 
+                                                                <ul class="drop-menu nav-bar">
+                                                                    <?php foreach($departmentData['cost'] as $cost){ ?>
+                                                                        <li>
+                                                                            <a href="<?= base_url(); ?>cost/<?php echo $cost['slug']; ?>" title="<?php echo $cost['name']; ?>">
+                                                                                <?php echo $cost['name']; ?>
+                                                                            </a> 
+                                                                        </li>
+                                                                    <?php } ?>
+                                                                </ul>
+                                                            </li>
+                                                        <?php } ?>
+                                                    </ul>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                        <!-- <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> <a class="drop-link" href="javascript:void" title="CARDIOLOGY">CARDIOLOGY</a>
@@ -374,7 +407,7 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li class="nav-list-item drop">
                                         <div class="has-arrow"> <span class="ms-nav-arrow">&nbsp;</span> 

@@ -83,3 +83,11 @@ CREATE TABLE `medassure`.`tbl_service` (`id` INT NOT NULL AUTO_INCREMENT , `titl
 ALTER TABLE `tbl_service` ADD `description` VARCHAR(255) NOT NULL AFTER `slug`;
 
 ALTER TABLE `tbl_service` ADD `image` VARCHAR(255) NOT NULL AFTER `slug`;
+
+ALTER TABLE `tbl_cost` ADD `country_id` INT NOT NULL AFTER `slug`;
+
+
+ALTER TABLE `tbl_department_master` ADD `menu` INT NOT NULL AFTER `country_id`, ADD `sequence` INT NOT NULL AFTER `menu`;
+ALTER TABLE `tbl_department_master` ADD `short_name` VARCHAR(255) NOT NULL AFTER `sequence`;
+
+ALTER TABLE `tbl_cost` ADD `department_id` INT NOT NULL AFTER `country_id`;

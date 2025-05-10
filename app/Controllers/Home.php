@@ -60,9 +60,10 @@ class Home extends BaseController{
         $data['noidatophospital'] = $this->HomeModel->getTopHospitalData(16);
         $data['channaitophospital'] = $this->HomeModel->getTopHospitalData(4);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
 
         // echo '<pre>';
-        // print_r($header['hospitalmenu']);
+        // print_r($header['costmenu']);
         // exit;
         return $this->loadView('index',$data,$header);
     }
@@ -70,78 +71,91 @@ class Home extends BaseController{
     public function about_us(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('aboutus',$data,$header);
     }
 
     public function medassure_services(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('medassureservices',$data,$header);
     }
 
     public function medassure_mission_vision_objective(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('medassuremissionvisionobjective',$data,$header);
     }
 
     public function our_team(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('ourteam',$data,$header);
     }
 
     public function frequently_asked_questions(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('faq',$data,$header);
     }
 
     public function contact(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('contact',$data,$header);
     }
 
     public function jobs_medassure(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('jobs',$data,$header);
     }
 
     public function medassure_hospital_services(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('hospitalservices',$data,$header);
     }
 
     public function opd_camps(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('opdcamps',$data,$header);
     }
 
     public function medassure_doctor_services(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('doctorservices',$data,$header);
     }
 
     public function partner_medassure(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('partnermedassure',$data,$header);
     }
 
     public function privacy_policy(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('privacypolicy',$data,$header);
     }
 
     public function editorial_policy(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('editorialpolicy',$data,$header);
     }
 
@@ -149,30 +163,35 @@ class Home extends BaseController{
     public function terms_use(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('termsuse',$data,$header);
     }
 
     public function india(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('india',$data,$header);
     }
 
     public function turkey(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('turkey',$data,$header);
     }
 
     public function thailand(){
         $data = [];
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('thailand',$data,$header);
     }
 
     public function consult_online(){
         $data['countryList'] = $this->CommonModel->getMasterData();
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return view('consultonline',$data,$header);
     }
 
@@ -180,6 +199,7 @@ class Home extends BaseController{
         $data = [];
         $data['slug'] = $slug;
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
 
         $where_conditions = array(
             'slug' => $slug,
@@ -195,6 +215,7 @@ class Home extends BaseController{
         $data['category'] = $this->HomeModel->getCategoryData();
         $data['video'] = $this->HomeModel->getVideoData($slug);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         // echo '<pre>';
         // print_r($data['video']);
         // exit;
@@ -207,6 +228,7 @@ class Home extends BaseController{
         $data['blogs'] = $this->HomeModel->getBlogsData(0,2);
         $data['blogsmore'] = $this->HomeModel->getBlogsData(0,5);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('knowledgecenter',$data,$header);
     }
 
@@ -216,6 +238,7 @@ class Home extends BaseController{
         $data['countryList'] = $this->CommonModel->getMasterData();
         $data['blog'] = $this->HomeModel->getBlogData($slug);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         // echo '<pre>';
         // print_r($data['blog']);
         // exit;
@@ -227,6 +250,7 @@ class Home extends BaseController{
         $data['slug'] = $slug;
         $data['cost'] = $this->HomeModel->getCostData($slug);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         //$data['blog'] = $this->HomeModel->getBlogData($slug);
         // echo '<pre>';
         // print_r($data['cost']);
@@ -241,6 +265,7 @@ class Home extends BaseController{
         $data['testimonials'] = $this->HomeModel->getTestimonialsData(0,2);
         $data['testimonialsmore'] = $this->HomeModel->getTestimonialsData(0,2);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         // echo '<pre>';
         // echo "-----------";
         // print_r($data['testimonials']);
@@ -254,6 +279,7 @@ class Home extends BaseController{
         $data['countryList'] = $this->CommonModel->getMasterData();
         $data['testimonial'] = $this->HomeModel->getTestimonialData($slug);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         // echo '<pre>';
         // print_r($data['testimonial']);
         // exit;
@@ -266,6 +292,7 @@ class Home extends BaseController{
         $data['slug'] = $slug;
         $data['countryList'] = $this->CommonModel->getMasterData();
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         // echo '<pre>';
         // print_r($data['testimonial']);
         // exit;
@@ -284,6 +311,7 @@ class Home extends BaseController{
         $columnArray = ['*'];
         $data['visa'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_travel_visa',$where_conditions);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         // echo '<pre>';
         // print_r($data['testimonial']);
         // exit;
@@ -311,6 +339,7 @@ class Home extends BaseController{
         $columnArray = ['id','name','slug'];
         $data['department'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_department_master',$where_conditions);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('hospital',$data,$header);
     }
 
@@ -321,6 +350,7 @@ class Home extends BaseController{
         $data['countryList'] = $this->CommonModel->getMasterData();
         $data['hospital'] = $this->HomeModel->getHospitalData($slug);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         // echo '<pre>';
         // print_r($header['hospitalmenu']);
         // exit;
@@ -419,6 +449,7 @@ class Home extends BaseController{
         $columnArray = ['id','name','slug'];
         $data['hospital'] = $this->CommonModel->row_any_record_where($columnArray,'tbl_hospital',$where_conditions);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         return $this->loadView('doctor',$data,$header);
     }
 
@@ -429,6 +460,7 @@ class Home extends BaseController{
         $data['countryList'] = $this->CommonModel->getMasterData();
         $data['doctor'] = $this->HomeModel->getDoctorlData($slug);
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
+        $header['costmenu'] = $this->HomeModel->getCostMenuData();
         // echo '<pre>';
         // print_r($data['doctor']);
         // exit;

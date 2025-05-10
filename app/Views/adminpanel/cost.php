@@ -11,7 +11,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?= base_url('admin/home'); ?>"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="breadcrumb-item">Board Members</li>
+                                <li class="breadcrumb-item">Costs</li>
                             </ol>
                         </nav>
                     </div>
@@ -44,6 +44,8 @@
                                                     <thead>
                                                         <tr>
                                                             <th>#</th> 
+                                                            <th>Country</th>
+                                                            <th>Department</th>
                                                             <th>Title</th>
                                                             <th>Slug</th>
                                                             <th>Created On</th>
@@ -81,6 +83,8 @@
             "columnDefs": [],
             'columns': [
                 { data: 'id' },
+                { data: 'country_name'},
+                { data: 'department_name' },
                 { data: 'title' },
                 { data: 'slug' },
                 { data: 'date' },

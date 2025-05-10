@@ -1870,7 +1870,8 @@ class Home extends BaseController{
 
     public function add_cost(){
         $data = [];
-
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['department'] = $this->CommonModel->getGenericData('tbl_department_master');
         return $this->loadAdminView('addcost',$data); 
     }
 
@@ -1881,6 +1882,8 @@ class Home extends BaseController{
         ## ✅ Validation Rules
         $validationRules = [
             'title'      => 'required|trim',
+            'country'      => 'required|trim',
+            'department'      => 'required|trim',
         ];
 
         ## ✅ Validate Input
@@ -1897,6 +1900,8 @@ class Home extends BaseController{
         $data = [
             'title'      => $this->request->getPost('title'),
             'slug'       =>$this->createSlug($this->request->getPost('title')),
+            'country_id' => $this->request->getPost('country'),
+            'department_id' => $this->request->getPost('department'),
             'content'    => $this->request->getPost('content'),
             'status'     => 1,
             'created_by' => session()->get('id'),
@@ -1923,6 +1928,8 @@ class Home extends BaseController{
     
     public function edit_cost($id){
         $data = [];
+        $data['countryList'] = $this->CommonModel->getMasterData();
+        $data['department'] = $this->CommonModel->getGenericData('tbl_department_master');
         $data['cost'] = $this->CommonModel->getSingleTableData('tbl_cost',$id);
         return $this->loadAdminView('editcost',$data); 
     }
@@ -1934,6 +1941,8 @@ class Home extends BaseController{
         ## ✅ Validation Rules
         $validationRules = [
             'title'      => 'required|trim',
+            'country'      => 'required|trim',
+            'department'      => 'required|trim',
             'content' => 'required|trim',
         ];
 
@@ -1952,6 +1961,8 @@ class Home extends BaseController{
         $data = [
             'title'      => $this->request->getPost('title'),
             'slug'       =>$this->createSlug($this->request->getPost('title')),
+            'country_id' => $this->request->getPost('country'),
+            'department_id' => $this->request->getPost('department'),
             'content'    => $this->request->getPost('content'),
         ];
 
