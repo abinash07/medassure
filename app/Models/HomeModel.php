@@ -304,4 +304,42 @@ class HomeModel extends Model{
         return $finalData;
     }
     
+
+    public function getDoctorMenuData() {
+        $db = \Config\Database::connect();
+    
+        $query = $db->query("SELECT 
+            tcm.name as country_name, 
+            tdm.short_name as department_name, 
+            tdm.slug as department_slug
+            FROM tbl_country_master as tcm
+            INNER JOIN tbl_department_master as tdm ON (tdm.country_id = tcm.id AND tdm.menu = 1)
+            WHERE tcm.status = 1 AND tcm.menu = 1
+            ORDER BY tcm.sequence, tdm.sequence
+        ");
+    
+        $result = $query->getResultArray();
+
+
+        $finalData = [];
+    
+        foreach ($result as $row) {
+            $country = $row['country_name'];
+            $department = $row['department_name'];
+            $department_slug = $row['department_slug'];
+
+    
+            if (!isset($finalData[$country])) {
+                $finalData[$country] = [];
+            }
+    
+            if (!isset($finalData[$country][$department])) {
+                $finalData[$country][$department] = [
+                    'slug' => $department_slug,
+                ];
+            }
+        }
+    
+        return $finalData;
+    }
 }

@@ -1539,6 +1539,7 @@ class ClientModel extends Model{
             $data[] = [
                 "id" => $slno,
                 "name"=> $record->name,
+                "short_name"=> $record->short_name,
                 "slug"=> $record->slug,
                 "country" => $record->country,
                 "date" => date('d M, Y - H:i:s A', $record->created_on),

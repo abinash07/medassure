@@ -45,6 +45,7 @@
                                                         <tr>
                                                             <th>#</th> 
                                                             <th>Name</th>
+                                                            <th>Short Name</th>
                                                             <th>Slug</th>
                                                             <th>Country</th>
                                                             <th>Created On</th>
@@ -83,6 +84,7 @@
             'columns': [
                 { data: 'id' },
                 { data: 'name' },
+                { data: 'short_name' },
                 { data: 'slug' },
                 { data: 'country' },
                 { data: 'date' },

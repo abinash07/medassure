@@ -149,9 +149,6 @@
                                                 </li>
                                             <?php } ?>
                                         </ul>
-                                        
-
-
                                         <!-- <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
                                             <li class="drop-submenu">
                                                 <div class="has-arrow">
@@ -203,6 +200,30 @@
                                             <a href="<?= base_url(''); ?>doctors" title="Doctors" class="nav-link">Doctors</a> 
                                         </div>
                                         <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
+                                            <?php foreach($doctormenu as $country => $departments){ ?>
+                                                <li class="drop-submenu"> 
+                                                    <div class="has-arrow">
+                                                        <span class="ms-nav-arrow">&nbsp;</span> 
+                                                        <a class="drop-link" href="#" title="<?php echo $country; ?>">
+                                                            <?php echo $country; ?>
+                                                        </a> 
+                                                    </div> 
+                                                    <ul class="drop-menu nav-bar">
+                                                        <?php foreach($departments as $department => $departmentData){ ?>
+                                                            <li class="drop-submenu"> 
+                                                                <div class="has-arrow">
+                                                                    <span class="ms-nav-arrow">&nbsp;</span> 
+                                                                    <a class="drop-link" href="<?= base_url(''); ?>doctors/<?php echo $departmentData['slug']; ?>" title="<?php echo $department; ?>">
+                                                                        <?php echo $department; ?>
+                                                                    </a> 
+                                                                </div>
+                                                            </li>
+                                                        <?php } ?>
+                                                    </ul>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                        <!-- <ul class="drop-menu" role="menu" aria-labelledby="dropdownMenu">
                                             <li class="drop-submenu">
                                                 <div class="has-arrow"> 
                                                     <span class="ms-nav-arrow">&nbsp;</span> 
@@ -257,7 +278,7 @@
                                                     <a class="drop-link" href="<?= base_url(''); ?>doctors/spine-surgery" title="SPINE SURGERY">SPINE SURGERY</a> 
                                                 </div>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
 
                                     <li class="nav-list-item drop">

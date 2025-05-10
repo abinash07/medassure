@@ -1762,6 +1762,7 @@ class Home extends BaseController{
         ## ✅ Validation Rules
         $validationRules = [
             'name'      => 'required|trim',
+            'short_name'      => 'required|trim',
             'country' => 'required|trim',
         ];
 
@@ -1779,6 +1780,8 @@ class Home extends BaseController{
             'name'        => $this->request->getPost('name'),
             'slug'       => $this->createSlug($this->request->getPost('name')),
             'country_id'     => $this->request->getPost('country'),
+            'short_name'     => $this->request->getPost('short_name'),
+            'menu' => 1,
             'status'      => 1,
             'created_by'   => session()->get('id'),
             'created_on'   => time() + 12600,
@@ -1815,6 +1818,7 @@ class Home extends BaseController{
         ## ✅ Validation Rules
         $validationRules = [
             'name'      => 'required|trim',
+            'short_name'      => 'required|trim',
             'country' => 'required|trim',
         ];
 
@@ -1834,6 +1838,7 @@ class Home extends BaseController{
             'name'        => $this->request->getPost('name'),
             'slug'       => $this->createSlug($this->request->getPost('name')),
             'country_id'     => $this->request->getPost('country'),
+            'short_name'     => $this->request->getPost('short_name'),
         ];
 
         //echo '<pre>';print_r($data);die;

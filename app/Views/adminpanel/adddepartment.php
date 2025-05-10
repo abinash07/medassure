@@ -39,14 +39,21 @@
                                             <div class="clint-info">
                                                 <span><i class="fa fa-file"></i>Email Configuration</span>
                                                 <div class="row">
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="control-label">Name <span class="star">*</span></label>
                                                             <input type="text" class="form-control" name="name" id="name" placeholder="Enter Department Name" required="">
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Short Name <span class="star">*</span></label>
+                                                            <input type="text" class="form-control" name="short_name" id="short_name" placeholder="Enter Department Short Name" required="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
                                                             <label class="control-label">Country <span class="star">*</span></label>
                                                             <select class="form-control" name="country" id="country" required="">
