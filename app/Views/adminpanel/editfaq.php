@@ -51,6 +51,19 @@
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    <div class="col-md-4" style="display:none;" id="catDiv">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Category <span class="star">*</span></label>
+                                                            <select class="form-control" name="category" id="category" required="">
+																<option value="">Select Category</option>
+                                                                <option value="patient" <?php if($faq->page == 'patient'){ ?> selected <?php } ?>>Patients</option>
+                                                                <option value="medicalvisa" <?php if($faq->page == 'medicalvisa'){ ?> selected <?php } ?>>Medical Visa</option>
+                                                                <option value="travel" <?php if($faq->page == 'travel'){ ?> selected <?php } ?>>Travel</option>
+                                                                <option value="payment" <?php if($faq->page == 'payment'){ ?> selected <?php } ?>>Payment</option>
+                                                                <option value="hotel" <?php if($faq->page == 'hotel'){ ?> selected <?php } ?>>Hotel, Food, and Commute</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                     <div class="col-md-8">
                                                         <div class="form-group">
                                                             <label class="control-label">Title <span class="star">*</span></label>
@@ -96,7 +109,16 @@
         $('#content').summernote({});
     });
 
-
+    $('#page').on('change',function(e){
+        var page = $(this).val();
+        if(page == 'faq'){
+            $('#catDiv').show();
+            $('#category').attr('required',true);
+        }else{
+            $('#catDiv').hide();
+            $('#category').attr('required',false);
+        }
+    });
 
     $('#addFaq').submit(function (e) {
         e.preventDefault();

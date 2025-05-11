@@ -54,13 +54,129 @@
     }
 </style>
 
-<section class="hero-section pt-5 pb-0 pb-md-5"> <div class="container-fluid"> <div class="container py-0 py-md-5"> <div class="row py-0 my-md-5"> <div class="col-lg-6 col-md-6 py-0 py-md-5"> <h1 class="mb-3 mt-0 mt-md-3 fw-bolder">FAQs on Medical Tourism</h1> <div class="fs-2 lh-base fw-bolder">Get all the answers to your medical tourism questions!</div> <!-- <img class="d-md-none" alt="about vaidam" src="assets/v2/static_page/images/faqs-banner-mob.webp" width="359" height="248"> --> </div> </div> </div> </div> 
+<section class="hero-section pt-5 pb-0 pb-md-5">
+   <div class="container-fluid">
+      <div class="container py-0 py-md-5">
+         <div class="row py-0 my-md-5">
+            <div class="col-lg-6 col-md-6 py-0 py-md-5">
+               <h1 class="mb-3 mt-0 mt-md-3 fw-bolder">FAQs on Medical Tourism</h1>
+               <div class="fs-2 lh-base fw-bolder">Get all the answers to your medical tourism questions!</div>
+            </div>
+         </div>
+      </div>
+   </div>
 </section>
 
-<section class="how-it-work bg-vh-2"> 
-    <div class="container-fluid"> 
-        <div class="container"> 
-            <div class="row"> 
-                <div class="col-md-3 py-5"> 
-                    <ul class="list-group nav nav-pills fs-4 py-0 py-md-5" role="tablist"> <li class="nav-item" role="presentation"> <h2><a class="nav-link active" data-bs-toggle="pill" href="#patient" aria-selected="true" role="tab">Patients</a></h2> </li> <li class="nav-item" role="presentation"> <h2><a class="nav-link" data-bs-toggle="pill" href="#visa" aria-selected="false" tabindex="-1" role="tab">Medical Visa</a></h2> </li> <li class="nav-item" role="presentation"> <h2><a class="nav-link" data-bs-toggle="pill" href="#travelRelated" aria-selected="false" tabindex="-1" role="tab">Travel</a></h2> </li> <li class="nav-item" role="presentation"> <h2><a class="nav-link" data-bs-toggle="pill" href="#paymentRelated" aria-selected="false" tabindex="-1" role="tab">Payment</a></h2> </li> <li class="nav-item" role="presentation"> <h2><a class="nav-link" data-bs-toggle="pill" href="#foodRelated" aria-selected="false" tabindex="-1" role="tab">Hotel, Food, and Commute</a></h2> </li> </ul> </div> <div class="col-md-9 bg-vh-3 py-5"> <h2 class="pt-0 pt-md-5">Frequently Asked Questions</h2> <div class="tab-content py-0 py-md-5"> <div id="patient" class="container tab-pane active" role="tabpanel"> <div class="accordion border-0" id="faqPatients"> <div class="accordion-item"> <h3 class="accordion-header fs-4" id="headingOne"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqPatients1" aria-expanded="true" aria-controls="faqPatients1"> What is included in the treatment cost? </button> </h3> <div id="faqPatients1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqPatients"> <div class="accordion-body"> The treatment cost covers surgical fees, doctor’s fees, lab tests, medication, and room charges. </div> </div> </div> <div class="accordion-item"> <h3 class="accordion-header fs-4" id="headingTwo"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPatients2" aria-expanded="false" aria-controls="faqPatients2"> Can an attendant stay with me in the hospital? </button> </h3> <div id="faqPatients2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqPatients"> <div class="accordion-body"> Yes, during your hospitalization, one attendant can stay with you in a single room at no additional cost. Complimentary food and accommodation for the attendant are provided. </div> </div> </div> <div class="accordion-item"> <h3 class="accordion-header fs-4" id="headingThree"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPatients3" aria-expanded="false" aria-controls="faqPatients3"> What additional documents and information do you require from my doctor? </button> </h3> <div id="faqPatients3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqPatients"> <div class="accordion-body"> Please bring all previous medical reports, including X-rays, MRI, CT scans,ultrasound images, blood investigation reports, and discharge summaries (if available). </div> </div> </div> <div class="accordion-item"> <h3 class="accordion-header fs-4" id="headingFour"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPatients4" aria-expanded="false" aria-controls="faqPatients4"> How soon can the investigations be scheduled? </button> </h3> <div id="faqPatients4" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqPatients"> <div class="accordion-body"> We prioritize minimal waiting time for our patients. Investigations are scheduled promptly after admission under the treating doctor. </div> </div> </div> </div> </div> <!-- visa start --> <div id="visa" class="container tab-pane fade" role="tabpanel"><br> <div class="accordion" id="faqvisa"> <div class="accordion-item"> <h3 class="accordion-header" id="headingOne"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqvisa1" aria-expanded="true" aria-controls="faqvisa1"> Do you assist in obtaining a medical visa to India? </button> </h3> <div id="faqvisa1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqvisa"> <div class="accordion-body"> Yes, we assist in obtaining a medical visa invitation letter. Once you select a hospital, please provide the passport copies of the individuals traveling, and we will facilitate the medical visa application process, including e-Visa applications, which are simple and fast. </div> </div> </div> </div> </div> <!-- end visa --> <!-- travel start --> <div id="travelRelated" class="container tab-pane fade" role="tabpanel"><br> <div class="accordion" id="faqtravelRelated"> <div class="accordion-item"> <h3 class="accordion-header" id="headingOne"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqtravelRelated1" aria-expanded="true" aria-controls="faqtravelRelated1"> Will you assist in airport transfers? </button> </h3> <div id="faqtravelRelated1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqtravelRelated"> <div class="accordion-body"> Yes, our dedicated executive will receive you at the airport upon arrival and arrange transportation to the hospital or accommodation. After discharge,we provide transportation back to the airport or accommodation, all at no extra cost. </div> </div> </div> <div class="accordion-item"> <h3 class="accordion-header" id="headingTwo"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqtravelRelated2" aria-expanded="false" aria-controls="faqtravelRelated2"> How can I contact my doctor for follow-up inquiries once I have returned home? </button> </h3> <div id="faqtravelRelated2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqtravelRelated"> <div class="accordion-body"> We facilitate communication with your doctors via email and telephonic consultations. Video conferencing with your treating doctor can also be arranged if necessary. </div> </div> </div> </div> </div> <!-- travel end --> <!-- payment start --> <div id="paymentRelated" class="container tab-pane fade" role="tabpanel"><br> <div class="accordion" id="faqpaymentRelated"> <div class="accordion-item"> <h3 class="accordion-header" id="headingOne"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqpaymentRelated1" aria-expanded="true" aria-controls="faqpaymentRelated1"> What is the payment policy? </button> </h3> <div id="faqpaymentRelated1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqpaymentRelated"> <div class="accordion-body"> An advance deposit of the treatment estimate is required upon admission to the hospital. Any excess amount deposited will be refunded at the time of discharge if the actual treatment cost is lower. </div> </div> </div> <div class="accordion-item"> <h3 class="accordion-header" id="headingTwo"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqpaymentRelated2" aria-expanded="false" aria-controls="faqpaymentRelated2"> Does Vaidam charge any fees for its services? </button> </h3> <div id="faqpaymentRelated2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqpaymentRelated"> <div class="accordion-body"> No, Vaidam does not charge any fees from patients. We operate as channel partners of the hospitals. </div> </div> </div> <div class="accordion-item"> <h3 class="accordion-header" id="headingThree"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqpaymentRelated3" aria-expanded="false" aria-controls="faqpaymentRelated3"> Does the bill increase by using Vaidam's services? </button> </h3> <div id="faqpaymentRelated3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqpaymentRelated"> <div class="accordion-body"> No, utilizing Vaidam's services does not increase your medical bills. In fact, we often negotiate better prices for our patients. </div> </div> </div> </div> </div> <!-- payment end --> <!-- foodrelated faq start  --> <div id="foodRelated" class="container tab-pane fade" role="tabpanel"><br> <div class="accordion" id="faqfoodRelated"> <div class="accordion-item"> <h3 class="accordion-header" id="headingOne"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqfoodRelated1" aria-expanded="true" aria-controls="faqfoodRelated1"> Can I get accommodation near the hospital after discharge? </button> </h3> <div id="faqfoodRelated1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqfoodRelated"> <div class="accordion-body"> Yes, we can recommend nearby affordable guesthouses, typically located within a 5-15 minute drive or walk from the hospital. </div> </div> </div> <div class="accordion-item"> <h3 class="accordion-header" id="headingTwo"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqfoodRelated2" aria-expanded="false" aria-controls="faqfoodRelated2"> How can I save on living expenses? </button> </h3> <div id="faqfoodRelated2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqfoodRelated"> <div class="accordion-body"> Opt for non-luxurious yet hygienic guesthouses or hotels near the hospital.Look for options with kitchen facilities for self-cooking. For longer stays,consider furnished/service apartments near the hospital </div> </div> </div> </div> </div> </div> </div> </div> </div> </div>
+
+<section class="how-it-work bg-vh-2">
+   <div class="container-fluid">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-3 py-5">
+               <ul class="list-group nav nav-pills fs-4 py-0 py-md-5" role="tablist">
+                  <li class="nav-item" role="presentation">
+                     <h2><a class="nav-link active" data-bs-toggle="pill" href="#patient" aria-selected="true" role="tab">Patients</a></h2>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <h2><a class="nav-link" data-bs-toggle="pill" href="#visa" aria-selected="false" tabindex="-1" role="tab">Medical Visa</a></h2>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <h2><a class="nav-link" data-bs-toggle="pill" href="#travelRelated" aria-selected="false" tabindex="-1" role="tab">Travel</a></h2>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <h2><a class="nav-link" data-bs-toggle="pill" href="#paymentRelated" aria-selected="false" tabindex="-1" role="tab">Payment</a></h2>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <h2><a class="nav-link" data-bs-toggle="pill" href="#foodRelated" aria-selected="false" tabindex="-1" role="tab">Hotel, Food, and Commute</a></h2>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-md-9 bg-vh-3 py-5">
+               <h2 class="pt-0 pt-md-5">Frequently Asked Questions</h2>
+               <div class="tab-content py-0 py-md-5">
+                  <div id="patient" class="container tab-pane active" role="tabpanel">
+                     <div class="accordion border-0" id="faqPatients">
+                        <?php foreach($faq as $k2 => $v2){ 
+                            if($v2->category == 'patient'){
+                        ?>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header fs-4" id="headingOne<?= $v2->id; ?>"> 
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPatients<?= $v2->id; ?>" aria-expanded="true" aria-controls="faqPatients<?= $v2->id; ?>"> <?php echo $v2->title; ?> </button> 
+                            </h3>
+                            <div id="faqPatients<?= $v2->id; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne<?= $v2->id; ?>" data-bs-parent="#faqPatients">
+                                <div class="accordion-body"> <?php echo $v2->content; ?> </div>
+                            </div>
+                        </div>
+                        <?php } } ?>
+                     </div>
+                  </div>
+                  <!-- visa start --> 
+                  <div id="visa" class="container tab-pane fade" role="tabpanel">
+                     <br> 
+                     <div class="accordion" id="faqvisa">
+                        <?php foreach($faq as $k2 => $v2){ 
+                            if($v2->category == 'medicalvisa'){
+                        ?>
+                        <div class="accordion-item">
+                           <h3 class="accordion-header" id="headingOne<?= $v2->id; ?>"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqvisa<?= $v2->id; ?>" aria-expanded="true" aria-controls="faqvisa<?= $v2->id; ?>"> <?php echo $v2->title; ?> </button> </h3>
+                           <div id="faqvisa<?= $v2->id; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne<?= $v2->id; ?>" data-bs-parent="#faqvisa">
+                              <div class="accordion-body"> <?php echo $v2->content; ?> </div>
+                           </div>
+                        </div>
+                        <?php } } ?>
+                     </div>
+                  </div>
+                  <!-- end visa --> <!-- travel start --> 
+                  <div id="travelRelated" class="container tab-pane fade" role="tabpanel">
+                     <br> 
+                     <div class="accordion" id="faqtravelRelated">
+                        <?php foreach($faq as $k2 => $v2){ 
+                            if($v2->category == 'travel'){
+                        ?>
+                        <div class="accordion-item">
+                           <h3 class="accordion-header" id="headingOne<?= $v2->id; ?>"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqtravelRelated<?= $v2->id; ?>" aria-expanded="true" aria-controls="faqtravelRelated<?= $v2->id; ?>"> <?php echo $v2->title; ?> </button> </h3>
+                           <div id="faqtravelRelated<?= $v2->id; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne<?= $v2->id; ?>" data-bs-parent="#faqtravelRelated">
+                              <div class="accordion-body"> <?php echo $v2->content; ?> </div>
+                           </div>
+                        </div>
+                        <?php } } ?>
+                     </div>
+                  </div>
+                  <!-- travel end --> <!-- payment start --> 
+                  <div id="paymentRelated" class="container tab-pane fade" role="tabpanel">
+                     <br> 
+                     <div class="accordion" id="faqpaymentRelated">
+                        <?php foreach($faq as $k2 => $v2){ 
+                            if($v2->category == 'payment'){
+                        ?>
+                        <div class="accordion-item">
+                           <h3 class="accordion-header" id="headingOne<?= $v2->id; ?>"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqpaymentRelated<?= $v2->id; ?>" aria-expanded="true" aria-controls="faqpaymentRelated<?= $v2->id; ?>"> <?php echo $v2->title; ?> </button> </h3>
+                           <div id="faqpaymentRelated<?= $v2->id; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqpaymentRelated">
+                              <div class="accordion-body"> <?php echo $v2->content; ?> </div>
+                           </div>
+                        </div>
+                        <?php } } ?>
+                     </div>
+                  </div>
+                  <!-- payment end --> <!-- foodrelated faq start  --> 
+                  <div id="foodRelated" class="container tab-pane fade" role="tabpanel">
+                     <br> 
+                     <div class="accordion" id="faqfoodRelated">
+                        <?php foreach($faq as $k2 => $v2){ 
+                            if($v2->category == 'hotel'){
+                        ?>
+                        <div class="accordion-item">
+                           <h3 class="accordion-header" id="headingOne<?= $v2->id; ?>"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqfoodRelated<?= $v2->id; ?>" aria-expanded="true" aria-controls="faqfoodRelated<?= $v2->id; ?>"> <?php echo $v2->title; ?> </button> </h3>
+                           <div id="faqfoodRelated<?= $v2->id; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne<?= $v2->id; ?>" data-bs-parent="#faqfoodRelated">
+                              <div class="accordion-body"> <?php echo $v2->content; ?> </div>
+                           </div>
+                        </div>
+                        <?php } } ?>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </section>

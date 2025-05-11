@@ -91,3 +91,6 @@ ALTER TABLE `tbl_department_master` ADD `menu` INT NOT NULL AFTER `country_id`, 
 ALTER TABLE `tbl_department_master` ADD `short_name` VARCHAR(255) NOT NULL AFTER `sequence`;
 
 ALTER TABLE `tbl_cost` ADD `department_id` INT NOT NULL AFTER `country_id`;
+
+
+ALTER TABLE `tbl_faq` ADD `category` VARCHAR(255) NULL AFTER `content`;

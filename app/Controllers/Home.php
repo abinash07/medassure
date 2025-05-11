@@ -106,6 +106,7 @@ class Home extends BaseController{
         $header['hospitalmenu'] = $this->HomeModel->getHospitalMenuData();
         $header['costmenu'] = $this->HomeModel->getCostMenuData();
         $header['doctormenu'] = $this->HomeModel->getDoctorMenuData();
+        $data['faq'] = $this->CommonModel->getFaqData('faq');
         return $this->loadView('faq',$data,$header);
     }
 

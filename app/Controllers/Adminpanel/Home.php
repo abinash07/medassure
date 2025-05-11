@@ -375,6 +375,7 @@ class Home extends BaseController{
             'page'        => $this->request->getPost('page'),
             'title'       => $this->request->getPost('title'),
             'content'       => $this->request->getPost('content'),
+            'category'       => $this->request->getPost('category'),
             'status'      => 1,
             'created_by'   => session()->get('id'),
             'created_on'   => time() + 12600,
@@ -427,7 +428,8 @@ class Home extends BaseController{
         $data = [
             'page'        => $this->request->getPost('page'),
             'title'       => $this->request->getPost('title'),
-            'content'       => $this->request->getPost('content'),            
+            'content'       => $this->request->getPost('content'),
+            'category'       => $this->request->getPost('category'),      
         ];
 
         ## ✅ Insert into Database

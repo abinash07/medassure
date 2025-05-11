@@ -65,12 +65,12 @@
 <body>
     <header>
         <div class="container register-section"> </div>
-        <section class="bg-theam py-2">
+        <section class="bg-theam" style="background-color: #FFFFFF;">
             <div class="container logo-section">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-7 col-6 text-start"> 
                         <a href="<?= base_url(''); ?>" class="vh-logo text-white lh-1" title="Medassure"> 
-                            <img class="desktop-nabh" src="<?= base_url(''); ?>assets/img/logo.png" alt="Logo" title="Logo" style="height: auto; width: 100%;">
+                            <img src="<?= base_url(''); ?>assets/img/logo.png" alt="Logo" title="Logo" style="height: auto; width: 100%;">
                         </a> 
                     </div>
                     <div class="col-lg-3 col-md-2 col-sm-3 col-3 headerimgaes"> 
@@ -103,7 +103,7 @@
                 </div>
             </div>
         </section>
-        <section class="nav-section bg-theam-2">
+        <section class="nav-section bg-theam-2" style="background-color: #dc3545;">
             <div class="container">
                 <div class="row nav-bar">
                     <div class="col-md-8 col-sm-12 col-12">
