@@ -6568,69 +6568,43 @@
   }
   $("#ageblock").hide();
   $(".stategroup").hide();
-  //      $('.datepicker').datepicker({
-  //         beforeShowDay: noSunday,
-  //         minDate:0,
-  //      dateFormat: "yy-mm-dd"
-  //  });
-  function noSunday(date) {
-    return [date.getDay() != 0, ""];
-  }
-  
-  $("#country").change(function () {
-    var curval = $(this).val();
-    $("#country_phone_code").val(country_phone_code[curval]);
-    if (curval == 'AE') {
-        $('#emirates-id-block').show();  
-        $('.stategroup').show();   
-        $('#city').attr('placeholder', 'Enter Emirates');  
-        $('#city').replaceWith('<select id="city" class="form-control new-form-control" name="city"><option value="">Select Emirates</option><option value="Abu Dhabi">Abu Dhabi</option><option value="Ajman">Ajman</option><option value="Al Ain">Al Ain</option><option value="Al Qusais">Al Qusais</option><option value="Dubai">Dubai</option><option value="Ras Al Khaimah">Ras Al Khaimah</option><option value="Sharjah">Sharjah</option></select>');
+
+    function noSunday(date) {
+        return [date.getDay() != 0, ""];
     }
-    else if (curval != "IN") {
-        $(".stategroup").hide();
-        $("#state").attr("disabled", "true");
-        $("#ageblock").hide();
-    } else {
-        $(".stategroup").show();
-        $("#state").removeAttr("disabled");
-        $("#ageblock").show();
+  
+    $("#country").change(function () {
+        var curval = $(this).val();
+        $("#country_phone_code").val(country_phone_code[curval]);
+        if (curval == 'AE') {
+            $('#emirates-id-block').show();  
+            $('.stategroup').show();   
+            $('#city').attr('placeholder', 'Enter Emirates');  
+            $('#city').replaceWith('<select id="city" class="form-control new-form-control" name="city"><option value="">Select Emirates</option><option value="Abu Dhabi">Abu Dhabi</option><option value="Ajman">Ajman</option><option value="Al Ain">Al Ain</option><option value="Al Qusais">Al Qusais</option><option value="Dubai">Dubai</option><option value="Ras Al Khaimah">Ras Al Khaimah</option><option value="Sharjah">Sharjah</option></select>');
+        }
+        else if (curval != "IN") {
+            $(".stategroup").hide();
+            $("#state").attr("disabled", "true");
+            $("#ageblock").hide();
+        } else {
+            $(".stategroup").show();
+            $("#state").removeAttr("disabled");
+            $("#ageblock").show();
+        }
+    });
+
+
+    var page_source = localStorage.getItem("current_lp_url");
+    $("#page_source").val(page_source);
+    $("#lang1").val(page_source);
+  
+    var countryCode = "IN";
+    var countryName = "India";
+    var countryPhnCode = "+91";
+    if(countryCode != undefined || countryCode == ""){
+        $("#country").val(countryCode);
+        $("#country_phone_code").val(country_phone_code[countryCode]);
     }
-  });
-  //generic ip tracker
-  var page_source = localStorage.getItem("current_lp_url");
-  $("#page_source").val(page_source);
-  $("#lang1").val(page_source);
-  
-  /* Ajax Code For Set Cookie */
-  $.ajax(
-      {
-          type: "GET",
-          url: "https://www.vaidam.com/setCookie",
-          success: function(res)
-          {
-              cc = res['countryCode'];
-              cn = res['countryName'];
-              cpc = res['countryPhnCode'];
-          },
-          async: false
-      });
-  
-      /* Pre Select User Country */
-      var countryCode = cc;//$.cookie("countryCode");
-      var countryName = cn;//$.cookie("countryName");
-      var countryPhnCode = cpc;//$.cookie("countryPhnCode");
-      console.log('countryCode: '+countryCode);
-      console.log('countryName: '+countryName);
-      console.log('countryPhnCode: '+countryPhnCode);
-      // console.log(localStorage.getItem("geo_countryCode"));
-      // var geo_countryCode = localStorage.getItem("geo_countryCode");
-      // var geo_countryName = localStorage.getItem("geo_countryName");
-      // var geo_regionName = localStorage.getItem("geo_regionName");
-      if(countryCode != undefined || countryCode == "")
-      {
-          $("#country").val(countryCode);
-          $("#country_phone_code").val(country_phone_code[countryCode]);
-      }
 
     //   banner logic
     if(countryCode=='IN')

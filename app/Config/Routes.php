@@ -55,7 +55,7 @@ $routes->get('/test_data', 'Home::test_data');
 $routes->post('/genericform','Home::generic_form');
 
 
-
+$routes->get('/suggestions/(:any)', 'Home::suggestions/$1');
 
 
 

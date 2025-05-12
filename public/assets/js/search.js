@@ -1,28 +1,7 @@
 // Set URL in localHost
 localStorage.setItem("current_lp_url", window.location.href);
+var base_url = 'http://localhost:8080/';
 
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
 
 function searchSuggestionsLog(searchTerm, type = null, clickedData = null, source = null, clickedDataUrl = null){
 
@@ -36,111 +15,6 @@ function searchSuggestionsLog(searchTerm, type = null, clickedData = null, sourc
 
 }
 
-function searchSuggestionsAjaxLoadOld(searchTerm, source = '') {
-    var plcookie = $.cookie("preferredLocation");
-    console.log('pl'+plcookie);
-    if($.cookie("preferredLocation")!=undefined && $.cookie("preferredLocation")!='')
-    {
-        var pl = plcookie.replace(' ', '-');
-    }else{
-        var pl = 'India';
-    }
-    if (searchTerm == '') {
-        $("#search-suggestions").empty().hide();
-        $("#search-suggestions-mobile").empty().hide();
-        return;
-    }
-    $.getJSON(base_url + "suggestions/" + searchTerm, function(data) {
-        $("#search-suggestions").empty().hide();
-        $("#search-suggestions-mobile").empty().hide();
-        var items = [];
-        suggestions = data.groups;
-        var totalResults = data.matches;
-        var text = '';
-        var treatmentText = "";
-        var doctorsText = "";
-        var hospitalsText = "";
-        var articlesText = "";
-        var tagsText = "";
-        if (totalResults > 0)
-            text = totalResults + " results found for <b>" + searchTerm + "</b></br>";
-        else
-            text = 'Click enter to search ';
-        //traverse all the categories
-        $.each(suggestions, function(key, groups) {
-            var base_url = 'https://www.vaidam.com';
-            var category = groups.groupValue;
-            var group = groups.doclist;
-            var totalInGroup = group.numFound;
-            var hospitalsLink = base_url + "/listings/hospitals/" + searchTerm;
-            var doctorsLink = base_url + "/listings/doctors/" + searchTerm;
-            var articlesLink = base_url + "/listings/treatments/" + searchTerm;
-            var groupItems = group.docs;
-            var tagsLink = base_url + "/tag-search/" + searchTerm + "/"+pl.toLowerCase();
-            var dispalyCatName = "";
-            if (category == "blog") {
-                totalInGroup = totalInGroup;
-                dispalyCatName = "<b><\/br>Articles related to " + searchTerm + " (" + totalInGroup + ") <\/br><\/b>";
-            }
-            if (category == "hospital") {
-                totalInGroup = totalInGroup;
-                dispalyCatName = "<b><\/br>Hospitals related to " + searchTerm + " (" + totalInGroup + ") <\/br><\/b>";
-            }
-            if (category == "doctors") {
-                totalInGroup = totalInGroup;
-                dispalyCatName = "<b><\/br>Doctors related to" + searchTerm + " (" + totalInGroup + ") <\/br><\/b>";
-            }
-            if (category == "treatment") {
-                totalInGroup = totalInGroup;
-                dispalyCatName = "<b><\/br>Treatments related to " + searchTerm + " (" + totalInGroup + ") <\/br><\/b>";
-            }
-            if (category == "tags") {
-                totalInGroup = totalInGroup;
-                dispalyCatName = "<b><\/br>Tags related to " + searchTerm + " (" + totalInGroup + ") <\/br><\/b>";
-            }
-            var subtext = "<ul>";
-            // traverse individual group
-            $.each(groupItems, function(key, item) {
-                if (category == "treatment") {
-                    var seoTerm = item.label.replace(/\s/g, "-");
-                    var url = base_url + "/treatment-search/" + seoTerm + '?source=search';
-                } else if (category == "tags") {
-                    var seoTerm = item.label.replace(/\s/g, "-");
-                    var url = base_url + "/search/" + item.url + '/'+pl.toLowerCase();
-                } else {
-                    var url = item.url + '?source=search';
-                }
-		url = url.replace("https://staging.vaidam.com","https://www.vaidam.com");
-        url = url.replace("com//",'com/');
-                subtext = subtext + "<a href=\"" + url + "\" onClick='suggestionLog(\"" + item.label + "\",\"" + url + "\");'><li>" + item.label + "<\/li><\/a>"
-            });
-
-            subtext = subtext + "<\/ul>";
-            if (category == "blog")
-                articlesText = dispalyCatName + subtext;
-            if (category == "hospital")
-                hospitalsText = dispalyCatName + subtext;
-            if (category == "doctors")
-                doctorsText = dispalyCatName + subtext;
-            if (category == "treatment")
-                treatmentText = dispalyCatName + subtext;
-            if (category == "tags")
-                tagsText = dispalyCatName + subtext;
-            // var link = $($.parseHTML(val.term)).text();
-        });
-        //text = text + tagsText + treatmentText+hospitalsText+doctorsText+articlesText;
-        text = text + tagsText + hospitalsText + doctorsText;
-        if (source == 'home') {
-            $("#search-suggestionsblock").html(text).show();
-        } else if (source == 'home_mobile') {
-            $(".sect-21").html(text).show();
-        } else {
-            $("#search-suggestions").html(text).show();
-            $("#search-suggestions-mobile").html(text).show();
-        }
-
-    });
-}
 
 function searchSuggestionsAjaxLoad(searchTerm, source = '') {
     // var plcookie = $.cookie("preferredLocation");
@@ -468,18 +342,18 @@ function loadScript() {if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'un
         searchSuggestionsLog(searchTerm, 'onIconClick', clickedData = null, cururl, clickedDataUrl = null);
     });
 
-if($(window).width() <= 768){   
-    $('.searchTerm').focus(function(e) {
-        $('.search-mobile-view').fadeIn(function() {
-            $('.dd-options .form-control').focus();
+    if($(window).width() <= 768){   
+        $('.searchTerm').focus(function(e) {
+            $('.search-mobile-view').fadeIn(function() {
+                $('.dd-options .form-control').focus();
+            });
+        
         });
-    
-    });
-    
-    $('.closeShowOption').on("click", function() {
-        $('.search-mobile-view').fadeOut();
-        $('.sect-21').html('');
-        return false;
-    })
-}
+        
+        $('.closeShowOption').on("click", function() {
+            $('.search-mobile-view').fadeOut();
+            $('.sect-21').html('');
+            return false;
+        })
+    }
 })

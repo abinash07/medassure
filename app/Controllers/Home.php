@@ -5,15 +5,18 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\CommonModel;
 use App\Models\HomeModel;
+use CodeIgniter\Database\BaseConnection;
 
 class Home extends BaseController{
 
     protected $CommonModel;
     protected $HomeModel;
+    protected BaseConnection $db;
 
     public function __construct(){
         $this->CommonModel = new CommonModel();
         $this->HomeModel = new HomeModel();
+        $this->db = \Config\Database::connect();
     }
 
     public function index(){
@@ -548,5 +551,99 @@ class Home extends BaseController{
                 'message' => 'Record not found'
             ]);
         }
+    }
+
+
+    public function suggestions($query){
+        $db = \Config\Database::connect();
+        $keyword = $query;
+
+        if (!$keyword) {
+            return $this->response->setJSON(['error' => 'Missing search keyword']);
+        }
+        $escaped = $this->db->escapeLikeString($keyword);
+
+        $results = [];
+
+        // --- Doctors ---
+        $doctorQuery = $this->db->table('tbl_doctor')
+            ->select('id AS entity_id, name as label, slug')
+            ->groupStart()
+                ->like('name', $escaped)
+            ->groupEnd()
+            ->get()
+            ->getResultArray();
+
+
+        $doctorResults = array_map(function ($row) {
+            $row['url'] = base_url("doctor/" . $row['slug']);
+            return $row;
+        }, $doctorQuery);
+
+        if (!empty($doctorResults)) {
+            $results[] = [
+                'groupValue' => 'doctors',
+                'doclist' => [
+                    'numFound' => count($doctorResults),
+                    'start' => 0,
+                    'docs' => $doctorResults
+                ]
+            ];
+        }
+
+        // --- Hospitals ---
+        $hospitalQuery = $this->db->table('tbl_hospital')
+            ->select('id AS entity_id, name as label, address, slug')
+            ->groupStart()
+                ->like('name', $escaped)
+                ->orLike('address', $escaped)
+            ->groupEnd()
+            ->get()
+            ->getResultArray();
+
+        $hospitalResults = array_map(function ($row) {
+            $row['url'] = base_url("hospitals/" . $row['slug']);
+            return $row;
+        }, $hospitalQuery);
+        
+        if (!empty($hospitalResults)) {
+            $results[] = [
+                'groupValue' => 'hospital',
+                'doclist' => [
+                    'numFound' => count($hospitalResults),
+                    'start' => 0,
+                    'docs' => $hospitalResults
+                ]
+            ];
+        }
+        
+
+        // --- Cities ---
+        $cityQuery = $this->db->table('tbl_city_master')
+            ->select('id AS entity_id, name')
+            ->groupStart()
+                ->like('name', $escaped)
+            ->groupEnd()
+            ->get()
+            ->getResultArray();
+
+        if (!empty($cityQuery)) {
+            $results[] = [
+                'groupValue' => 'city',
+                'doclist' => [
+                    'numFound' => count($cityQuery),
+                    'start' => 0,
+                    'docs' => $cityQuery
+                ]
+            ];
+        }
+
+        // --- Final Response ---
+        $response = [
+            'matches' => array_sum(array_column(array_column($results, 'doclist'), 'numFound')),
+            'groups' => $results
+        ];
+
+        return $this->response->setJSON($response);
     }
 }

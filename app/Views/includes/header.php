@@ -83,16 +83,16 @@
                     </div>
                     <!-- Search Bar Start -->
                     <div class="col-md-4 sm-12 col-12 vh-search d-flex align-items-center">
-                        <!-- <div class="banner-search hide-for-mobile">
+                        <div class="banner-search hide-for-mobile">
                             <div class="searchbar-home col-12">
                                 <div class="searchbar"> 
                                     <input type="text"class="searchTerm border border-secondary-subtle" id="search_find_new" placeholder="Search by disease, procedure, doctor or hospital" /> 
                                     <button class="search-button"><img src="<?= base_url(''); ?>assets/img/search.png" width="21" height="21" alt="Search" title="Search" /></button> </div>
                                 <div id="search-suggestionsblock" style="display: none;"> </div> 
-                                <img class="mobile-nabh" src="<?= base_url(''); ?>assets/img/small-logo.png" width="56" height="56" alt="Logo" title="Logo"> 
-                                <span class="bg-danger close-serach-100 text-white fw-bolder fs-5 rounded-circle">X</span>
+                                <!-- <img class="mobile-nabh" src="<?= base_url(''); ?>assets/img/small-logo.png" width="56" height="56" alt="Logo" title="Logo">  -->
+                                <!-- <span class="bg-danger close-serach-100 text-white fw-bolder fs-5 rounded-circle">X</span> -->
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                     <!-- Search Bar End -->
                     <div class="col-lg-2 col-md-2 contactMenu d-none d-md-block">
