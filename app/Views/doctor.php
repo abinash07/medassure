@@ -1030,6 +1030,7 @@
                 if(get_department == 'oncology-and-oncosurgery'){department = 5}
                 if(get_department == 'orthopedics'){department = 9}
                 if(get_department == 'spine-surgery'){department = 8}
+                if(get_department == 'dermatology'){department = 24}
 
             }
         }

@@ -124,13 +124,13 @@ class HomeModel extends Model{
             $search_arr[] = "(th.city = '$city')";
         }
         if($department !='' && $department != 0){
-            $search_arr[] = "(th.department = '$department')";
+            $search_arr[] = "(td.department_id = $department)";
         }
         if($treatment !='' && $treatment != 0){
-            $search_arr[] = "(th.treatment = '$treatment')";
+            $search_arr[] = "(td.treatment_id = $treatment)";
         }
         if($hospital !='' && $hospital != 0){
-            $search_arr[] = "(th.hospital = '$hospital')";
+            $search_arr[] = "(td.hospital_id = $hospital)";
         }
 
         if(count($search_arr) > 0){
@@ -145,6 +145,9 @@ class HomeModel extends Model{
         INNER JOIN tbl_treatment as ttm ON ttm.id = td.treatment_id
         WHERE td.status = 1 $searchQuery ORDER BY 1 DESC LIMIT $offset, $limit"
         );
+        
+        //$db = \Config\Database::connect();
+        //echo $db->getLastQuery();
         return $query->getResult();
     }
 
